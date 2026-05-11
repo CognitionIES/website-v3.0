@@ -1,0 +1,102 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Brand tokens ────────────────────────────────────────────────────────── */
+:root {
+  --teal:        #0098AF;
+  --teal-dark:   #007a8c;
+  --navy:        #003C46;
+  --body:        #4a5568;
+  --body-light:  #718096;
+  --border:      #e2e8f0;
+  --bg:          #ffffff;
+  --bg-warm:     #fafaf8;
+  --bg-dark:     #0f1117;
+  --ink:         #111827;
+}
+
+/* ── shadcn tokens ───────────────────────────────────────────────────────── */
+@layer base {
+  :root {
+    --background: 0 0% 100%; --foreground: 222 47% 11%;
+    --card: 0 0% 100%; --card-foreground: 222 47% 11%;
+    --popover: 0 0% 100%; --popover-foreground: 222 47% 11%;
+    --primary: 222 47% 11%; --primary-foreground: 0 0% 98%;
+    --secondary: 210 40% 96%; --secondary-foreground: 222 47% 11%;
+    --muted: 210 40% 96%; --muted-foreground: 215 16% 47%;
+    --accent: 210 40% 96%; --accent-foreground: 222 47% 11%;
+    --destructive: 0 84% 60%; --destructive-foreground: 0 0% 98%;
+    --border: 214 32% 91%; --input: 214 32% 91%; --ring: 222 47% 11%;
+    --radius: 0.5rem;
+  }
+}
+
+/* ── Base ────────────────────────────────────────────────────────────────── */
+@layer base {
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; overflow-x: hidden; }
+
+  body {
+    font-family: "DM Sans", "Helvetica Neue", Arial, ui-sans-serif, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--body);
+    background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Display serif for all headings */
+  h1, h2, h3, h4 {
+    font-family: "DM Serif Display", "Georgia", serif;
+    color: var(--ink);
+    line-height: 1.1;
+    letter-spacing: -0.025em;
+  }
+
+  /* DM Sans for all body/ui */
+  p, span, label, button, a, input, textarea, select, li, td {
+    font-family: "DM Sans", "Helvetica Neue", Arial, ui-sans-serif, sans-serif;
+  }
+
+  p { margin: 0; }
+  img { display: block; max-width: 100%; }
+  *:focus-visible { outline: 2px solid var(--teal); outline-offset: 2px; }
+  *:focus:not(:focus-visible) { outline: none; }
+}
+
+/* ── Eyebrow label ───────────────────────────────────────────────────────── */
+@layer utilities {
+  .text-balance { text-wrap: balance; }
+}
+
+@layer components {
+  .eyebrow {
+    display: block;
+    font-family: "DM Sans", sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 1rem;
+  }
+  /* Subtle 64-px grid texture */
+  .grid-texture {
+    background-image:
+      linear-gradient(#003C46 1px, transparent 1px),
+      linear-gradient(90deg, #003C46 1px, transparent 1px);
+    background-size: 64px 64px;
+  }
+}
+
+/* ── Keyframes ───────────────────────────────────────────────────────────── */
+@keyframes progress-fill { from { width: 0 } to { width: 100% } }
+@keyframes shimmer { from { transform: translateX(-100%) } to { transform: translateX(100%) } }
+@keyframes fade-up { from { opacity:0; transform:translateY(20px) } to { opacity:1; transform:translateY(0) } }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
