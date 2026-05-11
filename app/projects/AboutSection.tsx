@@ -3,6 +3,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
+import digitalizationImg from "@/constants/images/projects/digitalization/hero-image-1.jpg";
+import pcmImg from "@/constants/images/projects/pcm/hero.jpg";
+
 
 const projects = [
   {
@@ -11,7 +14,7 @@ const projects = [
     category: "Digital Transformation",
     description:
       "Comprehensive digital transformation of a manufacturing plant through 3D scanning, digital twin creation, and real-time data integration to improve efficiency and accuracy.",
-    image: "/images/projects/digitalization.jpg",
+    image: digitalizationImg,
     href: "/projects/digitalization",
   },
   {
@@ -20,7 +23,7 @@ const projects = [
     category: "Product Cost Management",
     description:
       "Detailed cost and function analysis of a log splitter product line, identifying savings through competitive benchmarking, value engineering, and design optimisation.",
-    image: "/images/projects/pcm.jpg",
+    image: pcmImg,
     href: "/projects/product-cost-management",
   },
 ];
