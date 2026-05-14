@@ -84,16 +84,16 @@ const services: Svc[] = [
       { title: "ServiceCPQ Platform", href: "/services/saas-solution/servicecpq", icon: <Server className="w-3 h-3" /> },
     ],
   },
-  {
-    num: "04", title: "Staffing & Recruitment", short: "Staffing",
-    href: "/services/staffing",
-    descriptor: "Data-driven talent acquisition across India & USA.",
-    image: { src: colImage, alt: "Staffing & Recruitment" },
-    subCategories: [
-      { title: "For Job Seekers", href: "/services/staffing/job-seeker", icon: <FontAwesomeIcon icon={faUsers} className="w-3 h-3" /> },
-      { title: "For Employers",   href: "/services/staffing/employer",   icon: <FontAwesomeIcon icon={faCity} className="w-3 h-3" /> },
-    ],
-  },
+  // {
+  //   num: "04", title: "Staffing & Recruitment", short: "Staffing",
+  //   href: "/services/staffing",
+  //   descriptor: "Data-driven talent acquisition across India & USA.",
+  //   image: { src: colImage, alt: "Staffing & Recruitment" },
+  //   subCategories: [
+  //     { title: "For Job Seekers", href: "/services/staffing/job-seeker", icon: <FontAwesomeIcon icon={faUsers} className="w-3 h-3" /> },
+  //     { title: "For Employers",   href: "/services/staffing/employer",   icon: <FontAwesomeIcon icon={faCity} className="w-3 h-3" /> },
+  //   ],
+  // },
 ];
 
 const navLinks = [
@@ -102,7 +102,6 @@ const navLinks = [
   { label: "Careers",  href: "/careers" },
   { label: "About",    href: "/about" },
 ];
-
 export function MegaMenu() {
   const [isOpen, setIsOpen]               = useState(false);
   const [hoveredTile, setHoveredTile]     = useState<number | null>(null);
@@ -404,7 +403,7 @@ export function MegaMenu() {
                         {[
                           { label: "All services",    href: "/services" },
                           { label: "Recent projects", href: "/projects" },
-                          { label: "Case studies",    href: "/projects" },
+                          //  { label: "Case studies",    href: "/projects" },
                           { label: "About us",        href: "/about" },
                         ].map((l) => (
                           <Link

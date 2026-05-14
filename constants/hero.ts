@@ -68,14 +68,14 @@ export const heroSlides: HeroSlide[] = [
     image: saasImage,
     mobileImage: saas2, // Using aimlImage as a placeholder; replace with actual mobile image
   },
-  {
-    id: 5,
-    title: "The Right People for the Right Roles",
-    subtitle: "Connecting Talent with Opportunity",
-    majorService: "Staffing & Recruitment",
-    description:
-      "Helping businesses build high-performing teams by sourcing top talent through strategic recruitment and staffing solutions.",
-    image: recruitmentImage,
-    mobileImage: recruit2, // Using aimlImage as a placeholder; replace with actual mobile image
-  },
+  // {
+  //   id: 5,
+  //   title: "The Right People for the Right Roles",
+  //   subtitle: "Connecting Talent with Opportunity",
+  //   majorService: "Staffing & Recruitment",
+  //   description:
+  //     "Helping businesses build high-performing teams by sourcing top talent through strategic recruitment and staffing solutions.",
+  //   image: recruitmentImage,
+  //   mobileImage: recruit2, // Using aimlImage as a placeholder; replace with actual mobile image
+  // },
 ];

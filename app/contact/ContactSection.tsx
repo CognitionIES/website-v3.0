@@ -20,7 +20,7 @@ const INTEREST_OPTIONS = [
   "Product Engineering",
   "Plant Engineering",
   "ServiceCPQ",
-  "Staffing And Recruitment",
+ // "Staffing And Recruitment",
   "Others",
 ];
 const INITIAL = {
