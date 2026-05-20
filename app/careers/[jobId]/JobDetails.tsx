@@ -16,8 +16,8 @@ import {
 } from "lucide-react";
 import { getJobById } from "@/data/jobs";
 import { Button } from "@/components/ui/button";
-import Footer from "@/components/Footer";
-import { JSXElementConstructor, Key, ReactElement, ReactNode, ReactPortal, useEffect, useState } from "react";
+import Footer from "@/components/footer";
+import { useEffect, useState } from "react";
 import { MegaMenu } from "@/components/ui/Megamenu/MegaMenu";
 
 interface JobDetailsProps {
@@ -204,7 +204,7 @@ const JobDetails = ({ jobId }: JobDetailsProps) => {
               <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.2 }}>
                 <SectionHeading>Responsibilities</SectionHeading>
                 <ul className="space-y-3.5">
-                  {job.responsibilities.map((item: ReactNode, index: number) => (
+                  {job.responsibilities.map((item, index) => (
                     <motion.li
                       key={index}
                       initial={{ opacity: 0, x: -8 }}

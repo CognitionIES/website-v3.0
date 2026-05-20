@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { Toaster } from "sonner";
 import { Analytics } from "@vercel/analytics/react";
 import FaqButton from "../components/FaqButton";
 import PageLoader from "../components/Loader";
@@ -75,9 +76,8 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon:        [{ url: "/favicon.ico" }, { url: "/favicon-32x32.png", sizes: "32x32" }],
-    apple:       [{ url: "/apple-touch-icon.png" }],
-    other:       [{ rel: "mask-icon", url: "/safari-pinned-tab.svg", color: "#0098AF" }],
+    icon:  [{ url: "/favicon.png", type: "image/png" }],
+    apple: [{ url: "/apple-touch-icon.png" }],
   },
   manifest: "/site.webmanifest",
   verification: {
@@ -114,6 +114,7 @@ export default function RootLayout({
         <ChatWidget />
         <LeadMagnet />
         <Analytics />
+        <Toaster richColors position="top-right" />
       </body>
     </html>
   );
