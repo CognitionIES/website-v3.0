@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     template: "%s | Cognition IES",
   },
   description:
-    "Cognition IES delivers advanced engineering services — product engineering, plant engineering, SaaS solutions and staffing for process and product industries worldwide.",
+    "Cognition IES delivers advanced engineering services — product engineering, plant engineering, and SaaS solutions for process and product industries worldwide.",
   keywords: [
     "engineering services",
     "product engineering",
@@ -30,8 +30,8 @@ export const metadata: Metadata = {
     "engineering consultancy",
     "mechanical engineering services",
     "industrial engineering",
-    "engineering staffing",
     "ServiceCPQ",
+    "SaaS solutions",
     "engineering company India",
     "engineering company USA",
     "Cognition IES",
@@ -48,13 +48,20 @@ export const metadata: Metadata = {
     title: "Cognition IES | Engineering Smarter Solutions",
     description:
       "Advanced engineering services for product, plant, and process industries — delivered from India and the USA.",
-    images: [{ url: "/og-default.jpg", width: 1200, height: 630, alt: "Cognition IES" }],
+    images: [
+      { 
+        url: "/og-image.png", 
+        width: 1200, 
+        height: 630, 
+        alt: "Cognition IES - Engineering Smarter Solutions" 
+      }
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Cognition IES | Engineering Smarter Solutions",
     description: "Advanced engineering services for product, plant, and process industries.",
-    images: ["/og-default.jpg"],
+    images: ["/og-image.png"],
   },
   robots: {
     index: true,
