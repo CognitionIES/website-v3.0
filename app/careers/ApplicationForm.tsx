@@ -102,25 +102,20 @@ const ApplicationForm = () => {
   }, []);
 
   const fieldClass =
-    "h-11 text-[15px] bg-[#f7f8fa] dark:bg-[#13131a] border border-[#e8eaed] dark:border-[#1e1e2e] rounded-lg text-[#003C46] dark:text-white placeholder:text-[#aabbcc] focus-visible:ring-1 focus-visible:ring-[#0098AF]/40 focus-visible:border-[#0098AF] transition-colors";
+    "h-11 text-[15px] bg-[#fafaf8] border border-[#e2e8f0] rounded-lg text-[#111827] placeholder:text-[#718096] focus-visible:ring-1 focus-visible:ring-[#0098AF]/40 focus-visible:border-[#0098AF] transition-colors";
 
   return (
     <section ref={sectionRef} className="py-10 lg:py-14">
 
       {/* Section header */}
       <div className="mb-8">
-        <p className="text-[10px] font-bold tracking-[0.22em] uppercase text-[#0098AF] mb-2">
-          Apply Now
-        </p>
-        <h2
-          className="text-3xl md:text-4xl font-bold text-[#003C46] dark:text-white mb-2"
-          style={{ fontFamily: "'DM Serif Display', Georgia, serif" }}
-        >
+        <span className="eyebrow text-[#0098AF] mb-2 block">Apply Now</span>
+        <h2 className="font-display text-3xl md:text-4xl text-[#111827] leading-[1.0] tracking-[-0.03em] mb-2">
           Start your{" "}
           <em className="not-italic text-[#0098AF]">application.</em>
         </h2>
-        <p className="text-[15px] text-[#778899] dark:text-[#6677aa]">
-          Fill in the details below and we'll be in touch soon.
+        <p className="text-[15px] text-[#718096]">
+          Fill in the details below and we&apos;ll be in touch soon.
         </p>
       </div>
 
@@ -131,13 +126,13 @@ const ApplicationForm = () => {
       >
         <form
           onSubmit={handleSubmit}
-          className="bg-white dark:bg-[#0d0d14] rounded-xl border border-[#e8eaed] dark:border-[#1e1e2e] p-6 lg:p-8 space-y-6"
+          className="bg-white rounded-xl border border-[#e2e8f0] p-6 lg:p-8 space-y-6"
         >
 
           {/* Name */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             <div className="space-y-1.5">
-              <Label htmlFor="firstName" className="text-[13px] font-semibold text-[#003C46] dark:text-[#ccddee] tracking-wide">
+              <Label htmlFor="firstName" className="text-[13px] font-semibold text-[#111827] tracking-wide">
                 First Name <span className="text-[#0098AF]">*</span>
               </Label>
               <div className="relative">
@@ -149,7 +144,7 @@ const ApplicationForm = () => {
               </div>
             </div>
             <div className="space-y-1.5">
-              <Label htmlFor="lastName" className="text-[13px] font-semibold text-[#003C46] dark:text-[#ccddee] tracking-wide">
+              <Label htmlFor="lastName" className="text-[13px] font-semibold text-[#111827] tracking-wide">
                 Last Name <span className="text-[#0098AF]">*</span>
               </Label>
               <div className="relative">
@@ -165,7 +160,7 @@ const ApplicationForm = () => {
           {/* Contact */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             <div className="space-y-1.5">
-              <Label htmlFor="email" className="text-[13px] font-semibold text-[#003C46] dark:text-[#ccddee] tracking-wide">
+              <Label htmlFor="email" className="text-[13px] font-semibold text-[#111827] tracking-wide">
                 Email <span className="text-[#0098AF]">*</span>
               </Label>
               <div className="relative">
@@ -177,7 +172,7 @@ const ApplicationForm = () => {
               </div>
             </div>
             <div className="space-y-1.5">
-              <Label htmlFor="phone" className="text-[13px] font-semibold text-[#003C46] dark:text-[#ccddee] tracking-wide">
+              <Label htmlFor="phone" className="text-[13px] font-semibold text-[#111827] tracking-wide">
                 Phone <span className="text-[#0098AF]">*</span>
               </Label>
               <div className="relative">
@@ -193,7 +188,7 @@ const ApplicationForm = () => {
           {/* Location + Job Title */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             <div className="space-y-1.5">
-              <Label htmlFor="location" className="text-[13px] font-semibold text-[#003C46] dark:text-[#ccddee] tracking-wide">
+              <Label htmlFor="location" className="text-[13px] font-semibold text-[#111827] tracking-wide">
                 Preferred Location <span className="text-[#0098AF]">*</span>
               </Label>
               <div className="relative">
@@ -201,7 +196,7 @@ const ApplicationForm = () => {
                   <SelectTrigger className={`pl-10 ${fieldClass} w-full`}>
                     <SelectValue placeholder="Select location" />
                   </SelectTrigger>
-                  <SelectContent className="bg-white dark:bg-[#13131a] border-[#e8eaed] dark:border-[#1e1e2e]">
+                  <SelectContent className="bg-white border-[#e2e8f0]">
                     <SelectItem value="India">India</SelectItem>
                     <SelectItem value="USA">USA</SelectItem>
                     <SelectItem value="remote">Remote</SelectItem>
@@ -211,7 +206,7 @@ const ApplicationForm = () => {
               </div>
             </div>
             <div className="space-y-1.5">
-              <Label htmlFor="jobTitle" className="text-[13px] font-semibold text-[#003C46] dark:text-[#ccddee] tracking-wide">
+              <Label htmlFor="jobTitle" className="text-[13px] font-semibold text-[#111827] tracking-wide">
                 Job Title <span className="text-[#0098AF]">*</span>
               </Label>
               <div className="relative">
@@ -226,21 +221,21 @@ const ApplicationForm = () => {
 
           {/* Resume upload */}
           <div className="space-y-1.5">
-            <Label className="text-[13px] font-semibold text-[#003C46] dark:text-[#ccddee] tracking-wide">
+            <Label className="text-[13px] font-semibold text-[#111827] tracking-wide">
               Resume / CV <span className="text-[#0098AF]">*</span>
             </Label>
             <div className="flex flex-col sm:flex-row sm:items-center gap-3">
               <input id="resume" type="file" onChange={handleFileChange}
                 accept=".pdf,.doc,.docx" className="hidden" disabled={isSubmitting} />
               <label htmlFor="resume" className="cursor-pointer">
-                <span className="inline-flex items-center gap-2 h-11 px-4 text-[14px] font-semibold bg-[#f7f8fa] dark:bg-[#13131a] border border-[#e8eaed] dark:border-[#1e1e2e] text-[#003C46] dark:text-white rounded-lg hover:border-[#0098AF] hover:text-[#0098AF] transition-colors duration-200">
+                <span className="inline-flex items-center gap-2 h-11 px-4 text-[14px] font-semibold bg-[#fafaf8] border border-[#e2e8f0] text-[#111827] rounded-lg hover:border-[#0098AF] hover:text-[#0098AF] transition-colors duration-200">
                   <Upload className="w-4 h-4 flex-shrink-0" />
                   <span className="max-w-[180px] truncate">
                     {formData.resume ? formData.resume.name : "Upload Resume"}
                   </span>
                 </span>
               </label>
-              <span className="text-[13px] text-[#aabbcc]">PDF, DOC or DOCX · max 5 MB</span>
+              <span className="text-[13px] text-[#718096]">PDF, DOC or DOCX · max 5 MB</span>
             </div>
           </div>
 
@@ -253,7 +248,7 @@ const ApplicationForm = () => {
               disabled={isSubmitting}
               className="mt-0.5 border-[#e8eaed] data-[state=checked]:bg-[#0098AF] data-[state=checked]:border-[#0098AF]"
             />
-            <Label htmlFor="consent" className="text-[13px] text-[#778899] dark:text-[#6677aa] leading-relaxed cursor-pointer">
+            <Label htmlFor="consent" className="text-[13px] text-[#718096] leading-relaxed cursor-pointer">
               I agree to the{" "}
               <a href="/privacy-policy" className="text-[#0098AF] hover:underline font-medium">
                 Privacy Policy
@@ -263,7 +258,7 @@ const ApplicationForm = () => {
           </div>
 
           {/* Divider */}
-          <div className="h-px bg-[#e8eaed] dark:bg-[#1e1e2e]" />
+          <div className="h-px bg-[#e2e8f0]" />
 
           {/* Submit */}
           <Button

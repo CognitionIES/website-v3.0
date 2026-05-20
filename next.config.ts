@@ -65,7 +65,8 @@ const nextConfig: NextConfig = {
       { source: "/contact/",                      destination: "/contact",                      permanent: true },
       { source: "/careers/",                      destination: "/careers",                      permanent: true },
       { source: "/faq/",                          destination: "/faq",                          permanent: true },
-      { source: "/services/",                     destination: "/services",                     permanent: true },
+      { source: "/services",                        destination: "/services/product-engineering", permanent: true },
+      { source: "/services/",                      destination: "/services/product-engineering", permanent: true },
       { source: "/services/product-engineering/", destination: "/services/product-engineering", permanent: true },
       { source: "/services/plant-engineering/",   destination: "/services/plant-engineering",   permanent: true },
 
@@ -128,7 +129,6 @@ const nextConfig: NextConfig = {
   },
 
   /* ── Build ── */
-  eslint:     { ignoreDuringBuilds: true },
   typescript: { ignoreBuildErrors: true },
 };
 

@@ -16,7 +16,7 @@ import {
 } from "lucide-react";
 import { getJobById } from "@/data/jobs";
 import { Button } from "@/components/ui/button";
-import Footer from "@/components/footer";
+import Footer from "@/components/Footer";
 import { useEffect, useState } from "react";
 import { MegaMenu } from "@/components/ui/Megamenu/MegaMenu";
 

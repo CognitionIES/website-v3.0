@@ -67,7 +67,7 @@ export default function CareersHero() {
       />
 
       {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-8 lg:px-12 h-full flex flex-col justify-center">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 h-full flex flex-col justify-center">
 
         {/* Breadcrumb */}
         <motion.nav
@@ -97,7 +97,7 @@ export default function CareersHero() {
             initial={{ opacity: 0, y: 14 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }}
-            className="text-[10px] font-bold tracking-[0.25em] uppercase text-[#0098AF] mb-5"
+            className="eyebrow text-[#0098AF] mb-5"
           >
             Cognition IES · Careers
           </motion.p>
@@ -144,7 +144,7 @@ export default function CareersHero() {
           >
             <Link
               href="#open-positions"
-              className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#0098AF] hover:bg-[#007B8F] text-white text-sm font-semibold rounded-lg transition-colors duration-200"
+              className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#003C46] hover:bg-[#0098AF] text-white text-sm font-semibold rounded-full transition-colors duration-200"
             >
               View Open Roles
               <ArrowDown className="w-4 h-4" />

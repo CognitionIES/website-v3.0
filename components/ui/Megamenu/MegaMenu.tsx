@@ -10,7 +10,7 @@ import {
   Box, Layers, FileText, Truck, Printer, Cpu,
 } from "lucide-react";
 import { IconSettingsDollar } from "@tabler/icons-react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useMotionValue, useSpring } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faGears, faPlugCircleBolt, faMagnifyingGlassChart,
@@ -19,7 +19,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { usePathname } from "next/navigation";
 
-import Logo1 from "@/constants/images/navbar-logo.png";
+import Logo1 from "@/constants/images/LOGO-COGNITION.png";
 import colImage from "@/constants/images/home/3.jpg";
 
 const T = {
@@ -102,6 +102,67 @@ const navLinks = [
   { label: "Careers",  href: "/careers" },
   { label: "About",    href: "/about" },
 ];
+function MagneticButton({
+  href,
+  onClick,
+  children,
+}: {
+  href: string;
+  onClick: () => void;
+  children: React.ReactNode;
+}) {
+  const ref = useRef<HTMLDivElement>(null);
+  const x = useMotionValue(0);
+  const y = useMotionValue(0);
+  const [spot, setSpot] = useState({ x: 0, y: 0 });
+  const [hovered, setHovered] = useState(false);
+
+  const sx = useSpring(x, { stiffness: 220, damping: 18, mass: 0.5 });
+  const sy = useSpring(y, { stiffness: 220, damping: 18, mass: 0.5 });
+
+  const onMove = (e: React.MouseEvent) => {
+    const r = ref.current?.getBoundingClientRect();
+    if (!r) return;
+    x.set((e.clientX - (r.left + r.width / 2)) * 0.35);
+    y.set((e.clientY - (r.top + r.height / 2)) * 0.35);
+    setSpot({ x: e.clientX - r.left, y: e.clientY - r.top });
+  };
+
+  const onLeave = () => {
+    x.set(0);
+    y.set(0);
+    setHovered(false);
+  };
+
+  return (
+    <motion.div
+      ref={ref}
+      style={{ x: sx, y: sy, display: "inline-flex" }}
+      whileTap={{ scale: 0.96 }}
+      onMouseMove={onMove}
+      onMouseEnter={() => setHovered(true)}
+      onMouseLeave={onLeave}
+    >
+      <Link
+        href={href}
+        onClick={onClick}
+        className="relative inline-flex items-center gap-1.5 px-5 py-2 bg-[#003C46] text-white text-[13px] font-semibold rounded-full overflow-hidden"
+      >
+        {/* Cursor spotlight */}
+        <span
+          className="absolute inset-0 rounded-full pointer-events-none"
+          style={{
+            opacity: hovered ? 1 : 0,
+            transition: "opacity 0.2s ease",
+            background: `radial-gradient(circle 70px at ${spot.x}px ${spot.y}px, rgba(0,152,175,0.55), transparent 70%)`,
+          }}
+        />
+        <span className="relative z-10 flex items-center gap-1.5">{children}</span>
+      </Link>
+    </motion.div>
+  );
+}
+
 export function MegaMenu() {
   const [isOpen, setIsOpen]               = useState(false);
   const [hoveredTile, setHoveredTile]     = useState<number | null>(null);
@@ -196,13 +257,9 @@ export function MegaMenu() {
 
               <div className="w-px h-4 bg-[#e2e8f0] mx-3" />
 
-              <Link
-                href="/contact"
-                onClick={closeAll}
-                className="inline-flex items-center gap-1.5 px-5 py-2 bg-[#003C46] hover:bg-[#0098AF] text-white text-[13px] font-semibold rounded-full transition-colors duration-300"
-              >
+              <MagneticButton href="/contact" onClick={closeAll}>
                 Contact Us
-              </Link>
+              </MagneticButton>
             </div>
 
             {/* Mobile toggle */}
@@ -317,7 +374,7 @@ export function MegaMenu() {
                           {/* Bottom content */}
                           <div className="mt-auto">
                             <motion.p
-                              animate={{ color: active ? "#0098AF" : "#a0aab4" }}
+                              animate={{ color: active ? "#0098AF" : "#718096" }}
                               transition={{ duration: 0.4 }}
                               className="text-[10px] font-semibold tracking-[0.18em] uppercase mb-2"
                             >
@@ -327,7 +384,7 @@ export function MegaMenu() {
                             <motion.p
                               animate={{
                                 color: active ? "#ffffff" : "#1a2332",
-                                fontSize: active ? "1.25rem" : "1.05rem",
+                                fontSize: active ? "1.45rem" : "1.25rem",
                               }}
                               transition={{ duration: 0.4, ease: [0.32, 0, 0.18, 1] }}
                               className="font-display leading-tight tracking-tight"
@@ -346,13 +403,15 @@ export function MegaMenu() {
                                   transition={{ duration: 0.3, delay: 0.06, ease: [0.32, 0, 0.18, 1] }}
                                   className="pointer-events-auto"
                                 >
-                                  <p className="text-[12px] text-white/45 leading-relaxed mt-2 mb-4">
+                                  <p className="text-[13px] text-white/65 leading-relaxed mt-2">
                                     {svc.descriptor}
                                   </p>
 
+                                  <div className="border-t border-white/10 mt-3 mb-3" />
+
                                   {/* 2-column grid — fits 9–10 items cleanly, no scrollbar */}
                                   <div className={cn(
-                                    "grid gap-x-3 gap-y-0.5",
+                                    "grid gap-x-4 gap-y-1",
                                     svc.subCategories.length > 4
                                       ? "grid-cols-2"
                                       : "grid-cols-1"
@@ -372,12 +431,12 @@ export function MegaMenu() {
                                         <Link
                                           href={sub.href}
                                           onClick={closeAll}
-                                          className="group/sub flex items-center gap-2 px-2 py-1.5 -mx-2 rounded-md hover:bg-white/[0.08] transition-colors duration-150"
+                                          className="group/sub flex items-center gap-2 px-2 py-2 -mx-2 rounded-md hover:bg-white/[0.08] transition-colors duration-150"
                                         >
-                                          <span className="text-white/25 group-hover/sub:text-[#0098AF] transition-colors duration-150 shrink-0">
+                                          <span className="text-white/45 group-hover/sub:text-[#0098AF] transition-colors duration-150 shrink-0">
                                             {sub.icon}
                                           </span>
-                                          <span className="text-[11.5px] text-white/55 group-hover/sub:text-white/90 transition-colors duration-150 leading-snug">
+                                          <span className="text-[13px] text-white/75 group-hover/sub:text-white/90 transition-colors duration-150 leading-snug">
                                             {sub.title}
                                           </span>
                                         </Link>
@@ -401,7 +460,7 @@ export function MegaMenu() {
                       </p>
                       <div className="space-y-0.5">
                         {[
-                          { label: "All services",    href: "/services" },
+                          { label: "All services",    href: "/services/product-engineering" },
                           { label: "Recent projects", href: "/projects" },
                           //  { label: "Case studies",    href: "/projects" },
                           { label: "About us",        href: "/about" },
