@@ -13,8 +13,8 @@ export const organizationSchema = {
   url: BASE,
   logo: `${BASE}/images/logo.png`,
   description:
-    "Cognition IES delivers advanced engineering services — product engineering, plant engineering, SaaS solutions and staffing for industries worldwide.",
-  foundingDate: "2010",
+    "Cognition IES delivers advanced engineering services — product engineering, plant engineering, SaaS solutions for industries worldwide.",
+  foundingDate: "2005",
   numberOfEmployees: { "@type": "QuantitativeValue", value: 50 },
   contactPoint: [
     {
@@ -61,12 +61,12 @@ export const professionalServiceSchema = {
   "@type": "ProfessionalService",
   name: "Cognition IES",
   url: BASE,
-  description: "Engineering consultancy offering product engineering, plant engineering, SaaS solutions, and staffing services.",
+  description: "Engineering consultancy offering product engineering, plant engineering, SaaS solutions related services.",
   serviceType: [
     "Product Engineering",
     "Plant Engineering",
     "SaaS Solutions",
-    "Staffing & Recruitment",
+    //"Staffing & Recruitment",
   ],
   areaServed: ["India", "USA", "Global"],
   hasOfferCatalog: {
@@ -74,9 +74,8 @@ export const professionalServiceSchema = {
     name: "Engineering Services",
     itemListElement: [
       { "@type": "Offer", itemOffered: { "@type": "Service", name: "Product Engineering", url: `${BASE}/services/product-engineering` } },
-      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Plant Engineering",   url: `${BASE}/services/plant-engineering` } },
-      { "@type": "Offer", itemOffered: { "@type": "Service", name: "ServiceCPQ SaaS",    url: `${BASE}/services/saas-solution/servicecpq` } },
-      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Staffing & Recruitment", url: `${BASE}/services/staffing` } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Plant Engineering", url: `${BASE}/services/plant-engineering` } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "ServiceCPQ SaaS", url: `${BASE}/services/saas-solution/servicecpq` } },
     ],
   },
 };

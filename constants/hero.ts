@@ -3,7 +3,7 @@ import productImage from "@/constants/images/home/hero/product.jpg";
 import processImage from "@/constants/images/home/hero/process.jpg";
 import aimlImage from "@/constants/images/home/hero/ai-ml.jpg";
 import saasImage from "@/constants/images/home/hero/saas.jpg";
-import recruitmentImage from "@/constants/images/home/hero/recruit.jpg";
+//import recruitmentImage from "@/constants/images/home/hero/recruit.jpg";
 import saas2 from "@/constants/images/home/hero/saas-mobile.jpg";
 import process2 from "@/constants/images/home/hero/process-mobile.jpg";
 import recruit2 from "@/constants/images/home/hero/recruit-mobile.jpg";
