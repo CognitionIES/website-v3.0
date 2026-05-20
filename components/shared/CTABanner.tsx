@@ -7,9 +7,9 @@ import { cn } from "@/lib/utils";
 import { ArrowRight } from "lucide-react";
 
 interface CTAButton { label: string; href: string; variant?: "primary" | "outline"; }
-interface CTABannerProps { title: string; accentWord?: string; description?: string; buttons: CTAButton[]; className?: string; }
+interface CTABannerProps { title: string; accentWord?: string; description?: string; buttons: CTAButton[]; className?: string; eyebrow?: string; }
 
-export default function CTABanner({ title, accentWord, description, buttons, className }: CTABannerProps) {
+export default function CTABanner({ title, accentWord, description, buttons, className, eyebrow }: CTABannerProps) {
   const ref = useRef<HTMLElement>(null);
   const isInView = useInView(ref, { once: true, amount: 0.2 });
 
@@ -45,7 +45,7 @@ export default function CTABanner({ title, accentWord, description, buttons, cla
             transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
             className="md:col-span-8 md:pr-16"
           >
-            <span className="eyebrow">Work With Us</span>
+            <span className="eyebrow">{eyebrow ?? "Work With Us"}</span>
             <h2 className="font-display text-5xl md:text-6xl lg:text-7xl text-white leading-[0.95] tracking-[-0.03em] text-balance">
               {renderTitle()}
             </h2>

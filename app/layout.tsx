@@ -102,9 +102,7 @@ export default function RootLayout({
       <body>
         <PageLoader />
         <NavigationProgress />
-        <div className="hidden lg:block">
-          <FaqButton />
-        </div>
+        <FaqButton />
         <main>{children}</main>
         <ChatWidget />
         <LeadMagnet />

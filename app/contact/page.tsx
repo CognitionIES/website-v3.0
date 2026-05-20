@@ -15,6 +15,7 @@ export default function ContactPage() {
       <PageHero image={IMAGE} title={TITLE} subtitle="Contact" breadcrumbs={[{ label: "Contact Us", href: "/contact" }]} />
       <ContactSection />
       <CTABanner
+        eyebrow="Let's Talk"
         title="Prefer to talk directly?"
         accentWord="directly?"
         description="Our team is available for calls and meetings. Let us know the best time to connect."

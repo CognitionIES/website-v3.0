@@ -77,7 +77,7 @@ export function ScrollSection({
             {/* Changed from space-y-8 to space-y-6 */}
             <motion.h2
               id={`section-title-${index}`}
-              className="text-2xl sm:text-3xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-foreground to-foreground/80 uppercase"
+              className="text-2xl sm:text-3xl font-semibold tracking-tight text-white"
               variants={itemVariants}
             >
               {title}
@@ -94,8 +94,8 @@ export function ScrollSection({
                   whileHover={shouldReduceMotion ? {} : { x: -5 }}
                   role="listitem"
                 >
-                  <span className="mt-1 w-4 h-4 bg-gray-300 rounded-full inline-block flex-shrink-0 mr-2 group-hover:bg-gray-400 transition-colors duration-200"></span>
-                  <span className="text-base sm:text-lg transition-colors uppercase break-words">
+                  <span className="mt-1.5 w-3 h-3 rounded-full bg-[#0098AF] inline-block flex-shrink-0 mr-2" />
+                  <span className="text-sm sm:text-base text-white/70 leading-snug break-words">
                     {point}
                   </span>
                 </motion.li>
@@ -146,7 +146,7 @@ export function ScrollSection({
         >
           <div className="space">
             <motion.h2
-              className="text-4xl md:text-3xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-foreground to-foreground/80 uppercase"
+              className="text-3xl md:text-4xl font-semibold tracking-tight text-white"
               variants={itemVariants}
             >
               {title}
@@ -154,7 +154,7 @@ export function ScrollSection({
           </div>
 
           <motion.p
-            className="text-lg text-muted-foreground/90 leading-relaxed uppercase"
+            className="text-base text-white/60 leading-relaxed"
             variants={itemVariants}
           >
             {description}
@@ -180,7 +180,7 @@ export function ScrollSection({
                   className="mt-1 flex-shrink-0 transition-transform group-hover:scale-125"
                   aria-hidden="true"
                 />
-                <span className="text-xl md:text-base transition-colors uppercase">
+                <span className="text-sm md:text-base text-white/70 leading-snug">
                   {point}
                 </span>
               </motion.li>
@@ -210,7 +210,7 @@ export function ScrollSection({
         </motion.div>
 
         <motion.div
-          className={`relative h-[510px] w-[360px] ${
+          className={`relative h-[480px] w-full ${
             isEven
               ? "md:order-1 md:col-span-4 md:mr-2"
               : "md:order-2 md:col-span-4 md:ml-8"

@@ -23,7 +23,7 @@ const projects = [
     num: "02",
     title: "Log Splitter Cost Optimisation",
     category: "Value Engineering",
-    year: "2023",
+    year: "2005",
     description: "Competitive benchmarking and design optimisation that identified significant cost-saving opportunities across the full product lifecycle.",
     image: pcmImage,
     href: "/projects/product-cost-management",
@@ -40,17 +40,24 @@ export default function RecentProjects() {
       <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16">
 
         {/* Header */}
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-16">
+        <div className="flex items-center gap-6 mb-10">
+          <span className="eyebrow">Selected Work</span>
           <motion.div
+            className="flex-1 h-px bg-[#e2e8f0] origin-left"
+            initial={{ scaleX: 0 }}
+            animate={isInView ? { scaleX: 1 } : {}}
+            transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+          />
+        </div>
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-16">
+          <motion.h2
             initial={{ opacity: 0, y: 16 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+            className="font-display text-5xl md:text-6xl text-[#111827] leading-[1.0] tracking-[-0.03em]"
           >
-            <span className="eyebrow">Selected Work</span>
-            <h2 className="font-display text-5xl md:text-6xl text-[#111827] leading-[1.0] tracking-[-0.03em]">
-              Recent <em className="not-italic text-[#0098AF]">Projects</em>
-            </h2>
-          </motion.div>
+            Recent <em className="not-italic text-[#0098AF]">Projects</em>
+          </motion.h2>
 
           <Link href="/projects"
             className="group inline-flex items-center gap-2 font-sans text-[13px] font-semibold text-[#003C46] hover:text-[#0098AF] transition-colors shrink-0">

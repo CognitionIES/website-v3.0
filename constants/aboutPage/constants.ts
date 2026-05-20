@@ -29,10 +29,10 @@ export const ABOUT_CONSTANTS = {
   TEXT: {
     COMPANY_NAME: "Cognition IES",
     HERO_SUBTITLE:
-      "Engineering the future with innovation, agility, and a human-first approach since 2023.",
+      "Engineering the future with innovation, agility, and a human-first approach since 2005.",
     STORY_TITLE: "Our Journey",
     STORY_P1:
-      "Born in 2023 from a visionary spark in India, Cognition IES has evolved into a global innovator. We’ve reimagined engineering by breaking down traditional hierarchies, connecting our expert engineers directly with clients to deliver seamless solutions for industries like automotive, aerospace, and medical devices.",
+      "Born in 2005 from a visionary spark in India, Cognition IES has evolved into a global innovator. We’ve reimagined engineering by breaking down traditional hierarchies, connecting our expert engineers directly with clients to deliver seamless solutions for industries like automotive, aerospace, and medical devices.",
     STORY_P2:
       "Our unique blend of startup agility and deep services drives us to create value that’s bold, practical, and sustainable—every single day.",
     MISSION_TITLE: "Our Mission",

@@ -33,7 +33,7 @@ const INITIAL = {
   message: "",
   consent: false,
 };
-const WEB3FORMS_KEY = "aba4ac86-a28e-496a-86bb-e3c981356299";
+const WEB3FORMS_KEY = process.env.NEXT_PUBLIC_WEB3FORMS_KEY ?? "aba4ac86-a28e-496a-86bb-e3c981356299";
 
 const inp =
   "h-12 border-[#e2e8f0] bg-[#fafaf8] focus-visible:ring-1 focus-visible:ring-[#0098AF] focus-visible:border-[#0098AF] text-[15px] rounded-xl font-sans placeholder:text-[#718096]/60";
@@ -106,7 +106,12 @@ export default function ContactSection() {
       <div className="relative max-w-7xl mx-auto px-6 sm:px-10 lg:px-16">
         <div className="flex items-center gap-6 mb-20">
           <span className="eyebrow">Reach Out</span>
-          <div className="flex-1 h-px bg-[#e2e8f0]" />
+          <motion.div
+            className="flex-1 h-px bg-[#e2e8f0] origin-left"
+            initial={{ scaleX: 0 }}
+            animate={isInView ? { scaleX: 1 } : {}}
+            transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+          />
         </div>
 
         <div className="grid lg:grid-cols-12 gap-16 items-start">

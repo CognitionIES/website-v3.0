@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useRef } from "react";
-import { useInView } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
@@ -66,13 +66,24 @@ export default function ServicesShowcase() {
     >
       {/* Header strip */}
       <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 pt-24 pb-12">
+        <div className="flex items-center gap-6 mb-10">
+          <span className="eyebrow">What We Do</span>
+          <motion.div
+            className="flex-1 h-px bg-[#e2e8f0] origin-left"
+            initial={{ scaleX: 0 }}
+            animate={isInView ? { scaleX: 1 } : {}}
+            transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+          />
+        </div>
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6">
-          <div>
-            <span className="eyebrow">What We Do</span>
-            <h2 className="font-display text-5xl md:text-6xl text-[#111827] leading-[1.0] tracking-[-0.03em]">
-              Our <em className="not-italic text-[#0098AF]">Services</em>
-            </h2>
-          </div>
+          <motion.h2
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+            className="font-display text-5xl md:text-6xl text-[#111827] leading-[1.0] tracking-[-0.03em]"
+          >
+            Our <em className="not-italic text-[#0098AF]">Services</em>
+          </motion.h2>
           <Link
             href="/services"
             className="group inline-flex items-center gap-2 text-[13px] font-semibold text-[#0098AF] hover:text-[#003C46] transition-colors"
@@ -88,7 +99,12 @@ export default function ServicesShowcase() {
         {/* Left: list */}
         <ul className="divide-y divide-[#e2e8f0] flex-1">
           {services.map((svc, i) => (
-            <li key={svc.num}>
+            <motion.li
+              key={svc.num}
+              initial={{ opacity: 0, x: -16 }}
+              animate={isInView ? { opacity: 1, x: 0 } : {}}
+              transition={{ duration: 0.5, delay: 0.1 + i * 0.08, ease: [0.22, 1, 0.36, 1] }}
+            >
               <Link
                 href={svc.href}
                 onMouseEnter={() => setActive(i)}
@@ -116,7 +132,7 @@ export default function ServicesShowcase() {
                       }`}
                     />
                   </div>
-                  <p className="font-sans text-[14px] text-[#718096] leading-[1.7] mb-4 text-justify">
+                  <p className="font-sans text-[14px] text-[#718096] leading-[1.7] mb-4">
                     {svc.description}
                   </p>
                   <div className="flex flex-wrap gap-2">
@@ -131,12 +147,17 @@ export default function ServicesShowcase() {
                   </div>
                 </div>
               </Link>
-            </li>
+            </motion.li>
           ))}
         </ul>
 
         {/* Right: image — NOT sticky, just centered vertically alongside the list */}
-        <div className="w-[45%] flex items-center">
+        <motion.div
+          initial={{ opacity: 0, x: 24 }}
+          animate={isInView ? { opacity: 1, x: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+          className="w-[45%] flex items-center"
+        >
           <div className="w-full">
             <div className="relative aspect-[4/3] rounded-2xl overflow-hidden">
               {services.map((svc, i) => (
@@ -168,7 +189,7 @@ export default function ServicesShowcase() {
               ))}
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
 
       {/* Mobile: cards */}

@@ -36,7 +36,7 @@ export default function Hero() {
           key={slide.id}
           className={`absolute inset-0 transition-opacity duration-1000 ${i === current ? "opacity-100" : "opacity-0"}`}
         >
-          <Image src={slide.image} alt="Cognition IES engineering" fill priority={i === 0} sizes="100vw" quality={90} className="object-cover object-center" />
+          <Image src={slide.image} alt={`${slide.majorService} — Cognition IES`} fill priority={i === 0} sizes="100vw" quality={90} className="object-cover object-center" />
           <div className="absolute inset-0 bg-gradient-to-r from-[#0f1117]/95 via-[#0f1117]/60 to-[#0f1117]/20" />
         </div>
       ))}
@@ -52,7 +52,7 @@ export default function Hero() {
 
         {/* Slide counter */}
         <div className="flex items-center gap-3">
-          <span className="font-sans text-[11px] font-600 tracking-[0.2em] text-[#0098AF] uppercase">
+          <span className="font-sans text-[11px] font-semibold tracking-[0.2em] text-[#0098AF] uppercase">
             {String(current + 1).padStart(2, "0")} / {String(total).padStart(2, "0")}
           </span>
           <div className="flex gap-1">

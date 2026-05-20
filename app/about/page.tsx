@@ -4,7 +4,8 @@ import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Target, Eye, Heart, Shield, Zap, Star, Users, Globe, Award, TrendingUp } from "lucide-react";
+import { ArrowUpRight, Target, Eye, Heart, Shield, Zap, Star, Users, Globe, Award, TrendingUp } from "lucide-react";
+import { AnimatedCounter } from "@/components/shared/AnimatedCounter";
 import { MegaMenu } from "@/components/ui/Megamenu/MegaMenu";
 import Footer from "@/components/Footer";
 import CTABanner from "@/components/shared/CTABanner";
@@ -56,21 +57,27 @@ function Story() {
       <div className="relative max-w-7xl mx-auto px-6 sm:px-10 lg:px-16">
         <div className="flex items-center gap-6 mb-20">
           <span className="eyebrow">Our Story</span>
-          <div className="flex-1 h-px bg-[#e2e8f0]" />
+          <motion.div
+            className="flex-1 h-px bg-[#e2e8f0] origin-left"
+            initial={{ scaleX: 0 }}
+            animate={isInView ? { scaleX: 1 } : {}}
+            transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+          />
         </div>
         <div className="grid lg:grid-cols-12 gap-16 items-start">
           <motion.div initial={{ opacity: 0, y: 24 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }} className="lg:col-span-5">
-            <h2 className="font-display text-5xl md:text-6xl text-[#111827] leading-[1.0] tracking-[-0.03em] text-balance mb-10 text-balance">{TEXT.STORY_TITLE}</h2>
+            <h2 className="font-display text-5xl md:text-6xl text-[#111827] leading-[1.0] tracking-[-0.03em] text-balance mb-10">{TEXT.STORY_TITLE}</h2>
             <div className="grid grid-cols-2 gap-px bg-[#e2e8f0] rounded-xl overflow-hidden mb-10">
               {STATS.map((s, i) => (
                 <div key={i} className="bg-white p-6">
-                  <p className="font-display text-4xl text-[#0098AF] mb-1">{s.stat}</p>
+                  <p className="font-display text-4xl text-[#0098AF] mb-1"><AnimatedCounter value={s.stat} /></p>
                   <p className="font-sans text-[13px] text-[#718096]">{s.label}</p>
                 </div>
               ))}
             </div>
             <Link href="/contact" className="group inline-flex items-center gap-3 font-sans text-[13px] font-semibold tracking-[0.12em] uppercase text-[#003C46] hover:text-[#0098AF] transition-colors">
               Work with us
+              <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200" />
             </Link>
           </motion.div>
           <motion.div initial={{ opacity: 0, x: 30 }} animate={isInView ? { opacity: 1, x: 0 } : {}} transition={{ duration: 0.7, delay: 0.1, ease: [0.22, 1, 0.36, 1] }} className="lg:col-span-7">
@@ -98,10 +105,19 @@ function MissionVision() {
     <section ref={ref} className="bg-[#fafaf8] py-28 md:py-36 overflow-hidden relative">
       <GridBg />
       <div className="relative max-w-7xl mx-auto px-6 sm:px-10 lg:px-16">
-        <motion.div initial={{ opacity: 0, y: 20 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6 }} className="mb-16">
+        <div className="flex items-center gap-6 mb-10">
           <span className="eyebrow">Our Direction</span>
-          <h2 className="font-display text-5xl md:text-6xl text-[#111827] leading-[1.0] tracking-[-0.03em] text-balance">Mission &amp; <em className="not-italic text-[#0098AF]">Vision.</em></h2>
-        </motion.div>
+          <motion.div
+            className="flex-1 h-px bg-[#e2e8f0] origin-left"
+            initial={{ scaleX: 0 }}
+            animate={isInView ? { scaleX: 1 } : {}}
+            transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+          />
+        </div>
+        <motion.h2 initial={{ opacity: 0, y: 20 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+          className="font-display text-5xl md:text-6xl text-[#111827] leading-[1.0] tracking-[-0.03em] text-balance mb-16">
+          Mission &amp; <em className="not-italic text-[#0098AF]">Vision.</em>
+        </motion.h2>
         <div className="grid md:grid-cols-2 gap-5">
           {[
             { Icon: Target, label: "Mission", title: TEXT.MISSION_TITLE, desc: TEXT.MISSION_DESC },
@@ -133,10 +149,19 @@ function KeyValues() {
     <section ref={ref} className="bg-white py-28 md:py-36 overflow-hidden relative">
       <GridBg />
       <div className="relative max-w-7xl mx-auto px-6 sm:px-10 lg:px-16">
-        <motion.div initial={{ opacity: 0, y: 20 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6 }} className="mb-16">
+        <div className="flex items-center gap-6 mb-10">
           <span className="eyebrow">What Drives Us</span>
-          <h2 className="font-display text-5xl md:text-6xl text-[#111827] leading-[1.0] tracking-[-0.03em] text-balance">{TEXT.VALUES_TITLE}</h2>
-        </motion.div>
+          <motion.div
+            className="flex-1 h-px bg-[#e2e8f0] origin-left"
+            initial={{ scaleX: 0 }}
+            animate={isInView ? { scaleX: 1 } : {}}
+            transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+          />
+        </div>
+        <motion.h2 initial={{ opacity: 0, y: 20 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+          className="font-display text-5xl md:text-6xl text-[#111827] leading-[1.0] tracking-[-0.03em] text-balance mb-16">
+          {TEXT.VALUES_TITLE}
+        </motion.h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-[#e2e8f0] border border-[#e2e8f0] rounded-2xl overflow-hidden">
           {KEY_VALUES.map((v, i) => {
             const Icon = VALUE_ICONS[i % VALUE_ICONS.length];
@@ -177,10 +202,19 @@ function StatsSection() {
       <GridBg dark />
       <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-[#0098AF]/40 to-transparent" />
       <div className="relative max-w-7xl mx-auto px-6 sm:px-10 lg:px-16">
-        <motion.div initial={{ opacity: 0, y: 20 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6 }} className="mb-16">
+        <div className="flex items-center gap-6 mb-10">
           <span className="eyebrow">By the Numbers</span>
-          <h2 className="font-display text-5xl md:text-6xl text-white leading-[1.0] tracking-[-0.03em]">Our <em className="not-italic text-[#0098AF]">Impact.</em></h2>
-        </motion.div>
+          <motion.div
+            className="flex-1 h-px bg-white/15 origin-left"
+            initial={{ scaleX: 0 }}
+            animate={isInView ? { scaleX: 1 } : {}}
+            transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+          />
+        </div>
+        <motion.h2 initial={{ opacity: 0, y: 20 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+          className="font-display text-5xl md:text-6xl text-white leading-[1.0] tracking-[-0.03em] mb-16">
+          Our <em className="not-italic text-[#0098AF]">Impact.</em>
+        </motion.h2>
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-px bg-white/10 border border-white/10 rounded-2xl overflow-hidden">
           {STATS.map((s, i) => {
             const Icon = STAT_ICONS[i % STAT_ICONS.length];
@@ -190,7 +224,7 @@ function StatsSection() {
                 <div className="w-10 h-10 rounded-full border border-white/15 flex items-center justify-center mx-auto mb-5 group-hover:border-[#0098AF] group-hover:bg-[#0098AF] transition-all duration-200">
                   <Icon className="w-4 h-4 text-white/50 group-hover:text-white transition-colors duration-200" />
                 </div>
-                <p className="font-display text-5xl text-white mb-2">{s.stat}</p>
+                <p className="font-display text-5xl text-white mb-2"><AnimatedCounter value={s.stat} /></p>
                 <p className="font-sans text-[13px] text-white/40 leading-snug">{s.label}</p>
               </motion.div>
             );

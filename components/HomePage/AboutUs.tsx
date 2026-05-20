@@ -6,11 +6,12 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { ABOUT_CONSTANTS } from "@/constants/home/about";
+import { AnimatedCounter } from "@/components/shared/AnimatedCounter";
 
 const stats = [
   { value: "15+", label: "Years of experience" },
   { value: "200+", label: "Projects delivered" },
-  { value: "2", label: "Global offices" },
+  { value: "2",   label: "Global offices" },
 ];
 
 export default function AboutUs() {
@@ -20,41 +21,49 @@ export default function AboutUs() {
   return (
     <section ref={ref} className="bg-white py-24 md:py-32 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16">
-        {/* Label */}
+
+        {/* Label + animated divider */}
         <div className="flex items-center gap-6 mb-16">
           <span className="eyebrow">About Cognition IES</span>
-          <div className="flex-1 h-px bg-[#e2e8f0]" />
+          <motion.div
+            className="flex-1 h-px bg-[#e2e8f0] origin-left"
+            initial={{ scaleX: 0 }}
+            animate={isInView ? { scaleX: 1 } : {}}
+            transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+          />
         </div>
-        <h2 className="font-display text-4xl md:text-5xl lg:text-6xl text-[#111827] leading-[1.0] tracking-[-0.03em] mb-8 text-balance">
+
+        <motion.h2
+          className="font-display text-4xl md:text-5xl lg:text-6xl text-[#111827] leading-[1.0] tracking-[-0.03em] mb-8 text-balance"
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+        >
           Engineering that moves{" "}
           <em className="not-italic text-[#0098AF]">industries forward.</em>
-        </h2>
+        </motion.h2>
+
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-          {/* Left: headline + body + stats + CTA */}
+          {/* Left: body + stats + CTA */}
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-            >
-            <p className="text-[15px] text-[#4a5568] leading-[1.8] mb-5 text-justify">
+            transition={{ duration: 0.6, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+          >
+            <p className="text-[15px] text-[#4a5568] leading-[1.8] mb-5">
               {ABOUT_CONSTANTS.DESCRIPTION_1}
             </p>
-            <p className="text-[15px] text-[#4a5568] leading-[1.8] mb-10 text-justify">
+            <p className="text-[15px] text-[#4a5568] leading-[1.8] mb-10">
               {ABOUT_CONSTANTS.DESCRIPTION_2}
             </p>
 
             <div className="grid grid-cols-3 border-t border-[#e2e8f0] pt-8 mb-10">
               {stats.map((s, i) => (
-                <div
-                  key={i}
-                  className={i > 0 ? "border-l border-[#e2e8f0] pl-6" : ""}
-                >
+                <div key={i} className={i > 0 ? "border-l border-[#e2e8f0] pl-6" : ""}>
                   <p className="font-display text-3xl text-[#003C46] mb-1">
-                    {s.value}
+                    <AnimatedCounter value={s.value} />
                   </p>
-                  <p className="text-[12px] text-[#718096] leading-snug">
-                    {s.label}
-                  </p>
+                  <p className="text-[12px] text-[#718096] leading-snug">{s.label}</p>
                 </div>
               ))}
             </div>
@@ -72,11 +81,7 @@ export default function AboutUs() {
           <motion.div
             initial={{ opacity: 0, x: 24 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{
-              duration: 0.6,
-              delay: 0.15,
-              ease: [0.22, 1, 0.36, 1],
-            }}
+            transition={{ duration: 0.6, delay: 0.18, ease: [0.22, 1, 0.36, 1] }}
           >
             <div className="relative bottom-12 left-0 rounded-2xl overflow-hidden">
               <Image

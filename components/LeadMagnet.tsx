@@ -20,7 +20,7 @@ const SUBMITTED_KEY = "lead_magnet_submitted";
  * - Only shown once per session after that.
  */
 
-const WEB3FORMS_KEY = "aba4ac86-a28e-496a-86bb-e3c981356299";
+const WEB3FORMS_KEY = process.env.NEXT_PUBLIC_WEB3FORMS_KEY ?? "aba4ac86-a28e-496a-86bb-e3c981356299";
 
 export default function LeadMagnet() {
   const [visible, setVisible] = useState(false);

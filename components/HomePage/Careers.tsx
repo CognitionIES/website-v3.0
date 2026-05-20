@@ -23,7 +23,12 @@ export default function Careers() {
         {/* Top label row */}
         <div className="flex items-center gap-6 mb-20">
           <span className="eyebrow">Join Our Team</span>
-          <div className="flex-1 h-px bg-[#e2e8f0]" />
+          <motion.div
+            className="flex-1 h-px bg-[#e2e8f0] origin-left"
+            initial={{ scaleX: 0 }}
+            animate={isInView ? { scaleX: 1 } : {}}
+            transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+          />
           <span className="font-sans text-[12px] text-[#718096] tracking-widest uppercase">We&apos;re hiring</span>
         </div>
 
@@ -66,15 +71,15 @@ export default function Careers() {
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.7, delay: 0.12, ease: [0.22, 1, 0.36, 1] }}
-            className="text-justify lg:text-left"
+            className=""
           >
             <h2 className="font-display text-5xl md:text-6xl text-[#111827] leading-[1.0] tracking-[-0.03em] mb-8 text-balance">
               Shape the future of<br />
               <em className="not-italic text-[#0098AF]">engineering</em>
             </h2>
 
-            <p className="font-sans text-[15px] font-semibold text-[#003C46] mb-4 leading-snug text-justify">{SUBTITLE}</p>
-            <p className="font-sans text-[16px] text-[#4a5568] leading-[1.8] mb-10 text-justify">{DESCRIPTION}</p>
+            <p className="font-sans text-[15px] font-semibold text-[#003C46] mb-4 leading-snug">{SUBTITLE}</p>
+            <p className="font-sans text-[16px] text-[#4a5568] leading-[1.8] mb-10">{DESCRIPTION}</p>
 
             <Link href="/careers">
               <button className="group inline-flex items-center gap-3 px-7 py-3.5 bg-[#003C46] hover:bg-[#0098AF] text-white text-[13px] font-semibold tracking-wide rounded-full transition-all duration-300">

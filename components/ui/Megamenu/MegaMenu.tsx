@@ -439,7 +439,7 @@ export function MegaMenu() {
               <div className="border-t border-[#e8edf2] bg-[#f8fafc]">
                 <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 h-10 flex items-center justify-between">
                   <p className="text-[11px] text-[#a0aab4] tracking-wide">
-                    4 practice areas &nbsp;·&nbsp; India & USA
+                    3 practice areas &nbsp;·&nbsp; India & USA
                   </p>
                   <Link
                     href="/contact"

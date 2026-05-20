@@ -1,11 +1,12 @@
 "use client";
 
+import { useRef } from "react";
+import { motion, useInView } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import digitalizationImg from "@/constants/images/projects/digitalization/hero-image-1.jpg";
 import pcmImg from "@/constants/images/projects/pcm/hero.jpg";
-
 
 const projects = [
   {
@@ -29,54 +30,89 @@ const projects = [
 ];
 
 export default function ProjectsGrid() {
+  const ref = useRef<HTMLElement>(null);
+  const isInView = useInView(ref, { once: true, amount: 0.1 });
+
   return (
-    <section className="w-full py-16 sm:py-20 lg:py-24 bg-gradient-to-b from-white to-[#E6F0F5]/30">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mb-10">
-          <span className="inline-block px-3 py-1 bg-[#0098af]/10 text-[#0098af] text-xs font-medium uppercase tracking-wider rounded-full mb-4">
-            Featured Work
-          </span>
-          <h2 className="text-3xl sm:text-4xl font-bold text-[#003C46]">
-            Recent Projects
-          </h2>
+    <section ref={ref} className="bg-white py-28 md:py-36 overflow-hidden relative">
+      {/* Grid texture */}
+      <div
+        className="absolute inset-0 pointer-events-none opacity-[0.025]"
+        style={{
+          backgroundImage:
+            "linear-gradient(#003C46 1px,transparent 1px),linear-gradient(90deg,#003C46 1px,transparent 1px)",
+          backgroundSize: "64px 64px",
+        }}
+      />
+
+      <div className="relative max-w-7xl mx-auto px-6 sm:px-10 lg:px-16">
+        {/* Section header */}
+        <div className="flex items-center gap-6 mb-16">
+          <span className="eyebrow">Featured Work</span>
+          <motion.div
+            className="flex-1 h-px bg-[#e2e8f0] origin-left"
+            initial={{ scaleX: 0 }}
+            animate={isInView ? { scaleX: 1 } : {}}
+            transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+          />
         </div>
 
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+          className="mb-16"
+        >
+          <h2 className="font-display text-5xl md:text-6xl text-[#111827] leading-[1.0] tracking-[-0.03em] text-balance">
+            Recent <em className="not-italic text-[#0098AF]">Projects</em>
+          </h2>
+        </motion.div>
+
         <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
-          {projects.map((project) => (
-            <Link
+          {projects.map((project, i) => (
+            <motion.div
               key={project.id}
-              href={project.href}
-              className="group block bg-white rounded-xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-md transition-shadow duration-300"
+              initial={{ opacity: 0, y: 24 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] }}
             >
-              <div className="relative h-52 sm:h-64 overflow-hidden">
-                <Image
-                  src={project.image}
-                  alt={project.title}
-                  fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
-                <div className="absolute top-3 left-3">
-                  <span className="px-2.5 py-1 bg-white/90 backdrop-blur-sm rounded-full text-[10px] font-medium text-[#003C46] uppercase tracking-wide">
-                    {project.category}
+              <Link
+                href={project.href}
+                className="group block bg-white rounded-2xl overflow-hidden border border-[#e2e8f0] hover:border-[#0098AF]/30 transition-colors duration-200"
+              >
+                <div className="relative h-56 overflow-hidden">
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    fill
+                    className="object-cover group-hover:scale-[1.03] transition-transform duration-500"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#003C46]/60 to-transparent" />
+                  <div className="absolute top-4 left-4">
+                    <span className="font-sans text-[10px] font-semibold tracking-[0.14em] uppercase px-3 py-1.5 bg-white/15 backdrop-blur-sm rounded-full text-white/80 border border-white/20">
+                      {project.category}
+                    </span>
+                  </div>
+                </div>
+
+                <div className="p-7">
+                  <div className="flex items-start justify-between mb-3">
+                    <h3 className="font-display text-2xl text-[#111827] group-hover:text-[#0098AF] transition-colors duration-200 leading-tight">
+                      {project.title}
+                    </h3>
+                    <ArrowUpRight className="w-5 h-5 text-[#e2e8f0] group-hover:text-[#0098AF] transition-colors duration-200 shrink-0 ml-4 mt-0.5" />
+                  </div>
+                  <p className="font-sans text-[14px] text-[#718096] leading-[1.75]">
+                    {project.description}
+                  </p>
+                  <span className="inline-flex items-center gap-1.5 mt-5 font-sans text-[13px] font-semibold text-[#0098AF] group-hover:text-[#003C46] transition-colors duration-200">
+                    View case study
+                    <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200" />
                   </span>
                 </div>
-              </div>
-
-              <div className="p-5 sm:p-6">
-                <h3 className="text-lg sm:text-xl font-bold text-[#003C46] group-hover:text-[#0098af] transition-colors duration-200 mb-2">
-                  {project.title}
-                </h3>
-                <p className="text-sm sm:text-base text-gray-600 leading-relaxed line-clamp-3 mb-4">
-                  {project.description}
-                </p>
-                <span className="inline-flex items-center gap-1.5 text-sm font-medium text-[#0098af]">
-                  View case study
-                  <ArrowUpRight className="w-4 h-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                </span>
-              </div>
-            </Link>
+              </Link>
+            </motion.div>
           ))}
         </div>
       </div>

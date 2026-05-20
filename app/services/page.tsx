@@ -1,7 +1,6 @@
 "use client";
 
 import sections from "@/constants/sections";
-const frameBackground = '/images/Background/Frame_8.jpg';
 import Footer from "@/components/Footer";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import { ChevronDown, MousePointer2 } from "lucide-react";
@@ -25,8 +24,7 @@ export default function ServicesPage() {
     return () => clearTimeout(timer);
   }, []);
 
-  const handleParamChange = useCallback((params: Record<string, string>) => {
-  }, []);
+  const handleParamChange = useCallback((_: string) => {}, []);
 
   const scrollToSection = (index: number) => {
     if (index < 0 || index >= sectionRefs.current.length || isScrolling) return;
@@ -81,7 +79,7 @@ export default function ServicesPage() {
         <div
           className="fixed inset-0 bg-cover bg-center -z-10"
           style={{
-            backgroundImage: `url(${frameBackground.src})`,
+            backgroundImage: `url(/images/Background/Frame_8.jpg)`,
           }}
         />
         <div className="relative">
@@ -89,7 +87,7 @@ export default function ServicesPage() {
             <MegaMenu />
           </header>
           <main className="relative pt-8">
-            <Suspense fallback={<div>Loading search parameters...</div>}>
+            <Suspense fallback={null}>
               <SearchParamsHandler onParamChange={handleParamChange} />
             </Suspense>
             {Object.entries(sections).map(([key, section], index) => (
@@ -104,10 +102,10 @@ export default function ServicesPage() {
                 } snap-start ${index === 0 ? "mt-12" : ""}`}
               >
                 <div
-                  className={`w-full max-w-7xl  mx-auto px-2 py-8 rounded-3xl transition-colors duration-500 outline outline-2 outline-black/50 ${
+                  className={`w-full max-w-7xl mx-auto px-2 py-8 rounded-3xl transition-colors duration-500 border border-white/10 ${
                     index % 2 === 0
-                      ? "bg-blue-400/5 dark:bg-blue-950/10"
-                      : "bg-gray-400/10 dark:bg-gray-900/10"
+                      ? "bg-white/[0.06]"
+                      : "bg-[#003C46]/[0.12]"
                   }`}
                   style={{ minHeight: "50vh" }}
                 >

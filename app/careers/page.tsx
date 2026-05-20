@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 import { motion, useInView, AnimatePresence } from "framer-motion";
-import { ArrowRight, CheckCircle2, Send, Upload, Briefcase, Phone, Mail, MapPin, User } from "lucide-react";
+import { ArrowRight, CheckCircle2, Send, Upload, Briefcase, Phone, Mail, MapPin, User, Clock, BookOpen, Globe, TrendingUp, Users, Heart } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { MegaMenu } from "@/components/ui/Megamenu/MegaMenu";
@@ -17,7 +17,11 @@ import { CAREERS_CONSTANTS } from "@/constants/careersPage/constants";
 import { useCallback, useState } from "react";
 import emailjs from "@emailjs/browser";
 
-const EMAILJS = { SERVICE_ID: "service_4jm4x6o", TEMPLATE_ID: "template_x7agzcz", PUBLIC_KEY: "YHfV6LAgPBcm9VnHd" };
+const EMAILJS = {
+  SERVICE_ID:  process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID  ?? "service_4jm4x6o",
+  TEMPLATE_ID: process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID ?? "template_x7agzcz",
+  PUBLIC_KEY:  process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY  ?? "YHfV6LAgPBcm9VnHd",
+};
 const INIT = { firstName:"", lastName:"", email:"", phone:"", location:"India", jobTitle:"", message:"", resume:null as File|null, resumeBase64:"", consent:false };
 
 const inp = "h-12 border-[#e2e8f0] bg-[#fafaf8] focus-visible:ring-1 focus-visible:ring-[#0098AF] focus-visible:border-[#0098AF] text-[15px] rounded-xl font-sans placeholder:text-[#718096]/60";
@@ -28,12 +32,12 @@ function Lbl({ text, required }: { text: string; required?: boolean }) {
 
 /* ── Benefits section ── */
 const benefits = [
-  { icon: "", title: "Work-Life Balance",       desc: "Flexible schedules that respect your personal time and commitments." },
-  { icon: "", title: "Learning & Growth",        desc: "Continuous development through training, certifications, and mentorship." },
-  { icon: "", title: "Global Exposure",          desc: "Work with international clients across diverse industries." },
-  { icon: "", title: "Competitive Compensation", desc: "Industry-leading packages with performance-based incentives." },
-  { icon: "", title: "Great Workplace",          desc: "A collaborative, inclusive culture where your voice matters." },
-  { icon: "", title: "Health & Wellness",        desc: "Comprehensive health coverage for you and your family." },
+  { Icon: Clock,       title: "Work-Life Balance",       desc: "Flexible schedules that respect your personal time and commitments." },
+  { Icon: BookOpen,    title: "Learning & Growth",        desc: "Continuous development through training, certifications, and mentorship." },
+  { Icon: Globe,       title: "Global Exposure",          desc: "Work with international clients across diverse industries." },
+  { Icon: TrendingUp,  title: "Competitive Compensation", desc: "Industry-leading packages with performance-based incentives." },
+  { Icon: Users,       title: "Great Workplace",          desc: "A collaborative, inclusive culture where your voice matters." },
+  { Icon: Heart,       title: "Health & Wellness",        desc: "Comprehensive health coverage for you and your family." },
 ];
 
 const values = CAREERS_CONSTANTS.VALUES.ITEMS;
@@ -171,7 +175,12 @@ export default function CareersPage() {
         <div className="relative max-w-7xl mx-auto px-6 sm:px-10 lg:px-16">
           <div className="flex items-center gap-6 mb-20">
             <span className="eyebrow">Why Join Us</span>
-            <div className="flex-1 h-px bg-[#e2e8f0]" />
+            <motion.div
+              className="flex-1 h-px bg-[#e2e8f0] origin-left"
+              initial={{ scaleX: 0 }}
+              animate={benefitsInView ? { scaleX: 1 } : {}}
+              transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+            />
           </div>
           <div className="grid lg:grid-cols-12 gap-16 items-start">
             <motion.div initial={{opacity:0,y:24}} animate={benefitsInView?{opacity:1,y:0}:{}} transition={{duration:0.65}} className="lg:col-span-4">
@@ -190,6 +199,9 @@ export default function CareersPage() {
                 {benefits.map((b, i) => (
                   <motion.div key={i} initial={{opacity:0}} animate={benefitsInView?{opacity:1}:{}} transition={{duration:0.4,delay:i*0.07}}
                     className="group bg-white hover:bg-[#fafaf8] transition-colors duration-200 p-8 relative overflow-hidden">
+                    <div className="w-10 h-10 rounded-full bg-[#0098AF]/10 flex items-center justify-center mb-5 group-hover:bg-[#0098AF] transition-colors duration-200">
+                      <b.Icon className="w-5 h-5 text-[#0098AF] group-hover:text-white transition-colors duration-200" />
+                    </div>
                     <h3 className="font-display text-xl text-[#111827] mb-2 group-hover:text-[#0098AF] transition-colors duration-200">{b.title}</h3>
                     <p className="font-sans text-[14px] text-[#718096] leading-[1.7]">{b.desc}</p>
                   </motion.div>
@@ -207,7 +219,12 @@ export default function CareersPage() {
         <div className="relative max-w-7xl mx-auto px-6 sm:px-10 lg:px-16">
           <div className="flex items-center gap-6 mb-20">
             <span className="eyebrow">Apply Now</span>
-            <div className="flex-1 h-px bg-[#e2e8f0]" />
+            <motion.div
+              className="flex-1 h-px bg-[#e2e8f0] origin-left"
+              initial={{ scaleX: 0 }}
+              animate={formInView ? { scaleX: 1 } : {}}
+              transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+            />
           </div>
           <div className="grid lg:grid-cols-12 gap-16 items-start">
             {/* Values sidebar */}
@@ -236,6 +253,7 @@ export default function CareersPage() {
       </section>
 
       <CTABanner
+        eyebrow="Join Our Team"
         title="Don't see the right role?"
         accentWord="right role?"
         description="We're always looking for exceptional engineers. Send us your resume and we'll keep you in mind."
