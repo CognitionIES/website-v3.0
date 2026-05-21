@@ -223,25 +223,25 @@ export function MegaMenu() {
                   href={l.href}
                   onClick={closeAll}
                   className={cn(
-                    "px-3 py-2 text-[13.5px] font-medium transition-colors duration-200",
+                    "px-3 py-1.5 text-[13.5px] font-medium transition-colors duration-200 rounded-md",
                     pathname === l.href
-                      ? "text-[#0098AF]"
-                      : "text-[#374151] hover:text-[#111827]"
+                      ? "text-[#003C46] bg-[#003C46]/[0.07]"
+                      : "text-[#374151] hover:text-[#111827] hover:bg-gray-50"
                   )}
                 >
                   {l.label}
                 </Link>
               ))}
 
-              {/* ── Services trigger with rotating chevron ── */}
+              {/* ── Services trigger ── */}
               <button
                 onMouseEnter={() => { cancelClose(); setIsOpen(true); }}
                 onMouseLeave={scheduleClose}
                 onClick={() => setIsOpen((v) => !v)}
                 className={cn(
-                  "flex items-center gap-1 px-3 py-2 text-[13.5px] font-medium transition-colors duration-200 rounded-md",
-                  isOpen
-                    ? "text-[#0098AF] bg-[#0098AF]/5"
+                  "flex items-center gap-1 px-3 py-1.5 text-[13.5px] font-medium transition-colors duration-200 rounded-md",
+                  isOpen || pathname.startsWith("/services")
+                    ? "text-[#003C46] bg-[#003C46]/[0.07]"
                     : "text-[#374151] hover:text-[#111827] hover:bg-gray-50"
                 )}
               >

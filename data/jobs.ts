@@ -82,7 +82,7 @@ export const jobs: Job[] = [
     {
         id: "bdm-staffing",
         title: "BDM - Staffing & Recruitment",
-        department: "Business Development",
+        department: "Sales & Business Development",
         location: "India",
         type: "Full-time",
         experience: "5-12 years",
@@ -118,7 +118,7 @@ export const jobs: Job[] = [
     {
         id: "business-development-manager",
         title: "Business Development Manager - Engineering Services",
-        department: "Business Development",
+        department: "Sales & Business Development",
         location: "Pune, Bangalore, Vadodara, Chennai",
         type: "Full-time",
         experience: "5-8 years",
@@ -152,7 +152,7 @@ export const jobs: Job[] = [
     {
         id: "direct-sales-executive",
         title: "Direct Sales Executive",
-        department: "Sales",
+        department: "Sales & Business Development",
         location: "India",
         type: "Full-time",
         experience: "0-1 years",
@@ -189,7 +189,7 @@ export const jobs: Job[] = [
     {
         id: "draftsman-piping-design",
         title: "Draftsman - Piping Design",
-        department: "Design",
+        department: "Engineering",
         location: "Pune, Bangalore, Vadodara, Chennai",
         type: "Full-time",
         experience: "0-1 years",
@@ -258,7 +258,7 @@ export const jobs: Job[] = [
     {
         id: "inside-sales-specialist",
         title: "Inside Sales Specialist",
-        department: "Sales",
+        department: "Sales & Business Development",
         location: "Pune, Bangalore, Vadodara, Chennai",
         type: "Full-time",
         experience: "2-5 years",
@@ -325,7 +325,7 @@ export const jobs: Job[] = [
     {
         id: "tech-support-specialist",
         title: "Tech Support Specialist",
-        department: "Technology",
+        department: "IT",
         location: "Pune, Bangalore, Vadodara, Chennai",
         type: "Full-time",
         experience: "3+ years",
@@ -396,7 +396,7 @@ export const jobs: Job[] = [
     {
         id: "plant-engineering-manager",
         title: "Plant Engineering Manager",
-        department: "Engineering & Design Services",
+        department: "Engineering",
         location: "Pune, Bangalore, Vadodara, Chennai",
         type: "Full-time",
         experience: "10-20 years",
@@ -469,7 +469,7 @@ export const jobs: Job[] = [
     {
         id: "software-engineer",
         title: "Software Engineer",
-        department: "Technology",
+        department: "IT",
         location: "Pune, Bangalore, Vadodara, Chennai",
         type: "Full-time",
         experience: "3+ years",

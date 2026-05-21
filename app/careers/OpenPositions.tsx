@@ -123,7 +123,7 @@ const OpenPositions = () => {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="text-xs text-[#718096] mb-8 px-1"
+          className="text-[13px] text-[#718096] mb-8 px-1"
         >
           {filteredJobs.length} position{filteredJobs.length !== 1 ? "s" : ""} available
         </motion.p>
@@ -137,9 +137,9 @@ const OpenPositions = () => {
         >
           {/* Table header — desktop only */}
           <div className="hidden md:grid grid-cols-[1fr_160px_140px_44px] gap-4 px-5 pb-3 border-b border-[#e2e8f0]">
-            <span className="text-[11px] font-semibold tracking-[0.12em] uppercase text-[#718096]">Role</span>
-            <span className="text-[11px] font-semibold tracking-[0.12em] uppercase text-[#718096]">Location</span>
-            <span className="text-[11px] font-semibold tracking-[0.12em] uppercase text-[#718096]">Experience</span>
+            <span className="text-[12px] font-medium tracking-[0.08em] uppercase text-[#718096]">Role</span>
+            <span className="text-[12px] font-medium tracking-[0.08em] uppercase text-[#718096]">Location</span>
+            <span className="text-[12px] font-medium tracking-[0.08em] uppercase text-[#718096]">Experience</span>
             <span />
           </div>
 
@@ -158,29 +158,29 @@ const OpenPositions = () => {
 
                     {/* Title + dept */}
                     <div>
-                      <div className="flex flex-wrap items-center gap-2 mb-1.5">
-                        <span className="text-[10px] font-semibold tracking-[0.1em] uppercase text-[#0098AF] bg-[#0098AF]/10 px-2 py-0.5 rounded">
+                      <div className="flex flex-wrap items-center gap-2 mb-2">
+                        <span className="text-[11px] font-medium tracking-wide uppercase text-[#0098AF] bg-[#0098AF]/10 px-2.5 py-1 rounded">
                           {job.department}
                         </span>
                         {job.type === "Internship" && (
-                          <span className="text-[10px] font-semibold tracking-[0.1em] uppercase text-amber-600 bg-amber-50 px-2 py-0.5 rounded">
+                          <span className="text-[11px] font-medium tracking-wide uppercase text-amber-600 bg-amber-50 px-2.5 py-1 rounded">
                             Trainee
                           </span>
                         )}
                       </div>
-                      <h3 className="text-[18px] font-semibold text-[#111827] group-hover:text-[#0098AF] transition-colors duration-200">
+                      <h3 className="text-[18px] font-medium text-[#111827] group-hover:text-[#0098AF] transition-colors duration-200">
                         {job.title}
                       </h3>
                     </div>
 
                     {/* Location */}
-                    <div className="flex items-center gap-1.5 text-[13px] text-[#718096]">
+                    <div className="flex items-center gap-1.5 text-[14px] text-[#718096]">
                       <MapPin className="w-3.5 h-3.5 flex-shrink-0" />
                       <span>{job.location}</span>
                     </div>
 
                     {/* Experience */}
-                    <div className="flex items-center gap-1.5 text-[13px] text-[#718096]">
+                    <div className="flex items-center gap-1.5 text-[14px] text-[#718096]">
                       <Clock className="w-3.5 h-3.5 flex-shrink-0" />
                       <span>{job.experience}</span>
                     </div>
