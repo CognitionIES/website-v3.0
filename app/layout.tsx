@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Toaster } from "sonner";
 import { Analytics } from "@vercel/analytics/react";
-import FaqButton from "../components/FaqButton";
 import PageLoader from "../components/Loader";
 import NavigationProgress from "../components/NavigationProgress";
 import ChatWidget from "../components/ChatWidget";
@@ -109,7 +108,6 @@ export default function RootLayout({
       <body>
         <PageLoader />
         <NavigationProgress />
-        <FaqButton />
         <main>{children}</main>
         <ChatWidget />
         <LeadMagnet />

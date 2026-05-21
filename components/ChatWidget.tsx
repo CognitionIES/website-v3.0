@@ -10,47 +10,100 @@ interface Message { id: string; role: Role; text: string; ts: Date; }
 
 /* ── Static FAQ knowledge base ─────────────────────────────────────────────── */
 const KB: { q: RegExp; a: string }[] = [
+  /* Greetings */
   {
-    q: /product.?engineer|cad|cae|mechanical|electrical|prototype/i,
-    a: "Our Product Engineering team specialises in end-to-end engineering — from concept design and CAD/CAE modelling through to prototyping and production support. We work across automotive, aerospace, industrial machinery, and consumer goods.",
+    q: /^(hi|hello|hey|good\s?(morning|afternoon|evening)|howdy|greetings)/i,
+    a: "Hi there! I'm the Cognition IES assistant. I can help you learn about our [engineering services](/services), [projects](/projects), or [how to get in touch](/contact). What would you like to know?",
   },
+
+  /* Product Engineering */
   {
-    q: /plant.?engineer|process|digitali[sz]|digital.?twin|3d.?scan|layout/i,
-    a: "Plant Engineering covers process optimisation, facility layout design, 3D laser scanning, and digital twin creation. We help industrial facilities reduce downtime and improve operational efficiency.",
+    q: /product.?engineer|cad|cae|fea|cfd|solidworks|catia|\bnx\b|creo|mechanical design|electrical design|prototype|simulation|stress.?analys|tolerance/i,
+    a: "Our Product Engineering team delivers end-to-end engineering — concept design, CAD/CAE modelling (SolidWorks, CATIA, NX, Creo), FEA/CFD analysis, prototyping, and production support. We work across automotive, aerospace, industrial machinery, and consumer goods. [Learn more about Product Engineering](/services/product-engineering) or [see project examples](/projects).",
   },
+
+  /* Plant Engineering */
   {
-    q: /saas|servicecpq|software|cloud|automat/i,
-    a: "Our SaaS practice centres on ServiceCPQ — a cloud-native configure-price-quote platform for complex engineering services. We also handle system integration and workflow automation.",
+    q: /plant.?engineer|facility|layout|3d.?scan|laser.?scan|digital.?twin|process.?optim|hazop|p.?&?.?id|maintenance|reliability|downtime|plant.?optim/i,
+    a: "Plant Engineering covers facility layout design, 3D laser scanning, digital twin creation, process optimisation, HAZOP reviews, P&ID development, and maintenance planning. We help industrial plants reduce downtime and improve reliability. [Explore Plant Engineering](/services/plant-engineering) or [view our projects](/projects).",
   },
+
+  /* Digital transformation / Industry 4.0 */
   {
-    q: /staff|recruit|hire|talent|job|career|engineer.*role|role.*engineer/i,
-    a: "We connect exceptional engineering talent with leading organisations across India and the USA. Whether you need contract, permanent, or project-based engineers, our team can help. Check our Careers page or contact us directly.",
+    q: /digitali[sz]|industry.?4|iiot|smart.?factory|digital.?transform|automation|connected|sensor|data.?driven|manufacturing.?intel/i,
+    a: "We help industrial facilities embrace digital transformation — from IIoT sensor integration and smart factory dashboards to full digitalization programmes. [View our digitalization project](/projects/digitalization) for a real-world example, or [contact us](/contact) to discuss your initiative.",
   },
+
+  /* SaaS / ServiceCPQ */
   {
-    q: /contact|reach|email|call|office|location|india|usa/i,
-    a: "You can reach us at info@cognitionies.com. We operate from offices in India and the USA. Our team typically responds within one business day.",
+    q: /saas|servicecpq|cpq|configure.?price|quote|cloud.?platform|software.?solution|erp|crm|integrat|workflow/i,
+    a: "Our SaaS practice is built around ServiceCPQ — a cloud-native configure-price-quote platform for complex engineering services. It simplifies quoting, integrates with ERP/CRM systems, and cuts sales cycle time. [Learn more about ServiceCPQ](/services/saas-solution/servicecpq) or [contact us](/contact) to discuss your requirements.",
   },
+
+  /* Careers / Hiring */
   {
-    q: /service|offer|what.*do|help.*with|capabilit/i,
-    a: "Cognition IES offers four core services: Product Engineering, Plant Engineering, SaaS Solutions (ServiceCPQ), and Staffing & Recruitment. Which area would you like to explore?",
+    q: /career|hiring|\bjob\b|opening|position|apply|join.*team|work.*for|vacanci|join us/i,
+    a: "We're always looking to connect with talented engineers! [Check out our Careers page](/careers) to view current openings and find out how to apply.",
   },
+
+  /* Industries */
   {
-    q: /about|who.*you|company|cognition|history|found/i,
-    a: "Cognition IES is an engineering services firm operating across India and the USA. We combine deep engineering expertise with technology to help industries solve complex challenges — from product design to plant optimisation.",
+    q: /industr|automotive|aerospace|oil.?gas|pharma|consumer.?goods|heavy.?engineer|defence|defense|energy|power.?plant|refiner/i,
+    a: "Cognition IES serves clients across automotive, aerospace, oil & gas, pharmaceuticals, heavy engineering, consumer goods, and energy sectors. Our cross-industry experience means we bring best practices from one domain and apply them where others haven't. [View our services](/services) to see how we can help your industry.",
   },
+
+  /* Projects / Portfolio */
   {
-    q: /brochure|download|pdf|resource/i,
-    a: "We have detailed brochures for both Product Engineering and Plant Engineering. Visit our Brochures page to download them — just fill in a quick form and the PDF opens instantly.",
+    q: /project|portfolio|case.?stud|past.?work|example|previous.?work|showcase|reference/i,
+    a: "Our [Projects page](/projects) showcases key engagements including [large-scale plant digitalization](/projects/digitalization) and [product cost management](/projects/product-cost-management) programmes. These highlight how we translate engineering expertise into measurable outcomes. Would you like me to point you to a specific service area?",
   },
+
+  /* How to get started / engagement process */
   {
-    q: /price|cost|rate|quotation|quote|fee/i,
-    a: "Pricing varies by project scope and engagement type. The best way to get an accurate quote is to tell us about your project — you can use the Contact page or drop us a line at info@cognitionies.com.",
+    q: /how.*(start|begin|engage|work.*together|work.*with.?you)|get.?started|next.?step|process|engagement|onboard|scope/i,
+    a: "Getting started is straightforward: 1) Share a brief via our [Contact page](/contact) or email. 2) We schedule a discovery call to understand your scope. 3) We propose a tailored solution and timeline. Most clients receive an initial proposal within 2–3 business days.",
+  },
+
+  /* Contact / Location */
+  {
+    q: /contact|reach|email|call|phone|office|location|address|india|usa|united.?states/i,
+    a: "You can reach us at [info@cognitionies.com](mailto:info@cognitionies.com), or use the [Contact form](/contact) for a faster response. We operate from offices in India and the USA, and our team typically replies within one business day.",
+  },
+
+  /* About the company */
+  {
+    q: /about|who.*you|company|cognition.?ies|history|found|team|background|mission|vision/i,
+    a: "Cognition IES is an engineering services firm with offices in India and the USA. We combine deep domain expertise in product and plant engineering with technology-driven solutions to help industries solve complex challenges. [Read our full story](/about) to learn more about our team and mission.",
+  },
+
+  /* Services overview */
+  {
+    q: /service|offer|what.*do|help.*with|capabilit|solution|practic/i,
+    a: "Cognition IES offers three core practice areas: [Product Engineering](/services/product-engineering) (CAD/CAE, simulation, prototyping), [Plant Engineering](/services/plant-engineering) (layouts, 3D scanning, digital twins), and [SaaS Solutions — ServiceCPQ](/services/saas-solution/servicecpq). Which area would you like to explore?",
+  },
+
+  /* Brochure / Downloads */
+  {
+    q: /brochure|download|pdf|resource|document|datasheet/i,
+    a: "We have detailed brochures for both Product Engineering and Plant Engineering. [Visit our Brochures page](/brochure), fill in a quick form, and the PDF opens instantly — no waiting for an email.",
+  },
+
+  /* Pricing / Quote */
+  {
+    q: /price|cost|rate|quotation|quote|fee|budget|investment/i,
+    a: "Pricing depends on project scope, complexity, and engagement type. The quickest way to get an accurate estimate is to share your brief via the [Contact page](/contact) or email [info@cognitionies.com](mailto:info@cognitionies.com). We typically turn around an initial proposal within 2–3 business days.",
+  },
+
+  /* Thank you / positive feedback */
+  {
+    q: /thank|thanks|great|helpful|perfect|awesome|brilliant|appreciate/i,
+    a: "You're welcome! If you have any other questions or are ready to discuss a project, reach out via our [Contact page](/contact) or at [info@cognitionies.com](mailto:info@cognitionies.com). We'd love to help.",
   },
 ];
 
 /* ── Bot reply logic ───────────────────────────────────────────────────────── */
 const FALLBACK =
-  "I'm not sure about that one. For a detailed answer, please email us at info@cognitionies.com or use the Contact page — our team replies within one business day.";
+  "I'm not sure about that one. For a detailed answer, please [email us](mailto:info@cognitionies.com) or use the [Contact page](/contact) — our team replies within one business day.";
 
 function botReply(input: string): string {
   const match = KB.find(({ q }) => q.test(input));
@@ -60,8 +113,8 @@ function botReply(input: string): string {
 /* ── Quick-reply suggestions ───────────────────────────────────────────────── */
 const SUGGESTIONS = [
   "What services do you offer?",
-  "How can I contact you?",
-  "Tell me about Plant Engineering",
+  "How do I get started?",
+  "Show me your projects",
   "Are you hiring?",
 ];
 
@@ -78,6 +131,32 @@ function TypingDots() {
       ))}
     </div>
   );
+}
+
+/* ── Inline link renderer (parses [label](href) in bot text) ──────────────── */
+function renderWithLinks(text: string): React.ReactNode {
+  const parts: React.ReactNode[] = [];
+  const regex = /\[([^\]]+)\]\(([^)]+)\)/g;
+  let last = 0;
+  let m: RegExpExecArray | null;
+  while ((m = regex.exec(text)) !== null) {
+    if (m.index > last) parts.push(text.slice(last, m.index));
+    const [, label, href] = m;
+    const isExternal = href.startsWith("http") || href.startsWith("mailto:");
+    parts.push(
+      <a
+        key={m.index}
+        href={href}
+        {...(isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+        className="underline decoration-[#0098AF]/50 text-[#0098AF] hover:text-[#003C46] transition-colors"
+      >
+        {label}
+      </a>
+    );
+    last = m.index + m[0].length;
+  }
+  if (last < text.length) parts.push(text.slice(last));
+  return <>{parts}</>;
 }
 
 /* ── Message bubble ────────────────────────────────────────────────────────── */
@@ -97,7 +176,7 @@ function Bubble({ msg }: { msg: Message }) {
             : "bg-[#f3f4f6] text-[#1f2937] rounded-bl-sm"
         }`}
       >
-        {msg.text}
+        {isUser ? msg.text : renderWithLinks(msg.text)}
       </div>
     </motion.div>
   );
