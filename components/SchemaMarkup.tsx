@@ -1,5 +1,5 @@
 /**
- * SchemaMarkup — injects JSON-LD into <head> as a Server Component.
+ * SchemaMarkup | injects JSON-LD into <head> as a Server Component.
  * Works with any schema object from lib/schema.ts.
  */
 

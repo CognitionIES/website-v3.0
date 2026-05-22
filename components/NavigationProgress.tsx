@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 
 /**
- * NavigationProgress — thin teal bar at the top of the viewport
+ * NavigationProgress | thin teal bar at the top of the viewport
  * that animates during client-side route transitions.
  *
  * Much lighter than a full loader: appears in ~0 ms, sweeps to 80 %

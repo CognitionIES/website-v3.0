@@ -4,7 +4,7 @@ import { buildMetadata } from "@/lib/seo";
 export const metadata: Metadata = buildMetadata({
   title: "Plant Engineering Services",
   description:
-    "Comprehensive plant engineering services — process & safety, piping, structural, civil, mechanical, electrical, instrumentation, modular, and procurement engineering for process industries.",
+    "Comprehensive plant engineering services, process & safety, piping, structural, civil, mechanical, electrical, instrumentation, modular, and procurement engineering for process industries.",
   path: "/services/plant-engineering",
   keywords: [
     "plant engineering",

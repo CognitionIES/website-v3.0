@@ -24,7 +24,7 @@ const PartnerSection = () => {
             cutting-edge, AI-driven after-sales solutions tailored for
             manufacturers, dealers, and service organizations. Our collaboration
             brings a unified platform that streamlines warranty management,
-            enhances repair workflows, and accelerates service quoting — all in
+            enhances repair workflows, and accelerates service quoting, all in
             one place.
           </p>
         </motion.div>

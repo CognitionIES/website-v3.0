@@ -4,14 +4,14 @@ import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 /**
- * PageLoader — full-screen cinematic intro.
+ * PageLoader | full-screen cinematic intro.
  *
  * Shows on first page load only (not on client-side navigation).
  * Design: ink-black (#0f1117) background, the wordmark assembles
  * letter by letter, a teal progress bar sweeps across, then the
  * whole screen slides up revealing the page beneath.
  *
- * Timing: ~1.8 s total — fast enough not to annoy, long enough to feel premium.
+ * Timing: ~1.8 s total | fast enough not to annoy, long enough to feel premium.
  */
 
 const LETTERS = "Cognition IES".split("");
@@ -60,7 +60,7 @@ export default function PageLoader() {
           className="fixed inset-0 z-[9999] bg-[#0f1117] flex flex-col items-center justify-center overflow-hidden"
           aria-hidden="true"
         >
-          {/* Subtle grid texture — matches site hero */}
+          {/* Subtle grid texture | matches site hero */}
           <div
             className="absolute inset-0 opacity-[0.04] pointer-events-none"
             style={{
@@ -71,7 +71,7 @@ export default function PageLoader() {
             }}
           />
 
-          {/* Wordmark — staggered letter reveal */}
+          {/* Wordmark  staggered letter reveal */}
           <div className="relative z-10 flex items-baseline gap-0 overflow-hidden mb-10">
             {LETTERS.map((char, i) => (
               <motion.span

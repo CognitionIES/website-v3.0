@@ -135,7 +135,7 @@ const OpenPositions = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.4 }}
         >
-          {/* Table header — desktop only */}
+          {/* Table header, desktop only */}
           <div className="hidden md:grid grid-cols-[1fr_160px_140px_44px] gap-4 px-5 pb-3 border-b border-[#e2e8f0]">
             <span className="text-[12px] font-medium tracking-[0.08em] uppercase text-[#718096]">Role</span>
             <span className="text-[12px] font-medium tracking-[0.08em] uppercase text-[#718096]">Location</span>

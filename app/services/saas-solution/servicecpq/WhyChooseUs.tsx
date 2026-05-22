@@ -17,7 +17,7 @@ const reasons = [
     number: "02",
     title: "Full Customization",
     description:
-      "No two businesses are alike. We customize every Service CPQ deployment to align with your operational goals — ensuring maximum efficiency and ROI.",
+      "No two businesses are alike. We customize every Service CPQ deployment to align with your operational goals, ensuring maximum efficiency and ROI.",
   },
   {
     icon: Handshake,

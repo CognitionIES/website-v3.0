@@ -1,11 +1,11 @@
 /**
- * JSON-LD Schema Markup — Cognition IES
+ * JSON-LD Schema Markup | Cognition IES
  * Generates structured data for Google rich results.
  */
 
 const BASE = "https://www.cognitionies.com";
 
-/** Organisation schema — injected on every page */
+/** Organisation schema | injected on every page */
 export const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
@@ -13,7 +13,7 @@ export const organizationSchema = {
   url: BASE,
   logo: `${BASE}/images/logo.png`,
   description:
-    "Cognition IES delivers advanced engineering services — product engineering, plant engineering, SaaS solutions for industries worldwide.",
+    "Cognition IES delivers advanced engineering services, product engineering, plant engineering, SaaS solutions for industries worldwide.",
   foundingDate: "2005",
   numberOfEmployees: { "@type": "QuantitativeValue", value: 50 },
   contactPoint: [
@@ -97,7 +97,7 @@ export function breadcrumbSchema(items: { name: string; url: string }[]) {
   };
 }
 
-/** FAQ schema builder — pass array of {q, a} */
+/** FAQ schema builder | pass array of {q, a} */
 export function faqSchema(items: { q: string; a: string }[]) {
   return {
     "@context": "https://schema.org",

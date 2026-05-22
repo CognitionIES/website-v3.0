@@ -97,7 +97,7 @@ const services = [
     icon: <Workflow className="w-5 h-5" />,
     title: "Hydraulic Engineering Services",
     description:
-      "We design and optimize fluid power systems that are reliable, efficient, and compliant. Our expertise covers the full hydraulic engineering lifecycle — from circuit modeling to field commissioning support.",
+      "We design and optimize fluid power systems that are reliable, efficient, and compliant. Our expertise covers the full hydraulic engineering lifecycle, from circuit modeling to field commissioning support.",
     image: hydraImage1,
     bullets: [
       "Hydraulic System Design & Simulation",
@@ -133,7 +133,7 @@ const services = [
     icon: <Cpu className="w-5 h-5" />,
     title: "Embedded Systems Engineering",
     description:
-      "Drive innovation with intelligent, connected systems. Our embedded engineering solutions cover the full spectrum — from firmware development to IoT integration — ensuring reliable, scalable performance in today's smart products.",
+      "Drive innovation with intelligent, connected systems. Our embedded engineering solutions cover the full spectrum, from firmware development to IoT integration, ensuring reliable, scalable performance in today's smart products.",
     image: embeddedImage2,
     bullets: [
       "Microcontroller & Microprocessor Programming",

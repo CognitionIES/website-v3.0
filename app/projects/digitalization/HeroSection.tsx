@@ -20,7 +20,7 @@ export default function HeroSection() {
       />
       <div className="absolute inset-0 bg-gradient-to-br from-[#003C46]/90 via-[#003C46]/70 to-[#0098AF]/50" />
 
-      {/* Breadcrumb — inside max-w-7xl, bottom aligned */}
+      {/* Breadcrumb, inside max-w-7xl, bottom aligned */}
       <div className="absolute inset-x-0 bottom-0">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-6">
           <nav aria-label="Breadcrumb" className="flex items-center gap-1.5 text-sm text-white/60">

@@ -1,5 +1,5 @@
 /**
- * SEO utility — generates consistent Metadata objects for every page.
+ * SEO utility generates consistent Metadata objects for every page.
  * Import and call buildMetadata() in each page's generateMetadata() export.
  */
 
@@ -12,7 +12,7 @@ const DEFAULT_OG = `${BASE_URL}/og-default.jpg`;
 interface SEOProps {
   title: string;
   description: string;
-  /** Canonical path — e.g. "/about" */
+  /** Canonical path e.g. "/about" */
   path: string;
   /** Optional OG image URL */
   image?: string;
@@ -78,15 +78,15 @@ export function buildMetadata({
     robots: noIndex
       ? { index: false, follow: false }
       : {
+        index: true,
+        follow: true,
+        googleBot: {
           index: true,
           follow: true,
-          googleBot: {
-            index: true,
-            follow: true,
-            "max-image-preview": "large",
-            "max-snippet": -1,
-          },
+          "max-image-preview": "large",
+          "max-snippet": -1,
         },
+      },
 
     verification: {
       // Add your actual verification tokens in .env

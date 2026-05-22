@@ -393,7 +393,7 @@ export function MegaMenu() {
                               {svc.title}
                             </motion.p>
 
-                            {/* Expanded content — 2-column grid, no scrollbar */}
+                            {/* Expanded content | 2-column grid, no scrollbar */}
                             <AnimatePresence>
                               {active && (
                                 <motion.div
@@ -409,7 +409,7 @@ export function MegaMenu() {
 
                                   <div className="border-t border-white/10 mt-3 mb-3" />
 
-                                  {/* 2-column grid — fits 9–10 items cleanly, no scrollbar */}
+                                  {/* 2-column grid fits 9–10 items cleanly, no scrollbar */}
                                   <div className={cn(
                                     "grid gap-x-4 gap-y-1",
                                     svc.subCategories.length > 4

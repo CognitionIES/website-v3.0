@@ -75,7 +75,7 @@ export default function OutcomeSection() {
                 <li key={i} className="flex items-start gap-3">
                   <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#0098af] shrink-0" />
                   <div>
-                    <span className="text-sm sm:text-base font-semibold text-[#003C46]">{item.title} — </span>
+                    <span className="text-sm sm:text-base font-semibold text-[#003C46]">{item.title}</span>
                     <span className="text-sm sm:text-base text-gray-500 leading-relaxed">{item.content}</span>
                   </div>
                 </li>

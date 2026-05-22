@@ -7,7 +7,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 const testimonials = [
   {
     quote:
-      "Cognition IES brings strong capabilities in teardown and idea generation, offering valuable insights that helped us refine our product design and explore cost-effective alternatives. A very positive experience — highly recommended for VAVE-focused engineering.",
+      "Cognition IES brings strong capabilities in teardown and idea generation, offering valuable insights that helped us refine our product design and explore cost-effective alternatives. A very positive experience, highly recommended for VAVE focused engineering.",
     author: "Senior Vice President",
     company: "Global Manufacturing Client",
     index: "01",

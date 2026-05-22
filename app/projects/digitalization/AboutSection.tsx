@@ -31,7 +31,7 @@ export default function AboutSection() {
               equipment layout and installation further caused delays and cost overruns.
             </p>
             <p className="text-base sm:text-lg text-gray-600 leading-relaxed">
-              Cognition IES was engaged to lead a complete digital transformation — building a
+              Cognition IES was engaged to lead a complete digital transformation, building a
               fully integrated, intelligent digital ecosystem from layout validation through to
               live production monitoring.
             </p>

@@ -1,5 +1,5 @@
 /**
- * Skeleton — shimmer placeholder components.
+ * Skeleton | shimmer placeholder components.
  * These are Server Components (no "use client") so they work
  * in loading.tsx files which must be Server Components.
  */

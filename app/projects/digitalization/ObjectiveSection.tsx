@@ -16,12 +16,12 @@ export default function ObjectiveSection() {
             Project Objective
           </h2>
           <p className="mt-3 text-base sm:text-lg text-gray-500 max-w-2xl leading-relaxed">
-            The single north-star goal that guided every decision throughout the engagement.
+            The single goal that guided every decision throughout the engagement.
           </p>
         </div>
 
         <div className="grid md:grid-cols-5 gap-8 lg:gap-12 items-center">
-          {/* Image — 2 cols */}
+          {/* Image 2 cols */}
           <div className="md:col-span-2 relative h-[260px] sm:h-[340px] rounded-xl overflow-hidden shadow-md">
             <Image
               src={objectiveImage}
@@ -32,13 +32,13 @@ export default function ObjectiveSection() {
             />
           </div>
 
-          {/* Content — 3 cols */}
+          {/* Content 3 cols */}
           <div className="md:col-span-3 space-y-6">
             <div className="p-6 sm:p-8 bg-white border border-gray-100 rounded-xl shadow-sm">
               <p className="text-base sm:text-lg text-gray-600 leading-relaxed">
                 To transform a traditionally operated manufacturing plant into a
                 data-driven, smart facility by implementing advanced digital tools,
-                real-time monitoring, and process optimisation systems — reducing
+                real-time monitoring, and process optimisation systems, reducing
                 errors, improving visibility, and enabling sustainable scale.
               </p>
             </div>

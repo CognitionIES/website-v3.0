@@ -75,7 +75,7 @@ export default function LeadMagnet() {
           subject: "Capabilities Guide Download Request",
           name,
           email,
-          source: "Lead Magnet — Capabilities Guide",
+          source: "Lead Magnet: Capabilities Guide",
         }),
       });
       const r = await res.json();
@@ -168,7 +168,7 @@ export default function LeadMagnet() {
                       Get our Capabilities Guide
                     </p>
                     <p className="font-sans text-[14px] text-[#718096] mb-4 leading-relaxed">
-                      A concise overview of our engineering services, project examples, and technical expertise — in one PDF.
+                      A concise overview of our engineering services, project examples, and technical expertise, in one PDF.
                     </p>
 
                     <form onSubmit={submit} className="space-y-3">

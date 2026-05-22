@@ -6,7 +6,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date().toISOString();
 
   const routes: MetadataRoute.Sitemap = [
-    // Core pages — highest priority
+    // Core pages highest priority
     { url: BASE, lastModified: now, changeFrequency: "weekly", priority: 1.0 },
     { url: `${BASE}/about`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
     { url: `${BASE}/contact`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
@@ -14,7 +14,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/faq`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
     { url: `${BASE}/brochure`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
 
-    // Services — high priority (core revenue pages)
+    // Services, high priority (core revenue pages)
     { url: `${BASE}/services`, lastModified: now, changeFrequency: "monthly", priority: 0.95 },
     { url: `${BASE}/services/product-engineering`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
     { url: `${BASE}/services/plant-engineering`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },

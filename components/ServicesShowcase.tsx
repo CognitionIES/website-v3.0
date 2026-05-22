@@ -16,7 +16,7 @@ const services = [
     title: "Product Engineering",
     short: "Design to delivery",
     description:
-      "From aerospace to industrial machinery — we engineer high-performance products that meet industry standards and redefine what's possible.",
+      "From aerospace to industrial machinery, we engineer high-performance products that meet industry standards and redefine what's possible.",
     image: productImage,
     href: "/services/product-engineering",
     tags: ["CAD/CAE", "Mechanical", "Electrical", "Prototyping"],
@@ -151,7 +151,7 @@ export default function ServicesShowcase() {
           ))}
         </ul>
 
-        {/* Right: image — NOT sticky, just centered vertically alongside the list */}
+        {/* Right: image | NOT sticky, just centered vertically alongside the list */}
         <motion.div
           initial={{ opacity: 0, x: 24 }}
           animate={isInView ? { opacity: 1, x: 0 } : {}}

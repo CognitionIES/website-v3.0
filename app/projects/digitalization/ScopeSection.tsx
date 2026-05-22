@@ -19,7 +19,7 @@ const scopeItems = [
   {
     number: "04",
     title: "Software Application Integration",
-    desc: "Implemented a suite of applications within the digital twin to drive efficiencies across departments — maintenance scheduling, inventory management, and performance analytics.",
+    desc: "Implemented a suite of applications within the digital twin to drive efficiencies across departments, maintenance scheduling, inventory management, and performance analytics.",
   },
   {
     number: "05",

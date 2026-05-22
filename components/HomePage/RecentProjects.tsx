@@ -14,7 +14,7 @@ const projects = [
     title: "Manufacturing Plant Digitalization",
     category: "Digital Transformation",
     year: "2024",
-    description: "Complete digital twin of a manufacturing facility using precision 3D scanning, real-time data integration, and IoT instrumentation — reducing layout errors by 40%.",
+    description: "Complete digital twin of a manufacturing facility using precision 3D scanning, real-time data integration, and IoT instrumentation, reducing layout errors by 40%.",
     image: digitalizationImage,
     href: "/projects/digitalization",
     span: "lg:col-span-8",
@@ -66,7 +66,7 @@ export default function RecentProjects() {
           </Link>
         </div>
 
-        {/* Projects — unequal asymmetric grid */}
+        {/* Projects | unequal asymmetric grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-5">
           {projects.map((p, i) => (
             <motion.div

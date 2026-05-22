@@ -37,8 +37,8 @@ export default function AboutSection() {
             <div className="space-y-2">
               <p className="text-xs font-semibold uppercase tracking-wider text-[#0098af]">Client Profile</p>
               <p className="text-base sm:text-lg text-gray-600 leading-relaxed">
-                A leading North American manufacturer of high-performance outdoor power tools —
-                log splitters, pressure washers, and air compressors — serving both commercial
+                A leading North American manufacturer of high-performance outdoor power tools,
+                log splitters, pressure washers, and air compressors, serving both commercial
                 and residential markets.
               </p>
             </div>
@@ -48,7 +48,7 @@ export default function AboutSection() {
               <p className="text-base sm:text-lg text-gray-600 leading-relaxed">
                 A complete cost transformation and design refinement of the Log Splitter lineup.
                 The goal was to maintain product quality and safety while achieving substantial
-                cost reductions through Cognition&apos;s PCM approach — uncovering inefficiencies,
+                cost reductions through Cognition&apos;s PCM approach, uncovering inefficiencies,
                 benchmarking competitors, and proposing high-impact design optimisations.
               </p>
             </div>

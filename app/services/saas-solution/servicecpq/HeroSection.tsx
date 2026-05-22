@@ -44,7 +44,7 @@ const HeroSection = () => {
             className="text-lg md:text-xl text-[#5b5b5b] mb-10 leading-relaxed"
           >
             AI-powered platform unifying claims, Configure Price Quote (CPQ),
-            and repair workflows — turning after-sales from a cost centre into a
+            and repair workflows, turning after-sales from a cost centre into a
             growth engine.
           </motion.p>
 

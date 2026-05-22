@@ -69,7 +69,7 @@ const BenefitsSection = () => {
                 {benefit.description}
               </p>
 
-              {/* Bottom accent — appears on hover */}
+              {/* Bottom accent, appears on hover */}
               <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-[#0098AF] to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left rounded-b-xl" />
             </motion.div>
           ))}

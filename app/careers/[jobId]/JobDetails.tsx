@@ -179,7 +179,7 @@ const JobDetails = ({ jobId }: JobDetailsProps) => {
           </motion.div>
         </div>
 
-        {/* Bottom edge — clean diagonal cut */}
+        {/* Bottom edge, clean diagonal cut */}
         <div className="absolute bottom-0 left-0 right-0 h-10 bg-white dark:bg-[#0a0a0f]"
           style={{ clipPath: "ellipse(55% 100% at 50% 100%)" }} />
       </section>

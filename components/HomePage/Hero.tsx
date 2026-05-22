@@ -36,7 +36,7 @@ export default function Hero() {
           key={slide.id}
           className={`absolute inset-0 transition-opacity duration-1000 ${i === current ? "opacity-100" : "opacity-0"}`}
         >
-          <Image src={slide.image} alt={`${slide.majorService} — Cognition IES`} fill priority={i === 0} sizes="100vw" quality={90} className="object-cover object-center" />
+          <Image src={slide.image} alt={`${slide.majorService} | Cognition IES`} fill priority={i === 0} sizes="100vw" quality={90} className="object-cover object-center" />
           <div className="absolute inset-0 bg-gradient-to-r from-[#0f1117]/95 via-[#0f1117]/60 to-[#0f1117]/20" />
         </div>
       ))}
@@ -85,7 +85,7 @@ export default function Hero() {
           ))}
         </div>
 
-        {/* Bottom row — scroll hint + nav */}
+        {/* Bottom row | scroll hint + nav */}
         <div className="flex items-end justify-between">
           <div className="flex items-center gap-2 text-white/25">
             <div className="w-px h-8 bg-white/20" />

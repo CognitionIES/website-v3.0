@@ -31,7 +31,7 @@ export default function TechSection() {
         </div>
 
         <div className="grid md:grid-cols-5 gap-6 lg:gap-8 items-start">
-          {/* Technologies — 3 cols */}
+          {/* Technologies 3 cols */}
           <div className="md:col-span-3 space-y-3">
             {technologies.map((tech, i) => (
               <div key={i} className="flex gap-4 p-4 sm:p-5 bg-white border border-gray-100 rounded-xl shadow-sm hover:border-[#0098af]/20 hover:shadow-md transition-all duration-200">
@@ -48,7 +48,7 @@ export default function TechSection() {
             ))}
           </div>
 
-          {/* Client Feedback — 2 cols */}
+          {/* Client Feedback 2 cols */}
           <div className="md:col-span-2 bg-[#003C46] rounded-xl shadow-sm p-6 sm:p-8 flex flex-col h-full">
             <p className="text-xs font-semibold uppercase tracking-wider text-white/40 mb-6">
               Client Feedback

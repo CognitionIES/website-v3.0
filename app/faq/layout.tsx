@@ -4,7 +4,7 @@ import SchemaMarkup from "@/components/SchemaMarkup";
 import { breadcrumbSchema, faqSchema } from "@/lib/schema";
 
 export const metadata: Metadata = buildMetadata({
-  title: "FAQs — Frequently Asked Questions About Our Engineering Services",
+  title: "FAQs | Frequently Asked Questions About Our Engineering Services",
   description:
     "Find answers to common questions about Cognition IES engineering services, project timelines, SaaS solutions, and how to work with us.",
   path: "/faq",
