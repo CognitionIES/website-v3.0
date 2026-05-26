@@ -46,10 +46,10 @@ export default function LeadMagnet() {
     // Trigger on 60% scroll
     const onScroll = () => {
       const pct = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight);
-      if (pct >= 0.6) show();
+      if (pct >= 0.4) show();
     };
-    // Trigger after 45 seconds
-    const timer = setTimeout(show, 45000);
+    // Trigger after 20 seconds
+    const timer = setTimeout(show, 20000);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => {
       window.removeEventListener("scroll", onScroll);

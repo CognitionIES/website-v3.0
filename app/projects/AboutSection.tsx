@@ -5,8 +5,8 @@ import { motion, useInView } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
-import digitalizationImg from "@/constants/images/projects/digitalization/hero-image-1.jpg";
-import pcmImg from "@/constants/images/projects/pcm/hero.jpg";
+import digitalizationImg from "@/constants/images/home/our-recent-projects/digitalization.jpg"
+import pcmImg from "@/constants/images/home/our-recent-projects/pcm.jpg";
 
 const projects = [
   {

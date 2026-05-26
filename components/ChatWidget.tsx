@@ -2,7 +2,8 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, Send, MessageSquare, Minimize2 } from "lucide-react";
+import { X, Send, MessageSquare, Minimize2, Phone } from "lucide-react";
+import { IconBrandWhatsapp } from "@tabler/icons-react";
 
 /* ── Types ─────────────────────────────────────────────────────────────────── */
 type Role = "user" | "bot";
@@ -271,6 +272,37 @@ export default function ChatWidget() {
           )}
         </AnimatePresence>
       </div>
+
+      {/* ── Quick-contact floating buttons (phone + WhatsApp) ── */}
+      <AnimatePresence>
+        {!open && (
+          <motion.div
+            key="quick-contact"
+            initial={{ opacity: 0, scale: 0 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0 }}
+            transition={{ type: "spring", stiffness: 400, damping: 28, delay: 0.05 }}
+            className="fixed bottom-[5.5rem] right-6 z-[9997] flex flex-col gap-3 items-center"
+          >
+            <a
+              href="https://wa.me/919876543210"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Chat on WhatsApp"
+              className="w-12 h-12 rounded-full bg-[#25D366] hover:bg-[#1fb356] text-white flex items-center justify-center shadow-lg transition-colors duration-200"
+            >
+              <IconBrandWhatsapp className="w-6 h-6" />
+            </a>
+            <a
+              href="tel:+919876543210"
+              aria-label="Call us"
+              className="w-12 h-12 rounded-full bg-[#003C46] hover:bg-[#0098AF] text-white flex items-center justify-center shadow-lg transition-colors duration-200"
+            >
+              <Phone className="w-5 h-5" />
+            </a>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       {/* ── Chat panel ── */}
       <AnimatePresence>

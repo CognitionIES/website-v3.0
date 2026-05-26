@@ -9,11 +9,21 @@ import AboutUs from "@/components/HomePage/AboutUs";
 import RecentProjects from "@/components/HomePage/RecentProjects";
 import ServicesShowcase from "@/components/ServicesShowcase";
 import CTA from "@/components/CTA";
-import { SkeletonBlock, SkeletonSectionHeader, SkeletonText } from "@/components/shared/Skeleton";
+import {
+  SkeletonBlock,
+  SkeletonSectionHeader,
+  SkeletonText,
+} from "@/components/shared/Skeleton";
+import EngagementCarousel from "@/components/HomePage/EngagementModel";
 
 // Lazy-load below-fold heavy sections
-const Testimonials = dynamic(() => import("@/components/HomePage/Testimonials"), { ssr: false });
-const Careers      = dynamic(() => import("@/components/HomePage/Careers"),      { ssr: false });
+const Testimonials = dynamic(
+  () => import("@/components/HomePage/Testimonials"),
+  { ssr: false },
+);
+const Careers = dynamic(() => import("@/components/HomePage/Careers"), {
+  ssr: false,
+});
 
 /** Minimal section-level skeleton while dynamic sections load */
 function SectionSkeleton() {
@@ -35,6 +45,7 @@ export default function Home() {
       <Hero />
       <AboutUs />
       <ServicesShowcase />
+      <EngagementCarousel />
       <RecentProjects />
       <Suspense fallback={<SectionSkeleton />}>
         <Testimonials />
