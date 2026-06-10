@@ -41,16 +41,16 @@ const services = [
     href: "/services/saas-solution/servicecpq",
     tags: ["ServiceCPQ", "Integration", "Cloud", "Automation"],
   },
-  // {
-  //   num: "04",
-  //   title: "Staffing & Recruitment",
-  //   short: "Right talent, right role",
-  //   description:
-  //     "Data-driven talent acquisition connecting exceptional engineers with forward-thinking organisations globally.",
-  //   image: staffImage,
-  //   href: "/services/staffing",
-  //   tags: ["Engineering Talent", "Contract", "Permanent", "India & USA"],
-  // },
+  {
+    num: "04",
+    title: "Staff Augmentation",
+    short: "Engineering talent on demand",
+    description:
+      "Add pre-vetted engineers directly to your team, scaling capacity across disciplines without the overhead of permanent hiring.",
+    image: staffImage,
+    href: "/services/staff-augmentation",
+    tags: ["Dedicated Teams", "Onsite & Offshore", "Contract", "India & USA"],
+  },
 ];
 
 export default function ServicesShowcase() {

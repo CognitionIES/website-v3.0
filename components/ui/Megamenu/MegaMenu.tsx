@@ -15,7 +15,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faGears, faPlugCircleBolt, faMagnifyingGlassChart,
   faBuildingShield, faChartArea, faGaugeHigh,
-  faBridge, faUsers, faCity,
+  faBridge, faUsers,
 } from "@fortawesome/free-solid-svg-icons";
 import { usePathname } from "next/navigation";
 
@@ -84,16 +84,17 @@ const services: Svc[] = [
       { title: "ServiceCPQ Platform", href: "/services/saas-solution/servicecpq", icon: <Server className="w-3 h-3" /> },
     ],
   },
-  // {
-  //   num: "04", title: "Staffing & Recruitment", short: "Staffing",
-  //   href: "/services/staffing",
-  //   descriptor: "Data-driven talent acquisition across India & USA.",
-  //   image: { src: colImage, alt: "Staffing & Recruitment" },
-  //   subCategories: [
-  //     { title: "For Job Seekers", href: "/services/staffing/job-seeker", icon: <FontAwesomeIcon icon={faUsers} className="w-3 h-3" /> },
-  //     { title: "For Employers",   href: "/services/staffing/employer",   icon: <FontAwesomeIcon icon={faCity} className="w-3 h-3" /> },
-  //   ],
-  // },
+  {
+    num: "04", title: "Staff Augmentation", short: "Talent",
+    href: "/services/staff-augmentation",
+    descriptor: "Pre-vetted engineering talent that scales with your team.",
+    image: { src: colImage, alt: "Staff Augmentation" },
+    subCategories: [
+      { title: "Engagement Models",    href: "/services/staff-augmentation#engagement-models", icon: <Layers className="w-3 h-3" /> },
+      { title: "Share a Requirement",  href: "/services/staff-augmentation#share-requirement",  icon: <FontAwesomeIcon icon={faUsers} className="w-3 h-3" /> },
+      { title: "How It Works",          href: "/services/staff-augmentation#how-it-works",       icon: <Workflow className="w-3 h-3" /> },
+    ],
+  },
 ];
 
 const navLinks = [
@@ -498,7 +499,7 @@ export function MegaMenu() {
               <div className="border-t border-[#e8edf2] bg-[#f8fafc]">
                 <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 h-10 flex items-center justify-between">
                   <p className="text-[11px] text-[#a0aab4] tracking-wide">
-                    3 practice areas &nbsp;·&nbsp; India & USA
+                    4 practice areas &nbsp;·&nbsp; India & USA
                   </p>
                   <Link
                     href="/contact"

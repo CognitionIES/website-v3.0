@@ -77,10 +77,16 @@ const KB: { q: RegExp; a: string }[] = [
     a: "Cognition IES is an engineering services firm with offices in India and the USA. We combine deep domain expertise in product and plant engineering with technology-driven solutions to help industries solve complex challenges. [Read our full story](/about) to learn more about our team and mission.",
   },
 
+  /* Staff Augmentation */
+  {
+    q: /staff.?aug|augment|resource.?aug|dedicated.?team|contract.?engineer|staffing|\btalent\b|extend.*team|on.?site|off.?shore|body.?shop/i,
+    a: "Yes, our [Staff Augmentation](/services/staff-augmentation) service adds pre-vetted engineers to your team across plant, mechanical, electrical, instrumentation, civil/structural, CAE, and plant-digitization disciplines. You can engage them onsite, offshore, or hybrid through Time & Material, Dedicated Team, Project-Based, or Fixed-Price models. Share what you need via the [requirement form](/services/staff-augmentation#share-requirement) and we'll send a matched shortlist.",
+  },
+
   /* Services overview */
   {
     q: /service|offer|what.*do|help.*with|capabilit|solution|practic/i,
-    a: "Cognition IES offers three core practice areas: [Product Engineering](/services/product-engineering) (CAD/CAE, simulation, prototyping), [Plant Engineering](/services/plant-engineering) (layouts, 3D scanning, digital twins), and [SaaS Solutions — ServiceCPQ](/services/saas-solution/servicecpq). Which area would you like to explore?",
+    a: "Cognition IES offers four core practice areas: [Product Engineering](/services/product-engineering) (CAD/CAE, simulation, prototyping), [Plant Engineering](/services/plant-engineering) (layouts, 3D scanning, digital twins), [SaaS Solutions (ServiceCPQ)](/services/saas-solution/servicecpq), and [Staff Augmentation](/services/staff-augmentation) (pre-vetted engineers added to your team). Which area would you like to explore?",
   },
 
   /* Brochure / Downloads */

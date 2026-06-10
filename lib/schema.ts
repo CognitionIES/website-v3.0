@@ -61,12 +61,12 @@ export const professionalServiceSchema = {
   "@type": "ProfessionalService",
   name: "Cognition IES",
   url: BASE,
-  description: "Engineering consultancy offering product engineering, plant engineering, SaaS solutions related services.",
+  description: "Engineering consultancy offering product engineering, plant engineering, SaaS solutions, and engineering staff augmentation related services.",
   serviceType: [
     "Product Engineering",
     "Plant Engineering",
     "SaaS Solutions",
-    //"Staffing & Recruitment",
+    "Staff Augmentation",
   ],
   areaServed: ["India", "USA", "Global"],
   hasOfferCatalog: {
@@ -76,6 +76,7 @@ export const professionalServiceSchema = {
       { "@type": "Offer", itemOffered: { "@type": "Service", name: "Product Engineering", url: `${BASE}/services/product-engineering` } },
       { "@type": "Offer", itemOffered: { "@type": "Service", name: "Plant Engineering", url: `${BASE}/services/plant-engineering` } },
       { "@type": "Offer", itemOffered: { "@type": "Service", name: "ServiceCPQ SaaS", url: `${BASE}/services/saas-solution/servicecpq` } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Staff Augmentation", url: `${BASE}/services/staff-augmentation` } },
     ],
   },
 };

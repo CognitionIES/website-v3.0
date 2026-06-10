@@ -14,7 +14,7 @@ const links = {
     { label: "Product Engineering",  href: "/services/product-engineering" },
     { label: "Plant Engineering",    href: "/services/plant-engineering" },
     { label: "SaaS Solutions",       href: "/services/saas-solution/servicecpq" },
-   // { label: "Staffing",             href: "/services/staffing" },
+    { label: "Staff Augmentation",   href: "/services/staff-augmentation" },
   ],
 };
 

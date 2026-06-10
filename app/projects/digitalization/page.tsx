@@ -5,6 +5,7 @@ import AboutSection from "./AboutSection";
 import ObjectiveSection from "./ObjectiveSection";
 import ScopeSection from "./ScopeSection";
 import OutcomeSection from "./OutcomeSection";
+import AISection from "./AISection";
 import TechSection from "./TechSection";
 import CTASection from "@/components/CTA";
 
@@ -17,6 +18,7 @@ export default function DigitalizationProject() {
       <ObjectiveSection />
       <ScopeSection />
       <OutcomeSection />
+      <AISection />
       <TechSection />
       <CTASection />
       <Footer />
