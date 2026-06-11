@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Tags, Spline, Gauge, ShieldCheck } from "lucide-react";
+import PidTrace from "./PidTrace";
 
 // Only what we actually run in delivery. No platform branding, no speculative
 // capabilities, no invented metrics.
@@ -108,6 +109,9 @@ export default function AISection() {
             </div>
           </div>
         </div>
+
+        {/* Self-drawing P&ID: show the extraction, don't just describe it */}
+        <PidTrace />
       </div>
     </section>
   );
