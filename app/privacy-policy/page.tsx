@@ -90,7 +90,7 @@ const PrivacyPolicy = () => {
               </p>
               <p>
                 Personal data means any information relating to an identified or
-                identifiable natural person (“Data Subject”)—including name,
+                identifiable natural person (“Data Subject”), including name,
                 identification number, location data, online identifiers, or
                 factors specific to physical, physiological, genetic, mental,
                 economic, cultural, or social identity.{" "}

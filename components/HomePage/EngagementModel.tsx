@@ -176,7 +176,7 @@ const EngagementCarousel = () => {
             <ChevronRight className="w-4 h-4" />
           </button>
 
-          {/* Cards — desktop 3, tablet 2, mobile 1 */}
+          {/* Cards: desktop 3, tablet 2, mobile 1 */}
           <div className="px-12">
             {/* Desktop */}
             <div className="hidden lg:flex items-center gap-5">

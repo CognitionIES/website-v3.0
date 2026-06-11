@@ -17,7 +17,7 @@ export const metadata: Metadata = buildMetadata({
 
 const TOP_FAQS = [
   { q: "What engineering services does Cognition IES offer?", a: "Cognition IES offers four core services: Product Engineering, Plant Engineering and SaaS Solutions (ServiceCPQ)." },
-  { q: "Where is Cognition IES located?", a: "Cognition IES operates from offices in India and the USA, serving clients globally." },
+  { q: "Where is Cognition IES located?", a: "Cognition IES operates from offices in USA (HQ) and India, serving clients globally." },
   { q: "How can I contact Cognition IES?", a: "You can reach us at info@cognitionies.com or through the contact form on our website. We respond within one business day." },
  // { q: "Does Cognition IES offer staffing services?", a: "Yes, we connect exceptional engineering talent with leading organisations across India and the USA for contract, permanent, and project-based roles." },
 ];

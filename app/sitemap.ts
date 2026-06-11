@@ -37,6 +37,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/projects`, lastModified: now, changeFrequency: "monthly", priority: 0.75 },
     { url: `${BASE}/projects/digitalization`, lastModified: now, changeFrequency: "yearly", priority: 0.6 },
     { url: `${BASE}/projects/product-cost-management`, lastModified: now, changeFrequency: "yearly", priority: 0.6 },
+    { url: `${BASE}/projects/it-talent-deployment`, lastModified: now, changeFrequency: "yearly", priority: 0.6 },
+    { url: `${BASE}/projects/engineering-talent-deployment`, lastModified: now, changeFrequency: "yearly", priority: 0.6 },
 
     // Industries
     // { url: `${BASE}/industries`,              lastModified: now, changeFrequency: "monthly", priority: 0.75 },

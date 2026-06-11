@@ -34,7 +34,7 @@ export const ABOUT_CONSTANTS = {
     STORY_P1:
       "Born in 2005 from a visionary spark in India, Cognition IES has evolved into a global innovator. We’ve reimagined engineering by breaking down traditional hierarchies, connecting our expert engineers directly with clients to deliver seamless solutions for industries like automotive, aerospace, and medical devices.",
     STORY_P2:
-      "Our unique blend of startup agility and deep services drives us to create value that’s bold, practical, and sustainable—every single day.",
+      "Our unique blend of startup agility and deep services drives us to create value that’s bold, practical, and sustainable, every single day.",
     MISSION_TITLE: "Our Mission",
     MISSION_DESC:
       "To spark engineering innovation with a people-first mindset, empowering every team member to deliver exceptional value directly to our clients.",

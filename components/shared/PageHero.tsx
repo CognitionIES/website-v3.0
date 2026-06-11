@@ -12,11 +12,12 @@ interface PageHeroProps {
   image: StaticImageData | string;
   title: string;
   subtitle?: string;
+  description?: string;
   breadcrumbs?: BreadcrumbItem[];
   align?: "left" | "center";
 }
 
-export default function PageHero({ image, title, subtitle, breadcrumbs, align = "left" }: PageHeroProps) {
+export default function PageHero({ image, title, subtitle, description, breadcrumbs, align = "left" }: PageHeroProps) {
   const ref = useRef<HTMLElement>(null);
   const isInView = useInView(ref, { once: true, amount: 0.1 });
   const isCenter = align === "center";
@@ -63,6 +64,16 @@ export default function PageHero({ image, title, subtitle, breadcrumbs, align = 
         >
           {title}
         </motion.h1>
+
+        {description && (
+          <motion.p
+            initial={{ opacity: 0 }} animate={isInView ? { opacity: 1 } : {}}
+            transition={{ duration: 0.5, delay: 0.2 }}
+            className={`mt-4 font-sans text-[16px] text-white/50 leading-[1.75] ${isCenter ? "mx-auto max-w-xl" : "max-w-lg"}`}
+          >
+            {description}
+          </motion.p>
+        )}
       </div>
 
       {/* White clip into next section */}

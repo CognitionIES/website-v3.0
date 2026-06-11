@@ -6,7 +6,7 @@ import { breadcrumbSchema } from "@/lib/schema";
 export const metadata: Metadata = buildMetadata({
   title: "About Us | Engineering Excellence Since 2005",
   description:
-    "Learn about Cognition IES, a global engineering consultancy with offices in India and the USA, delivering product engineering, plant engineering, SaaS and staffing services.",
+    "Learn about Cognition IES, a global engineering consultancy with offices USA(HQ) and India, delivering product engineering, plant engineering, SaaS and staffing services.",
   path: "/about",
   keywords: [
     "about cognition ies",

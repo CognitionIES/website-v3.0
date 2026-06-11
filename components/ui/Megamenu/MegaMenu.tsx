@@ -213,7 +213,7 @@ export function MegaMenu() {
 
             {/* Logo */}
             <Link href="/" onClick={closeAll} className="flex-shrink-0">
-              <Image src={Logo1} width={148} height={74} alt="Cognition IES" priority />
+              <Image src={Logo1} width={148} height={74} alt="Cognition IES" priority style={{ height: "auto" }} />
             </Link>
 
             {/* Desktop nav */}
@@ -299,7 +299,7 @@ export function MegaMenu() {
               className="overflow-hidden border-t border-[#e8edf2] bg-white"
             >
               <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16">
-                <div className="flex" style={{ height: 380 }}>
+                <div className="flex" style={{ height: 416 }}>
 
                   {/* ── Service tiles ── */}
                   {services.map((svc, i) => {
@@ -311,13 +311,15 @@ export function MegaMenu() {
                         key={svc.num}
                         onMouseEnter={() => setHoveredTile(i)}
                         onMouseLeave={() => setHoveredTile(null)}
-                        animate={{ flex: active ? 2.8 : dimmed ? 0.6 : 1 }}
+                        layout
                         transition={T.tile}
                         className={cn(
                           "relative flex flex-col border-r border-[#e8edf2] overflow-hidden first:border-l",
                         )}
                         style={{
                           minWidth: 0,
+                          flexGrow: active ? 2.8 : dimmed ? 0.6 : 1,
+                          flexBasis: 0,
                           backgroundColor: active ? "#003C46" : "#ffffff",
                           transition: "background-color 0.5s cubic-bezier(0.32,0,0.18,1)",
                         }}
@@ -353,7 +355,7 @@ export function MegaMenu() {
                         />
 
                         {/* Card content */}
-                        <div className="relative z-20 flex flex-col h-full p-7 pointer-events-none select-none">
+                        <motion.div layout className="relative z-20 flex flex-col h-full p-7 pointer-events-none select-none">
 
                           {/* Number + arrow */}
                           <div className="flex items-start justify-between">
@@ -385,11 +387,10 @@ export function MegaMenu() {
                             <motion.p
                               animate={{
                                 color: active ? "#ffffff" : "#1a2332",
-                                fontSize: active ? "1.45rem" : "1.25rem",
+                                scale: active ? 1.16 : 1,
                               }}
                               transition={{ duration: 0.4, ease: [0.32, 0, 0.18, 1] }}
-                              className="font-display leading-tight tracking-tight"
-                              style={{ overflow: "hidden", textOverflow: "ellipsis", whiteSpace: "nowrap" }}
+                              className="font-display text-[1.25rem] leading-tight tracking-tight origin-bottom-left line-clamp-2"
                             >
                               {svc.title}
                             </motion.p>
@@ -408,11 +409,11 @@ export function MegaMenu() {
                                     {svc.descriptor}
                                   </p>
 
-                                  <div className="border-t border-white/10 mt-3 mb-3" />
+                                  <div className="border-t border-white/10 mt-2.5 mb-2.5" />
 
                                   {/* 2-column grid fits 9–10 items cleanly, no scrollbar */}
                                   <div className={cn(
-                                    "grid gap-x-4 gap-y-1",
+                                    "grid gap-x-4 gap-y-0.5",
                                     svc.subCategories.length > 4
                                       ? "grid-cols-2"
                                       : "grid-cols-1"
@@ -432,7 +433,7 @@ export function MegaMenu() {
                                         <Link
                                           href={sub.href}
                                           onClick={closeAll}
-                                          className="group/sub flex items-center gap-2 px-2 py-2 -mx-2 rounded-md hover:bg-white/[0.08] transition-colors duration-150"
+                                          className="group/sub flex items-center gap-2 px-2 py-[5px] -mx-2 rounded-md hover:bg-white/[0.08] transition-colors duration-150"
                                         >
                                           <span className="text-white/45 group-hover/sub:text-[#0098AF] transition-colors duration-150 shrink-0">
                                             {sub.icon}
@@ -448,7 +449,7 @@ export function MegaMenu() {
                               )}
                             </AnimatePresence>
                           </div>
-                        </div>
+                        </motion.div>
                       </motion.div>
                     );
                   })}
@@ -483,7 +484,7 @@ export function MegaMenu() {
                       <p className="text-[10px] font-semibold tracking-[0.22em] uppercase text-[#a0aab4] mb-3">
                         Offices
                       </p>
-                      {["India", "USA"].map((loc) => (
+                      {[ "USA(HQ)", "India" ].map((loc) => (
                         <div key={loc} className="flex items-center gap-2.5 mb-2">
                           <span className="w-1.5 h-1.5 rounded-full bg-[#0098AF] shrink-0" />
                           <span className="text-[12.5px] text-[#718096]">{loc}</span>

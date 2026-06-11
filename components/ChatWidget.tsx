@@ -20,7 +20,7 @@ const KB: { q: RegExp; a: string }[] = [
   /* Product Engineering */
   {
     q: /product.?engineer|cad|cae|fea|cfd|solidworks|catia|\bnx\b|creo|mechanical design|electrical design|prototype|simulation|stress.?analys|tolerance/i,
-    a: "Our Product Engineering team delivers end-to-end engineering — concept design, CAD/CAE modelling (SolidWorks, CATIA, NX, Creo), FEA/CFD analysis, prototyping, and production support. We work across automotive, aerospace, industrial machinery, and consumer goods. [Learn more about Product Engineering](/services/product-engineering) or [see project examples](/projects).",
+    a: "Our Product Engineering team delivers end-to-end engineering: concept design, CAD/CAE modelling (SolidWorks, CATIA, NX, Creo), FEA/CFD analysis, prototyping, and production support. We work across automotive, aerospace, industrial machinery, and consumer goods. [Learn more about Product Engineering](/services/product-engineering) or [see project examples](/projects).",
   },
 
   /* Plant Engineering */
@@ -32,13 +32,13 @@ const KB: { q: RegExp; a: string }[] = [
   /* Digital transformation / Industry 4.0 */
   {
     q: /digitali[sz]|industry.?4|iiot|smart.?factory|digital.?transform|automation|connected|sensor|data.?driven|manufacturing.?intel/i,
-    a: "We help industrial facilities embrace digital transformation — from IIoT sensor integration and smart factory dashboards to full digitalization programmes. [View our digitalization project](/projects/digitalization) for a real-world example, or [contact us](/contact) to discuss your initiative.",
+    a: "We help industrial facilities embrace digital transformation, from IIoT sensor integration and smart factory dashboards to full digitalization programmes. [View our digitalization project](/projects/digitalization) for a real-world example, or [contact us](/contact) to discuss your initiative.",
   },
 
   /* SaaS / ServiceCPQ */
   {
     q: /saas|servicecpq|cpq|configure.?price|quote|cloud.?platform|software.?solution|erp|crm|integrat|workflow/i,
-    a: "Our SaaS practice is built around ServiceCPQ — a cloud-native configure-price-quote platform for complex engineering services. It simplifies quoting, integrates with ERP/CRM systems, and cuts sales cycle time. [Learn more about ServiceCPQ](/services/saas-solution/servicecpq) or [contact us](/contact) to discuss your requirements.",
+    a: "Our SaaS practice is built around ServiceCPQ, a cloud-native configure-price-quote platform for complex engineering services. It simplifies quoting, integrates with ERP/CRM systems, and cuts sales cycle time. [Learn more about ServiceCPQ](/services/saas-solution/servicecpq) or [contact us](/contact) to discuss your requirements.",
   },
 
   /* Careers / Hiring */
@@ -68,13 +68,13 @@ const KB: { q: RegExp; a: string }[] = [
   /* Contact / Location */
   {
     q: /contact|reach|email|call|phone|office|location|address|india|usa|united.?states/i,
-    a: "You can reach us at [info@cognitionies.com](mailto:info@cognitionies.com), or use the [Contact form](/contact) for a faster response. We operate from offices in India and the USA, and our team typically replies within one business day.",
+    a: "You can reach us at [info@cognitionies.com](mailto:info@cognitionies.com), or use the [Contact form](/contact) for a faster response. We operate from offices USA(HQ) and the India, and our team typically replies within one business day.",
   },
 
   /* About the company */
   {
     q: /about|who.*you|company|cognition.?ies|history|found|team|background|mission|vision/i,
-    a: "Cognition IES is an engineering services firm with offices in India and the USA. We combine deep domain expertise in product and plant engineering with technology-driven solutions to help industries solve complex challenges. [Read our full story](/about) to learn more about our team and mission.",
+    a: "Cognition IES is an engineering services firm with offices USA(HQ) and the India. We combine deep domain expertise in product and plant engineering with technology-driven solutions to help industries solve complex challenges. [Read our full story](/about) to learn more about our team and mission.",
   },
 
   /* Staff Augmentation */
@@ -92,7 +92,7 @@ const KB: { q: RegExp; a: string }[] = [
   /* Brochure / Downloads */
   {
     q: /brochure|download|pdf|resource|document|datasheet/i,
-    a: "We have detailed brochures for both Product Engineering and Plant Engineering. [Visit our Brochures page](/brochure), fill in a quick form, and the PDF opens instantly — no waiting for an email.",
+    a: "We have detailed brochures for both Product Engineering and Plant Engineering. [Visit our Brochures page](/brochure), fill in a quick form, and the PDF opens instantly, with no waiting for an email.",
   },
 
   /* Pricing / Quote */
@@ -110,7 +110,7 @@ const KB: { q: RegExp; a: string }[] = [
 
 /* ── Bot reply logic ───────────────────────────────────────────────────────── */
 const FALLBACK =
-  "I'm not sure about that one. For a detailed answer, please [email us](mailto:info@cognitionies.com) or use the [Contact page](/contact) — our team replies within one business day.";
+  "I'm not sure about that one. For a detailed answer, please [email us](mailto:info@cognitionies.com) or use the [Contact page](/contact). Our team replies within one business day.";
 
 function botReply(input: string): string {
   const match = KB.find(({ q }) => q.test(input));
@@ -417,7 +417,7 @@ export default function ChatWidget() {
                 </button>
               </form>
               <p className="font-sans text-[10px] text-[#9ca3af] text-center mt-2">
-                For urgent queries — info@cognitionies.com
+                For urgent queries: info@cognitionies.com
               </p>
             </div>
           </motion.div>

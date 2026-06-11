@@ -180,7 +180,7 @@ export const HorizontalScrollSection = forwardRef<
             <div className="space-y-8">
               <motion.h2
                 id={`${id}-title`}
-                className="text-2xl sm:text-3xl font-bold tracking-tight text-black"
+                className="text-2xl sm:text-3xl font-bold tracking-tight text-[#003C46]"
                 variants={itemVariants}
               >
                 {title}
@@ -239,7 +239,7 @@ export const HorizontalScrollSection = forwardRef<
                           whileTap={{ backgroundColor: "#F3F4F6" }}
                         >
                           <span className="mt-1 w-4 h-4 bg-gray-300 rounded-full inline-block flex-shrink-0 group-hover:bg-gray-400 group-active:bg-gray-400 transition-colors duration-200"></span>
-                          <span className="text-sm sm:text-base text-black transition-colors leading-relaxed break-words">
+                          <span className="text-sm sm:text-base text-[#003C46] transition-colors leading-relaxed break-words">
                             {point}
                           </span>
                         </motion.li>
@@ -277,7 +277,7 @@ export const HorizontalScrollSection = forwardRef<
           <motion.div className="text-left" variants={itemVariants}>
             <motion.h2
               id={`${id}-title`}
-              className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight text-black"
+              className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight text-[#003C46]"
               variants={itemVariants}
             >
               {title}
@@ -323,7 +323,7 @@ export const HorizontalScrollSection = forwardRef<
                             height={14}
                             className="mt-[1px] flex-shrink-0"
                           />
-                          <span className="text-sm text-black transition-colors">
+                          <span className="text-sm text-[#003C46] transition-colors">
                             {point}
                           </span>
                         </motion.li>

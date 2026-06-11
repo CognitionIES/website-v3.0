@@ -7,14 +7,14 @@ export const CONTACT_CONSTANTS = {
     IMAGE: contactImage,
     TITLE: "Contact Us",
     SUBTITLE:
-      "Reach out to us—we’re here to collaborate and turn your ideas into reality.",
+      "Reach out to us. We’re here to collaborate and turn your ideas into reality.",
   },
 
   // Contact Section
   CONTACT: {
     TITLE: "GET IN TOUCH",
     DESCRIPTION:
-      "Feel free to reach out—we’re always open to discussing your questions, new projects, creative ideas, or opportunities to collaborate and bring your vision to life.",
+      "Feel free to reach out. We’re always open to discussing your questions, new projects, creative ideas, or opportunities to collaborate and bring your vision to life.",
     LOCATION: {
       TITLE: "Our Location",
       ADDRESS: "123 ABC, DEF HIJ, JKLM 9999",

@@ -155,7 +155,7 @@ export default function ContactSection() {
                     Offices
                   </p>
                   <p className="font-sans text-[15px] text-[#4a5568]">
-                    India &amp; USA
+                    USA (HQ) &amp; India
                   </p>
                 </div>
               </div>

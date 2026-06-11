@@ -86,8 +86,8 @@ export default function Footer() {
           <div>
             <h3 className="font-sans text-[11px] font-semibold tracking-[0.2em] uppercase text-white/30 mb-5">Offices</h3>
             <ul className="space-y-3">
+              <li className="font-sans text-[14px] text-white/50">USA (HQ)</li>
               <li className="font-sans text-[14px] text-white/50">India</li>
-              <li className="font-sans text-[14px] text-white/50">USA</li>
             </ul>
           </div>
         </div>

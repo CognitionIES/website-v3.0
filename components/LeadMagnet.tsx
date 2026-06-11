@@ -8,10 +8,10 @@ const DISMISSED_KEY = "lead_magnet_dismissed";
 const SUBMITTED_KEY = "lead_magnet_submitted";
 
 /**
- * LeadMagnet — a non-intrusive slide-up panel that appears after the user
+ * LeadMagnet: a non-intrusive slide-up panel that appears after the user
  * has scrolled 60% of the page OR spent 45 seconds on it (whichever first).
  *
- * Offer: "Download our Engineering Capabilities Guide" — captures name + email,
+ * Offer: "Download our Engineering Capabilities Guide". Captures name + email,
  * submits to Web3Forms, then reveals the brochure download link.
  *
  * Rules:

@@ -84,7 +84,7 @@ const sections = {
   prototyping: {
     title: "Prototyping & 3D Printing",
     description:
-      "Accelerate your product development with our rapid prototyping solutions. From functional testing to design validation, we turn concepts into physical reality—fast—using additive manufacturing and low-volume production techniques.",
+      "Accelerate your product development with our rapid prototyping solutions. From functional testing to design validation, we turn concepts into physical reality, fast, using additive manufacturing and low-volume production techniques.",
     imageUrl: protoImage1,
     bulletPoints: [
       "Rapid Prototyping (3D Printing, CNC Machining)",
@@ -142,7 +142,7 @@ const sections = {
   "embedded-systems": {
     title: "Embedded Systems Engineering",
     description:
-      "Drive innovation with intelligent, connected systems. Our embedded engineering solutions cover the full spectrum—from firmware development to IoT integration—ensuring reliable, scalable performance in today’s smart products.",
+      "Drive innovation with intelligent, connected systems. Our embedded engineering solutions cover the full spectrum, from firmware development to IoT integration, ensuring reliable, scalable performance in today’s smart products.",
     imageUrl:embeddedImage1,
 
     bulletPoints: [

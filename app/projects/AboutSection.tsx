@@ -7,6 +7,10 @@ import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import digitalizationImg from "@/constants/images/home/our-recent-projects/digitalization.jpg"
 import pcmImg from "@/constants/images/home/our-recent-projects/pcm.jpg";
+// Stand-in card images reused from existing assets. Swap when dedicated
+// photos for the staffing case studies are available.
+import itTalentImg from "@/constants/images/home/our-services/staff.jpg";
+import engTalentImg from "@/constants/images/home/who-we-are.jpg";
 
 const projects = [
   {
@@ -26,6 +30,24 @@ const projects = [
       "Detailed cost and function analysis of a log splitter product line, identifying savings through competitive benchmarking, value engineering, and design optimisation.",
     image: pcmImg,
     href: "/projects/product-cost-management",
+  },
+  {
+    id: "project-3",
+    title: "IT Talent Deployment",
+    category: "Staff Augmentation",
+    description:
+      "Staffed and managed a full-stack development team (React and Node.js) for a growing IT company, with rapid onboarding and end-to-end payroll and compliance support.",
+    image: itTalentImg,
+    href: "/projects/it-talent-deployment",
+  },
+  {
+    id: "project-4",
+    title: "Engineering Talent Deployment",
+    category: "Staff Augmentation",
+    description:
+      "Deployed a multi-disciplinary engineering team across mechanical, electrical, instrumentation, and piping roles, screened for tool proficiency in SmartPlant 3D, CAESAR II, STAAD and SPI.",
+    image: engTalentImg,
+    href: "/projects/engineering-talent-deployment",
   },
 ];
 

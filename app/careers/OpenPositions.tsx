@@ -205,7 +205,7 @@ const OpenPositions = () => {
             animate={{ opacity: 1 }}
             className="text-center py-20"
           >
-            <p className="text-3xl mb-3">—</p>
+            <p className="text-3xl mb-3"></p>
             <p className="text-sm font-medium text-[#111827] mb-1">No positions found</p>
             <p className="text-sm text-[#718096]">Try different search terms or department</p>
           </motion.div>
