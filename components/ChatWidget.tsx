@@ -299,13 +299,13 @@ export default function ChatWidget() {
             >
               <IconBrandWhatsapp className="w-6 h-6" />
             </a>
-            <a
+            {/* <a
               href="tel:+919876543210"
               aria-label="Call us"
               className="w-12 h-12 rounded-full bg-[#003C46] hover:bg-[#0098AF] text-white flex items-center justify-center shadow-lg transition-colors duration-200"
             >
               <Phone className="w-5 h-5" />
-            </a>
+            </a> */}
           </motion.div>
         )}
       </AnimatePresence>
