@@ -116,7 +116,7 @@ function MissionVision() {
         </div>
         <motion.h2 initial={{ opacity: 0, y: 20 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
           className="font-display text-5xl md:text-6xl text-[#111827] leading-[1.0] tracking-[-0.03em] text-balance mb-16">
-          Mission &amp; <em className="not-italic text-[#0098AF]">Vision.</em>
+          Mission &amp; <em className="not-italic text-[#0098AF]">Vision</em>
         </motion.h2>
         <div className="grid md:grid-cols-2 gap-5">
           {[
@@ -213,7 +213,7 @@ function StatsSection() {
         </div>
         <motion.h2 initial={{ opacity: 0, y: 20 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
           className="font-display text-5xl md:text-6xl text-white leading-[1.0] tracking-[-0.03em] mb-16">
-          Our <em className="not-italic text-[#0098AF]">Impact.</em>
+          Our <em className="not-italic text-[#0098AF]">Impact</em>
         </motion.h2>
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-px bg-white/10 border border-white/10 rounded-2xl overflow-hidden">
           {STATS.map((s, i) => {

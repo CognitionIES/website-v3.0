@@ -142,7 +142,7 @@ const EngagementCarousel = () => {
             style={{ fontFamily: "'DM Serif Display', Georgia, serif" }}
           >
             Flexible partnerships,{" "}
-            <em className="not-italic text-[#0098AF]">your way.</em>
+            <em className="not-italic text-[#0098AF]">your way</em>
           </h2>
           <p className="text-[15px] text-[#556677] dark:text-[#8899aa] max-w-lg leading-relaxed">
             Flexible partnership models designed to meet your unique business

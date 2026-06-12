@@ -48,11 +48,11 @@ const OpenPositions = () => {
           <span className="eyebrow text-[#0098AF] mb-5 block">Open Positions</span>
           <h2 className="font-display text-5xl md:text-[56px] text-[#111827] leading-[1.05] tracking-[-0.03em] mb-5">
             Work that{" "}
-            <em className="not-italic text-[#0098AF]">matters.</em>
+            <em className="not-italic text-[#0098AF]">matters</em>
           </h2>
           <p className="text-[15px] text-[#718096] max-w-lg leading-relaxed">
             We build engineering solutions used by teams across the globe.
-            Come build with us.
+            Come build with us
           </p>
         </motion.div>
 

@@ -38,7 +38,7 @@ export default function HowItWorks() {
 
         <h2 className="text-3xl sm:text-4xl font-bold leading-tight text-white max-w-2xl mb-14">
           From a few lines of brief to an engineer
-          <span className="text-[#0098AF]"> inside your team.</span>
+          <span className="text-[#0098AF]"> inside your team</span>
         </h2>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12">

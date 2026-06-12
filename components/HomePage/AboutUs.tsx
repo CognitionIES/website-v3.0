@@ -40,7 +40,7 @@ export default function AboutUs() {
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
         >
           Engineering that moves{" "}
-          <em className="not-italic text-[#0098AF]">industries forward.</em>
+          <em className="not-italic text-[#0098AF]">industries forward</em>
         </motion.h2>
 
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">

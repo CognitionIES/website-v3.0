@@ -10,7 +10,7 @@ export const STAFF_AUGMENTATION_CONSTANTS = {
 
   ABOUT: {
     EYEBROW: "The Idea",
-    HEADING: "Hire the gap, not the headcount.",
+    HEADING: "Hire the gap, not the headcount",
     DESCRIPTION_1:
       "Some gaps shouldn't be solved with a permanent hire: a deadline that needs more hands, a skill one project demands, a workload that rises and falls. Staff augmentation fills exactly that gap with engineers who join your team, follow your processes, and report to your leads.",
     DESCRIPTION_2:

@@ -7,7 +7,7 @@ import {
 // Stand-in images reused from existing assets. Swap to dedicated photos at
 // constants/images/projects/engineering-talent/ when available.
 import heroImage from "@/constants/images/staff-augmentation/hero.jpg";
-import overviewImage from "@/constants/images/home/who-we-are.jpg";
+import overviewImage from "@/constants/images/staffing-recruitment/hero.jpg";
 import type { CaseStudy } from "./types";
 
 export const ENGINEERING_TALENT: CaseStudy = {

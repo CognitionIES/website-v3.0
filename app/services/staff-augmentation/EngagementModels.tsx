@@ -67,7 +67,7 @@ export default function EngagementModels() {
         <div className="grid lg:grid-cols-12 gap-10 mb-12">
           <div className="lg:col-span-7">
             <h2 className="text-3xl sm:text-4xl font-bold text-[#003C46] leading-tight">
-              Engage the way the work demands.
+              Engage the way the work demands
             </h2>
           </div>
           <div className="lg:col-span-5">

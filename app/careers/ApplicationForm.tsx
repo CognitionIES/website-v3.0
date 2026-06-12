@@ -112,7 +112,7 @@ const ApplicationForm = () => {
         <span className="eyebrow text-[#0098AF] mb-2 block">Apply Now</span>
         <h2 className="font-display text-3xl md:text-4xl text-[#111827] leading-[1.0] tracking-[-0.03em] mb-2">
           Start your{" "}
-          <em className="not-italic text-[#0098AF]">application.</em>
+          <em className="not-italic text-[#0098AF]">application</em>
         </h2>
         <p className="text-[15px] text-[#718096]">
           Fill in the details below and we&apos;ll be in touch soon.

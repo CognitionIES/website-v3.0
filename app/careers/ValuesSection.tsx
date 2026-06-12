@@ -33,7 +33,7 @@ export default function ValuesSection() {
       >
         <span className="eyebrow text-[#0098AF] mb-3 block">What Drives Us</span>
         <h2 className="font-display text-3xl md:text-4xl text-[#111827] leading-[1.0] tracking-[-0.03em]">
-          Our <em className="not-italic text-[#0098AF]">values.</em>
+          Our <em className="not-italic text-[#0098AF]">values</em>
         </h2>
       </motion.div>
 

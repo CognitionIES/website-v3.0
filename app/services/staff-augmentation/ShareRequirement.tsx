@@ -137,9 +137,9 @@ export default function ShareRequirement() {
           {/* Left: narrative + expectations */}
           <div className="lg:col-span-5">
             <h2 className="text-3xl sm:text-4xl font-bold text-[#003C46] leading-tight">
-              Tell us who you need.
+              Tell us who you need  
               <br />
-              <span className="text-[#0098AF]">We&apos;ll find them.</span>
+              <span className="text-[#0098AF]">We&apos;ll find them</span>
             </h2>
             <p className="mt-6 text-base sm:text-lg text-[#5b5b5b] leading-relaxed">
               A role, the software involved, and a rough duration is enough to
