@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ── Brand tokens ────────────────────────────────────────────────────────── */
+/*  Brand tokens  */
 :root {
   --teal:        #0098AF;
   --teal-dark:   #007a8c;
@@ -16,7 +16,7 @@
   --ink:         #111827;
 }
 
-/* ── shadcn tokens ───────────────────────────────────────────────────────── */
+/*  shadcn tokens ─ */
 @layer base {
   :root {
     --background: 0 0% 100%; --foreground: 222 47% 11%;
@@ -32,7 +32,7 @@
   }
 }
 
-/* ── Base ────────────────────────────────────────────────────────────────── */
+/*  Base  */
 @layer base {
   *, *::before, *::after { box-sizing: border-box; }
   html { scroll-behavior: smooth; overflow-x: hidden; }
@@ -67,7 +67,7 @@
   *:focus:not(:focus-visible) { outline: none; }
 }
 
-/* ── Eyebrow label ───────────────────────────────────────────────────────── */
+/*  Eyebrow label ─ */
 @layer utilities {
   .text-balance { text-wrap: balance; }
 }
@@ -92,7 +92,7 @@
   }
 }
 
-/* ── Keyframes ───────────────────────────────────────────────────────────── */
+/*  Keyframes ─ */
 @keyframes progress-fill { from { width: 0 } to { width: 100% } }
 @keyframes shimmer { from { transform: translateX(-100%) } to { transform: translateX(100%) } }
 @keyframes fade-up { from { opacity:0; transform:translateY(20px) } to { opacity:1; transform:translateY(0) } }

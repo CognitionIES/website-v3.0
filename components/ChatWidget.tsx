@@ -5,11 +5,11 @@ import { motion, AnimatePresence } from "framer-motion";
 import { X, Send, MessageSquare, Minimize2, Phone } from "lucide-react";
 import { IconBrandWhatsapp } from "@tabler/icons-react";
 
-/* ── Types ─────────────────────────────────────────────────────────────────── */
+/*  Types ─ */
 type Role = "user" | "bot";
 interface Message { id: string; role: Role; text: string; ts: Date; }
 
-/* ── Static FAQ knowledge base ─────────────────────────────────────────────── */
+/*  Static FAQ knowledge base ─ */
 const KB: { q: RegExp; a: string }[] = [
   /* Greetings */
   {
@@ -108,7 +108,7 @@ const KB: { q: RegExp; a: string }[] = [
   },
 ];
 
-/* ── Bot reply logic ───────────────────────────────────────────────────────── */
+/*  Bot reply logic ─ */
 const FALLBACK =
   "I'm not sure about that one. For a detailed answer, please [email us](mailto:info@cognitionies.com) or use the [Contact page](/contact). Our team replies within one business day.";
 
@@ -117,7 +117,7 @@ function botReply(input: string): string {
   return match?.a ?? FALLBACK;
 }
 
-/* ── Quick-reply suggestions ───────────────────────────────────────────────── */
+/*  Quick-reply suggestions ─ */
 const SUGGESTIONS = [
   "What services do you offer?",
   "How do I get started?",
@@ -125,7 +125,7 @@ const SUGGESTIONS = [
   "Are you hiring?",
 ];
 
-/* ── Typing indicator ──────────────────────────────────────────────────────── */
+/*  Typing indicator  */
 function TypingDots() {
   return (
     <div className="flex items-center gap-1 py-1 px-1">
@@ -140,7 +140,7 @@ function TypingDots() {
   );
 }
 
-/* ── Inline link renderer (parses [label](href) in bot text) ──────────────── */
+/*  Inline link renderer (parses [label](href) in bot text)  */
 function renderWithLinks(text: string): React.ReactNode {
   const parts: React.ReactNode[] = [];
   const regex = /\[([^\]]+)\]\(([^)]+)\)/g;
@@ -166,7 +166,7 @@ function renderWithLinks(text: string): React.ReactNode {
   return <>{parts}</>;
 }
 
-/* ── Message bubble ────────────────────────────────────────────────────────── */
+/*  Message bubble  */
 function Bubble({ msg }: { msg: Message }) {
   const isUser = msg.role === "user";
   return (
@@ -189,7 +189,7 @@ function Bubble({ msg }: { msg: Message }) {
   );
 }
 
-/* ── Main widget ───────────────────────────────────────────────────────────── */
+/*  Main widget ─ */
 export default function ChatWidget() {
   const [open, setOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([
@@ -249,7 +249,7 @@ export default function ChatWidget() {
 
   return (
     <>
-      {/* ── Toggle button ── */}
+      {/*  Toggle button  */}
       <div className="fixed bottom-6 right-6 z-[9998]">
         <AnimatePresence>
           {!open && (
@@ -279,7 +279,7 @@ export default function ChatWidget() {
         </AnimatePresence>
       </div>
 
-      {/* ── Quick-contact floating buttons (phone + WhatsApp) ── */}
+      {/*  Quick-contact floating buttons (phone + WhatsApp)  */}
       <AnimatePresence>
         {!open && (
           <motion.div
@@ -310,7 +310,7 @@ export default function ChatWidget() {
         )}
       </AnimatePresence>
 
-      {/* ── Chat panel ── */}
+      {/*  Chat panel  */}
       <AnimatePresence>
         {open && (
           <motion.div

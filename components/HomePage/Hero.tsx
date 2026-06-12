@@ -30,7 +30,7 @@ export default function Hero() {
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
-      {/* ── Background images ── */}
+      {/*  Background images  */}
       {heroSlides.map((slide, i) => (
         <div
           key={slide.id}
@@ -41,13 +41,13 @@ export default function Hero() {
         </div>
       ))}
 
-      {/* ── Progress bar ── */}
+      {/*  Progress bar  */}
       <div className="absolute top-0 inset-x-0 h-px bg-white/10 z-30">
         <div key={`${current}-${paused}`} className="h-full bg-[#0098AF]"
           style={{ animation: paused ? "none" : `progress-fill ${DURATION}ms linear forwards` }} />
       </div>
 
-      {/* ── Main content ── */}
+      {/*  Main content  */}
       <div className="relative z-10 h-full flex flex-col justify-between max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 pt-28 pb-14">
 
         {/* Slide counter */}

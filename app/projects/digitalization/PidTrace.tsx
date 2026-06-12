@@ -72,22 +72,22 @@ export default function PidTrace() {
           role="img"
           aria-label="Illustration of a P&ID with equipment tag, instrument tag, and line number being detected"
         >
-          {/* ── Pipe run ── */}
+          {/*  Pipe run  */}
           <motion.path d="M 80 140 H 360" {...line} {...draw(0.1)} />
           <motion.path d="M 400 140 H 660" {...line} {...draw(0.9)} />
           <motion.path d="M 660 140 H 700 V 90" {...line} {...draw(1.5, 0.5)} />
 
-          {/* ── Pump P-101: circle with discharge tangent ── */}
+          {/*  Pump P-101: circle with discharge tangent  */}
           <motion.circle cx="80" cy="140" r="26" {...line} {...draw(0.0, 0.6)} />
           <motion.path d="M 62 122 L 98 122" {...line} {...draw(0.5, 0.3)} />
           <motion.text x="80" y="196" textAnchor="middle" fontFamily={mono} fontSize="13" fill="#003C46" {...appear(0.7)}>
             P-101
           </motion.text>
 
-          {/* ── Gate valve at mid-run ── */}
+          {/*  Gate valve at mid-run  */}
           <motion.path d="M 360 126 L 400 154 M 360 154 L 400 126" {...line} {...draw(0.9, 0.4)} />
 
-          {/* ── Instrument bubble PT-1001, dashed lead line ── */}
+          {/*  Instrument bubble PT-1001, dashed lead line  */}
           <motion.path d="M 520 140 V 84" stroke="#003C46" strokeWidth="1.2" strokeDasharray="4 4" fill="none" {...draw(1.4, 0.4)} />
           <motion.circle cx="520" cy="62" r="22" {...line} {...draw(1.7, 0.5)} />
           <motion.path d="M 498 62 H 542" {...line} {...draw(2.0, 0.25)} />
@@ -98,18 +98,18 @@ export default function PidTrace() {
             1001
           </motion.text>
 
-          {/* ── Vessel V-201 ── */}
+          {/*  Vessel V-201  */}
           <motion.rect x="676" y="34" width="48" height="58" rx="10" {...line} {...draw(1.9, 0.5)} />
           <motion.text x="700" y="116" textAnchor="middle" fontFamily={mono} fontSize="13" fill="#003C46" {...appear(2.2)}>
             V-201
           </motion.text>
 
-          {/* ── Line number along the pipe ── */}
+          {/*  Line number along the pipe  */}
           <motion.text x="230" y="128" textAnchor="middle" fontFamily={mono} fontSize="12" fill="#003C46" {...appear(1.2)}>
             6&quot;-CW-1023-A1
           </motion.text>
 
-          {/* ── Detection highlights: what the pipeline pulls out ── */}
+          {/*  Detection highlights: what the pipeline pulls out  */}
           {/* equipment tag */}
           <motion.g {...detect(2.6)}>
             <rect x="52" y="182" width="56" height="20" rx="4" fill="none" stroke="#0098AF" strokeWidth="1.4" />

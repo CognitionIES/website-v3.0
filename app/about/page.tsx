@@ -11,13 +11,13 @@ import Footer from "@/components/Footer";
 import CTABanner from "@/components/shared/CTABanner";
 import { ABOUT_CONSTANTS } from "@/constants/aboutPage/constants";
 
-/* ── Reusable grid texture ── */
+/*  Reusable grid texture  */
 const GridBg = ({ dark = false }: { dark?: boolean }) => (
   <div className="absolute inset-0 pointer-events-none"
     style={{ opacity: dark ? 0.05 : 0.025, backgroundImage: `linear-gradient(${dark ? "rgba(255,255,255,0.4)" : "#003C46"} 1px,transparent 1px),linear-gradient(90deg,${dark ? "rgba(255,255,255,0.4)" : "#003C46"} 1px,transparent 1px)`, backgroundSize: "64px 64px" }} />
 );
 
-/* ── Hero ── */
+/*  Hero  */
 function Hero() {
   const { IMAGES } = ABOUT_CONSTANTS;
   const ref = useRef<HTMLElement>(null);
@@ -46,7 +46,7 @@ function Hero() {
   );
 }
 
-/* ── Story ── */
+/*  Story  */
 function Story() {
   const { IMAGES, TEXT, STATS } = ABOUT_CONSTANTS;
   const ref = useRef<HTMLElement>(null);
@@ -96,7 +96,7 @@ function Story() {
   );
 }
 
-/* ── Mission & Vision ── */
+/*  Mission & Vision  */
 function MissionVision() {
   const { TEXT } = ABOUT_CONSTANTS;
   const ref = useRef<HTMLElement>(null);
@@ -139,7 +139,7 @@ function MissionVision() {
   );
 }
 
-/* ── Values ── */
+/*  Values  */
 const VALUE_ICONS = [Heart, Shield, Zap, Star];
 function KeyValues() {
   const { IMAGES, TEXT, KEY_VALUES } = ABOUT_CONSTANTS;
@@ -191,7 +191,7 @@ function KeyValues() {
   );
 }
 
-/* ── Stats ── */
+/*  Stats  */
 const STAT_ICONS = [Users, Globe, Award, TrendingUp];
 function StatsSection() {
   const { STATS } = ABOUT_CONSTANTS;

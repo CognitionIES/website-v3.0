@@ -16,7 +16,7 @@ import type { CaseStudy } from "@/constants/projects/types";
 
 const EASE = [0.22, 1, 0.36, 1] as const;
 
-/* ── Motion helpers ───────────────────────────────────────────────────── */
+/*  Motion helpers ─ */
 
 // Vertical parallax tied to the element's progress through the viewport.
 // Returns 0 movement when the user prefers reduced motion.
@@ -86,7 +86,7 @@ function SectionHeader({ eyebrow }: { eyebrow: string }) {
   );
 }
 
-/* ── Overview: text + parallax image + count-up stats ────────────────── */
+/*  Overview: text + parallax image + count-up stats  */
 export function OverviewSection({ study }: { study: CaseStudy }) {
   const { overview } = study;
   const { ref, y, reduce } = useParallax(30);
@@ -153,7 +153,7 @@ export function OverviewSection({ study }: { study: CaseStudy }) {
   );
 }
 
-/* ── Objective: statement over slow parallax background ──────────────── */
+/*  Objective: statement over slow parallax background  */
 export function ObjectiveSection({ study }: { study: CaseStudy }) {
   const { objective } = study;
   const { ref, y, reduce } = useParallax(50);
@@ -203,7 +203,7 @@ export function ObjectiveSection({ study }: { study: CaseStudy }) {
   );
 }
 
-/* ── Approach: numbered step grid ────────────────────────────────────── */
+/*  Approach: numbered step grid  */
 export function ApproachSection({ study }: { study: CaseStudy }) {
   const { approach } = study;
   return (
@@ -246,7 +246,7 @@ export function ApproachSection({ study }: { study: CaseStudy }) {
   );
 }
 
-/* ── Results: metric cards + before/after KPI table ──────────────────── */
+/*  Results: metric cards + before/after KPI table  */
 export function ResultsSection({ study }: { study: CaseStudy }) {
   const { results } = study;
   return (
@@ -317,7 +317,7 @@ export function ResultsSection({ study }: { study: CaseStudy }) {
   );
 }
 
-/* ── Testimonial: full-bleed parallax band ───────────────────────────── */
+/*  Testimonial: full-bleed parallax band ─ */
 export function TestimonialBand({ study }: { study: CaseStudy }) {
   const { ref, y, reduce } = useParallax(60);
   if (!study.testimonial) return null;
@@ -360,7 +360,7 @@ export function TestimonialBand({ study }: { study: CaseStudy }) {
   );
 }
 
-/* ── Roles & tools ────────────────────────────────────────────────────── */
+/*  Roles & tools  */
 export function RolesToolsSection({ study }: { study: CaseStudy }) {
   const { roles, tools } = study;
   return (

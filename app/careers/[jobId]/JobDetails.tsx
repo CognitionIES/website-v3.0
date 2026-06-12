@@ -78,7 +78,7 @@ const JobDetails = ({ jobId }: JobDetailsProps) => {
     <div className="min-h-screen bg-white dark:bg-[#0a0a0f]">
       <MegaMenu />
 
-      {/* ── Hero ── */}
+      {/*  Hero  */}
       <section className="relative bg-[#003C46] overflow-hidden">
 
         {/* Faint grid */}
@@ -184,7 +184,7 @@ const JobDetails = ({ jobId }: JobDetailsProps) => {
           style={{ clipPath: "ellipse(55% 100% at 50% 100%)" }} />
       </section>
 
-      {/* ── Body ── */}
+      {/*  Body  */}
       <section className="py-14 md:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">

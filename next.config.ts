@@ -1,7 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* ── Image optimisation ── */
+  /*  Image optimisation  */
   images: {
     formats: ["image/avif", "image/webp"],       // Modern formats up to 50% smaller
     remotePatterns: [
@@ -16,11 +16,11 @@ const nextConfig: NextConfig = {
     unoptimized: false,                            // Enable optimisation
   },
 
-  /* ── Performance ── */
+  /*  Performance  */
   compress: true,                                  // gzip/brotli
   poweredByHeader: false,                          // Remove X-Powered-By
 
-  /* ── Security & performance HTTP headers ── */
+  /*  Security & performance HTTP headers  */
   async headers() {
     // Custom headers (esp. Cache-Control on /_next/static) break Next.js dev
     // behavior and spam a warning on every start, so apply them in prod only.
@@ -60,10 +60,10 @@ const nextConfig: NextConfig = {
     ];
   },
 
-  /* ── Redirects ── */
+  /*  Redirects  */
   async redirects() {
     return [
-      // ── Trailing slash normalisation ──
+      //  Trailing slash normalisation 
       { source: "/about/", destination: "/about", permanent: true },
       { source: "/contact/", destination: "/contact", permanent: true },
       { source: "/careers/", destination: "/careers", permanent: true },
@@ -73,7 +73,7 @@ const nextConfig: NextConfig = {
       { source: "/services/product-engineering/", destination: "/services/product-engineering", permanent: true },
       { source: "/services/plant-engineering/", destination: "/services/plant-engineering", permanent: true },
 
-      // ── 301: Legacy ?section= query-param URLs → clean semantic service URLs ──
+      //  301: Legacy ?section= query-param URLs → clean semantic service URLs 
       {
         source: "/services",
         has: [{ type: "query", key: "section", value: "mechanical" }],
@@ -131,7 +131,7 @@ const nextConfig: NextConfig = {
     ];
   },
 
-  /* ── Build ── */
+  /*  Build  */
   typescript: { ignoreBuildErrors: true },
 };
 

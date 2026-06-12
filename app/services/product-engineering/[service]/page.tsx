@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { buildMetadata } from "@/lib/seo";
 import ProductEngineeringServiceClient from "./ProductEngineeringServiceClient";
 
-// ── Route → section-key mapping (slug → sections.tsx key) ──
+//  Route → section-key mapping (slug → sections.tsx key) 
 export const SERVICE_SLUG_MAP: Record<string, string> = {
   "mechanical-design":       "mechanical",
   "electrical-engineering":  "electrical",
@@ -16,7 +16,7 @@ export const SERVICE_SLUG_MAP: Record<string, string> = {
   "supply-chain-management": "supply-chain",
 };
 
-// ── SEO metadata per service ──
+//  SEO metadata per service 
 const SERVICE_META: Record<string, { title: string; description: string; keywords: string[] }> = {
   "mechanical-design": {
     title: "Mechanical Design Services",
@@ -65,12 +65,12 @@ const SERVICE_META: Record<string, { title: string; description: string; keyword
   },
 };
 
-// ── Generate static params for all service slugs ──
+//  Generate static params for all service slugs 
 export async function generateStaticParams() {
   return Object.keys(SERVICE_SLUG_MAP).map((service) => ({ service }));
 }
 
-// ── Generate dynamic SEO metadata ──
+//  Generate dynamic SEO metadata 
 export async function generateMetadata({
   params,
 }: {
@@ -88,7 +88,7 @@ export async function generateMetadata({
   });
 }
 
-// ── Page component ──
+//  Page component 
 export default async function ProductEngineeringServicePage({
   params,
 }: {

@@ -207,7 +207,7 @@ export function MegaMenu() {
             : "border-b border-[#e2e8f0]"
         )}
       >
-        {/* ── Top bar ── */}
+        {/*  Top bar  */}
         <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16">
           <div className="flex items-center justify-between h-[62px]">
 
@@ -234,7 +234,7 @@ export function MegaMenu() {
                 </Link>
               ))}
 
-              {/* ── Services trigger ── */}
+              {/*  Services trigger  */}
               <button
                 onMouseEnter={() => { cancelClose(); setIsOpen(true); }}
                 onMouseLeave={scheduleClose}
@@ -285,7 +285,7 @@ export function MegaMenu() {
           </div>
         </div>
 
-        {/* ── Shelf panel ── */}
+        {/*  Shelf panel  */}
         <AnimatePresence>
           {isOpen && (
             <motion.div
@@ -301,7 +301,7 @@ export function MegaMenu() {
               <div className="max-w-7xl mx-auto px-6 sm:px-10 lg:px-16">
                 <div className="flex" style={{ height: 416 }}>
 
-                  {/* ── Service tiles ── */}
+                  {/*  Service tiles  */}
                   {services.map((svc, i) => {
                     const active = hoveredTile === i;
                     const dimmed = hoveredTile !== null && !active;
@@ -454,7 +454,7 @@ export function MegaMenu() {
                     );
                   })}
 
-                  {/* ── Meta column ── */}
+                  {/*  Meta column  */}
                   <div className="w-[185px] shrink-0 border-l border-[#e8edf2] flex flex-col justify-between px-6 py-7">
                     <div>
                       <p className="text-[10px] font-semibold tracking-[0.22em] uppercase text-[#a0aab4] mb-4">
@@ -515,7 +515,7 @@ export function MegaMenu() {
           )}
         </AnimatePresence>
 
-        {/* ── Mobile menu ── */}
+        {/*  Mobile menu  */}
         <AnimatePresence>
           {isMobileOpen && (
             <motion.div
