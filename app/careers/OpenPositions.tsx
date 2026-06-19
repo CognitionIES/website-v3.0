@@ -52,7 +52,7 @@ const OpenPositions = () => {
           </h2>
           <p className="text-[15px] text-[#718096] max-w-lg leading-relaxed">
             We build engineering solutions used by teams across the globe.
-            Come build with us
+            Come build with us!
           </p>
         </motion.div>
 

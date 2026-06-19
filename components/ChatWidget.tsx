@@ -2,8 +2,10 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, Send, MessageSquare, Minimize2, Phone } from "lucide-react";
+import { X, Send, MessageSquare, Minimize2, Phone, Mail } from "lucide-react";
 import { IconBrandWhatsapp } from "@tabler/icons-react";
+import { usePathname } from "next/navigation";
+
 
 /*  Types ─ */
 type Role = "user" | "bot";
@@ -205,6 +207,11 @@ export default function ChatWidget() {
   const [showBadge, setShowBadge] = useState(true);
   const bottomRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
+  const pathname = usePathname();
+  const contactEmail = pathname?.startsWith("/careers")
+    ? "hr@cognitionies.com"
+    : "info@cognitionies.com";
+
 
   /* Auto-scroll to latest message */
   useEffect(() => {
@@ -298,6 +305,13 @@ export default function ChatWidget() {
               className="w-12 h-12 rounded-full bg-[#25D366] hover:bg-[#1fb356] text-white flex items-center justify-center shadow-lg transition-colors duration-200"
             >
               <IconBrandWhatsapp className="w-6 h-6" />
+            </a>
+            <a
+        href={`mailto:${contactEmail}`}
+        aria-label={`Email us at ${contactEmail}`}
+        className="w-12 h-12 rounded-full bg-[#003C46] hover:bg-[#0098AF] text-white flex items-center justify-center shadow-lg transition-colors duration-200"
+            >
+             <Mail className="w-6 h-6" />
             </a>
             {/* <a
               href="tel:+919876543210"

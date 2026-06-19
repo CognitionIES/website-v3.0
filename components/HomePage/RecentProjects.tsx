@@ -13,7 +13,7 @@ const projects = [
     num: "01",
     title: "Manufacturing Plant Digitalization",
     category: "Digital Transformation",
-    year: "2024",
+    //year: "2024",
     description: "Complete digital twin of a manufacturing facility using precision 3D scanning, real-time data integration, and IoT instrumentation, reducing layout errors by 40%.",
     image: digitalizationImage,
     href: "/projects/digitalization",
@@ -23,7 +23,7 @@ const projects = [
     num: "02",
     title: "Log Splitter Cost Optimisation",
     category: "Value Engineering",
-    year: "2005",
+    //year: "2005",
     description: "Competitive benchmarking and design optimisation that identified significant cost-saving opportunities across the full product lifecycle.",
     image: pcmImage,
     href: "/projects/product-cost-management",
@@ -107,7 +107,7 @@ export default function RecentProjects() {
                     <h3 className="font-display text-xl text-[#111827] leading-snug group-hover:text-[#0098AF] transition-colors duration-200">
                       {p.title}
                     </h3>
-                    <span className="font-sans text-[12px] text-[#718096] shrink-0 mt-1">{p.year}</span>
+                    {/* <span className="font-sans text-[12px] text-[#718096] shrink-0 mt-1">{p.year}</span> */}
                   </div>
                   <p className="font-sans text-[14px] text-[#718096] leading-[1.7] line-clamp-3">{p.description}</p>
                 </div>
