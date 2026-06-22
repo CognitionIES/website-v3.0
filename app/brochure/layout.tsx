@@ -8,15 +8,8 @@ export const metadata: Metadata = buildMetadata({
   description:
     "Download the Cognition IES engineering service brochures for Product Engineering and Plant Engineering. Detailed capability guides in PDF format.",
   path: "/brochure",
-  keywords: [
-    "engineering brochure download",
-    "product engineering pdf",
-    "plant engineering guide",
-    "engineering services brochure",
-  ],
-});
-keywords: [
-  "engineering brochure download",
+ keywords: [
+  
   "product engineering pdf",
   "plant engineering guide",
   "engineering services brochure",
@@ -25,6 +18,9 @@ keywords: [
   "engineering case studies pdf",
   "engineering service offerings download",
 ],
+});
+const newLocal = "engineering brochure download";
+
 
 export default function BrochureLayout({ children }: { children: React.ReactNode }) {
   return (
