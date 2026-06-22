@@ -17,7 +17,7 @@ export const CONTACT_CONSTANTS = {
       "Feel free to reach out. We’re always open to discussing your questions, new projects, creative ideas, or opportunities to collaborate and bring your vision to life.",
     LOCATION: {
       TITLE: "Our Location",
-      ADDRESS: "123 ABC, DEF HIJ, JKLM 9999",
+      ADDRESS: "",
     },
     //PHONE: {
     //TITLE: "Toll Free Phone No.",
@@ -28,7 +28,14 @@ export const CONTACT_CONSTANTS = {
       ADDRESS: "info@cognitionies.com",
     },
   },
-
+  keywords: [
+    "contact cognition ies",
+    "engineering consultancy contact",
+    "engineering services enquiry",
+    "india engineering company contact",
+    "get a quote engineering services",
+    "engineering project enquiry",
+  ],
   // Map Section
   MAP: {
     EMBED_URL:

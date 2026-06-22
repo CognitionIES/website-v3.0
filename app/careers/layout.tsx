@@ -9,14 +9,19 @@ export const metadata: Metadata = buildMetadata({
     "Join Cognition IES and work on cutting-edge engineering projects across India and the USA. We hire product engineers, plant engineers, software engineers, and more.",
   path: "/careers",
   keywords: [
-    "engineering jobs india",
-    "engineering jobs usa",
-    "product engineer job",
-    "plant engineer career",
-    "engineering recruitment",
-    "mechanical engineer hiring",
-  ],
+  "engineering jobs india",
+  "engineering jobs usa",
+  "product engineer job",
+  "plant engineer career",
+  "engineering recruitment",
+  "mechanical engineer hiring",
+  "electrical engineer jobs",
+  "engineering careers india usa",
+  "engineering company hiring",
+  "jobs at cognition ies",
+],
 });
+
 
 export default function CareersLayout({ children }: { children: React.ReactNode }) {
   return (

@@ -1,6 +1,4 @@
 // Engineering Talent Deployment case study. Content ported from website v2.0.
-// NOTE: verify the metrics (cost savings, retention, satisfaction scores) and
-// the testimonial against real project records before publishing.
 import {
   Zap, Shield, Users, Target, CheckCircle, TrendingUp, Code, Database,
 } from "lucide-react";

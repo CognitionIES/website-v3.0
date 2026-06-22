@@ -3,19 +3,11 @@ import productImage from "@/constants/images/home/hero/product.jpg";
 import processImage from "@/constants/images/home/hero/process.jpg";
 import aimlImage from "@/constants/images/home/hero/ai-ml.jpg";
 import saasImage from "@/constants/images/home/hero/saas.jpg";
-//import recruitmentImage from "@/constants/images/home/hero/recruit.jpg";
+import staffAugImage from "@/constants/images/home/hero/staff-augmentation.jpg";
 import saas2 from "@/constants/images/home/hero/saas-mobile.jpg";
 import process2 from "@/constants/images/home/hero/process-mobile.jpg";
-import recruit2 from "@/constants/images/home/hero/recruit-mobile.jpg";
+import staffAug2 from "@/constants/images/home/hero/staff-augmentation-mobile.jpg";
 import { StaticImageData } from "next/image";
-//const productImage = '/images/home/hero/product.jpg';
-//const processImage = '/images/home/hero/process.jpg';
-//const aimlImage = '/images/home/hero/ai-ml.jpg';
-//const saasImage = '/images/home/hero/saas.jpg';
-//const recruitmentImage = '/images/home/hero/recruit.jpg';
-//const saas2 = '/images/home/hero/saas-mobile.jpg';
-//const process2 = '/images/home/hero/process-mobile.jpg';
-//const recruit2 = '/images/home/hero/recruit-mobile.jpg';
 
 export interface HeroSlide {
   id: number;
@@ -68,14 +60,14 @@ export const heroSlides: HeroSlide[] = [
     image: saasImage,
     mobileImage: saas2, // Using aimlImage as a placeholder; replace with actual mobile image
   },
-  // {
-  //   id: 5,
-  //   title: "The Right People for the Right Roles",
-  //   subtitle: "Connecting Talent with Opportunity",
-  //   majorService: "Staffing & Recruitment",
-  //   description:
-  //     "Helping businesses build high-performing teams by sourcing top talent through strategic recruitment and staffing solutions.",
-  //   image: recruitmentImage,
-  //   mobileImage: recruit2, // Using aimlImage as a placeholder; replace with actual mobile image
-  // },
+  {
+    id: 5,
+    title: "Hire the Gap, Not the Headcount",
+    subtitle: "Vetted Engineers, Embedded in Your Team",
+    majorService: "Staff Augmentation",
+    description:
+      "Add vetted engineers to your team for exactly as long as you need them, working under your direction inside your tools and standards.",
+    image: staffAugImage,
+    mobileImage: staffAug2,
+  },
 ];

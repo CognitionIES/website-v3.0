@@ -15,6 +15,16 @@ export const metadata: Metadata = buildMetadata({
     "engineering services brochure",
   ],
 });
+keywords: [
+  "engineering brochure download",
+  "product engineering pdf",
+  "plant engineering guide",
+  "engineering services brochure",
+  "CAD CAE capabilities brochure",
+  "plant engineering tools overview",
+  "engineering case studies pdf",
+  "engineering service offerings download",
+],
 
 export default function BrochureLayout({ children }: { children: React.ReactNode }) {
   return (

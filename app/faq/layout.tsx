@@ -9,10 +9,14 @@ export const metadata: Metadata = buildMetadata({
     "Find answers to common questions about Cognition IES engineering services, project timelines, SaaS solutions, and how to work with us.",
   path: "/faq",
   keywords: [
-    "engineering services faq",
-    "cognition ies questions",
-    "engineering consultancy faq",
-  ],
+  "engineering services faq",
+  "cognition ies questions",
+  "engineering consultancy faq",
+  "product engineering questions",
+  "plant engineering questions",
+  "ServiceCPQ faq",
+  "engineering company locations",
+],
 });
 
 const TOP_FAQS = [

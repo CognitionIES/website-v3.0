@@ -7,13 +7,19 @@ export const metadata: Metadata = buildMetadata({
     "End-to-end product engineering services, mechanical design, electrical engineering, CAE/CFD, prototyping, hydraulic engineering, embedded systems, asset management, technical publication, and supply chain management.",
   path: "/services/product-engineering",
   keywords: [
-    "product engineering services",
-    "mechanical design services",
-    "CAE CFD analysis",
-    "embedded systems engineering",
-    "product development India",
-    "engineering consultancy",
-  ],
+  "product engineering services",
+  "mechanical design services",
+  "CAE CFD analysis",
+  "embedded systems engineering",
+  "product development India",
+  "engineering consultancy",
+  "rapid prototyping services",
+  "PCB design services",
+  "FEA structural analysis",
+  "battery management system design",
+  "hydraulic system design",
+  "technical documentation services",
+],
 });
 
 export default function ProductEngineeringLayout({

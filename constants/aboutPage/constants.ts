@@ -24,7 +24,18 @@ export const ABOUT_CONSTANTS = {
 
     ],
   },
-
+  keywords: [
+    "about cognition ies",
+    "engineering consultancy india usa",
+    "engineering company history",
+    "product engineering firm",
+    "plant engineering company",
+    "ISO 9001 certified engineering company",
+    "global engineering consultancy",
+    "engineering company since 2005",
+    "co-innovation engineering partner",
+    "product lifecycle engineering partner",
+  ],
   // Text Content
   TEXT: {
     COMPANY_NAME: "Cognition IES",

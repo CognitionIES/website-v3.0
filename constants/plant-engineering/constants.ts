@@ -71,7 +71,7 @@ export const PLANT_ENGINEERING_CONSTANTS = {
     DESCRIPTION_1:
       "Efficiency, safety, and sustainability form the core of our Plant Engineering Services. We support industries in optimizing their facilities by offering engineering expertise that improves processes, infrastructure, and operations. Whether it's greenfield or brownfield projects, our goal is to help businesses achieve operational excellence by integrating intelligent planning, robust design, and compliance with modern industry standards. We empower plant systems to run smoother, safer, and smarter.",
     DESCRIPTION_2:
-      "Our team brings industry specific knowledge and a systems driven mindset, enabling seamless integration of engineering solutions that enhance productivity while minimizing downtime and costs.", // Placeholder from your code
+      "Our team brings industry specific knowledge and a systems driven mindset, enabling seamless integration of engineering solutions that enhance productivity while minimizing downtime and costs.",
     IMAGE: aboutImage,
   },
 

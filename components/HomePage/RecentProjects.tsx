@@ -21,7 +21,7 @@ const projects = [
   },
   {
     num: "02",
-    title: "Log Splitter Cost Optimisation",
+    title: "Industrial Equipment Cost Optimisation",
     category: "Value Engineering",
     //year: "2005",
     description: "Competitive benchmarking and design optimisation that identified significant cost-saving opportunities across the full product lifecycle.",
