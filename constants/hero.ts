@@ -4,9 +4,9 @@ import processImage from "@/constants/images/home/hero/process.jpg";
 import aimlImage from "@/constants/images/home/hero/ai-ml.jpg";
 import saasImage from "@/constants/images/home/hero/saas.jpg";
 import staffAugImage from "@/constants/images/home/hero/staff-augmentation-1.jpg";
+//import staffAug2 from "@/constants/images/home/hero/staff-augmentation-mobile-1.jpg";
 import saas2 from "@/constants/images/home/hero/saas-mobile.jpg";
 import process2 from "@/constants/images/home/hero/process-mobile.jpg";
-import staffAug2 from "@/constants/images/home/hero/staff-augmentation-mobile-1.jpg";
 import { StaticImageData } from "next/image";
 
 export interface HeroSlide {
@@ -67,7 +67,7 @@ export const heroSlides: HeroSlide[] = [
     majorService: "Staff Augmentation",
     description:
       "Add vetted engineers to your team for exactly as long as you need them, working under your direction inside your tools and standards.",
-    image: staffAugImage,
-    mobileImage: staffAug2,
+    image: saasImage,
+    mobileImage: saasImage,
   },
 ];
