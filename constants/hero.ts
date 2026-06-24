@@ -3,10 +3,10 @@ import productImage from "@/constants/images/home/hero/product.jpg";
 import processImage from "@/constants/images/home/hero/process.jpg";
 import aimlImage from "@/constants/images/home/hero/ai-ml.jpg";
 import saasImage from "@/constants/images/home/hero/saas.jpg";
-import staffAugImage from "@/constants/images/home/hero/staff-augmentation.jpg";
+import staffAugImage from "@/constants/images/home/hero/staff-augmentation-1.jpg";
 import saas2 from "@/constants/images/home/hero/saas-mobile.jpg";
 import process2 from "@/constants/images/home/hero/process-mobile.jpg";
-import staffAug2 from "@/constants/images/home/hero/staff-augmentation-mobile.jpg";
+import staffAug2 from "@/constants/images/home/hero/staff-augmentation-mobile-1.jpg";
 import { StaticImageData } from "next/image";
 
 export interface HeroSlide {
