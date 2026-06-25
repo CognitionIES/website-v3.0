@@ -42,13 +42,13 @@ export default function Testimonials() {
   );
   const goNext = useCallback(() => goTo(active + 1), [active, goTo]);
 
-  useEffect(() => {
+useEffect(() => {
     if (paused) return;
-    timer.current = setTimeout(goNext, 7000);
+    timer.current = setTimeout(goNext, 5000);
     return () => {
       if (timer.current) clearTimeout(timer.current);
     };
-  }, [active, paused, goNext]);
+  }, [active, paused, goNext]); 
 
   return (
     <section

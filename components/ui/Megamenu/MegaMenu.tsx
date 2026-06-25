@@ -217,22 +217,21 @@ export function MegaMenu() {
             </Link>
 
             {/* Desktop nav */}
+            {/* Desktop nav */}
             <div className="hidden md:flex items-center gap-0.5">
-              {navLinks.map((l) => (
-                <Link
-                  key={l.href}
-                  href={l.href}
-                  onClick={closeAll}
-                  className={cn(
-                    "px-3 py-1.5 text-[13.5px] font-medium transition-colors duration-200 rounded-md",
-                    pathname === l.href
-                      ? "text-[#003C46] bg-[#003C46]/[0.07]"
-                      : "text-[#374151] hover:text-[#111827] hover:bg-gray-50"
-                  )}
-                >
-                  {l.label}
-                </Link>
-              ))}
+              {/* Home */}
+              <Link
+                href={navLinks[0].href}
+                onClick={closeAll}
+                className={cn(
+                  "px-3 py-1.5 text-[13.5px] font-medium transition-colors duration-200 rounded-md",
+                  pathname === navLinks[0].href
+                    ? "text-[#003C46] bg-[#003C46]/[0.07]"
+                    : "text-[#374151] hover:text-[#111827] hover:bg-gray-50"
+                )}
+              >
+                {navLinks[0].label}
+              </Link>
 
               {/*  Services trigger  */}
               <button
@@ -255,6 +254,23 @@ export function MegaMenu() {
                   <ChevronDown className="w-3.5 h-3.5" strokeWidth={2.5} />
                 </motion.span>
               </button>
+
+              {/* Projects, Careers, About */}
+              {navLinks.slice(1).map((l) => (
+                <Link
+                  key={l.href}
+                  href={l.href}
+                  onClick={closeAll}
+                  className={cn(
+                    "px-3 py-1.5 text-[13.5px] font-medium transition-colors duration-200 rounded-md",
+                    pathname === l.href
+                      ? "text-[#003C46] bg-[#003C46]/[0.07]"
+                      : "text-[#374151] hover:text-[#111827] hover:bg-gray-50"
+                  )}
+                >
+                  {l.label}
+                </Link>
+              ))}
 
               <div className="w-px h-4 bg-[#e2e8f0] mx-3" />
 

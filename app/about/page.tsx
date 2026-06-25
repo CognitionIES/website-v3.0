@@ -75,7 +75,7 @@ function Story() {
                 </div>
               ))}
             </div>
-            <Link href="/contact" className="group inline-flex items-center gap-3 font-sans text-[13px] font-semibold tracking-[0.12em] uppercase text-[#003C46] hover:text-[#0098AF] transition-colors">
+            <Link href="/careers" className="group inline-flex items-center gap-3 font-sans text-[13px] font-semibold tracking-[0.12em] uppercase text-[#003C46] hover:text-[#0098AF] transition-colors">
               Work with us
               <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200" />
             </Link>
