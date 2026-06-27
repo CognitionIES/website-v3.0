@@ -7,6 +7,18 @@ export const metadata: Metadata = buildMetadata({
   description:
     "Value engineering and competitive benchmarking of a log splitter product line, identifying cost reduction and margin improvement through detailed cost and function analysis.",
   path: "/projects/product-cost-management",
+  keywords: [
+    "product cost management case study",
+    "VAVE value engineering",
+    "should costing analysis",
+    "competitive benchmarking case study",
+    "DFMA DFMEA review",
+    "FEA structural analysis case study",
+    "function cost worth analysis",
+    "outdoor power tools cost optimisation",
+    "manufacturing cost reduction project",
+    "Pareto cost analysis",
+  ],
 });
 import Footer from "@/components/Footer";
 import CTASection from "@/components/CTA";

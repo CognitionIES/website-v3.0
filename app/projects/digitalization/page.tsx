@@ -7,6 +7,18 @@ export const metadata: Metadata = buildMetadata({
   description:
     "Comprehensive digital transformation of a manufacturing plant through 3D scanning, digital twin creation, and real-time data integration for a leading industrial chemical manufacturer.",
   path: "/projects/digitalization",
+  keywords: [
+    "plant digitalization case study",
+    "digital twin manufacturing plant",
+    "3D scanning industrial facility",
+    "real-time plant performance monitoring",
+    "AI powered P&ID analysis",
+    "layout error reduction case study",
+    "manufacturing digital transformation",
+    "industrial chemical plant digitalization",
+    "IoT instrumentation integration",
+    "plant digitalization India",
+  ],
 });
 import HeroSection from "./HeroSection";
 import Footer from "@/components/Footer";

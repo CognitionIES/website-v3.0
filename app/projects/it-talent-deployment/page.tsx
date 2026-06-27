@@ -4,21 +4,20 @@ import { IT_TALENT } from "@/constants/projects/it-talent";
 import Content from "./Content";
 
 export const metadata: Metadata = buildMetadata({
-  title: "Product Cost Management | Projects",
-  description:
-    "Value engineering and competitive benchmarking of a log splitter product line, identifying cost reduction and margin improvement through detailed cost and function analysis.",
-  path: "/projects/product-cost-management",
+  title: "IT Talent Deployment | Projects",
+  description: IT_TALENT.metaDescription,
+  path: "/projects/it-talent-deployment",
   keywords: [
-    "value engineering case study",
-    "VAVE methodology",
-    "product cost reduction",
-    "competitive benchmarking",
-    "should costing",
-    "industrial equipment cost optimisation",
-    "design for cost reduction",
-    "reverse engineering competitor products",
-    "manufacturing cost analysis",
-    "product cost optimization consulting",
+    "IT staff augmentation case study",
+    "full stack development team staffing",
+    "React Node.js contract developers",
+    "IT contract staffing India",
+    "dedicated development team deployment",
+    "tech talent sourcing case study",
+    "payroll and compliance staffing",
+    "rapid IT hiring turnaround",
+    "software developer contract staffing",
+    "IT resource augmentation USA",
   ],
 });
 

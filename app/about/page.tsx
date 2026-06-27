@@ -96,6 +96,55 @@ function Story() {
   );
 }
 
+/*  Certifications & Partnerships  */
+function Certifications() {
+  const { TEXT, CERTIFICATIONS } = ABOUT_CONSTANTS;
+  const ref = useRef<HTMLElement>(null);
+  const isInView = useInView(ref, { once: true, amount: 0.1 });
+  return (
+    <section ref={ref} className="bg-[#fafaf8] py-28 md:py-36 overflow-hidden relative">
+      <GridBg />
+      <div className="relative max-w-7xl mx-auto px-6 sm:px-10 lg:px-16">
+        <div className="flex items-center gap-6 mb-10">
+          <span className="eyebrow">Trust &amp; Standards</span>
+          <motion.div
+            className="flex-1 h-px bg-[#e2e8f0] origin-left"
+            initial={{ scaleX: 0 }}
+            animate={isInView ? { scaleX: 1 } : {}}
+            transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+          />
+        </div>
+        <motion.h2 initial={{ opacity: 0, y: 20 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+          className="font-display text-5xl md:text-6xl text-[#111827] leading-[1.0] tracking-[-0.03em] text-balance mb-5 max-w-2xl">
+          {TEXT.CERTIFICATIONS_TITLE}
+        </motion.h2>
+        <motion.p initial={{ opacity: 0 }} animate={isInView ? { opacity: 1 } : {}} transition={{ duration: 0.5, delay: 0.15 }}
+          className="font-sans text-[16px] text-[#718096] leading-[1.8] max-w-xl mb-16">
+          {TEXT.CERTIFICATIONS_DESC}
+        </motion.p>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          {CERTIFICATIONS.map((c, i) => (
+            <motion.div key={i} initial={{ opacity: 0, y: 24 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] }}
+              className="group bg-white border border-[#e2e8f0] rounded-2xl p-9 hover:border-[#0098AF]/30 transition-colors duration-200">
+              <div className="h-14 flex items-center mb-7">
+                {c.logo ? (
+                  <Image src={c.logo} alt={c.title} height={40} width={140} className="h-10 w-auto object-contain" />
+                ) : (
+                  <span className="inline-flex items-center px-4 py-2 rounded-full bg-[#0098AF]/10 font-display text-lg text-[#0098AF] tracking-tight">
+                    {c.badge}
+                  </span>
+                )}
+              </div>
+              <h3 className="font-display text-xl text-[#111827] mb-3 group-hover:text-[#0098AF] transition-colors duration-200">{c.title}</h3>
+              <p className="font-sans text-[14px] text-[#718096] leading-[1.8]">{c.desc}</p>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 /*  Mission & Vision  */
 function MissionVision() {
   const { TEXT } = ABOUT_CONSTANTS;
@@ -241,6 +290,7 @@ export default function AboutPage() {
       <MegaMenu />
       <Hero />
       <Story />
+      <Certifications />
       <MissionVision />
       <KeyValues />
       <StatsSection />
