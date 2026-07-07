@@ -43,18 +43,22 @@ export default function AboutUs() {
           <em className="not-italic text-[#0098AF]">industries forward</em>
         </motion.h2>
 
-        <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+        <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center justify-between">
           {/* Left: body + stats + CTA */}
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
           >
-            <p className="text-[15px] text-[#4a5568] leading-[1.8] mb-5">
+            <p className="text-[15px] text-[#4a5568] leading-[1.8] mb-5 text-justify">
               {ABOUT_CONSTANTS.DESCRIPTION_1}
             </p>
-            <p className="text-[15px] text-[#4a5568] leading-[1.8] mb-10">
+            <p className="text-[15px] text-[#4a5568] leading-[1.8] mb-5 text-justify">
               {ABOUT_CONSTANTS.DESCRIPTION_2}
+            </p>
+
+            <p className="text-[15px] text-[#4a5568] leading-[1.8] mb-10 text-justify">
+              {ABOUT_CONSTANTS.DESCRIPTION_3}
             </p>
 
             <div className="grid grid-cols-3 border-t border-[#e2e8f0] pt-8 mb-10">
@@ -86,7 +90,7 @@ export default function AboutUs() {
             <div className="relative bottom-12 left-0 rounded-2xl overflow-hidden">
               <Image
                 src={ABOUT_CONSTANTS.IMAGE}
-                alt="Cognition IES"
+                alt="staff augmentation services"
                 width={640}
                 height={520}
                 className="w-full h-[420px] object-cover"

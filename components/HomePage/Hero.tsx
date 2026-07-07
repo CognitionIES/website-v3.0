@@ -66,12 +66,17 @@ export default function Hero() {
 
         {/* Text */}
         <div className="max-w-2xl">
+          {/* Single, static H1 for SEO — the rotating slide headline below is
+              marketing copy, not the page's primary heading, so it renders as h2. */}
+          <h1 className="sr-only">
+            Engineering Services, IT Staff Augmentation &amp; Digital Transformation Solutions
+          </h1>
           {heroSlides.map((slide, i) => (
             <div key={slide.id} className={`transition-all duration-700 ${i === current ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4 absolute pointer-events-none"}`}>
               <p className="eyebrow text-[#0098AF] mb-5">{slide.majorService}</p>
-              <h1 className="font-display text-5xl sm:text-6xl md:text-7xl text-white leading-[1.0] mb-6 tracking-[-0.03em] text-balance">
+              <h2 className="font-display text-5xl sm:text-6xl md:text-7xl text-white leading-[1.0] mb-6 tracking-[-0.03em] text-balance">
                 {slide.title}
-              </h1>
+              </h2>
               <p className="font-sans text-[16px] text-white/55 leading-[1.75] max-w-lg mb-9 font-light">
                 {slide.description}
               </p>

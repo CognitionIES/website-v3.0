@@ -7,7 +7,7 @@ export default function HeroSection() {
   return (
     <PageHero
       image={heroImage}
-      title="Product Engineering"
+      title="Product Engineering Services"
       subtitle="Our Services"
       description="Innovative engineering solutions for complex challenges."
       breadcrumbs={[
