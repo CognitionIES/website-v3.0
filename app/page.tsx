@@ -15,6 +15,7 @@ import {
   SkeletonText,
 } from "@/components/shared/Skeleton";
 import EngagementCarousel from "@/components/HomePage/EngagementModel";
+import WhyPartnerWithUs from "@/components/HomePage/WhyPartnerWithUs";
 
 // Lazy-load below-fold heavy sections
 const Testimonials = dynamic(
@@ -44,6 +45,7 @@ export default function Home() {
       <MegaMenu />
       <Hero />
       <AboutUs />
+      <WhyPartnerWithUs />
       <ServicesShowcase />
       <EngagementCarousel />
       <RecentProjects />

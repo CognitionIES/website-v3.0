@@ -77,11 +77,11 @@ const services: Svc[] = [
   },
   {
     num: "03", title: "SaaS Solutions", short: "SaaS",
-    href: "/services/saas-solution/servicecpq",
+    href: "/services/saas-solution",
     descriptor: "Cloud-native software built for engineering organisations.",
     image: { src: colImage, alt: "SaaS Solutions" },
     subCategories: [
-      { title: "ServiceCPQ Platform", href: "/services/saas-solution/servicecpq", icon: <Server className="w-3 h-3" /> },
+      { title: "ServiceCPQ Platform", href: "/services/saas-solution", icon: <Server className="w-3 h-3" /> },
     ],
   },
   {

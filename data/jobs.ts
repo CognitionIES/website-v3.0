@@ -12,78 +12,78 @@ export interface Job {
 }
 
 export const jobs: Job[] = [
-    {
-        id: "electrical-automation-engineer",
-        title: "Electrical & Automation Engineer",
-        department: "Engineering",
-        location: "Pune, Bangalore, Vadodara, Chennai",
-        type: "Full-time",
-        experience: "3-6 years",
-        description: "The Electrical & Automation Engineer will support System Integrators (SIs) by providing technical assistance, application support, and coordination during design, integration, testing, and commissioning of automation solutions across industrial projects.",
-        responsibilities: [
-            "Provide technical support to System Integrators during project execution and integration",
-            "Assist in electrical design, panel engineering, and automation architecture",
-            "Support configuration and troubleshooting of PLC, SCADA, HMI, drives, and control systems",
-            "Review electrical drawings, wiring diagrams, and control schematics",
-            "Coordinate with internal engineering, sales, and project teams",
-            "Support factory acceptance tests (FAT) and site acceptance tests (SAT)",
-            "Assist System Integrators during commissioning and troubleshooting",
-            "Prepare basic technical documentation, manuals, and support notes",
-            "Act as a technical point of contact between OEM/products and System Integrators"
-        ],
-        requirements: [
-            "Bachelor's degree / Diploma in Electrical, Electronics, or Automation Engineering",
-            "Hands-on experience with industrial automation systems",
-            "Working knowledge of PLCs, SCADA, HMI, VFDs, and industrial control panels",
-            "Understanding of system integration workflows",
-            "Ability to troubleshoot electrical and automation issues",
-            "Good communication skills to interact with System Integrators and internal teams",
-            "Experience working with System Integrators or OEMs preferred",
-            "Basic knowledge of industrial communication protocols (Modbus, Profibus, Ethernet/IP, etc.) preferred"
-        ],
-        benefits: [
-            "Competitive salary and performance bonuses",
-            "Health insurance and wellness programs",
-            "Professional development opportunities",
-            "Flexible work arrangements"
-        ]
-    },
-    {
-        id: "hr-executive",
-        title: "HR Executive",
-        department: "Human Resources",
-        location: "Pune, Bangalore, Vadodara, Chennai",
-        type: "Full-time",
-        experience: "1-3 years",
-        description: "Looking for an HR Executive to manage daily HR operations, employee coordination, and office HR activities.",
-        responsibilities: [
-            "Manage attendance, leave, and HRMS/Excel data",
-            "Prepare monthly payroll inputs",
-            "Handle on-boarding, documentation, and employee file management",
-            "Coordinate interviews and walk-ins",
-            "Address employee queries and support HR operations",
-            "Manage exit formalities and asset handover",
-            "Coordinate with housekeeping, IT, admin, and vendors",
-            "Assist in employee engagement activities"
-        ],
-        requirements: [
-            "Graduate (preferably in HR/Business)",
-            "1–3 years of HR operations experience",
-            "Good Excel & documentation skills",
-            "Strong communication and people-handling skills"
-        ],
-        benefits: [
-            "Competitive salary package",
-            "Health and life insurance",
-            "Learning and development programs",
-            "Work-life balance initiatives"
-        ]
-    },
+    // {
+    //     id: "electrical-automation-engineer",
+    //     title: "Electrical & Automation Engineer",
+    //     department: "Engineering",
+    //     location: "Chennai",
+    //     type: "Full-time",
+    //     experience: "3-6 years",
+    //     description: "The Electrical & Automation Engineer will support System Integrators (SIs) by providing technical assistance, application support, and coordination during design, integration, testing, and commissioning of automation solutions across industrial projects.",
+    //     responsibilities: [
+    //         "Provide technical support to System Integrators during project execution and integration",
+    //         "Assist in electrical design, panel engineering, and automation architecture",
+    //         "Support configuration and troubleshooting of PLC, SCADA, HMI, drives, and control systems",
+    //         "Review electrical drawings, wiring diagrams, and control schematics",
+    //         "Coordinate with internal engineering, sales, and project teams",
+    //         "Support factory acceptance tests (FAT) and site acceptance tests (SAT)",
+    //         "Assist System Integrators during commissioning and troubleshooting",
+    //         "Prepare basic technical documentation, manuals, and support notes",
+    //         "Act as a technical point of contact between OEM/products and System Integrators"
+    //     ],
+    //     requirements: [
+    //         "Bachelor's degree / Diploma in Electrical, Electronics, or Automation Engineering",
+    //         "Hands-on experience with industrial automation systems",
+    //         "Working knowledge of PLCs, SCADA, HMI, VFDs, and industrial control panels",
+    //         "Understanding of system integration workflows",
+    //         "Ability to troubleshoot electrical and automation issues",
+    //         "Good communication skills to interact with System Integrators and internal teams",
+    //         "Experience working with System Integrators or OEMs preferred",
+    //         "Basic knowledge of industrial communication protocols (Modbus, Profibus, Ethernet/IP, etc.) preferred"
+    //     ],
+    //     benefits: [
+    //         "Competitive salary and performance bonuses",
+    //         "Health insurance and wellness programs",
+    //         "Professional development opportunities",
+    //         "Flexible work arrangements"
+    //     ]
+    // },
+    // {
+    //     id: "hr-executive",
+    //     title: "HR Executive",
+    //     department: "Human Resources",
+    //     location: "Pune",
+    //     type: "Full-time",
+    //     experience: "1-3 years",
+    //     description: "Looking for an HR Executive to manage daily HR operations, employee coordination, and office HR activities.",
+    //     responsibilities: [
+    //         "Manage attendance, leave, and HRMS/Excel data",
+    //         "Prepare monthly payroll inputs",
+    //         "Handle on-boarding, documentation, and employee file management",
+    //         "Coordinate interviews and walk-ins",
+    //         "Address employee queries and support HR operations",
+    //         "Manage exit formalities and asset handover",
+    //         "Coordinate with housekeeping, IT, admin, and vendors",
+    //         "Assist in employee engagement activities"
+    //     ],
+    //     requirements: [
+    //         "Graduate (preferably in HR/Business)",
+    //         "1–3 years of HR operations experience",
+    //         "Good Excel & documentation skills",
+    //         "Strong communication and people-handling skills"
+    //     ],
+    //     benefits: [
+    //         "Competitive salary package",
+    //         "Health and life insurance",
+    //         "Learning and development programs",
+    //         "Work-life balance initiatives"
+    //     ]
+    // },
     {
         id: "bdm-staffing",
         title: "BDM - Staffing & Recruitment",
-        department: "Sales & Business Development",
-        location: "India",
+        department: "Business Development",
+        location: "Pune",
         type: "Full-time",
         experience: "5-12 years",
         description: "We are looking for an experienced Business Development Manager (BDM) to establish and grow a new staffing & recruitment division within our company. The ideal candidate will be responsible for building client relationships, setting up staffing operations, and driving revenue in domestic and/or international markets.",
@@ -118,8 +118,8 @@ export const jobs: Job[] = [
     {
         id: "business-development-manager",
         title: "Business Development Manager - Engineering Services",
-        department: "Sales & Business Development",
-        location: "Pune, Bangalore, Vadodara, Chennai",
+        department: "Business Development",
+        location: "Banglore ",
         type: "Full-time",
         experience: "5-8 years",
         description: "Responsible for driving new business opportunities for mechanical engineering and industrial services, including mechanical design, CAD/CAE, product development, and manufacturing support.",
@@ -149,48 +149,48 @@ export const jobs: Job[] = [
             "Flexible working options"
         ]
     },
-    {
-        id: "direct-sales-executive",
-        title: "Direct Sales Executive",
-        department: "Sales & Business Development",
-        location: "India",
-        type: "Full-time",
-        experience: "0-1 years",
-        description: "We are looking for an enthusiastic Direct Sales Executive (Fresher) to support business development activities for our engineering services and staffing solutions. The role involves identifying potential clients, initiating contact, and supporting the sales cycle under the guidance of senior team members.",
-        responsibilities: [
-            "Identify and research potential clients in engineering, manufacturing, EPC, and IT services sectors",
-            "Initiate contact through cold emails, calls, and LinkedIn outreach",
-            "Understand basic client requirements related to engineering services / staffing",
-            "Support preparation of company profiles, proposals, and presentations",
-            "Maintain lead data, follow-ups, and updates in CRM / Excel",
-            "Coordinate with internal teams (HR / Engineering / Delivery) for requirement mapping",
-            "Assist senior sales members during negotiations and closures",
-            "Track daily sales activities and prepare simple MIS reports",
-            "Travel locally as required for client meetings and business development activities"
-        ],
-        requirements: [
-            "B.E / B.Tech / Diploma / BSc (Engineering / Science background preferred)",
-            "Fresher with engineering or science background",
-            "Interest in B2B sales and business development",
-            "Comfortable speaking with professionals and decision-makers",
-            "Self-motivated, target-oriented mindset with strong learning attitude",
-            "Good communication skills (verbal & written)",
-            "Basic understanding or interest in engineering services / IT services",
-            "Willingness to do cold calling, client outreach, and travel as required",
-            "Basic computer skills (MS Excel, email, internet research)"
-        ],
-        benefits: [
-            "Competitive stipend / starting salary",
-            "Mentorship from senior sales professionals",
-            "Opportunity for growth and full-time career development",
-            "Travel allowance"
-        ]
-    },
+    // {
+    //     id: "direct-sales-executive",
+    //     title: "Direct Sales Executive",
+    //     department: "Sales",
+    //     location: "Banglore",
+    //     type: "Full-time",
+    //     experience: "0-1 years",
+    //     description: "We are looking for an enthusiastic Direct Sales Executive (Fresher) to support business development activities for our engineering services and staffing solutions. The role involves identifying potential clients, initiating contact, and supporting the sales cycle under the guidance of senior team members.",
+    //     responsibilities: [
+    //         "Identify and research potential clients in engineering, manufacturing, EPC, and IT services sectors",
+    //         "Initiate contact through cold emails, calls, and LinkedIn outreach",
+    //         "Understand basic client requirements related to engineering services / staffing",
+    //         "Support preparation of company profiles, proposals, and presentations",
+    //         "Maintain lead data, follow-ups, and updates in CRM / Excel",
+    //         "Coordinate with internal teams (HR / Engineering / Delivery) for requirement mapping",
+    //         "Assist senior sales members during negotiations and closures",
+    //         "Track daily sales activities and prepare simple MIS reports",
+    //         "Travel locally as required for client meetings and business development activities"
+    //     ],
+    //     requirements: [
+    //         "B.E / B.Tech / Diploma / BSc (Engineering / Science background preferred)",
+    //         "Fresher with engineering or science background",
+    //         "Interest in B2B sales and business development",
+    //         "Comfortable speaking with professionals and decision-makers",
+    //         "Self-motivated, target-oriented mindset with strong learning attitude",
+    //         "Good communication skills (verbal & written)",
+    //         "Basic understanding or interest in engineering services / IT services",
+    //         "Willingness to do cold calling, client outreach, and travel as required",
+    //         "Basic computer skills (MS Excel, email, internet research)"
+    //     ],
+    //     benefits: [
+    //         "Competitive stipend / starting salary",
+    //         "Mentorship from senior sales professionals",
+    //         "Opportunity for growth and full-time career development",
+    //         "Travel allowance"
+    //     ]
+    // },
     {
         id: "draftsman-piping-design",
         title: "Draftsman - Piping Design",
-        department: "Engineering",
-        location: "Pune, Bangalore, Vadodara, Chennai",
+        department: "Design",
+        location: "Vadodara",
         type: "Full-time",
         experience: "0-1 years",
         description: "We are looking for a Draftsman / Piping Design Trainee to support our design and engineering team. This role is ideal for candidates looking to build expertise in piping layouts, 2D/3D modeling, and technical drawings for industrial and engineering projects.",
@@ -220,46 +220,46 @@ export const jobs: Job[] = [
             "Career growth opportunities"
         ]
     },
-    {
-        id: "hr-admin-trainee",
-        title: "HR Admin Trainee",
-        department: "Human Resources",
-        location: "Pune, Bangalore, Vadodara, Chennai",
-        type: "Internship",
-        experience: "0-1 years",
-        description: "We are seeking an HR Admin Trainee to support the HR and administrative functions of our organization. This role is designed to provide hands-on experience in HR operations, recruitment, employee engagement, and office administration.",
-        responsibilities: [
-            "Assist in recruitment (job postings, resume screening, interview coordination)",
-            "Support the onboarding & induction process for new hires",
-            "Maintain and update employee records & HR databases",
-            "Assist in HR policy implementation and documentation",
-            "Manage attendance & leave records",
-            "Handle office supplies and vendor coordination",
-            "Assist in coordinating meetings, HR events, and training sessions",
-            "Support in organizing employee engagement activities & well-being programs",
-            "Draft internal HR emails and announcements",
-            "Address basic employee queries related to HR policies"
-        ],
-        requirements: [
-            "Bachelor's/Master's degree in HR, Business Administration, or a related field",
-            "Fresher or up to 1 year of experience in HR/Admin",
-            "Strong organizational & communication skills",
-            "Proficiency in MS Office (Excel, Word, PowerPoint)",
-            "Ability to handle multiple tasks efficiently",
-            "Familiarity with HRMS or ATS tools (preferred, but not mandatory)"
-        ],
-        benefits: [
-            "Competitive stipend",
-            "Mentorship from senior HR professionals",
-            "Opportunity for full-time conversion",
-            "Certificate upon completion"
-        ]
-    },
+    // {
+    //     id: "hr-admin-trainee",
+    //     title: "HR Admin Trainee",
+    //     department: "Human Resources",
+    //     location: "Pune",
+    //     type: "Internship",
+    //     experience: "0-1 years",
+    //     description: "We are seeking an HR Admin Trainee to support the HR and administrative functions of our organization. This role is designed to provide hands-on experience in HR operations, recruitment, employee engagement, and office administration.",
+    //     responsibilities: [
+    //         "Assist in recruitment (job postings, resume screening, interview coordination)",
+    //         "Support the onboarding & induction process for new hires",
+    //         "Maintain and update employee records & HR databases",
+    //         "Assist in HR policy implementation and documentation",
+    //         "Manage attendance & leave records",
+    //         "Handle office supplies and vendor coordination",
+    //         "Assist in coordinating meetings, HR events, and training sessions",
+    //         "Support in organizing employee engagement activities & well-being programs",
+    //         "Draft internal HR emails and announcements",
+    //         "Address basic employee queries related to HR policies"
+    //     ],
+    //     requirements: [
+    //         "Bachelor's/Master's degree in HR, Business Administration, or a related field",
+    //         "Fresher or up to 1 year of experience in HR/Admin",
+    //         "Strong organizational & communication skills",
+    //         "Proficiency in MS Office (Excel, Word, PowerPoint)",
+    //         "Ability to handle multiple tasks efficiently",
+    //         "Familiarity with HRMS or ATS tools (preferred, but not mandatory)"
+    //     ],
+    //     benefits: [
+    //         "Competitive stipend",
+    //         "Mentorship from senior HR professionals",
+    //         "Opportunity for full-time conversion",
+    //         "Certificate upon completion"
+    //     ]
+    // },
     {
         id: "inside-sales-specialist",
         title: "Inside Sales Specialist",
-        department: "Sales & Business Development",
-        location: "Pune, Bangalore, Vadodara, Chennai",
+        department: "Sales",
+        location: "Pune",
         type: "Full-time",
         experience: "2-5 years",
         description: "We are seeking a dynamic and results-driven Inside Sales Specialist with a background in engineering services sales and proven exposure to international markets. The ideal candidate will be responsible for generating leads, building client relationships, and closing opportunities in global markets through remote communication channels.",
@@ -294,7 +294,7 @@ export const jobs: Job[] = [
         id: "design-engineer",
         title: "Design Engineer",
         department: "Engineering",
-        location: "Pune, Bangalore, Vadodara, Chennai",
+        location: "Vadodara",
         type: "Full-time",
         experience: "2-4 years",
         description: "Validate as-built conditions against engineering plans (P&IDs), identify parts from bubble view, read P&IDs and Process Data Sheets, and support oil and gas industry projects using AVEVA and related tools.",
@@ -322,49 +322,49 @@ export const jobs: Job[] = [
             "Innovative work environment"
         ]
     },
-    {
-        id: "tech-support-specialist",
-        title: "Tech Support Specialist",
-        department: "IT",
-        location: "Pune, Bangalore, Vadodara, Chennai",
-        type: "Full-time",
-        experience: "3+ years",
-        description: "We are seeking a knowledgeable and detail-oriented Senior Tech Support Specialist to manage and resolve technical issues while ensuring compliance with ISO 27001 standards and data security protocols. The ideal candidate should have expertise in server management, data security, and problem-solving.",
-        responsibilities: [
-            "Provide advanced technical support for hardware, software, servers, and network systems",
-            "Diagnose and resolve complex technical issues promptly while documenting solutions",
-            "Manage user requests through ticketing systems and ensure timely resolution",
-            "Maintain, configure, and monitor Windows/Linux servers, including backups and security updates",
-            "Manage Active Directory, DNS, DHCP, and virtualization platforms (VMware/Hyper-V)",
-            "Implement and maintain processes in alignment with ISO 27001 standards for information security",
-            "Monitor and enforce data protection policies, ensuring secure handling of sensitive information",
-            "Assist with internal audits and ensure compliance with industry best practices",
-            "Perform regular maintenance of firewalls, VPN, and cloud services",
-            "Identify root causes of recurring issues and propose permanent solutions",
-            "Document processes, best practices, and technical resolutions"
-        ],
-        requirements: [
-            "Bachelor's degree in IT, Computer Science, or related field",
-            "Minimum 3+ years in IT support, server management, and data security",
-            "Strong understanding of Windows/Linux servers, Active Directory, and virtualization",
-            "Familiarity with ISO 27001 guidelines and their implementation in an IT environment",
-            "Experience with data protection protocols and network security",
-            "Proven ability to analyze and resolve complex technical challenges",
-            "Strong written and verbal skills to collaborate across teams and document procedures",
-            "ISO 27001 Lead Implementer/Auditor, Microsoft Certified Azure Administrator, or CompTIA Security+ preferred"
-        ],
-        benefits: [
-            "Competitive salary",
-            "Health insurance",
-            "IT certification sponsorship",
-            "Shift allowances"
-        ]
-    },
+    // {
+    //     id: "tech-support-specialist",
+    //     title: "Tech Support Specialist",
+    //     department: "Technology",
+    //     location: "Vadodara",
+    //     type: "Full-time",
+    //     experience: "3+ years",
+    //     description: "We are seeking a knowledgeable and detail-oriented Senior Tech Support Specialist to manage and resolve technical issues while ensuring compliance with ISO 27001 standards and data security protocols. The ideal candidate should have expertise in server management, data security, and problem-solving.",
+    //     responsibilities: [
+    //         "Provide advanced technical support for hardware, software, servers, and network systems",
+    //         "Diagnose and resolve complex technical issues promptly while documenting solutions",
+    //         "Manage user requests through ticketing systems and ensure timely resolution",
+    //         "Maintain, configure, and monitor Windows/Linux servers, including backups and security updates",
+    //         "Manage Active Directory, DNS, DHCP, and virtualization platforms (VMware/Hyper-V)",
+    //         "Implement and maintain processes in alignment with ISO 27001 standards for information security",
+    //         "Monitor and enforce data protection policies, ensuring secure handling of sensitive information",
+    //         "Assist with internal audits and ensure compliance with industry best practices",
+    //         "Perform regular maintenance of firewalls, VPN, and cloud services",
+    //         "Identify root causes of recurring issues and propose permanent solutions",
+    //         "Document processes, best practices, and technical resolutions"
+    //     ],
+    //     requirements: [
+    //         "Bachelor's degree in IT, Computer Science, or related field",
+    //         "Minimum 3+ years in IT support, server management, and data security",
+    //         "Strong understanding of Windows/Linux servers, Active Directory, and virtualization",
+    //         "Familiarity with ISO 27001 guidelines and their implementation in an IT environment",
+    //         "Experience with data protection protocols and network security",
+    //         "Proven ability to analyze and resolve complex technical challenges",
+    //         "Strong written and verbal skills to collaborate across teams and document procedures",
+    //         "ISO 27001 Lead Implementer/Auditor, Microsoft Certified Azure Administrator, or CompTIA Security+ preferred"
+    //     ],
+    //     benefits: [
+    //         "Competitive salary",
+    //         "Health insurance",
+    //         "IT certification sponsorship",
+    //         "Shift allowances"
+    //     ]
+    // },
     {
         id: "mechanical-engineer",
         title: "Mechanical Engineer",
         department: "Engineering",
-        location: "Pune, Bangalore, Vadodara, Chennai",
+        location: "Vadodara",
         type: "Full-time",
         experience: "3-5 years",
         description: "Join our engineering team to work on mechanical engineering projects in the engineering services industry. You will work on design processes including legacy conversion, new product development, and value engineering.",
@@ -396,8 +396,8 @@ export const jobs: Job[] = [
     {
         id: "plant-engineering-manager",
         title: "Plant Engineering Manager",
-        department: "Engineering",
-        location: "Pune, Bangalore, Vadodara, Chennai",
+        department: "Engineering & Design Services",
+        location: "Vadodara",
         type: "Full-time",
         experience: "10-20 years",
         description: "We are seeking a seasoned Plant Engineering Manager to lead and coordinate engineering activities across multiple industrial projects for our clients in Oil & Gas, Power, Chemicals, and EPC sectors. The ideal candidate will have deep expertise in plant design across multiple engineering disciplines.",
@@ -431,79 +431,79 @@ export const jobs: Job[] = [
             "Leadership development programs"
         ]
     },
-    {
-        id: "robotics-engineer",
-        title: "Robotics Engineer",
-        department: "Engineering",
-        location: "Pune, Bangalore, Vadodara, Chennai",
-        type: "Full-time",
-        experience: "3-7 years",
-        description: "The Robotics Engineer will be responsible for designing, programming, and supporting pick-and-place robotic solutions integrated with process industry conveyor systems. The role focuses on automation solutions used in manufacturing, packaging, and material handling environments.",
-        responsibilities: [
-            "Design and implement pick-and-place robotic applications for conveyor-based systems",
-            "Program, configure, and troubleshoot industrial robots used in process industries",
-            "Integrate robots with conveyors, sensors, vision systems, and PLCs",
-            "Support robot commissioning, testing, and on-site deployment",
-            "Coordinate with system integrators, electrical, and automation teams",
-            "Optimize robot cycle time, accuracy, and reliability",
-            "Support FAT and SAT activities",
-            "Prepare and maintain robot programs, layouts, and technical documentation",
-            "Provide technical support and troubleshooting during production runs"
-        ],
-        requirements: [
-            "Degree / Diploma in Robotics, Mechatronics, Electrical, Electronics, or Automation Engineering",
-            "3–7 years of hands-on experience with pick-and-place robotic applications",
-            "Experience working with conveyor systems in process or manufacturing industries",
-            "Knowledge of PLC-robot communication and I/O interfacing",
-            "Understanding of industrial safety standards and interlocks",
-            "Experience with industrial robots such as ABB, FANUC, KUKA, YASKAWA, or Universal Robots preferred",
-            "Exposure to vision-guided robotics and knowledge of end-of-arm tooling (EOAT) preferred"
-        ],
-        benefits: [
-            "Competitive salary",
-            "Health and wellness benefits",
-            "Conference and training sponsorship",
-            "Innovation bonuses"
-        ]
-    },
-    {
-        id: "software-engineer",
-        title: "Software Engineer",
-        department: "IT",
-        location: "Pune, Bangalore, Vadodara, Chennai",
-        type: "Full-time",
-        experience: "3+ years",
-        description: "We're looking for a motivated and versatile Software Engineer to join our fast-paced technology team. Our company develops digital twins and custom web applications to support workflows for oil and gas facilities and beyond. You'll work on both short-term feature rollouts and long-term projects critical to our clients' operations.",
-        responsibilities: [
-            "Develop front-end and back-end features for internal and client-facing web applications",
-            "Collaborate with team members and stakeholders to understand evolving client needs",
-            "Rapidly prototype solutions and iterate based on user feedback",
-            "Write clean, maintainable, and well-documented code",
-            "Troubleshoot issues and deploy fixes across the tech stack",
-            "Contribute to architecture decisions and best practices"
-        ],
-        requirements: [
-            "Bachelor's degree in Computer Science or related field",
-            "3+ years of experience in a professional or project-based software development role",
-            "Proficiency in React and JavaScript/TypeScript",
-            "Working knowledge of Python, C#, SQL, or bash scripting is a plus",
-            "Understanding of REST APIs and asynchronous programming",
-            "Familiarity with Git and modern development workflows",
-            "Experience working in agile or fast-paced development environments preferred",
-            "Strong problem-solving skills and a self-starter mentality"
-        ],
-        benefits: [
-            "Competitive salary package",
-            "Health insurance and wellness benefits",
-            "Remote work flexibility",
-            "Learning and development budget"
-        ]
-    },
+    // {
+    //     id: "robotics-engineer",
+    //     title: "Robotics Engineer",
+    //     department: "Engineering",
+    //     location: "Chennai",
+    //     type: "Full-time",
+    //     experience: "3-7 years",
+    //     description: "The Robotics Engineer will be responsible for designing, programming, and supporting pick-and-place robotic solutions integrated with process industry conveyor systems. The role focuses on automation solutions used in manufacturing, packaging, and material handling environments.",
+    //     responsibilities: [
+    //         "Design and implement pick-and-place robotic applications for conveyor-based systems",
+    //         "Program, configure, and troubleshoot industrial robots used in process industries",
+    //         "Integrate robots with conveyors, sensors, vision systems, and PLCs",
+    //         "Support robot commissioning, testing, and on-site deployment",
+    //         "Coordinate with system integrators, electrical, and automation teams",
+    //         "Optimize robot cycle time, accuracy, and reliability",
+    //         "Support FAT and SAT activities",
+    //         "Prepare and maintain robot programs, layouts, and technical documentation",
+    //         "Provide technical support and troubleshooting during production runs"
+    //     ],
+    //     requirements: [
+    //         "Degree / Diploma in Robotics, Mechatronics, Electrical, Electronics, or Automation Engineering",
+    //         "3–7 years of hands-on experience with pick-and-place robotic applications",
+    //         "Experience working with conveyor systems in process or manufacturing industries",
+    //         "Knowledge of PLC-robot communication and I/O interfacing",
+    //         "Understanding of industrial safety standards and interlocks",
+    //         "Experience with industrial robots such as ABB, FANUC, KUKA, YASKAWA, or Universal Robots preferred",
+    //         "Exposure to vision-guided robotics and knowledge of end-of-arm tooling (EOAT) preferred"
+    //     ],
+    //     benefits: [
+    //         "Competitive salary",
+    //         "Health and wellness benefits",
+    //         "Conference and training sponsorship",
+    //         "Innovation bonuses"
+    //     ]
+    // },
+    // {
+    //     id: "software-engineer",
+    //     title: "Software Engineer",
+    //     department: "Technology",
+    //     location: "Vadodara",
+    //     type: "Full-time",
+    //     experience: "3+ years",
+    //     description: "We're looking for a motivated and versatile Software Engineer to join our fast-paced technology team. Our company develops digital twins and custom web applications to support workflows for oil and gas facilities and beyond. You'll work on both short-term feature rollouts and long-term projects critical to our clients' operations.",
+    //     responsibilities: [
+    //         "Develop front-end and back-end features for internal and client-facing web applications",
+    //         "Collaborate with team members and stakeholders to understand evolving client needs",
+    //         "Rapidly prototype solutions and iterate based on user feedback",
+    //         "Write clean, maintainable, and well-documented code",
+    //         "Troubleshoot issues and deploy fixes across the tech stack",
+    //         "Contribute to architecture decisions and best practices"
+    //     ],
+    //     requirements: [
+    //         "Bachelor's degree in Computer Science or related field",
+    //         "3+ years of experience in a professional or project-based software development role",
+    //         "Proficiency in React and JavaScript/TypeScript",
+    //         "Working knowledge of Python, C#, SQL, or bash scripting is a plus",
+    //         "Understanding of REST APIs and asynchronous programming",
+    //         "Familiarity with Git and modern development workflows",
+    //         "Experience working in agile or fast-paced development environments preferred",
+    //         "Strong problem-solving skills and a self-starter mentality"
+    //     ],
+    //     benefits: [
+    //         "Competitive salary package",
+    //         "Health insurance and wellness benefits",
+    //         "Remote work flexibility",
+    //         "Learning and development budget"
+    //     ]
+    // },
     {
         id: "technical-recruiter",
         title: "Technical Recruiter",
         department: "Human Resources",
-        location: "Pune, Bangalore, Vadodara, Chennai",
+        location: "Banglore",
         type: "Full-time",
         experience: "2-3 years",
         description: "We are seeking a Technical Recruiter with experience in sourcing and hiring for mechanical, electrical, electronics, or civil domains. The ideal candidate will have strong exposure to identifying, evaluating, and placing candidates in technical roles within engineering-driven industries.",

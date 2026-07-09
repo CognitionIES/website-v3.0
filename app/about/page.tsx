@@ -4,7 +4,15 @@ import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowUpRight, Target, Eye, Heart, Shield, Zap, Star, Users, Globe, Award, TrendingUp } from "lucide-react";
+import {
+  ArrowUpRight, Target, Eye, Heart, Shield, Zap, Star, Users, Globe, Award, TrendingUp,
+  Compass, PenTool, HardHat, Quote as QuoteIcon,
+  ClipboardList, Boxes, Handshake, Cuboid,
+} from "lucide-react";
+import {
+  OilGasIcon, PetrochemicalIcon, ChemicalIcon, PharmaceuticalIcon, FoodProcessingIcon,
+  WaterTreatmentIcon, FertilizerIcon, RenewableEnergyIcon, HydrogenIcon, SpecialtyChemicalsIcon,
+} from "@/components/shared/icons/IndustryIcons";
 import { AnimatedCounter } from "@/components/shared/AnimatedCounter";
 import { MegaMenu } from "@/components/ui/Megamenu/MegaMenu";
 import Footer from "@/components/Footer";
@@ -17,9 +25,38 @@ const GridBg = ({ dark = false }: { dark?: boolean }) => (
     style={{ opacity: dark ? 0.05 : 0.025, backgroundImage: `linear-gradient(${dark ? "rgba(255,255,255,0.4)" : "#003C46"} 1px,transparent 1px),linear-gradient(90deg,${dark ? "rgba(255,255,255,0.4)" : "#003C46"} 1px,transparent 1px)`, backgroundSize: "64px 64px" }} />
 );
 
+/*  Renders a paragraph with one phrase bolded + teal, matching the deck's inline
+    emphasis style. `highlight` must be an exact substring of `text`; if it isn't
+    found (e.g. copy drifts from the constants file), it just renders plain text
+    instead of silently dropping content. */
+const HighlightedText = ({ text, highlight, className = "" }: { text: string; highlight?: string; className?: string }) => {
+  if (!highlight || !text.includes(highlight)) return <p className={className}>{text}</p>;
+  const [before, after] = text.split(highlight);
+  return (
+    <p className={className}>
+      {before}
+      <strong className="font-semibold text-[#0098AF]">{highlight}</strong>
+      {after}
+    </p>
+  );
+};
+
+/*  Section eyebrow + divider — shared across sections to cut repetition  */
+const SectionEyebrow = ({ label, isInView, dark = false }: { label: string; isInView: boolean; dark?: boolean }) => (
+  <div className="flex items-center gap-6 mb-10">
+    <span className="eyebrow">{label}</span>
+    <motion.div
+      className={`flex-1 h-px origin-left ${dark ? "bg-white/15" : "bg-[#e2e8f0]"}`}
+      initial={{ scaleX: 0 }}
+      animate={isInView ? { scaleX: 1 } : {}}
+      transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+    />
+  </div>
+);
+
 /*  Hero  */
 function Hero() {
-  const { IMAGES } = ABOUT_CONSTANTS;
+  const { IMAGES, TEXT } = ABOUT_CONSTANTS;
   const ref = useRef<HTMLElement>(null);
   const isInView = useInView(ref, { once: true, amount: 0.1 });
   return (
@@ -31,12 +68,13 @@ function Hero() {
       <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 pt-32 pb-20">
         <motion.span initial={{ opacity: 0 }} animate={isInView ? { opacity: 1 } : {}} transition={{ duration: 0.4 }} className="eyebrow text-[#0098AF]">About Us</motion.span>
         <motion.h1 initial={{ opacity: 0, y: 16 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.65, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-          className="font-display text-5xl sm:text-6xl md:text-7xl text-white leading-[1.0] tracking-[-0.03em] max-w-3xl">
-          Cognition IES
+          className="font-display text-5xl sm:text-6xl md:text-7xl text-white leading-[1.05] tracking-[-0.03em] max-w-3xl">
+          Engineering Excellence.{" "}
+          <em className="not-italic text-[#0098AF]">Digital Intelligence.</em>
         </motion.h1>
-        <motion.p initial={{ opacity: 0 }} animate={isInView ? { opacity: 1 } : {}} transition={{ duration: 0.5, delay: 0.2 }}
-          className="mt-4 font-sans text-[16px] text-white/50 max-w-lg leading-[1.75]">
-          Empowering Growth Through People and Technology.
+        <motion.p initial={{ opacity: 0 }} animate={isInView ? { opacity: 1 } : {}} transition={{ duration: 0.5, delay: 0.25 }}
+          className="mt-5 font-sans text-[16px] text-white/50 max-w-lg leading-[1.75]">
+          {TEXT.HERO_SUBTITLE}
         </motion.p>
       </div>
       <div className="absolute bottom-0 inset-x-0 h-12 z-20 pointer-events-none" style={{ clipPath: "ellipse(55% 100% at 50% 100%)" }}>
@@ -48,46 +86,168 @@ function Hero() {
 
 /*  Story  */
 function Story() {
-  const { IMAGES, TEXT, STATS } = ABOUT_CONSTANTS;
+  const { IMAGES, TEXT } = ABOUT_CONSTANTS;
   const ref = useRef<HTMLElement>(null);
   const isInView = useInView(ref, { once: true, amount: 0.1 });
   return (
-    <section ref={ref} className="bg-white py-28 md:py-36 overflow-hidden relative">
+    <section ref={ref} className="bg-white py-20 md:py-28 overflow-hidden relative">
       <GridBg />
       <div className="relative max-w-7xl mx-auto px-6 sm:px-10 lg:px-16">
-        <div className="flex items-center gap-6 mb-20">
-          <span className="eyebrow">Our Story</span>
-          <motion.div
-            className="flex-1 h-px bg-[#e2e8f0] origin-left"
-            initial={{ scaleX: 0 }}
-            animate={isInView ? { scaleX: 1 } : {}}
-            transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-          />
-        </div>
+        <SectionEyebrow label="Our Story" isInView={isInView} />
         <div className="grid lg:grid-cols-12 gap-16 items-start">
           <motion.div initial={{ opacity: 0, y: 24 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }} className="lg:col-span-5">
-            <h2 className="font-display text-5xl md:text-6xl text-[#111827] leading-[1.0] tracking-[-0.03em] text-balance mb-10">{TEXT.STORY_TITLE}</h2>
-            <div className="grid grid-cols-2 gap-px bg-[#e2e8f0] rounded-xl overflow-hidden mb-10">
-              {STATS.map((s, i) => (
-                <div key={i} className="bg-white p-6">
-                  <p className="font-display text-4xl text-[#0098AF] mb-1"><AnimatedCounter value={s.stat} /></p>
-                  <p className="font-sans text-[13px] text-[#718096]">{s.label}</p>
-                </div>
-              ))}
-            </div>
+            <h2 className="font-display text-5xl md:text-6xl text-[#111827] leading-[1.0] tracking-[-0.03em] text-balance mb-8">
+              Two Decades of Engineering <em className="not-italic text-[#0098AF]">Trust</em>
+            </h2>
+            <p className="font-sans text-[16px] text-[#4a5568] leading-[1.8] mb-8">{TEXT.STORY_P1}</p>
             <Link href="/contact" className="group inline-flex items-center gap-3 font-sans text-[13px] font-semibold tracking-[0.12em] uppercase text-[#003C46] hover:text-[#0098AF] transition-colors">
               Work with us
               <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200" />
             </Link>
           </motion.div>
           <motion.div initial={{ opacity: 0, x: 30 }} animate={isInView ? { opacity: 1, x: 0 } : {}} transition={{ duration: 0.7, delay: 0.1, ease: [0.22, 1, 0.36, 1] }} className="lg:col-span-7">
-            <div className="relative rounded-2xl overflow-hidden group mb-10">
+            <div className="relative rounded-2xl overflow-hidden group mb-8">
               <Image src={IMAGES.STORY_IMAGE.OurJourneyImage} alt="Our journey" width={800} height={500} className="w-full h-80 object-cover group-hover:scale-[1.02] transition-transform duration-700" />
               <div className="absolute inset-0 bg-gradient-to-t from-[#003C46]/25 to-transparent" />
             </div>
-            <div className="space-y-5">
-              <p className="font-sans text-[16px] text-[#4a5568] leading-[1.8]">{TEXT.STORY_P1}</p>
-              <p className="font-sans text-[16px] text-[#4a5568] leading-[1.8]">{TEXT.STORY_P2}</p>
+            <p className="font-sans text-[16px] text-[#4a5568] leading-[1.8]">{TEXT.STORY_P2}</p>
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/*  Industries We Serve  */
+const INDUSTRY_ICONS = [
+  OilGasIcon, PetrochemicalIcon, ChemicalIcon, PharmaceuticalIcon, FoodProcessingIcon,
+  WaterTreatmentIcon, FertilizerIcon, RenewableEnergyIcon, HydrogenIcon, SpecialtyChemicalsIcon,
+];
+function IndustriesServed() {
+  const { TEXT, INDUSTRIES } = ABOUT_CONSTANTS;
+  const ref = useRef<HTMLElement>(null);
+  const isInView = useInView(ref, { once: true, amount: 0.1 });
+  return (
+    <section ref={ref} className="bg-[#fafaf8] py-20 md:py-28 overflow-hidden relative">
+      <GridBg />
+      <div className="relative max-w-7xl mx-auto px-6 sm:px-10 lg:px-16">
+        <SectionEyebrow label="Who We Serve" isInView={isInView} />
+        <motion.h2 initial={{ opacity: 0, y: 20 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+          className="font-display text-5xl md:text-6xl text-[#111827] leading-[1.0] tracking-[-0.03em] text-balance mb-5 max-w-4xl">
+          Industries We <em className="not-italic text-[#0098AF]">Serve</em>
+        </motion.h2>
+        <motion.p initial={{ opacity: 0 }} animate={isInView ? { opacity: 1 } : {}} transition={{ duration: 0.5, delay: 0.15 }}
+          className="font-sans text-[16px] text-[#718096] leading-[1.8] max-w-xl mb-14">
+          {TEXT.INDUSTRIES_DESC}
+        </motion.p>
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-x-5 gap-y-10">
+          {INDUSTRIES.map((ind, i) => {
+            const Icon = INDUSTRY_ICONS[i % INDUSTRY_ICONS.length];
+            return (
+              <motion.div key={i} initial={{ opacity: 0, y: 20 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5, delay: i * 0.06, ease: [0.22, 1, 0.36, 1] }}
+                className="group flex flex-col items-center text-center">
+                <div className="w-20 h-20 rounded-full border border-[#e2e8f0] flex items-center justify-center mb-4 group-hover:border-[#0098AF] group-hover:bg-[#0098AF]/5 transition-colors duration-200">
+                  <Icon className="w-8 h-8 text-[#0098AF]" />
+                </div>
+                <h3 className="font-sans text-[14px] font-semibold text-[#111827] mb-1.5">{ind.title}</h3>
+                <span className="block w-5 h-[2px] bg-[#0098AF]/50" />
+              </motion.div>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/*  Closing quote  */
+function ClosingQuote() {
+  const { TEXT } = ABOUT_CONSTANTS;
+  const ref = useRef<HTMLElement>(null);
+  const isInView = useInView(ref, { once: true, amount: 0.3 });
+  return (
+    <section ref={ref} className="bg-white py-20 md:py-24 overflow-hidden relative">
+      <div className="relative max-w-4xl mx-auto px-6 sm:px-10 lg:px-16 text-center">
+        <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={isInView ? { opacity: 1, scale: 1 } : {}} transition={{ duration: 0.5 }}
+          className="w-12 h-12 rounded-full bg-[#0098AF]/10 flex items-center justify-center mx-auto mb-8">
+          <QuoteIcon className="w-5 h-5 text-[#0098AF]" />
+        </motion.div>
+        <motion.p initial={{ opacity: 0, y: 16 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6, delay: 0.1 }}
+          className="font-display text-2xl md:text-3xl text-[#111827] leading-[1.4] tracking-[-0.01em] text-balance">
+          {TEXT.CLOSING_QUOTE}
+        </motion.p>
+      </div>
+    </section>
+  );
+}
+
+/*  Mission & Vision  */
+function MissionVision() {
+  const { TEXT } = ABOUT_CONSTANTS;
+  const ref = useRef<HTMLElement>(null);
+  const isInView = useInView(ref, { once: true, amount: 0.1 });
+  return (
+    <section ref={ref} className="bg-[#fafaf8] py-20 md:py-28 overflow-hidden relative">
+      <GridBg />
+      <div className="relative max-w-7xl mx-auto px-6 sm:px-10 lg:px-16">
+        <SectionEyebrow label="Our Direction" isInView={isInView} />
+        <motion.h2 initial={{ opacity: 0, y: 20 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+          className="font-display text-5xl md:text-6xl text-[#111827] leading-[1.0] tracking-[-0.03em] text-balance mb-16">
+          Mission &amp; <em className="not-italic text-[#0098AF]">Vision</em>
+        </motion.h2>
+        <div className="grid md:grid-cols-2 gap-5">
+          {[
+            { Icon: Target, label: "Mission", title: TEXT.MISSION_TITLE, desc: TEXT.MISSION_DESC, highlight: TEXT.MISSION_HIGHLIGHT },
+            { Icon: Eye,    label: "Vision",  title: TEXT.VISION_TITLE,  desc: TEXT.VISION_DESC,  highlight: TEXT.VISION_HIGHLIGHT },
+          ].map(({ Icon, label, title, desc, highlight }, i) => (
+            <motion.div key={i} initial={{ opacity: 0, y: 24 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6, delay: i * 0.1 }}
+              className="group bg-white border border-[#e2e8f0] rounded-2xl p-10 hover:border-[#0098AF]/30 hover:shadow-md transition-all duration-200 relative overflow-hidden">
+              <div className="w-12 h-12 rounded-full bg-[#0098AF]/10 flex items-center justify-center mb-7 group-hover:bg-[#0098AF] transition-colors duration-200">
+                <Icon className="w-5 h-5 text-[#0098AF] group-hover:text-white transition-colors duration-200" />
+              </div>
+              <span className="eyebrow">{label}</span>
+              <h3 className="font-display text-2xl text-[#111827] mb-4">{title}</h3>
+              <HighlightedText text={desc} highlight={highlight} className="font-sans text-[15px] text-[#718096] leading-[1.8]" />
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/*  Digital Twin — new  */
+function DigitalTwin() {
+  const { TEXT, DIGITAL_TWIN_HIGHLIGHTS } = ABOUT_CONSTANTS;
+  const ref = useRef<HTMLElement>(null);
+  const isInView = useInView(ref, { once: true, amount: 0.2 });
+  return (
+    <section ref={ref} className="bg-[#0f1117] py-20 md:py-28 overflow-hidden relative">
+      <GridBg dark />
+      <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-[#0098AF]/40 to-transparent" />
+      <div className="relative max-w-7xl mx-auto px-6 sm:px-10 lg:px-16">
+        <SectionEyebrow label="Digital Transformation" isInView={isInView} dark />
+        <div className="grid lg:grid-cols-12 gap-16 items-start">
+          <motion.div initial={{ opacity: 0, y: 24 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }} className="lg:col-span-7">
+            <div className="w-12 h-12 rounded-full bg-[#0098AF]/15 flex items-center justify-center mb-7">
+              <Cuboid className="w-5 h-5 text-[#0098AF]" />
+            </div>
+            <h2 className="font-display text-4xl md:text-5xl text-white leading-[1.05] tracking-[-0.03em] text-balance mb-2">
+              Digital Twin <em className="not-italic text-[#0098AF]">Expertise</em>
+            </h2>
+            <p className="font-sans text-[13px] font-semibold tracking-[0.12em] uppercase text-[#0098AF] mb-7">
+              {TEXT.DIGITAL_TWIN_TAGLINE}
+            </p>
+            <p className="font-sans text-[16px] text-white/60 leading-[1.8]">{TEXT.DIGITAL_TWIN_DESC}</p>
+          </motion.div>
+          <motion.div initial={{ opacity: 0, y: 24 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6, delay: 0.15 }} className="lg:col-span-5">
+            <div className="grid grid-cols-2 gap-px bg-white/10 border border-white/10 rounded-2xl overflow-hidden">
+              {DIGITAL_TWIN_HIGHLIGHTS.map((h, i) => (
+                <div key={i} className="bg-[#0f1117] p-7">
+                  <span className="font-display text-3xl text-white/10 block mb-3">{String(i + 1).padStart(2, "0")}</span>
+                  <p className="font-sans text-[14px] text-white/80 leading-snug">{h}</p>
+                </div>
+              ))}
             </div>
           </motion.div>
         </div>
@@ -102,30 +262,22 @@ function Certifications() {
   const ref = useRef<HTMLElement>(null);
   const isInView = useInView(ref, { once: true, amount: 0.1 });
   return (
-    <section ref={ref} className="bg-[#fafaf8] py-28 md:py-36 overflow-hidden relative">
+    <section ref={ref} className="bg-white py-20 md:py-28 overflow-hidden relative">
       <GridBg />
       <div className="relative max-w-7xl mx-auto px-6 sm:px-10 lg:px-16">
-        <div className="flex items-center gap-6 mb-10">
-          <span className="eyebrow">Trust &amp; Standards</span>
-          <motion.div
-            className="flex-1 h-px bg-[#e2e8f0] origin-left"
-            initial={{ scaleX: 0 }}
-            animate={isInView ? { scaleX: 1 } : {}}
-            transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-          />
-        </div>
+        <SectionEyebrow label="Trust & Standards" isInView={isInView} />
         <motion.h2 initial={{ opacity: 0, y: 20 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-          className="font-display text-5xl md:text-6xl text-[#111827] leading-[1.0] tracking-[-0.03em] text-balance mb-5 max-w-2xl">
-          {TEXT.CERTIFICATIONS_TITLE}
+          className="font-display text-5xl md:text-6xl text-[#111827] leading-[1.0] tracking-[-0.03em] text-balance mb-5 max-w-4xl">
+          Certifications &amp; <em className="not-italic text-[#0098AF]">Partnerships</em>
         </motion.h2>
         <motion.p initial={{ opacity: 0 }} animate={isInView ? { opacity: 1 } : {}} transition={{ duration: 0.5, delay: 0.15 }}
-          className="font-sans text-[16px] text-[#718096] leading-[1.8] max-w-xl mb-16">
+          className="font-sans text-[16px] text-[#718096] leading-[1.8] max-w-xl mb-14">
           {TEXT.CERTIFICATIONS_DESC}
         </motion.p>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {CERTIFICATIONS.map((c, i) => (
             <motion.div key={i} initial={{ opacity: 0, y: 24 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] }}
-              className="group bg-white border border-[#e2e8f0] rounded-2xl p-9 hover:border-[#0098AF]/30 transition-colors duration-200">
+              className="group bg-white border border-[#e2e8f0] rounded-2xl p-9 hover:border-[#0098AF]/30 hover:shadow-md transition-all duration-200">
               <div className="h-14 flex items-center mb-7">
                 {c.logo ? (
                   <Image src={c.logo} alt={c.title} height={40} width={140} className="h-10 w-auto object-contain" />
@@ -145,43 +297,40 @@ function Certifications() {
   );
 }
 
-/*  Mission & Vision  */
-function MissionVision() {
-  const { TEXT } = ABOUT_CONSTANTS;
+/*  End-to-End Engineering (project lifecycle)  */
+const PROCESS_ICONS = [Compass, PenTool, ClipboardList, HardHat, Handshake];
+function Process() {
+  const { TEXT, PROCESS } = ABOUT_CONSTANTS;
   const ref = useRef<HTMLElement>(null);
   const isInView = useInView(ref, { once: true, amount: 0.1 });
   return (
-    <section ref={ref} className="bg-[#fafaf8] py-28 md:py-36 overflow-hidden relative">
+    <section ref={ref} className="bg-white py-20 md:py-28 overflow-hidden relative">
       <GridBg />
       <div className="relative max-w-7xl mx-auto px-6 sm:px-10 lg:px-16">
-        <div className="flex items-center gap-6 mb-10">
-          <span className="eyebrow">Our Direction</span>
-          <motion.div
-            className="flex-1 h-px bg-[#e2e8f0] origin-left"
-            initial={{ scaleX: 0 }}
-            animate={isInView ? { scaleX: 1 } : {}}
-            transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-          />
-        </div>
+        <SectionEyebrow label="Our Approach" isInView={isInView} />
         <motion.h2 initial={{ opacity: 0, y: 20 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-          className="font-display text-5xl md:text-6xl text-[#111827] leading-[1.0] tracking-[-0.03em] text-balance mb-16">
-          Mission &amp; <em className="not-italic text-[#0098AF]">Vision</em>
+          className="font-display text-5xl md:text-6xl text-[#111827] leading-[1.0] tracking-[-0.03em] text-balance mb-5 max-w-4xl">
+          End-to-End Engineering, Concept to <em className="not-italic text-[#0098AF]">Commissioning</em>
         </motion.h2>
-        <div className="grid md:grid-cols-2 gap-5">
-          {[
-            { Icon: Target, label: "Mission", title: TEXT.MISSION_TITLE, desc: TEXT.MISSION_DESC },
-            { Icon: Eye,    label: "Vision",  title: TEXT.VISION_TITLE,  desc: TEXT.VISION_DESC },
-          ].map(({ Icon, label, title, desc }, i) => (
-            <motion.div key={i} initial={{ opacity: 0, y: 24 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6, delay: i * 0.1 }}
-              className="group bg-white border border-[#e2e8f0] rounded-2xl p-10 hover:border-[#0098AF]/30 transition-colors duration-200 relative overflow-hidden">
-              <div className="w-12 h-12 rounded-full bg-[#0098AF]/10 flex items-center justify-center mb-7 group-hover:bg-[#0098AF] transition-colors duration-200">
-                <Icon className="w-5 h-5 text-[#0098AF] group-hover:text-white transition-colors duration-200" />
-              </div>
-              <span className="eyebrow">{label}</span>
-              <h3 className="font-display text-2xl text-[#111827] mb-4">{title}</h3>
-              <p className="font-sans text-[15px] text-[#718096] leading-[1.8]">{desc}</p>
-            </motion.div>
-          ))}
+        <motion.p initial={{ opacity: 0 }} animate={isInView ? { opacity: 1 } : {}} transition={{ duration: 0.5, delay: 0.15 }}
+          className="font-sans text-[16px] text-[#718096] leading-[1.8] max-w-xl mb-14">
+          {TEXT.PROCESS_DESC}
+        </motion.p>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-5">
+          {PROCESS.map((p, i) => {
+            const Icon = PROCESS_ICONS[i % PROCESS_ICONS.length];
+            return (
+              <motion.div key={i} initial={{ opacity: 0, y: 24 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] }}
+                className="relative bg-[#fafaf8] border border-[#e2e8f0] rounded-2xl p-7">
+                <span className="absolute top-5 right-6 font-display text-3xl text-[#0098AF]/10">{p.step}</span>
+                <div className="w-11 h-11 rounded-full bg-[#0098AF]/10 flex items-center justify-center mb-6">
+                  <Icon className="w-5 h-5 text-[#0098AF]" />
+                </div>
+                <h3 className="font-display text-lg text-[#111827] mb-2">{p.title}</h3>
+                <p className="font-sans text-[13px] text-[#718096] leading-[1.7]">{p.desc}</p>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>
@@ -195,21 +344,13 @@ function KeyValues() {
   const ref = useRef<HTMLElement>(null);
   const isInView = useInView(ref, { once: true, amount: 0.05 });
   return (
-    <section ref={ref} className="bg-white py-28 md:py-36 overflow-hidden relative">
+    <section ref={ref} className="bg-[#fafaf8] py-20 md:py-28 overflow-hidden relative">
       <GridBg />
       <div className="relative max-w-7xl mx-auto px-6 sm:px-10 lg:px-16">
-        <div className="flex items-center gap-6 mb-10">
-          <span className="eyebrow">What Drives Us</span>
-          <motion.div
-            className="flex-1 h-px bg-[#e2e8f0] origin-left"
-            initial={{ scaleX: 0 }}
-            animate={isInView ? { scaleX: 1 } : {}}
-            transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-          />
-        </div>
+        <SectionEyebrow label="What Drives Us" isInView={isInView} />
         <motion.h2 initial={{ opacity: 0, y: 20 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
           className="font-display text-5xl md:text-6xl text-[#111827] leading-[1.0] tracking-[-0.03em] text-balance mb-16">
-          {TEXT.VALUES_TITLE}
+          What Drives <em className="not-italic text-[#0098AF]">Us</em>
         </motion.h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-[#e2e8f0] border border-[#e2e8f0] rounded-2xl overflow-hidden">
           {KEY_VALUES.map((v, i) => {
@@ -241,40 +382,32 @@ function KeyValues() {
 }
 
 /*  Stats  */
-const STAT_ICONS = [Users, Globe, Award, TrendingUp];
+const STAT_ICONS = [Award, TrendingUp, Boxes, Users, Globe];
 function StatsSection() {
   const { STATS } = ABOUT_CONSTANTS;
   const ref = useRef<HTMLElement>(null);
   const isInView = useInView(ref, { once: true, amount: 0.2 });
   return (
-    <section ref={ref} className="bg-[#111827] py-28 md:py-36 overflow-hidden relative">
+    <section ref={ref} className="bg-[#111827] py-20 md:py-28 overflow-hidden relative">
       <GridBg dark />
       <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-[#0098AF]/40 to-transparent" />
       <div className="relative max-w-7xl mx-auto px-6 sm:px-10 lg:px-16">
-        <div className="flex items-center gap-6 mb-10">
-          <span className="eyebrow">By the Numbers</span>
-          <motion.div
-            className="flex-1 h-px bg-white/15 origin-left"
-            initial={{ scaleX: 0 }}
-            animate={isInView ? { scaleX: 1 } : {}}
-            transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-          />
-        </div>
+        <SectionEyebrow label="By the Numbers" isInView={isInView} dark />
         <motion.h2 initial={{ opacity: 0, y: 20 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
           className="font-display text-5xl md:text-6xl text-white leading-[1.0] tracking-[-0.03em] mb-16">
           Our <em className="not-italic text-[#0098AF]">Impact</em>
         </motion.h2>
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-px bg-white/10 border border-white/10 rounded-2xl overflow-hidden">
+        <div className="grid grid-cols-2 lg:grid-cols-5 gap-px bg-white/10 border border-white/10 rounded-2xl overflow-hidden">
           {STATS.map((s, i) => {
             const Icon = STAT_ICONS[i % STAT_ICONS.length];
             return (
               <motion.div key={i} initial={{ opacity: 0, y: 20 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.5, delay: i * 0.08 }}
-                className="group bg-[#111827] hover:bg-[#0098AF]/8 transition-colors duration-200 p-10 text-center">
+                className="group bg-[#111827] hover:bg-[#0098AF]/8 transition-colors duration-200 p-8 text-center">
                 <div className="w-10 h-10 rounded-full border border-white/15 flex items-center justify-center mx-auto mb-5 group-hover:border-[#0098AF] group-hover:bg-[#0098AF] transition-all duration-200">
                   <Icon className="w-4 h-4 text-white/50 group-hover:text-white transition-colors duration-200" />
                 </div>
-                <p className="font-display text-5xl text-white mb-2"><AnimatedCounter value={s.stat} /></p>
-                <p className="font-sans text-[13px] text-white/40 leading-snug">{s.label}</p>
+                <p className="font-display text-4xl text-white mb-2"><AnimatedCounter value={s.stat} /></p>
+                <p className="font-sans text-[12px] text-white/40 leading-snug">{s.label}</p>
               </motion.div>
             );
           })}
@@ -290,9 +423,13 @@ export default function AboutPage() {
       <MegaMenu />
       <Hero />
       <Story />
-      <Certifications />
+      <IndustriesServed />
+      <ClosingQuote />
       <MissionVision />
+      <DigitalTwin />
+      <Process />
       <KeyValues />
+      <Certifications />
       <StatsSection />
       <CTABanner
         title="Shape the future with us"
