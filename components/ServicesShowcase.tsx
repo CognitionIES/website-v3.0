@@ -5,10 +5,10 @@ import { motion, useInView } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
-import productImage from "@/constants/images/home/our-services/product-2.jpg";
-import plantImage from "@/constants/images/home/our-services/plant.jpg";
-import saasImage from "@/constants/images/home/our-services/saas.jpg";
-import staffImage from "@/constants/images/home/our-services/staff.jpg";
+import productImage from "@/constants/images/home/our-services/product-2.webp";
+import plantImage from "@/constants/images/home/our-services/plant.webp";
+import saasImage from "@/constants/images/home/our-services/saas.webp";
+import staffImage from "@/constants/images/home/our-services/staff.webp";
 
 const services = [
   {

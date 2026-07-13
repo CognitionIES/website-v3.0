@@ -2,7 +2,7 @@
 
 import PageHero from "@/components/shared/PageHero";
 
-const heroImage = "/images/projects/pcm/hero.jpg";
+const heroImage = "/images/projects/pcm/hero.webp";
 
 export default function HeroSection() {
   return (

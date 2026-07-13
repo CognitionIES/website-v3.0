@@ -8,8 +8,8 @@ import Image from "next/image";
 
 import { useIsMobile } from "@/hooks/useIsMobile";
 import { ChevronDown, ChevronUp } from "lucide-react"; // Import icons for expand/collapse
-import BulletPointGray from "@/constants/images/Bullet_Points/gray.png";
-import BulletPointBlue from "@/constants/images/Bullet_Points/bullet_point_blue_1.png";
+import BulletPointGray from "@/constants/images/Bullet_Points/gray.webp";
+import BulletPointBlue from "@/constants/images/Bullet_Points/bullet_point_blue_1.webp";
 
 
 interface BulletPoint {

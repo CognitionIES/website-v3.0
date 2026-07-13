@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 
-const approachImage = "/images/projects/pcm/pcm-approach.jpg";
+const approachImage = "/images/projects/pcm/pcm-approach.webp";
 
 const sections = [
   {

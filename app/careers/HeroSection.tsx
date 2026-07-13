@@ -5,7 +5,7 @@ import { motion, useInView } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { Home, ChevronRight, ArrowDown } from "lucide-react";
-import heroImage from "@/constants/images/hero/careers-hero.png";
+import heroImage from "@/constants/images/hero/careers-hero.webp";
 
 export default function CareersHero() {
   const ref = useRef<HTMLElement>(null);

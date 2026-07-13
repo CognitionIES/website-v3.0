@@ -181,7 +181,10 @@ function ClosingQuote() {
   );
 }
 
-/*  Mission & Vision  */
+/*  Mission & Vision — a single unified split panel rather than two identical
+    twin cards (which is what the source deck does, and what most corporate sites
+    default to). Dark panel, vertical divider, oversized ghost icon watermark per
+    side for a more editorial feel. */
 function MissionVision() {
   const { TEXT } = ABOUT_CONSTANTS;
   const ref = useRef<HTMLElement>(null);
@@ -195,22 +198,29 @@ function MissionVision() {
           className="font-display text-5xl md:text-6xl text-[#111827] leading-[1.0] tracking-[-0.03em] text-balance mb-16">
           Mission &amp; <em className="not-italic text-[#0098AF]">Vision</em>
         </motion.h2>
-        <div className="grid md:grid-cols-2 gap-5">
+
+        <motion.div
+          initial={{ opacity: 0, y: 24 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+          className="relative bg-[#0f1117] rounded-3xl overflow-hidden grid md:grid-cols-2"
+        >
+          <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-[#0098AF]/40 to-transparent" />
+          {/* vertical divider, desktop only */}
+          <div className="hidden md:block absolute left-1/2 top-10 bottom-10 w-px bg-white/10" />
+
           {[
-            { Icon: Target, label: "Mission", title: TEXT.MISSION_TITLE, desc: TEXT.MISSION_DESC, highlight: TEXT.MISSION_HIGHLIGHT },
-            { Icon: Eye,    label: "Vision",  title: TEXT.VISION_TITLE,  desc: TEXT.VISION_DESC,  highlight: TEXT.VISION_HIGHLIGHT },
-          ].map(({ Icon, label, title, desc, highlight }, i) => (
-            <motion.div key={i} initial={{ opacity: 0, y: 24 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6, delay: i * 0.1 }}
-              className="group bg-white border border-[#e2e8f0] rounded-2xl p-10 hover:border-[#0098AF]/30 hover:shadow-md transition-all duration-200 relative overflow-hidden">
-              <div className="w-12 h-12 rounded-full bg-[#0098AF]/10 flex items-center justify-center mb-7 group-hover:bg-[#0098AF] transition-colors duration-200">
-                <Icon className="w-5 h-5 text-[#0098AF] group-hover:text-white transition-colors duration-200" />
+            { Icon: Target, label: "Mission", desc: TEXT.MISSION_DESC, highlight: TEXT.MISSION_HIGHLIGHT },
+            { Icon: Eye,    label: "Vision",  desc: TEXT.VISION_DESC,  highlight: TEXT.VISION_HIGHLIGHT },
+          ].map(({ Icon, label, desc, highlight }, i) => (
+            <div key={i} className="relative p-10 md:p-14 overflow-hidden">
+              <Icon className="absolute -right-6 -bottom-8 w-40 h-40 text-white/[0.04] pointer-events-none" strokeWidth={1} />
+              <div className="relative w-12 h-12 rounded-full bg-[#0098AF]/15 flex items-center justify-center mb-7">
+                <Icon className="w-5 h-5 text-[#0098AF]" />
               </div>
-              <span className="eyebrow">{label}</span>
-              <h3 className="font-display text-2xl text-[#111827] mb-4">{title}</h3>
-              <HighlightedText text={desc} highlight={highlight} className="font-sans text-[15px] text-[#718096] leading-[1.8]" />
-            </motion.div>
+              <span className="relative font-sans text-[13px] font-semibold tracking-[0.12em] uppercase text-[#0098AF] block mb-4">{label}</span>
+              <HighlightedText text={desc} highlight={highlight} className="relative font-sans text-[16px] text-white/70 leading-[1.8]" />
+            </div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

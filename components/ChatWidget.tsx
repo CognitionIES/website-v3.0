@@ -52,7 +52,7 @@ const KB: { q: RegExp; a: string }[] = [
   /* Industries */
   {
     q: /industr|automotive|aerospace|oil.?gas|pharma|consumer.?goods|heavy.?engineer|defence|defense|energy|power.?plant|refiner/i,
-    a: "Cognition IES serves clients across automotive, aerospace, oil & gas, pharmaceuticals, heavy engineering, consumer goods, and energy sectors. Our cross-industry experience means we bring best practices from one domain and apply them where others haven't. [View our services](/services) to see how we can help your industry.",
+    a: "It depends on the practice: our Plant Engineering team works across oil & gas, chemicals, petrochemicals, pharmaceuticals, specialty chemicals, energy, and manufacturing — the process industries. Our Product Engineering team serves automotive, aerospace, industrial machinery, and consumer goods. [View our services](/services) to see how we can help your industry.",
   },
 
   /* Projects / Portfolio */

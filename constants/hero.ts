@@ -1,12 +1,12 @@
 
-import productImage from "@/constants/images/home/hero/product.jpg";
-import processImage from "@/constants/images/home/hero/process.jpg";
-import aimlImage from "@/constants/images/home/hero/ai-ml.jpg";
-import saasImage from "@/constants/images/home/hero/saas.jpg";
-import staffAugImage from "@/constants/images/home/hero/staff-augmentation-1.jpg";
-//import staffAug2 from "@/constants/images/home/hero/staff-augmentation-mobile-1.jpg";
-import saas2 from "@/constants/images/home/hero/saas-mobile.jpg";
-import process2 from "@/constants/images/home/hero/process-mobile.jpg";
+import productImage from "@/constants/images/home/hero/product.webp";
+import processImage from "@/constants/images/home/hero/process.webp";
+import aimlImage from "@/constants/images/home/hero/ai-ml.webp";
+import saasImage from "@/constants/images/home/hero/saas.webp";
+import staffAugImage from "@/constants/images/home/hero/staff-augmentation-1.webp";
+//import staffAug2 from "@/constants/images/home/hero/staff-augmentation-mobile-1.webp";
+import saas2 from "@/constants/images/home/hero/saas-mobile.webp";
+import process2 from "@/constants/images/home/hero/process-mobile.webp";
 import { StaticImageData } from "next/image";
 
 export interface HeroSlide {

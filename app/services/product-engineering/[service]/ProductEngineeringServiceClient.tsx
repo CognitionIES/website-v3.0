@@ -8,7 +8,7 @@ import sections from "@/constants/sections";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { ChevronRight, Home } from "lucide-react";
-const frameBackground = "/images/Background/Frame_8.jpg";
+const frameBackground = "/images/Background/Frame_8.webp";
 
 interface Props {
   sectionKey: string;

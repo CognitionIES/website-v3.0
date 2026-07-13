@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 
-const aboutImage = "/images/projects/pcm/project-overview.jpg";
+const aboutImage = "/images/projects/pcm/project-overview.webp";
 
 export default function AboutSection() {
   return (

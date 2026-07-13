@@ -80,7 +80,7 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon:  [{ url: "/favicon.png", type: "image/png" }],
+    icon:  [{ url: "/favicon.webp", type: "image/png" }],
     apple: [{ url: "/apple-touch-icon.png" }],
   },
   manifest: "/site.webmanifest",

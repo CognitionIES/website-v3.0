@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import outcomeImage from "@/constants/images/projects/digitalization/outcome.jpg";
+import outcomeImage from "@/constants/images/projects/digitalization/outcome.webp";
 
 const outcomes = [
   { title: "Improved Accuracy",       content: "3D validation reduced layout deviations drastically, saving hours in installation rework." },

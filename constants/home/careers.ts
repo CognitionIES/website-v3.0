@@ -1,5 +1,5 @@
-import careerImage from "@/constants/images/home/career/career-home.jpg";
-//const careerImage = '/images/home/career/career-home.jpg'
+import careerImage from "@/constants/images/home/career/career-home.webp";
+//const careerImage = '/images/home/career/career-home.webp'
 
 // Constants for the Careers section
 export const CAREERS_CONSTANTS = {

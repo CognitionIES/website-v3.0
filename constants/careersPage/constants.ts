@@ -1,4 +1,4 @@
-import HeroCareerImg from '@/constants/images/career/hero.jpg'
+import HeroCareerImg from '@/constants/images/career/hero.webp'
 
 // This file holds all constants for the careers page
 export const CAREERS_CONSTANTS = {

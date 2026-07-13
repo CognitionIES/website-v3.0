@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import objectiveImage from "@/constants/images/projects/digitalization/objective.jpg";
+import objectiveImage from "@/constants/images/projects/digitalization/objective.webp";
 
 export default function ObjectiveSection() {
   return (

@@ -1,7 +1,7 @@
 "use client";
 
 import PageHero from "@/components/shared/PageHero";
-import heroImage from "@/constants/images/projects/digitalization/hero.jpg";
+import heroImage from "@/constants/images/projects/digitalization/hero.webp";
 
 export default function HeroSection() {
   return (

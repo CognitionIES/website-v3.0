@@ -8,15 +8,16 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGears, faPlugCircleBolt, faMagnifyingGlassChart } from "@fortawesome/free-solid-svg-icons";
 import { Cpu, FileText, Layers, Printer, Truck, Workflow } from "lucide-react";
 
-import mechImage1 from "@/constants/images/product/side/mech.jpg";
-import elecImage1 from "@/constants/images/product/side/elec.jpg";
-import caeImage1 from "@/constants/images/product/side/cae.png";
-import protoImage1 from "@/constants/images/product/side/prototyping.jpg";
-import hydraImage1 from "@/constants/images/product/side/hydraulic.jpg";
-import assetImage1 from "@/constants/images/product/side/asset.jpg";
-import embeddedImage2 from "@/constants/images/product/side/embedded-1.jpg";
-import techImage1 from "@/constants/images/product/side/tech.jpeg";
-import supplyImage1 from "@/constants/images/product/side/supply.jpg";
+import mechImage1 from "@/constants/images/product/side/mech.webp";
+import elecImage1 from "@/constants/images/product/side/elec.webp";
+import caeImage1 from "@/constants/images/product/side/cae.webp";
+import protoImage1 from "@/constants/images/product/side/prototyping.webp";
+import hydraImage1 from "@/constants/images/product/side/hydraulic.webp";
+import assetImage1 from "@/constants/images/product/side/asset.webp";
+import embeddedImage2 from "@/constants/images/product/side/embedded-1.webp";
+import techImage1 from "@/constants/images/product/side/tech.webp";
+import supplyImage1 from "@/constants/images/product/side/supply.webp";
+import { SOFTWARE_PROFICIENCY } from "@/constants/product-engineering/softwareProficiency";
 
 const services = [
   {
@@ -282,7 +283,7 @@ export default function ProductServicesExpanded() {
                     >
                       <div className="bg-[#f8fbfc] border-t border-[#E6F0F5]">
                         <div className="max-w-7xl mx-auto px-6 py-8 grid md:grid-cols-2 gap-8 items-start">
-                          {/* Left: description + bullets */}
+                          {/* Left: description + bullets + software used */}
                           <div>
                             <p className="text-[#5b5b5b] leading-relaxed mb-6">
                               {svc.description}
@@ -298,6 +299,37 @@ export default function ProductServicesExpanded() {
                                 </li>
                               ))}
                             </ul>
+
+                            {(() => {
+                              const cat = SOFTWARE_PROFICIENCY.find((c) => c.id === svc.id);
+                              if (!cat) return null;
+                              return (
+                                <div className="mt-7 pt-6 border-t border-[#E6F0F5]">
+                                  <h4 className="text-xs font-semibold uppercase tracking-wide text-[#003C46]/60 mb-3">
+                                    Software We Use
+                                  </h4>
+                                  <div className="flex flex-wrap gap-3">
+                                    {cat.tools.map((tool) => (
+                                      <div
+                                        key={tool.name}
+                                        title={tool.uncertain ? `${tool.name} — unconfirmed, please verify` : tool.name}
+                                        className={`relative w-12 h-12 bg-white border rounded-xl p-2 flex items-center justify-center hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 ${
+                                          tool.uncertain ? "border-amber-300" : "border-gray-200"
+                                        }`}
+                                      >
+                                        <Image
+                                          src={tool.logo}
+                                          alt={tool.name}
+                                          width={32}
+                                          height={32}
+                                          className="object-contain w-full h-full"
+                                        />
+                                      </div>
+                                    ))}
+                                  </div>
+                                </div>
+                              );
+                            })()}
                           </div>
 
                           {/* Right: image */}

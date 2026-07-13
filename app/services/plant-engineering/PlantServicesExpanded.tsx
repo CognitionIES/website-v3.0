@@ -3,27 +3,40 @@
 import { useState, useId, type ReactNode } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown } from "lucide-react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faBuildingShield, faChartArea, faGaugeHigh,
-  faGears, faPlugCircleBolt, faBridge,
-} from "@fortawesome/free-solid-svg-icons";
-import { Box, Truck, Workflow, Building2, Flame, Cuboid, PenTool } from "lucide-react";
-import { IconSettingsDollar } from "@tabler/icons-react";
+import Image from "next/image";
+import { Flame, Cuboid, PenTool } from "lucide-react";
 import { SERVICE_PHASES, type IconKey } from "@/constants/plant-engineering/servicePhases";
+import { SOFTWARE_BY_DISCIPLINE } from "@/constants/plant-engineering/SoftwareProficiency";
+
+// The 11 core disciplines now use your real icon set (constants/icon/perfect/) —
+// recolored to the site's teal accent, same source files as your repo. Fire &
+// Safety, BIM & 3D Modeling, and CAD Services are new categories with no matching
+// custom icon yet, so they still fall back to lucide icons until you have real
+// artwork for those three.
+import ProcessIcon from "@/constants/icon/perfect/process.svg";
+import PipingIcon from "@/constants/icon/perfect/piping.svg";
+import PipingStressIcon from "@/constants/icon/perfect/piping-stress.svg";
+import MechanicalIcon from "@/constants/icon/perfect/mechanical.svg";
+import ElectricalIcon from "@/constants/icon/perfect/electrical.svg";
+import InstrumentationIcon from "@/constants/icon/perfect/intrumentation.svg";
+import CivilIcon from "@/constants/icon/perfect/civil.svg";
+import StructuralIcon from "@/constants/icon/perfect/structural.svg";
+import ReverseIcon from "@/constants/icon/perfect/reverse.svg";
+import ModularIcon from "@/constants/icon/perfect/modular.svg";
+import ProcurementIcon from "@/constants/icon/perfect/procurement.svg";
 
 const ICON_MAP: Record<IconKey, ReactNode> = {
-  "process-safety": <FontAwesomeIcon icon={faBuildingShield} className="w-4 h-4" />,
-  "piping": <Workflow className="w-4 h-4" />,
-  "piping-stress": <FontAwesomeIcon icon={faChartArea} className="w-4 h-4" />,
-  "mechanical": <FontAwesomeIcon icon={faGears} className="w-4 h-4" />,
-  "electrical": <FontAwesomeIcon icon={faPlugCircleBolt} className="w-4 h-4" />,
-  "instrumentation": <IconSettingsDollar className="w-4 h-4" />,
-  "civil": <Building2 className="w-4 h-4" />,
-  "structural": <FontAwesomeIcon icon={faBridge} className="w-4 h-4" />,
-  "reverse-engineering": <FontAwesomeIcon icon={faGaugeHigh} className="w-4 h-4" />,
-  "modular": <Box className="w-4 h-4" />,
-  "procurement": <Truck className="w-4 h-4" />,
+  "process-safety": <Image src={ProcessIcon} alt="" className="w-5 h-5" />,
+  "piping": <Image src={PipingIcon} alt="" className="w-5 h-5" />,
+  "piping-stress": <Image src={PipingStressIcon} alt="" className="w-5 h-5" />,
+  "mechanical": <Image src={MechanicalIcon} alt="" className="w-5 h-5" />,
+  "electrical": <Image src={ElectricalIcon} alt="" className="w-5 h-5" />,
+  "instrumentation": <Image src={InstrumentationIcon} alt="" className="w-5 h-5" />,
+  "civil": <Image src={CivilIcon} alt="" className="w-5 h-5" />,
+  "structural": <Image src={StructuralIcon} alt="" className="w-5 h-5" />,
+  "reverse-engineering": <Image src={ReverseIcon} alt="" className="w-5 h-5" />,
+  "modular": <Image src={ModularIcon} alt="" className="w-5 h-5" />,
+  "procurement": <Image src={ProcurementIcon} alt="" className="w-5 h-5" />,
   "fire-safety": <Flame className="w-4 h-4" />,
   "bim-3d": <Cuboid className="w-4 h-4" />,
   "cad": <PenTool className="w-4 h-4" />,
@@ -108,6 +121,7 @@ export default function PlantServicesExpanded() {
                             className="overflow-hidden"
                           >
                             <div className="bg-[#f8fbfc] border-t border-[#E6F0F5] px-6 py-6">
+                              <p className="text-sm text-[#5b5b5b] mb-4 leading-relaxed">{cat.description}</p>
                               <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2">
                                 {cat.scope.map((pt) => (
                                   <li key={pt} className="flex items-start gap-2 text-sm text-[#003C46]">
@@ -116,6 +130,29 @@ export default function PlantServicesExpanded() {
                                   </li>
                                 ))}
                               </ul>
+
+                              {(() => {
+                                const tools = SOFTWARE_BY_DISCIPLINE[cat.icon];
+                                if (!tools || tools.length === 0) return null;
+                                return (
+                                  <div className="mt-6 pt-5 border-t border-[#E6F0F5]">
+                                    <h4 className="text-xs font-semibold uppercase tracking-wide text-[#003C46]/60 mb-3">
+                                      Software We Use
+                                    </h4>
+                                    <div className="flex flex-wrap gap-2">
+                                      {tools.map((tool) => (
+                                        <span
+                                          key={tool}
+                                          title={tool}
+                                          className="px-3 py-1.5 rounded-lg bg-white border border-gray-200 text-[12px] text-[#003C46] font-medium"
+                                        >
+                                          {tool}
+                                        </span>
+                                      ))}
+                                    </div>
+                                  </div>
+                                );
+                              })()}
                             </div>
                           </motion.div>
                         )}

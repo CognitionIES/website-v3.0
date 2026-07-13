@@ -5,12 +5,12 @@ import { motion, useInView } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
-import digitalizationImg from "@/constants/images/home/our-recent-projects/digitalization.jpg"
-import pcmImg from "@/constants/images/home/our-recent-projects/pcm.jpg";
+import digitalizationImg from "@/constants/images/home/our-recent-projects/digitalization.webp"
+import pcmImg from "@/constants/images/home/our-recent-projects/pcm.webp";
 // Stand-in card images reused from existing assets. Swap when dedicated
 // photos for the staffing case studies are available.
-import itTalentImg from "@/constants/images/home/our-services/staff.jpg";
-import engTalentImg from "@/constants/images/home/who-we-are.jpg";
+import itTalentImg from "@/constants/images/home/our-services/staff.webp";
+import engTalentImg from "@/constants/images/home/who-we-are.webp";
 
 const projects = [
   {

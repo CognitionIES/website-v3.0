@@ -4,6 +4,7 @@ import { MegaMenu } from "@/components/ui/Megamenu/MegaMenu";
 import Footer from "@/components/Footer";
 import PageHero from "@/components/shared/PageHero";
 import ContactSection from "./ContactSection";
+import GlobalPresence from "./GlobalPresence";
 import CTABanner from "@/components/shared/CTABanner";
 import { CONTACT_CONSTANTS } from "@/constants/contactPage/constants";
 
@@ -14,6 +15,7 @@ export default function ContactPage() {
       <MegaMenu />
       <PageHero image={IMAGE} title={TITLE} subtitle="Contact" breadcrumbs={[{ label: "Contact Us", href: "/contact" }]} />
       <ContactSection />
+      <GlobalPresence />
       <CTABanner
         eyebrow="Let's Talk"
         title="Prefer to talk directly?"

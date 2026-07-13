@@ -6,8 +6,8 @@ import {
 } from "lucide-react";
 // Stand-in images reused from existing assets. Swap to dedicated photos at
 // constants/images/projects/it/ when available.
-import heroImage from "@/constants/images/home/our-services/staff.jpg";
-import overviewImage from "@/constants/images/staff-augmentation/about.png";
+import heroImage from "@/constants/images/home/our-services/staff.webp";
+import overviewImage from "@/constants/images/staff-augmentation/about.webp";
 import type { CaseStudy } from "./types";
 
 export const IT_TALENT: CaseStudy = {

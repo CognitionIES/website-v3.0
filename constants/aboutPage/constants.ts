@@ -1,13 +1,13 @@
 // Constants for the About page to keep content and assets modular and reusable
 import { StaticImageData } from 'next/image'
-import HeroImage from '@/constants/images/about/about-hero.jpg'
-import OurJourneyImage from '@/constants/images/about/about-our-journey.jpg'
-import flexScaleImage from '@/constants/images/about/flex-scale.jpg'
-import lifeCycleImage from '@/constants/images/about/lifecyle-mastery.jpg'
-import qualityCoreImage from '@/constants/images/about/quality-core.jpg'
-import coInnovativeImage from '@/constants/images/about/coinnovative.jpg'
+import HeroImage from '@/constants/images/about/about-hero.webp'
+import OurJourneyImage from '@/constants/images/about/about-our-journey.webp'
+import flexScaleImage from '@/constants/images/about/flex-scale.webp'
+import lifeCycleImage from '@/constants/images/about/lifecyle-mastery.webp'
+import qualityCoreImage from '@/constants/images/about/quality-core.webp'
+import coInnovativeImage from '@/constants/images/about/coinnovative.webp'
 
-// NOTE: `missionVisionImage` and `statsImage` (about/missionvision.jpg, about/stats.jpg)
+// NOTE: `missionVisionImage` and `statsImage` (about/missionvision.webp, about/stats.webp)
 // were imported here previously but never rendered anywhere in AboutPage. Removed.
 // If you find you need a background texture for those sections, re-add deliberately —
 // don't let it sit as a dead import again.

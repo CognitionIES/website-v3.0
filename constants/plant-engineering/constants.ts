@@ -1,39 +1,38 @@
-import processImage from "@/constants/images/plant/horizontal/01.jpg";
-import mechImage from "@/constants/images/plant/horizontal/02.jpg";
-import pipingImage from "@/constants/images/plant/horizontal/03.jpg";
-import pipeStressImage from "@/constants/images/plant/horizontal/04.jpg";
-import civilImage from "@/constants/images/plant/horizontal/05.jpg";
-import StructuralImage from "@/constants/images/plant/horizontal/06.png";
-import elecImage from "@/constants/images/plant/horizontal/07.jpg";
-import InstrumentationImage from "@/constants/images/plant/horizontal/08.jpg";
-import ModularImage from "@/constants/images/plant/horizontal/09.jpg";
-import ReverseImage from "@/constants/images/plant/horizontal/10.jpg";
-import ProcurementImage from "@/constants/images/plant/horizontal/11.jpg";
-import heroImage from "@/constants/images/plant/hero.jpg";
-import aboutImage from '@/constants/images/Plant-engineering/about.jpg';
+import processImage from "@/constants/images/plant/horizontal/01.webp";
+import mechImage from "@/constants/images/plant/horizontal/02.webp";
+import pipingImage from "@/constants/images/plant/horizontal/03.webp";
+import pipeStressImage from "@/constants/images/plant/horizontal/04.webp";
+import civilImage from "@/constants/images/plant/horizontal/05.webp";
+import StructuralImage from "@/constants/images/plant/horizontal/06.webp";
+import elecImage from "@/constants/images/plant/horizontal/07.webp";
+import InstrumentationImage from "@/constants/images/plant/horizontal/08.webp";
+import ModularImage from "@/constants/images/plant/horizontal/09.webp";
+import ReverseImage from "@/constants/images/plant/horizontal/10.webp";
+import ProcurementImage from "@/constants/images/plant/horizontal/11.webp";
+import heroImage from "@/constants/images/plant/hero.webp";
+import aboutImage from '@/constants/images/Plant-engineering/about.webp';
 
-//const processImage = '/images/plant/horizontal/01.jpg';
-//const mechImage = '/images/plant/horizontal/02.jpg';
-//const pipingImage = '/images/plant/horizontal/03.jpg';
-//const pipeStressImage = '/images/plant/horizontal/04.jpg';
-//const civilImage = '/images/plant/horizontal/05.jpg';
-//const StructuralImage = '/images/plant/horizontal/06.png';
-//const elecImage = '/images/plant/horizontal/07.jpg';
-//const InstrumentationImage = '/images/plant/horizontal/08.jpg';
-//const ModularImage = '/images/plant/horizontal/09.jpg';
-//const ReverseImage = '/images/plant/horizontal/10.jpg';
-//const ProcurementImage = '/images/plant/horizontal/11.jpg';
-//const heroImage = '/images/plant/hero.jpg';
+//const processImage = '/images/plant/horizontal/01.webp';
+//const mechImage = '/images/plant/horizontal/02.webp';
+//const pipingImage = '/images/plant/horizontal/03.webp';
+//const pipeStressImage = '/images/plant/horizontal/04.webp';
+//const civilImage = '/images/plant/horizontal/05.webp';
+//const StructuralImage = '/images/plant/horizontal/06.webp';
+//const elecImage = '/images/plant/horizontal/07.webp';
+//const InstrumentationImage = '/images/plant/horizontal/08.webp';
+//const ModularImage = '/images/plant/horizontal/09.webp';
+//const ReverseImage = '/images/plant/horizontal/10.webp';
+//const ProcurementImage = '/images/plant/horizontal/11.webp';
+//const heroImage = '/images/plant/hero.webp';
 
 // This file holds all constants for the plant engineering page
 import { Building2, Workflow, Box, Truck } from "lucide-react";
-//const aboutImage = '/images/Plant-engineering/about.jpg';
+//const aboutImage = '/images/Plant-engineering/about.webp';
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
 import { ComponentType } from "react";
 
 interface Service {
   columns?: number;
-  category: string;
   bulletPoints: {
     mainTopic: string;
     subPoints: string[];
@@ -59,25 +58,6 @@ import {
 import { IconSettingsDollar } from "@tabler/icons-react";
 
 export const PLANT_ENGINEERING_CONSTANTS = {
-  // Ordered list of service categories — matches the 6 project phases from the
-  // Engineering_Service__2_.pptx deck ("Our Engineering Services" slide) exactly:
-  // Pre-FEED, FEED, Basic, Detailed, Specialized, Digitization.
-  //
-  // "Procurement & EPCM Support" is a 7th category tacked on at the end — it
-  // doesn't belong to any of the 6 phases in that slide (in the deck, procurement
-  // sits under a *different* slide's "EPCM & PMC" grouping, not the phase-based
-  // one). I kept it rather than delete a real, sellable service — if you'd rather
-  // it not appear at all, or want it folded into one of the 6, say so.
-  SERVICE_CATEGORIES: [
-    "Pre-FEED",
-    "FEED Engineering",
-    "Basic Engineering",
-    "Detailed Engineering",
-    "Specialized Engineering",
-    "Digitization",
-    "Procurement & EPCM Support",
-  ],
-
   // Hero Section
   HERO: {
     IMAGE: heroImage,
@@ -104,16 +84,15 @@ export const PLANT_ENGINEERING_CONSTANTS = {
       //Process & Safety Engineering
       {
         icon: faBuildingShield,
-        title: "Pre-FEED Engineering",
-        category: "Pre-FEED",
+        title: "Process & Safety Engineering",
         description:
-          "Early-stage feasibility and pre-bid engineering that establishes the technical basis before FEED begins.",
+          "Comprehensive engineering solutions to optimize plant processes, ensure safety compliance, and enhance operational efficiency through advanced design and risk assessment.",
         image: processImage,
-        alt: "Pre-FEED engineering documents",
-        href: "/services/plant-engineering/details#pre-feed-engineering",
+        alt: "Process safety equipment",
+        href: "/services/plant-engineering/details#process-safety-engineering",
         bulletPoints: [
           {
-            mainTopic: "Feasibility & Pre-Bid Engineering",
+            mainTopic: "Pre-Bid Engineering / FEED",
             subPoints: [
               "Preliminary P&ID",
               "Hydraulic Analysis",
@@ -124,18 +103,7 @@ export const PLANT_ENGINEERING_CONSTANTS = {
               "Preliminary Thermal Design for HE",
             ],
           },
-        ],
-      },
-      {
-        icon: faBuildingShield,
-        title: "FEED Engineering",
-        category: "FEED Engineering",
-        description:
-          "Front-End Engineering Design that optimizes process parameters and locks in the design basis ahead of detailed engineering.",
-        image: processImage,
-        alt: "FEED process engineering",
-        href: "/services/plant-engineering/details#feed-engineering",
-        bulletPoints: [
+
           {
             mainTopic: "Process Design & Optimization",
             subPoints: [
@@ -147,20 +115,8 @@ export const PLANT_ENGINEERING_CONSTANTS = {
               "Distribution Network Hydraulics and Surge Analysis",
             ],
           },
-        ],
-      },
-      {
-        icon: faBuildingShield,
-        title: "Process & Safety Engineering",
-        category: "Basic Engineering",
-        description:
-          "Basic engineering process design paired with revalidation and safety & risk assessment for existing and new facilities.",
-        image: processImage,
-        alt: "Process safety equipment",
-        href: "/services/plant-engineering/details#process-safety-engineering",
-        bulletPoints: [
           {
-            mainTopic: "Revalidation & Retrofitting",
+            mainTopic: "Revalidation & Retrofitting ",
             subPoints: [
               "Process Equipment Reassessment",
               "Hydraulics Pipeline Review",
@@ -168,7 +124,7 @@ export const PLANT_ENGINEERING_CONSTANTS = {
             ],
           },
           {
-            mainTopic: "Safety & Risk Assessment",
+            mainTopic: "Safety & Risk Assessment ",
             subPoints: ["HAZOP", "HAZID", "SIL", "QRA"],
           },
         ],
@@ -176,7 +132,6 @@ export const PLANT_ENGINEERING_CONSTANTS = {
       {
         icon: Workflow,
         title: "Piping Engineering",
-        category: "Detailed Engineering",
         description:
           "Designing and managing efficient piping systems to ensure safe and reliable transport of fluids and gases across the plant with advanced analysis and material specifications.",
         image: pipingImage,
@@ -224,7 +179,6 @@ export const PLANT_ENGINEERING_CONSTANTS = {
       {
         icon: faChartArea,
         title: "Piping Stress Analysis",
-        category: "Specialized Engineering",
         description:
           "Comprehensive analysis of piping systems to ensure structural integrity, safety, and reliability under diverse operating conditions through advanced stress evaluations and calculations.",
         image: pipeStressImage,
@@ -267,7 +221,6 @@ export const PLANT_ENGINEERING_CONSTANTS = {
       {
         icon: faGears,
         title: "Mechanical Design Engineering",
-        category: "Detailed Engineering",
         description:
           "Engineering and maintaining high-performance mechanical systems to ensure plant reliability, efficiency, and safety through detailed design and analysis.",
         image: mechImage,
@@ -325,7 +278,6 @@ export const PLANT_ENGINEERING_CONSTANTS = {
       {
         icon: faPlugCircleBolt,
         title: "Electrical Design Engineering",
-        category: "Detailed Engineering",
         description:
           "Implementing reliable electrical systems to power plant operations efficiently and safely.",
         image: elecImage,
@@ -375,7 +327,6 @@ export const PLANT_ENGINEERING_CONSTANTS = {
       {
         icon: IconSettingsDollar,
         title: "Reverse Engineering",
-        category: "Digitization",
         description:
           "Analyzing existing systems to recreate or improve designs for enhanced performance.",
         image: ReverseImage,
@@ -412,7 +363,6 @@ export const PLANT_ENGINEERING_CONSTANTS = {
       {
         icon: faGaugeHigh,
         title: "Instrumentation Engineering",
-        category: "Detailed Engineering",
         description:
           "Integrating advanced instrumentation for precise monitoring and control of plant processes.",
         image: InstrumentationImage,
@@ -464,7 +414,6 @@ export const PLANT_ENGINEERING_CONSTANTS = {
       {
         icon: Building2,
         title: "Civil Engineering",
-        category: "Detailed Engineering",
         description:
           "Providing foundational civil engineering solutions for durable and safe plant infrastructure.",
         image: civilImage,
@@ -500,7 +449,6 @@ export const PLANT_ENGINEERING_CONSTANTS = {
       {
         icon: faBridge,
         title: "Structural Engineering",
-        category: "Detailed Engineering",
         description:
           "Designing strong, stable structures to support plant operations and withstand environmental challenges.",
         image: StructuralImage,
@@ -546,7 +494,6 @@ export const PLANT_ENGINEERING_CONSTANTS = {
       {
         icon: Box,
         title: "Modular Package",
-        category: "Specialized Engineering",
         description:
           "Delivering pre-engineered modular solutions for faster installation and operational flexibility.",
         image: ModularImage,
@@ -593,7 +540,6 @@ export const PLANT_ENGINEERING_CONSTANTS = {
       {
         icon: Truck,
         title: "Procurement Support",
-        category: "Procurement & EPCM Support",
         description:
           "Streamlining procurement processes to source quality materials and equipment on time and within budget.",
         image: ProcurementImage,
@@ -642,7 +588,7 @@ export const PLANT_ENGINEERING_CONSTANTS = {
       {
         question: "What industries do you serve?",
         answer:
-          "We work across the process industry — including Oil & Gas, Petrochemical, Chemical, Pharmaceutical, Food Processing, Water Treatment, Fertilizer, Renewable Energy, Hydrogen, and Specialty Chemicals — delivering tailored solutions for each sector's plant operations.",
+          "We work across the process industries — oil & gas, chemicals, petrochemicals, pharmaceuticals, specialty chemicals, energy, and manufacturing. Our cross-sector experience lets us bring proven practices from one domain into another.",
       },
       {
         question: "Can you help upgrade an existing plant?",

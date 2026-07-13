@@ -19,8 +19,8 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { usePathname } from "next/navigation";
 
-import Logo1 from "@/constants/images/LOGO-COGNITION.png";
-import colImage from "@/constants/images/home/3.jpg";
+import Logo1 from "@/constants/images/LOGO-COGNITION.webp";
+import colImage from "@/constants/images/home/3.webp";
 
 const T = {
   tile:    { duration: 0.55, ease: [0.32, 0, 0.18, 1] as const },

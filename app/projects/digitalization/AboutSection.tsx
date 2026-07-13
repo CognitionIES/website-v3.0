@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import aboutImage from "@/constants/images/projects/digitalization/about.jpg";
+import aboutImage from "@/constants/images/projects/digitalization/about.webp";
 
 export default function AboutSection() {
   return (

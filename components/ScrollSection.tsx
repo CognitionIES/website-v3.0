@@ -6,8 +6,8 @@ import { useIsMobile } from "@/hooks/useIsMobile";
 import Image from "next/image";
 
 
-import blueBulletImage from "@/constants/images/Bullet_Points/bullet_point_blue_1.png";
-import BulletPointGray from "@/constants/images/Bullet_Points/gray.png";
+import blueBulletImage from "@/constants/images/Bullet_Points/bullet_point_blue_1.webp";
+import BulletPointGray from "@/constants/images/Bullet_Points/gray.webp";
 
 interface ScrollSectionProps {
   index: number;

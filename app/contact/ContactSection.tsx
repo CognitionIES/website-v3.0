@@ -363,3 +363,15 @@ export default function ContactSection() {
     </section>
   );
 }
+/*
+export functtion ContactInfo(){
+  return(
+    <>
+      <div className="h1">
+        <div className="size-20 items-center text-[#0098AF]"> random text</div>
+        <div className="size-20 items-center text-[#0098AF]"> random text</div>
+      </div>
+    </>
+  )
+}
+*/

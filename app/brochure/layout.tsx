@@ -9,7 +9,14 @@ export const metadata: Metadata = buildMetadata({
     "Download the Cognition IES engineering service brochures for Product Engineering and Plant Engineering. Detailed capability guides in PDF format.",
   path: "/brochure",
  keywords: [
-  
+  "engineering brochures download",
+  "engineering service brochures",
+  "engineering service vadodara",
+  "engineering service gujarat",
+  "engineering service india",
+  "engineering service piping",
+  "engineering service Desinging",
+  " engineering brochures",
   "product engineering pdf",
   "plant engineering guide",
   "engineering services brochure",

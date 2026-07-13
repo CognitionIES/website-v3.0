@@ -5,8 +5,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowDown } from "lucide-react";
 // Reusing an existing site image for now. Swap to a dedicated photo at
-// constants/images/staff-augmentation/about.jpg when one is available.
-import aboutImage from "@/constants/images/home/our-services/staff.jpg";
+// constants/images/staff-augmentation/about.webp when one is available.
+import aboutImage from "@/constants/images/home/our-services/staff.webp";
 import { STAFF_AUGMENTATION_CONSTANTS } from "@/constants/staff-augmentation/constants";
 
 export default function AboutSection() {

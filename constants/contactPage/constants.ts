@@ -1,5 +1,5 @@
 // This file holds all constants for the contact page
-const contactImage = '/images/conatct.jpg'
+const contactImage = '/images/conatct.webp'
 
 export const CONTACT_CONSTANTS = {
   // Hero Section

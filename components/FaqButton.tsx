@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 const FaqGif = '/images/faq-gif-unscreen.gif';
-const FaqStatic = '/images/faq-image.png';
+const FaqStatic = '/images/faq-image.webp';
 
 const FaqButton = () => {
   const [isHovered, setIsHovered] = useState(false);

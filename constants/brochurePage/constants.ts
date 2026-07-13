@@ -1,5 +1,5 @@
 // constants/brochurePage/constants.js
-const heroImage = '/images/brochure/hero.jpg';
+const heroImage = '/images/brochure/hero.webp';
 
 export const BROCHURE_CONSTANTS = {
   BANNER_IMAGE: { heroImage },

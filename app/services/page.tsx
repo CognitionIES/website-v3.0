@@ -79,7 +79,7 @@ export default function ServicesPage() {
         <div
           className="fixed inset-0 bg-cover bg-center -z-10"
           style={{
-            backgroundImage: `url(/images/Background/Frame_8.jpg)`,
+            backgroundImage: `url(/images/Background/Frame_8.webp)`,
           }}
         />
         <div className="relative">
