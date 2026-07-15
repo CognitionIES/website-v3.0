@@ -202,7 +202,7 @@ export const SOFTWARE_PROFICIENCY: SoftwareCategory[] = [
             { name: "Infor", logo: InforLogo },
             { name: "Arena PLM", logo: ArenaLogo },
             { name: "Blue Yonder (JDA)", logo: JDALogo },
-            { name: "Oracle NetSuite", logo: OracleLogo, uncertain: true },
+            { name: "Oracle NetSuite", logo: OracleLogo },
             { name: "Tableau", logo: TableauLogo },
             { name: "Power BI", logo: PowerBILogo },
             { name: "Qlik", logo: QlikLogo },

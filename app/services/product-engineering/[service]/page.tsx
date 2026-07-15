@@ -1,20 +1,14 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { buildMetadata } from "@/lib/seo";
+import { getProductService } from "@/constants/product-engineering/services";
 import ProductEngineeringServiceClient from "./ProductEngineeringServiceClient";
 
-//  Route → section-key mapping (slug → sections.tsx key) 
-export const SERVICE_SLUG_MAP: Record<string, string> = {
-  "mechanical-design":       "mechanical",
-  "electrical-engineering":  "electrical",
-  "cae-cfd":                 "cae-cfd",
-  "prototyping-3d-printing": "prototyping",
-  "hydraulic-engineering":   "hydraulic",
-  "asset-management":        "asset-management",
-  "embedded-systems":        "embedded-systems",
-  "technical-publication":   "technical-publication",
-  "supply-chain-management": "supply-chain",
-};
+// Previously there was a separate SERVICE_SLUG_MAP here translating the URL
+// slug to a shorter internal key used by constants/sections.ts (e.g.
+// "hydraulic-engineering" -> "hydraulic"). Now that all Product Engineering
+// content lives in one place (constants/product-engineering/services.ts) with
+// `id` equal to the URL slug, that indirection is gone — the slug *is* the id.
 
 //  SEO metadata per service 
 const SERVICE_META: Record<string, { title: string; description: string; keywords: string[] }> = {
@@ -103,7 +97,7 @@ const SERVICE_META: Record<string, { title: string; description: string; keyword
 
 //  Generate static params for all service slugs 
 export async function generateStaticParams() {
-  return Object.keys(SERVICE_SLUG_MAP).map((service) => ({ service }));
+  return Object.keys(SERVICE_META).map((service) => ({ service }));
 }
 
 //  Generate dynamic SEO metadata 
@@ -131,11 +125,10 @@ export default async function ProductEngineeringServicePage({
   params: Promise<{ service: string }>;
 }) {
   const { service } = await params;
-  const sectionKey = SERVICE_SLUG_MAP[service];
 
-  if (!sectionKey) {
+  if (!getProductService(service)) {
     notFound();
   }
 
-  return <ProductEngineeringServiceClient sectionKey={sectionKey} serviceSlug={service} />;
+  return <ProductEngineeringServiceClient serviceSlug={service} />;
 }

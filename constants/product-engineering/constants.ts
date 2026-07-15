@@ -47,6 +47,12 @@ export const PRODUCT_ENGINEERING_CONSTANTS = {
   },
 
   // Services Section
+  // ⚠️ DEPRECATED — confirmed via grep that nothing reads
+  // PRODUCT_ENGINEERING_CONSTANTS.SERVICES or .FAQ anywhere in the codebase;
+  // only .ABOUT (below) is still live, via AboutSection.tsx. The real,
+  // current service content lives in
+  // constants/product-engineering/services.ts (PRODUCT_SERVICES). Kept here
+  // non-destructively rather than deleted — safe to remove once confirmed.
   SERVICES: {
     TITLE: "Product Engineering Services",
     SUBTITLE:

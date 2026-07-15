@@ -4,14 +4,13 @@ import { MegaMenu } from "@/components/ui/Megamenu/MegaMenu";
 import Footer from "@/components/Footer";
 import CTASection from "@/components/CTA";
 import { ScrollSection } from "@/components/ScrollSection";
-import sections from "@/constants/sections";
+import { getProductService } from "@/constants/product-engineering/services";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { ChevronRight, Home } from "lucide-react";
 const frameBackground = "/images/Background/Frame_8.webp";
 
 interface Props {
-  sectionKey: string;
   serviceSlug: string;
 }
 
@@ -28,14 +27,14 @@ const SERVICE_LABELS: Record<string, string> = {
   "supply-chain-management": "Supply Chain Management",
 };
 
-export default function ProductEngineeringServiceClient({ sectionKey, serviceSlug }: Props) {
-  const section = sections[sectionKey as keyof typeof sections];
+export default function ProductEngineeringServiceClient({ serviceSlug }: Props) {
+  const service = getProductService(serviceSlug);
 
-  if (!section) {
+  if (!service) {
     notFound();
   }
 
-  const breadcrumbLabel = SERVICE_LABELS[serviceSlug] ?? section.title;
+  const breadcrumbLabel = SERVICE_LABELS[serviceSlug] ?? service.title;
 
   return (
     <div className="min-h-screen bg-[#FFFFFF]">
@@ -107,21 +106,11 @@ export default function ProductEngineeringServiceClient({ sectionKey, serviceSlu
           <div className="max-w-7xl mx-auto px-4 py-8 rounded-3xl bg-blue-400/5 outline outline-2 outline-black/50 mx-4 lg:mx-auto">
             <ScrollSection
               index={0}
-              title={section.title}
-              description={section.description}
-              imageUrl={
-                typeof section.imageUrl === "string"
-                  ? section.imageUrl
-                  : (section.imageUrl as { src: string }).src
-              }
-              bulletPoints={section.bulletPoints}
-              additionalImageUrl={
-                section.additionalImageUrl
-                  ? typeof section.additionalImageUrl === "string"
-                    ? section.additionalImageUrl
-                    : (section.additionalImageUrl as { src: string }).src
-                  : undefined
-              }
+              title={service.title}
+              description={service.description}
+              imageUrl={service.image.src}
+              bulletPoints={service.bullets}
+              additionalImageUrl={service.logoImage.src}
             />
           </div>
 

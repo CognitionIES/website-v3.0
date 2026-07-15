@@ -7,11 +7,11 @@ import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { ABOUT_CONSTANTS } from "@/constants/home/about";
 import { AnimatedCounter } from "@/components/shared/AnimatedCounter";
-
 // Kept in sync with constants/aboutPage/constants.ts STATS — do not hardcode
 // different numbers here. Previously this said "15+ Years" / "200+ Projects" /
 // "2 Global offices" while the About page said "20+ Years" and left the project
 // count as an unresolved placeholder. Same company, same numbers, everywhere.
+
 const stats = [
   { value: "2005", label: "Established" },
   { value: "20+", label: "Years of excellence" },
@@ -36,29 +36,39 @@ export default function AboutUs() {
             transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
           />
         </div>
-
+<h2 className="font-display text-4xl md:text-5xl text-[#111827] leading-[1.05] tracking-[-0.03em] mb-8 text-balance">
+              Engineering that moves{" "}
+              <em className="not-italic text-[#0098AF]">industries forward</em>
+            </h2>
         <div className="grid lg:grid-cols-12 gap-y-10 lg:gap-x-16 items-start">
           {/* Left: heading + image, stacked */}
           <motion.div
             initial={{ opacity: 0, x: -24 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-            className="lg:col-span-5"
+            className="lg:col-span-5 "
           >
-            <h2 className="font-display text-4xl md:text-5xl text-[#111827] leading-[1.05] tracking-[-0.03em] mb-8 text-balance">
+            {/* <h2 className="font-display text-4xl md:text-5xl text-[#111827] leading-[1.05] tracking-[-0.03em] mb-8 text-balance">
               Engineering that moves{" "}
               <em className="not-italic text-[#0098AF]">industries forward</em>
-            </h2>
-            <div className="relative rounded-2xl overflow-hidden">
+            </h2> */}
+            <div className="relative rounded-2xl overflow-hidden mb-2">
               <Image
                 src={ABOUT_CONSTANTS.IMAGE}
                 alt="Cognition IES engineering team at work"
                 width={640}
                 height={520}
-                className="w-full h-[320px] md:h-[380px] object-cover"
+                className="w-full h-[320px] md:h-[380px] object-cover  "
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#003C46]/25 to-transparent" />
+              <div className=" absolute inset-2 bg-gradient-to-t from-[#003C46]/25 to-transparent " />
             </div>
+             <Link
+              href="/about"
+              className="group inline-flex items-center gap-2 text-[13px] font-semibold text-[#003C46] hover:text-[#0098AF] transition-colors duration-200 mt-8 "
+            >
+              Our full story
+              <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200" />
+            </Link>
           </motion.div>
 
           {/* Right: body + stats + CTA */}
@@ -68,7 +78,7 @@ export default function AboutUs() {
             transition={{ duration: 0.6, delay: 0.18, ease: [0.22, 1, 0.36, 1] }}
             className="lg:col-span-7"
           >
-            <div className="space-y-5 mb-10">
+            <div className="space-y-5 mb-8">
               <p className="text-[15px] text-[#4a5568] leading-[1.8]">
                 {ABOUT_CONSTANTS.DESCRIPTION_1}
               </p>
@@ -91,13 +101,13 @@ export default function AboutUs() {
               ))}
             </div>
 
-            <Link
+            {/* <Link
               href="/about"
               className="group inline-flex items-center gap-2 text-[13px] font-semibold text-[#003C46] hover:text-[#0098AF] transition-colors duration-200"
             >
               Our full story
               <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200" />
-            </Link>
+            </Link> */}
           </motion.div>
         </div>
       </div>

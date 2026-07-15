@@ -1,13 +1,11 @@
 "use client";
 
 import { useState, useId, type ReactNode } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { ChevronDown } from "lucide-react";
 import Image from "next/image";
 import { Flame, Cuboid, PenTool } from "lucide-react";
-import { SERVICE_PHASES, type IconKey } from "@/constants/plant-engineering/servicePhases";
+import { SERVICE_PHASES, DISCIPLINE_IMAGES, type IconKey } from "@/constants/plant-engineering/servicePhases";
 import { SOFTWARE_BY_DISCIPLINE } from "@/constants/plant-engineering/SoftwareProficiency";
-
+import { AccordionList, AccordionItem, BulletGrid, SoftwareSection } from "@/components/shared/ServiceAccordion";
 // The 11 core disciplines now use your real icon set (constants/icon/perfect/) —
 // recolored to the site's teal accent, same source files as your repo. Fire &
 // Safety, BIM & 3D Modeling, and CAD Services are new categories with no matching
@@ -46,16 +44,12 @@ const slugify = (s: string) =>
   s.toLowerCase().replace(/[^a-z0-9\s-]/g, "").trim().replace(/\s+/g, "-");
 
 export default function PlantServicesExpanded() {
-  const [openIds, setOpenIds] = useState<Set<string>>(new Set());
+  // Single-open state, matching /details and the Product Engineering homepage —
+  // opening one item closes whichever else was open. This used to be a
+  // Set<string> here (independent multi-open per item), which is why this page
+  // behaved differently from the other two.
+  const [activeId, setActiveId] = useState<string | null>(null);
   const headingId = useId();
-
-  const toggle = (id: string) => {
-    setOpenIds((prev) => {
-      const next = new Set(prev);
-      next.has(id) ? next.delete(id) : next.add(id);
-      return next;
-    });
-  };
 
   return (
     <section id="services" className="py-16 sm:py-20 bg-white">
@@ -85,82 +79,49 @@ export default function PlantServicesExpanded() {
               </div>
 
               {/* Level 2 — category accordions */}
-              <div
-                className="divide-y divide-gray-100 border border-gray-100 rounded-2xl overflow-hidden shadow-sm"
-                role="list"
-                aria-labelledby={headingId}
-              >
-                {phase.categories.map((cat) => {
+              <AccordionList ariaLabelledBy={headingId}>
+                {phase.categories.map((cat, i) => {
                   const id = `${phase.number}-${slugify(cat.title)}`;
-                  const isOpen = openIds.has(id);
+                  const isOpen = activeId === id;
+                  const image = DISCIPLINE_IMAGES[cat.icon];
                   return (
-                    <div key={id} id={id} role="listitem">
-                      <button
-                        onClick={() => toggle(id)}
-                        aria-expanded={isOpen}
-                        className={`w-full flex items-center gap-4 px-6 py-4 text-left transition-colors duration-200 group ${
-                          isOpen ? "bg-[#003C46] text-white" : "bg-white hover:bg-[#E6F0F5]/50 text-[#003C46]"
+                    <AccordionItem
+                      key={id}
+                      id={id}
+                      index={String(i + 1).padStart(2, "0")}
+                      icon={ICON_MAP[cat.icon]}
+                      title={cat.title}
+                      isOpen={isOpen}
+                      onToggle={() => setActiveId(isOpen ? null : id)}
+                    >
+                      {/* Level 3 — scope of work for this category, at this phase */}
+                      <div
+                        className={`max-w-7xl mx-auto px-6 py-8 grid gap-8 items-start ${
+                          image ? "md:grid-cols-2" : ""
                         }`}
                       >
-                        <span className={`flex-shrink-0 w-8 h-8 rounded-lg flex items-center justify-center transition-colors duration-200 ${isOpen ? "bg-white/10 text-white" : "bg-[#0098af]/10 text-[#0098af]"}`}>
-                          {ICON_MAP[cat.icon]}
-                        </span>
-                        <span className="flex-1 text-[15px] sm:text-base font-semibold">{cat.title}</span>
-                        <ChevronDown className={`flex-shrink-0 h-5 w-5 transition-transform duration-300 ${isOpen ? "rotate-180 text-white/60" : "text-gray-400 group-hover:text-[#0098af]"}`} />
-                      </button>
+                        <div>
+                          <p className="text-sm text-[#5b5b5b] mb-4 leading-relaxed">{cat.description}</p>
+                          <BulletGrid items={cat.scope} />
+                          <SoftwareSection tools={SOFTWARE_BY_DISCIPLINE[cat.icon]} />
+                        </div>
 
-                      {/* Level 3 — scope of work for this category, at this phase */}
-                      <AnimatePresence initial={false}>
-                        {isOpen && (
-                          <motion.div
-                            key="panel"
-                            initial={{ height: 0, opacity: 0 }}
-                            animate={{ height: "auto", opacity: 1 }}
-                            exit={{ height: 0, opacity: 0 }}
-                            transition={{ duration: 0.3, ease: [0.32, 0, 0.18, 1] }}
-                            className="overflow-hidden"
-                          >
-                            <div className="bg-[#f8fbfc] border-t border-[#E6F0F5] px-6 py-6">
-                              <p className="text-sm text-[#5b5b5b] mb-4 leading-relaxed">{cat.description}</p>
-                              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2">
-                                {cat.scope.map((pt) => (
-                                  <li key={pt} className="flex items-start gap-2 text-sm text-[#003C46]">
-                                    <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-[#0098af] flex-shrink-0" />
-                                    {pt}
-                                  </li>
-                                ))}
-                              </ul>
-
-                              {(() => {
-                                const tools = SOFTWARE_BY_DISCIPLINE[cat.icon];
-                                if (!tools || tools.length === 0) return null;
-                                return (
-                                  <div className="mt-6 pt-5 border-t border-[#E6F0F5]">
-                                    <h4 className="text-xs font-semibold uppercase tracking-wide text-[#003C46]/60 mb-3">
-                                      Software We Use
-                                    </h4>
-                                    <div className="flex flex-wrap gap-2">
-                                      {tools.map((tool) => (
-                                        <span
-                                          key={tool}
-                                          title={tool}
-                                          className="px-3 py-1.5 rounded-lg bg-white border border-gray-200 text-[12px] text-[#003C46] font-medium"
-                                        >
-                                          {tool}
-                                        </span>
-                                      ))}
-                                    </div>
-                                  </div>
-                                );
-                              })()}
-                            </div>
-                          </motion.div>
+                        {image && (
+                          <div className="relative h-56 md:h-72 rounded-xl overflow-hidden shadow-md">
+                            <Image
+                              src={image.src}
+                              alt={image.alt}
+                              fill
+                              className="object-cover"
+                              sizes="(max-width: 768px) 100vw, 50vw"
+                            />
+                          </div>
                         )}
-                      </AnimatePresence>
-                    </div>
+                      </div>
+                    </AccordionItem>
                   );
                 })}
-              </div>
+              </AccordionList>
             </div>
           ))}
         </div>

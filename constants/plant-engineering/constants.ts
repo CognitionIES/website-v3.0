@@ -12,27 +12,14 @@ import ProcurementImage from "@/constants/images/plant/horizontal/11.webp";
 import heroImage from "@/constants/images/plant/hero.webp";
 import aboutImage from '@/constants/images/Plant-engineering/about.webp';
 
-//const processImage = '/images/plant/horizontal/01.webp';
-//const mechImage = '/images/plant/horizontal/02.webp';
-//const pipingImage = '/images/plant/horizontal/03.webp';
-//const pipeStressImage = '/images/plant/horizontal/04.webp';
-//const civilImage = '/images/plant/horizontal/05.webp';
-//const StructuralImage = '/images/plant/horizontal/06.webp';
-//const elecImage = '/images/plant/horizontal/07.webp';
-//const InstrumentationImage = '/images/plant/horizontal/08.webp';
-//const ModularImage = '/images/plant/horizontal/09.webp';
-//const ReverseImage = '/images/plant/horizontal/10.webp';
-//const ProcurementImage = '/images/plant/horizontal/11.webp';
-//const heroImage = '/images/plant/hero.webp';
-
 // This file holds all constants for the plant engineering page
 import { Building2, Workflow, Box, Truck } from "lucide-react";
-//const aboutImage = '/images/Plant-engineering/about.webp';
 import { IconProp } from "@fortawesome/fontawesome-svg-core";
 import { ComponentType } from "react";
 
 interface Service {
   columns?: number;
+  category: string;
   bulletPoints: {
     mainTopic: string;
     subPoints: string[];
@@ -75,6 +62,21 @@ export const PLANT_ENGINEERING_CONSTANTS = {
     IMAGE: aboutImage,
   },
 
+  // Service Categories (used to group SERVICES.ITEMS below)
+  // ⚠️ DEPRECATED — no longer used by any page as of the servicePhases.ts /
+  // getDisciplinesFlat() migration. The homepage reads SERVICE_PHASES from
+  // constants/plant-engineering/servicePhases.ts; /details reads
+  // getDisciplinesFlat() from the same file. Only PLANT_ENGINEERING_CONSTANTS.HERO,
+  // .ABOUT, and .FAQ below are still live. Kept here (not deleted) so the content
+  // isn't lost in case anything below still needs cross-checking against it —
+  // safe to delete once you've confirmed that.
+  SERVICE_CATEGORIES: [
+    "Process & Safety",
+    "Design Engineering",
+    "Analysis & Assessment",
+    "Delivery & Support",
+  ],
+
   // Services Section
   SERVICES: {
     TITLE: " Plant Engineering Services",
@@ -85,6 +87,7 @@ export const PLANT_ENGINEERING_CONSTANTS = {
       {
         icon: faBuildingShield,
         title: "Process & Safety Engineering",
+        category: "Process & Safety",
         description:
           "Comprehensive engineering solutions to optimize plant processes, ensure safety compliance, and enhance operational efficiency through advanced design and risk assessment.",
         image: processImage,
@@ -132,6 +135,7 @@ export const PLANT_ENGINEERING_CONSTANTS = {
       {
         icon: Workflow,
         title: "Piping Engineering",
+        category: "Design Engineering",
         description:
           "Designing and managing efficient piping systems to ensure safe and reliable transport of fluids and gases across the plant with advanced analysis and material specifications.",
         image: pipingImage,
@@ -179,6 +183,7 @@ export const PLANT_ENGINEERING_CONSTANTS = {
       {
         icon: faChartArea,
         title: "Piping Stress Analysis",
+        category: "Analysis & Assessment",
         description:
           "Comprehensive analysis of piping systems to ensure structural integrity, safety, and reliability under diverse operating conditions through advanced stress evaluations and calculations.",
         image: pipeStressImage,
@@ -221,6 +226,7 @@ export const PLANT_ENGINEERING_CONSTANTS = {
       {
         icon: faGears,
         title: "Mechanical Design Engineering",
+        category: "Design Engineering",
         description:
           "Engineering and maintaining high-performance mechanical systems to ensure plant reliability, efficiency, and safety through detailed design and analysis.",
         image: mechImage,
@@ -254,7 +260,6 @@ export const PLANT_ENGINEERING_CONSTANTS = {
             mainTopic: "Static and Rotating Equipment",
             subPoints: [
               "Pressure Vessels & Heat Exchangers",
-              // "Static & Rotating Equipment",
               "Columns & Towers",
               "Storage Tanks",
               "Dryers & Cooling Towers",
@@ -278,6 +283,7 @@ export const PLANT_ENGINEERING_CONSTANTS = {
       {
         icon: faPlugCircleBolt,
         title: "Electrical Design Engineering",
+        category: "Design Engineering",
         description:
           "Implementing reliable electrical systems to power plant operations efficiently and safely.",
         image: elecImage,
@@ -327,6 +333,7 @@ export const PLANT_ENGINEERING_CONSTANTS = {
       {
         icon: IconSettingsDollar,
         title: "Reverse Engineering",
+        category: "Analysis & Assessment",
         description:
           "Analyzing existing systems to recreate or improve designs for enhanced performance.",
         image: ReverseImage,
@@ -363,6 +370,7 @@ export const PLANT_ENGINEERING_CONSTANTS = {
       {
         icon: faGaugeHigh,
         title: "Instrumentation Engineering",
+        category: "Design Engineering",
         description:
           "Integrating advanced instrumentation for precise monitoring and control of plant processes.",
         image: InstrumentationImage,
@@ -414,6 +422,7 @@ export const PLANT_ENGINEERING_CONSTANTS = {
       {
         icon: Building2,
         title: "Civil Engineering",
+        category: "Design Engineering",
         description:
           "Providing foundational civil engineering solutions for durable and safe plant infrastructure.",
         image: civilImage,
@@ -449,6 +458,7 @@ export const PLANT_ENGINEERING_CONSTANTS = {
       {
         icon: faBridge,
         title: "Structural Engineering",
+        category: "Design Engineering",
         description:
           "Designing strong, stable structures to support plant operations and withstand environmental challenges.",
         image: StructuralImage,
@@ -494,6 +504,7 @@ export const PLANT_ENGINEERING_CONSTANTS = {
       {
         icon: Box,
         title: "Modular Package",
+        category: "Delivery & Support",
         description:
           "Delivering pre-engineered modular solutions for faster installation and operational flexibility.",
         image: ModularImage,
@@ -540,6 +551,7 @@ export const PLANT_ENGINEERING_CONSTANTS = {
       {
         icon: Truck,
         title: "Procurement Support",
+        category: "Delivery & Support",
         description:
           "Streamlining procurement processes to source quality materials and equipment on time and within budget.",
         image: ProcurementImage,
@@ -607,7 +619,7 @@ export const PLANT_ENGINEERING_CONSTANTS = {
           "We manage projects end-to-end, covering planning, design, execution, and final testing. Our structured approach ensures timely completion while staying within budget and meeting all requirements.",
       },
       {
-        question: "Can you customize your solutions for our plant’s needs?",
+        question: "Can you customize your solutions for our plant's needs?",
         answer:
           "Absolutely! We provide tailored plant engineering solutions to align with your specific requirements, ensuring maximum efficiency, safety, and cost-effectiveness.",
       },

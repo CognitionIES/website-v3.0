@@ -1,3 +1,15 @@
+// ⚠️ DEPRECATED — no longer imported anywhere as of the Product Engineering
+// data consolidation. All 3 former consumers now read from one canonical
+// source instead:
+//   - app/services/page.tsx                                  (the /services hub)
+//   - app/services/product-engineering/ProductServicesExpanded.tsx (homepage)
+//   - app/services/product-engineering/[service]/*.tsx        (standalone pages)
+// ...all now import PRODUCT_SERVICES / getProductService from
+// constants/product-engineering/services.ts. This file had drifted from that
+// data in real ways (see CHANGES.md) — e.g. its CAE/CFD description was
+// actually about hydraulics, and several bullet lists had different wording.
+// Kept here for reference only; safe to delete once you've spot-checked the
+// merge against this original.
 import mechImage from '@/constants/images/product/logo/mech.webp';
 import elecImage from '@/constants/images/product/logo/elec.webp';
 import caeImage from '@/constants/images/product/logo/cae.webp';

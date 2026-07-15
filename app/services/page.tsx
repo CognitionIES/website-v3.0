@@ -1,6 +1,6 @@
 "use client";
 
-import sections from "@/constants/sections";
+import { PRODUCT_SERVICES } from "@/constants/product-engineering/services";
 import Footer from "@/components/Footer";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import { ChevronDown, MousePointer2 } from "lucide-react";
@@ -90,10 +90,10 @@ export default function ServicesPage() {
             <Suspense fallback={null}>
               <SearchParamsHandler onParamChange={handleParamChange} />
             </Suspense>
-            {Object.entries(sections).map(([key, section], index) => (
+            {PRODUCT_SERVICES.map((section, index) => (
               <section
-                key={key}
-                id={key}
+                key={section.id}
+                id={section.id}
                 ref={(el) => {
                   sectionRefs.current[index] = el as HTMLDivElement | null;
                 }}
@@ -113,9 +113,9 @@ export default function ServicesPage() {
                     index={index}
                     title={section.title}
                     description={section.description}
-                    imageUrl={section.imageUrl.src}
-                    bulletPoints={section.bulletPoints}
-                    additionalImageUrl={section.additionalImageUrl?.src}
+                    imageUrl={section.image.src}
+                    bulletPoints={section.bullets}
+                    additionalImageUrl={section.logoImage.src}
                   />
                 </div>
               </section>

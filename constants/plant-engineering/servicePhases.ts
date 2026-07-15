@@ -1,3 +1,16 @@
+import type { StaticImageData } from "next/image";
+import processImage from "@/constants/images/plant/horizontal/01.webp";
+import mechImage from "@/constants/images/plant/horizontal/02.webp";
+import pipingImage from "@/constants/images/plant/horizontal/03.webp";
+import pipeStressImage from "@/constants/images/plant/horizontal/04.webp";
+import civilImage from "@/constants/images/plant/horizontal/05.webp";
+import StructuralImage from "@/constants/images/plant/horizontal/06.webp";
+import elecImage from "@/constants/images/plant/horizontal/07.webp";
+import InstrumentationImage from "@/constants/images/plant/horizontal/08.webp";
+import ModularImage from "@/constants/images/plant/horizontal/09.webp";
+import ReverseImage from "@/constants/images/plant/horizontal/10.webp";
+import ProcurementImage from "@/constants/images/plant/horizontal/11.webp";
+
 // Three-level Engineering Services hierarchy for the Plant Engineering page:
 // Phase (numbered heading, not an accordion) -> Category (accordion) -> Scope of work.
 //
@@ -27,6 +40,31 @@ export type ServiceCategory = {
     sourced?: boolean;
 };
 
+// Discipline images live here as a separate lookup, NOT as a field on
+// ServiceCategory. A discipline (e.g. "Process & Safety Engineering") can appear
+// in multiple phases with different scope subsets, so an image belongs to the
+// discipline once — keyed by IconKey — rather than being repeated (and risking
+// drift) on every phase-occurrence. Sourced 1:1 from the original 11 images in
+// constants/plant-engineering/constants.ts. The 3 categories introduced in this
+// v2 rebuild (fire-safety, bim-3d, cad) have no source image yet — intentionally
+// left out of the map below rather than given a placeholder.
+export const DISCIPLINE_IMAGES: Partial<Record<IconKey, { src: StaticImageData; alt: string }>> = {
+    "process-safety": { src: processImage, alt: "Process safety equipment" },
+    "piping": { src: pipingImage, alt: "Piping engineering layout" },
+    "piping-stress": { src: pipeStressImage, alt: "Piping stress analysis dashboard" },
+    "mechanical": { src: mechImage, alt: "Mechanical engineering tools" },
+    "electrical": { src: elecImage, alt: "Electrical engineering panel" },
+    "instrumentation": { src: InstrumentationImage, alt: "Instrumentation control system" },
+    "civil": { src: civilImage, alt: "Civil engineering construction" },
+    // NOTE: the original constants.ts reused the "Civil engineering construction"
+    // alt text for Structural too (copy-paste, not a real description) — corrected
+    // here rather than carried forward.
+    "structural": { src: StructuralImage, alt: "Structural engineering steel framework" },
+    "reverse-engineering": { src: ReverseImage, alt: "Reverse engineering process" },
+    "modular": { src: ModularImage, alt: "Modular plant package" },
+    "procurement": { src: ProcurementImage, alt: "Procurement planning meeting" },
+};
+
 export type ServicePhase = {
     number: string;
     title: string;
@@ -48,6 +86,65 @@ export type IconKey =
     | "fire-safety"
     | "bim-3d"
     | "cad";
+
+export type DisciplineOccurrence = {
+    phaseNumber: string;
+    phaseTitle: string;
+    /** This occurrence's own title. Usually matches the parent DisciplineEntry.title,
+     * but not always — e.g. "process-safety" appears in phase 05 under two distinct
+     * titles ("Process & Safety Engineering" and "Process Safety & Risk Assessment")
+     * with different descriptions. Kept as-is rather than collapsed into one, so no
+     * original wording is lost or silently merged. */
+    title: string;
+    description: string;
+    scope: string[];
+    sourced?: boolean;
+};
+
+export type DisciplineEntry = {
+    icon: IconKey;
+    /** Label for the outer accordion — the title from this discipline's first
+     * phase-occurrence. */
+    title: string;
+    image?: { src: StaticImageData; alt: string };
+    occurrences: DisciplineOccurrence[];
+};
+
+/**
+ * Regroups SERVICE_PHASES (phase -> category) into one entry per discipline
+ * (icon -> all its phase occurrences), for pages like /details that want a
+ * comprehensive per-discipline view rather than the homepage's phase journey.
+ * This is a pure re-indexing of existing data — nothing is merged, summarized,
+ * or invented, so it can't drift from SERVICE_PHASES.
+ */
+export function getDisciplinesFlat(): DisciplineEntry[] {
+    const order: IconKey[] = [];
+    const map = new Map<IconKey, DisciplineEntry>();
+
+    for (const phase of SERVICE_PHASES) {
+        for (const cat of phase.categories) {
+            if (!map.has(cat.icon)) {
+                order.push(cat.icon);
+                map.set(cat.icon, {
+                    icon: cat.icon,
+                    title: cat.title,
+                    image: DISCIPLINE_IMAGES[cat.icon],
+                    occurrences: [],
+                });
+            }
+            map.get(cat.icon)!.occurrences.push({
+                phaseNumber: phase.number,
+                phaseTitle: phase.title,
+                title: cat.title,
+                description: cat.description,
+                scope: cat.scope,
+                sourced: cat.sourced,
+            });
+        }
+    }
+
+    return order.map((k) => map.get(k)!);
+}
 
 export const SERVICE_PHASES: ServicePhase[] = [
     {
