@@ -5,6 +5,7 @@ import Image from "next/image";
 import { PRODUCT_ENGINEERING_CONSTANTS } from "@/constants/product-engineering/constants";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import productEngineeringImage from '@/constants/images/product-engineering/product-engineering-services.webp';
 
 export default function AboutSection() {
   const { DESCRIPTION_1, DESCRIPTION_2, IMAGE } = PRODUCT_ENGINEERING_CONSTANTS.ABOUT;
@@ -41,7 +42,7 @@ export default function AboutSection() {
           </div>
           <div className="hidden md:block relative rounded-xl shadow-md overflow-hidden min-h-[380px]">
             <Image
-              src={IMAGE}
+              src={productEngineeringImage}
               alt="Product Engineering services"
               fill
               className="object-cover"

@@ -5,9 +5,10 @@ import Image from "next/image";
 import { PLANT_ENGINEERING_CONSTANTS } from "@/constants/plant-engineering/constants";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import plantengineeringimage from "@/constants/images/plant-engineering/plant-engineering-services.webp";
 
 export default function AboutSection() {
-  const { DESCRIPTION_1, DESCRIPTION_2, IMAGE } = PLANT_ENGINEERING_CONSTANTS.ABOUT;
+  const { DESCRIPTION_1, DESCRIPTION_2 } = PLANT_ENGINEERING_CONSTANTS.ABOUT;
 
   return (
     <section className="w-full py-16 sm:py-20 lg:py-24 bg-gradient-to-b from-white to-[#E6F0F5]/30">
@@ -41,7 +42,7 @@ export default function AboutSection() {
           </div>
           <div className="hidden md:block relative rounded-xl shadow-md overflow-hidden min-h-[380px]">
             <Image
-              src={IMAGE}
+              src={plantengineeringimage}
               alt="Plant Engineering services"
               fill
               className="object-cover"

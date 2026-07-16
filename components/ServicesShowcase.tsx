@@ -1,7 +1,13 @@
 "use client";
 
-import { useState, useRef } from "react";
-import { motion, useInView } from "framer-motion";
+import { useState, useRef, useEffect } from "react";
+import {
+  motion,
+  useInView,
+  useScroll,
+  useTransform,
+  useSpring,
+} from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
@@ -53,14 +59,125 @@ const services = [
   },
 ];
 
+function ServiceRow({
+  svc,
+  index,
+  active,
+  onActivate,
+}: {
+  svc: (typeof services)[number];
+  index: number;
+  active: number;
+  onActivate: (i: number) => void;
+}) {
+  const rowRef = useRef<HTMLLIElement>(null);
+  const inCenterBand = useInView(rowRef, {
+    margin: "-45% 0px -45% 0px",
+  });
+
+  useEffect(() => {
+    if (inCenterBand) onActivate(index);
+  }, [inCenterBand, index, onActivate]);
+
+  const isActive = active === index;
+
+  return (
+    <motion.li
+      ref={rowRef}
+      initial={{ opacity: 0, x: -16 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      viewport={{ once: true, amount: 0.4 }}
+      transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+      className="relative"
+    >
+      {/* Active-state accent bar — quiet left-edge indicator rather than a full bg fill */}
+      <motion.span
+        aria-hidden
+        className="absolute left-[-1px] top-0 bottom-0 w-[2px] bg-[#0098AF] origin-top"
+        initial={false}
+        animate={{ scaleY: isActive ? 1 : 0 }}
+        transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+      />
+      <Link
+        href={svc.href}
+        onMouseEnter={() => onActivate(index)}
+        className="group flex min-h-[200px] items-center gap-8 py-5 pl-6 -ml-6 transition-colors duration-300"
+      >
+        <span
+          className={`font-display text-4xl tabular-nums tracking-tight mt-1 shrink-0 transition-all duration-500 ease-out ${
+            isActive
+              ? "text-[#0098AF] opacity-100"
+              : "text-[#e2e8f0] opacity-100"
+          }`}
+        >
+          {svc.num}
+        </span>
+        <div
+          className={`flex-1 min-w-0 transition-opacity duration-400 ${
+            isActive ? "opacity-100" : "opacity-45 group-hover:opacity-75"
+          }`}
+        >
+          <div className="flex items-baseline justify-between mb-2">
+            <h3 className="font-display text-2xl text-[#111827] tracking-tight">
+              {svc.title}
+            </h3>
+            <ArrowUpRight
+              className={`w-5 h-5 shrink-0 ml-4 transition-all duration-300 ${
+                isActive
+                  ? "text-[#0098AF] translate-x-0 translate-y-0"
+                  : "text-transparent -translate-x-0.5 translate-y-0.5 group-hover:text-[#0098AF] group-hover:translate-x-0 group-hover:translate-y-0"
+              }`}
+            />
+          </div>
+          <p className="font-sans text-[14px] text-[#718096] leading-[1.7] mb-4 max-w-md">
+            {svc.description}
+          </p>
+          <div className="flex flex-wrap gap-2">
+            {svc.tags.map((t) => (
+              <span
+                key={t}
+                className="font-sans text-[11px] font-semibold tracking-[0.1em] uppercase text-[#718096] border border-[#e2e8f0] rounded-full px-2.5 py-0.5"
+              >
+                {t}
+              </span>
+            ))}
+          </div>
+        </div>
+      </Link>
+    </motion.li>
+  );
+}
+
 export default function ServicesShowcase() {
   const [active, setActive] = useState(0);
-  const ref = useRef<HTMLElement>(null);
-  const isInView = useInView(ref, { once: true, amount: 0.1 });
+  const sectionRef = useRef<HTMLElement>(null);
+  const listWrapRef = useRef<HTMLDivElement>(null);
+  const isInView = useInView(sectionRef, { once: true, amount: 0.1 });
+
+  const { scrollYProgress } = useScroll({
+    target: listWrapRef,
+    offset: ["start end", "end start"],
+  });
+
+  // Spring-damp the raw scroll progress before mapping to pixels — removes the
+  // slight jitter/step-iness raw scroll-linked transforms can have on trackpads,
+  // and gives the drift a more considered, weighted feel rather than 1:1 tracking.
+  const smoothProgress = useSpring(scrollYProgress, {
+    stiffness: 90,
+    damping: 24,
+    mass: 0.5,
+  });
+
+  const imageY = useTransform(smoothProgress, [0, 1], [-120, 120]);
+  const imageScale = useTransform(
+    smoothProgress,
+    [0, 0.5, 1],
+    [0.97, 1, 0.97]
+  );
 
   return (
     <section
-      ref={ref}
+      ref={sectionRef}
       id="services-showcase"
       className="bg-[#fafaf8] relative overflow-hidden"
     >
@@ -94,80 +211,41 @@ export default function ServicesShowcase() {
         </div>
       </div>
 
-      {/* Desktop: numbered list + image panel */}
-      <div className="hidden lg:flex max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 pb-24 gap-16">
+      {/* Desktop: numbered list + parallax image panel */}
+      <div
+        ref={listWrapRef}
+        className="hidden lg:flex max-w-7xl mx-auto px-6 sm:px-10 lg:px-16 pb-24 gap-16 items-center"
+      >
         {/* Left: list */}
         <ul className="divide-y divide-[#e2e8f0] flex-1">
           {services.map((svc, i) => (
-            <motion.li
+            <ServiceRow
               key={svc.num}
-              initial={{ opacity: 0, x: -16 }}
-              animate={isInView ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 0.5, delay: 0.1 + i * 0.08, ease: [0.22, 1, 0.36, 1] }}
-            >
-              <Link
-                href={svc.href}
-                onMouseEnter={() => setActive(i)}
-                className={`group flex items-start gap-8 py-5 transition-all duration-300 ${
-                  active === i ? "opacity-100" : "opacity-40 hover:opacity-70"
-                }`}
-              >
-                <span
-                  className={`font-display text-4xl tabular-nums tracking-tight mt-1 shrink-0 transition-colors duration-300 ${
-                    active === i ? "text-[#0098AF]" : "text-[#e2e8f0]"
-                  }`}
-                >
-                  {svc.num}
-                </span>
-                <div className="flex-1 min-w-0">
-                  <div className="flex items-baseline justify-between mb-2">
-                    <h3 className="font-display text-2xl text-[#111827] tracking-tight">
-                      {svc.title}
-                    </h3>
-                    <ArrowUpRight
-                      className={`w-5 h-5 shrink-0 ml-4 transition-all duration-300 ${
-                        active === i
-                          ? "text-[#0098AF]"
-                          : "text-transparent group-hover:text-[#0098AF]"
-                      }`}
-                    />
-                  </div>
-                  <p className="font-sans text-[14px] text-[#718096] leading-[1.7] mb-4">
-                    {svc.description}
-                  </p>
-                  <div className="flex flex-wrap gap-2">
-                    {svc.tags.map((t) => (
-                      <span
-                        key={t}
-                        className="font-sans text-[11px] font-semibold tracking-[0.1em] uppercase text-[#718096] border border-[#e2e8f0] rounded-full px-2.5 py-0.5"
-                      >
-                        {t}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </Link>
-            </motion.li>
+              svc={svc}
+              index={i}
+              active={active}
+              onActivate={setActive}
+            />
           ))}
         </ul>
 
-        {/* Right: image | NOT sticky, just centered vertically alongside the list */}
-        <motion.div
-          initial={{ opacity: 0, x: 24 }}
-          animate={isInView ? { opacity: 1, x: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-          className="w-[45%] flex items-center"
-        >
-          <div className="w-full">
-            <div className="relative aspect-[4/3] rounded-2xl overflow-hidden">
+        {/* Right: parallax image panel */}
+        <div className="w-[45%] shrink-0">
+          <motion.div
+            style={{ y: imageY, scale: imageScale }}
+            className="w-full will-change-transform"
+          >
+            <div className="relative aspect-[4/3] rounded-2xl overflow-hidden ring-1 ring-black/5 shadow-[0_30px_70px_-20px_rgba(0,60,70,0.28)]">
               {services.map((svc, i) => (
-                <div
+                <motion.div
                   key={svc.num}
-                  className={`absolute inset-0 transition-all duration-500 ease-in-out ${
-                    i === active
-                      ? "opacity-100 scale-100"
-                      : "opacity-0 scale-[1.04]"
-                  }`}
+                  className="absolute inset-0"
+                  initial={false}
+                  animate={{
+                    opacity: i === active ? 1 : 0,
+                    scale: i === active ? 1 : 1.06,
+                  }}
+                  transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
                 >
                   <Image
                     src={svc.image}
@@ -176,8 +254,8 @@ export default function ServicesShowcase() {
                     className="object-cover"
                     sizes="45vw"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#003C46]/60 via-transparent to-transparent" />
-                  <div className="absolute bottom-6 left-6">
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#003C46]/65 via-[#003C46]/5 to-transparent" />
+                  <div className="absolute bottom-0 left-0 right-0 p-6">
                     <span className="font-sans text-[11px] font-semibold tracking-[0.18em] uppercase text-white/70 block mb-1">
                       {svc.short}
                     </span>
@@ -185,11 +263,45 @@ export default function ServicesShowcase() {
                       {svc.title}
                     </span>
                   </div>
-                </div>
+                  {/* Faint inner border for a "framed" feel on top of the photo */}
+                  <div className="absolute inset-0 ring-1 ring-inset ring-white/10 rounded-2xl pointer-events-none" />
+                </motion.div>
               ))}
             </div>
-          </div>
-        </motion.div>
+
+            {/* Progress rail with number labels */}
+            <div className="flex items-center gap-3 mt-5">
+              {services.map((svc, i) => (
+                <button
+                  key={svc.num}
+                  type="button"
+                  aria-label={`Show ${svc.title}`}
+                  onClick={() => setActive(i)}
+                  className="flex-1 group/rail"
+                >
+                  <div className="h-[3px] rounded-full bg-[#e2e8f0] overflow-hidden mb-2">
+                    <motion.div
+                      className="h-full bg-[#0098AF]"
+                      initial={false}
+                      animate={{ scaleX: i === active ? 1 : 0 }}
+                      style={{ transformOrigin: "left" }}
+                      transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                    />
+                  </div>
+                  <span
+                    className={`font-sans text-[10px] font-semibold tracking-[0.12em] uppercase transition-colors duration-300 ${
+                      i === active
+                        ? "text-[#003C46]"
+                        : "text-[#a0aec0] group-hover/rail:text-[#718096]"
+                    }`}
+                  >
+                    {svc.num}
+                  </span>
+                </button>
+              ))}
+            </div>
+          </motion.div>
+        </div>
       </div>
 
       {/* Mobile: cards */}
@@ -229,4 +341,4 @@ export default function ServicesShowcase() {
       </div>
     </section>
   );
-}
+} 

@@ -13,6 +13,7 @@ import aboutImage from '@/constants/images/product-engineering/about.webp'
 import embeddedImage2 from '@/constants/images/product-engineering/side/embedded-1.webp'
 import { faGears, faMagnifyingGlassChart, faPlugCircleBolt } from "@fortawesome/free-solid-svg-icons";
 import { Cpu, FileText, Layers, Printer, Truck, Workflow } from "lucide-react";
+import productEngineeringImage from '@/constants/images/product-engineering/product-engineering-services.webp';
 
 // constants/product-engineering/constants.ts
 import { ComponentType } from "react";
@@ -30,7 +31,7 @@ export const PRODUCT_ENGINEERING_CONSTANTS = {
   // Hero Section
   HERO: {
     IMAGE:
-      "https://images.unsplash.com/photo-1581094794329-c8112c4e5190?ixlib=rb-1.2.1&auto=format&fit=crop&w=2000&q=80",
+      productEngineeringImage,
     TITLE: "Product Engineering services",
     SUBTITLE: "Innovative engineering solutions for complex challenges",
   },
