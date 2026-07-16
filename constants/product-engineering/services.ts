@@ -2,28 +2,28 @@ import type { StaticImageData } from "next/image";
 
 // Side images — used as the large image in both the homepage accordion panel
 // and the standalone /[service] page.
-import mechImage from "@/constants/images/product/side/mech.webp";
-import elecImage from "@/constants/images/product/side/elec.webp";
-import caeImage from "@/constants/images/product/side/cae.webp";
-import protoImage from "@/constants/images/product/side/prototyping.webp";
-import hydraImage from "@/constants/images/product/side/hydraulic.webp";
-import assetImage from "@/constants/images/product/side/asset.webp";
-import embeddedImage from "@/constants/images/product/side/embedded-1.webp";
-import techImage from "@/constants/images/product/side/tech.webp";
-import supplyImage from "@/constants/images/product/side/supply.webp";
+import mechImage from "@/constants/images/product-engineering/side/mech.webp";
+import elecImage from "@/constants/images/product-engineering/side/elec.webp";
+import caeImage from "@/constants/images/product-engineering/side/cae.webp";
+import protoImage from "@/constants/images/product-engineering/side/prototyping.webp";
+import hydraImage from "@/constants/images/product-engineering/side/hydraulic.webp";
+import assetImage from "@/constants/images/product-engineering/side/asset.webp";
+import embeddedImage from "@/constants/images/product-engineering/side/embedded-1.webp";
+import techImage from "@/constants/images/product-engineering/side/tech.webp";
+import supplyImage from "@/constants/images/product-engineering/side/supply.webp";
 
 // Small logo-style images — only ever used on the standalone /[service] pages
 // (as `additionalImageUrl` in the old sections.ts). Optional on purpose: not
 // every consumer needs them.
-import mechLogo from "@/constants/images/product/logo/mech.webp";
-import elecLogo from "@/constants/images/product/logo/elec.webp";
-import caeLogo from "@/constants/images/product/logo/cae.webp";
-import protoLogo from "@/constants/images/product/logo/prototyp.webp";
-import hydraLogo from "@/constants/images/product/logo/hydraulic.webp";
-import assetLogo from "@/constants/images/product/logo/asset.webp";
-import embeddedLogo from "@/constants/images/product/logo/embedded.webp";
-import techLogo from "@/constants/images/product/logo/technical.webp";
-import supplyLogo from "@/constants/images/product/logo/supply.webp";
+import mechLogo from "@/constants/images/product-engineering/logo/mech.webp";
+import elecLogo from "@/constants/images/product-engineering/logo/elec.webp";
+import caeLogo from "@/constants/images/product-engineering/logo/cae.webp";
+import protoLogo from "@/constants/images/product-engineering/logo/prototyp.webp";
+import hydraLogo from "@/constants/images/product-engineering/logo/hydraulic.webp";
+import assetLogo from "@/constants/images/product-engineering/logo/asset.webp";
+import embeddedLogo from "@/constants/images/product-engineering/logo/embedded.webp";
+import techLogo from "@/constants/images/product-engineering/logo/technical.webp";
+import supplyLogo from "@/constants/images/product-engineering/logo/supply.webp";
 
 /**
  * Single source of truth for the 9 Product Engineering disciplines.

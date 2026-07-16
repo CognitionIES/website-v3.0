@@ -8,8 +8,7 @@ import { getProductService } from "@/constants/product-engineering/services";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { ChevronRight, Home } from "lucide-react";
-const frameBackground = "/images/Background/Frame_8.webp";
-
+import frameBackground from "@/constants/images/Background/Frame_8.webp";
 interface Props {
   serviceSlug: string;
 }
@@ -98,7 +97,7 @@ export default function ProductEngineeringServiceClient({ serviceSlug }: Props) 
         <div
           className="relative min-h-screen py-16"
           style={{
-            backgroundImage: `url(${frameBackground})`,
+  backgroundImage: `url(${frameBackground.src})`,
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}

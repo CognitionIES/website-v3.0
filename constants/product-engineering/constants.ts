@@ -1,16 +1,16 @@
 // This file holds all constants for the product engineering page
 
-import supplyImage1 from '@/constants/images/product/side/supply.webp';
-import mechImage1 from '@/constants/images/product/side/mech.webp';
-import elecImage1 from '@/constants/images/product/side/elec.webp';
-import protoImage1 from '@/constants/images/product/side/prototyping.webp';
-import hydraImage1 from '@/constants/images/product/side/hydraulic.webp';
-import assetImage1 from '@/constants/images/product/side/asset.webp';
+import supplyImage1 from '@/constants/images/product-engineering/side/supply.webp';
+import mechImage1 from '@/constants/images/product-engineering/side/mech.webp';
+import elecImage1 from '@/constants/images/product-engineering/side/elec.webp';
+import protoImage1 from '@/constants/images/product-engineering/side/prototyping.webp';
+import hydraImage1 from '@/constants/images/product-engineering/side/hydraulic.webp';
+import assetImage1 from '@/constants/images/product-engineering/side/asset.webp';
 //const embeddedImage1 = '/images/product/side/embedded.webp';
-import caeImage1 from '@/constants/images/product/side/cae.webp'
-import techImage1 from '@/constants/images/product/side/tech.webp'
-import aboutImage from '@/constants/images/product/about.webp'
-import embeddedImage2 from '@/constants/images/product/side/embedded-1.webp'
+import caeImage1 from '@/constants/images/product-engineering/side/cae.webp'
+import techImage1 from '@/constants/images/product-engineering/side/tech.webp'
+import aboutImage from '@/constants/images/product-engineering/about.webp'
+import embeddedImage2 from '@/constants/images/product-engineering/side/embedded-1.webp'
 import { faGears, faMagnifyingGlassChart, faPlugCircleBolt } from "@fortawesome/free-solid-svg-icons";
 import { Cpu, FileText, Layers, Printer, Truck, Workflow } from "lucide-react";
 

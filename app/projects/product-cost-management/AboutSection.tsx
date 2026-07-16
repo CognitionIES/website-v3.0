@@ -1,8 +1,7 @@
 "use client";
 
 import Image from "next/image";
-
-const aboutImage = "/images/projects/pcm/project-overview.webp";
+import aboutImage from "@/constants/images/projects/pcm/project-overview.webp";
 
 export default function AboutSection() {
   return (

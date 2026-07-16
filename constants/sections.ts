@@ -10,24 +10,24 @@
 // actually about hydraulics, and several bullet lists had different wording.
 // Kept here for reference only; safe to delete once you've spot-checked the
 // merge against this original.
-import mechImage from '@/constants/images/product/logo/mech.webp';
-import elecImage from '@/constants/images/product/logo/elec.webp';
-import caeImage from '@/constants/images/product/logo/cae.webp';
-import prototypingImage from '@/constants/images/product/logo/prototyp.webp';
-import hydraulicImage from '@/constants/images/product/logo/hydraulic.webp';
-import assetImage from '@/constants/images/product/logo/asset.webp';
-import embeddedImage from '@/constants/images/product/logo/embedded.webp';
-import techImage from '@/constants/images/product/logo/technical.webp';
-import supplyImage from '@/constants/images/product/logo/supply.webp';
-import mechImage1 from '@/constants/images/product/side/mech.webp';
-import elecImage1 from '@/constants/images/product/side/elec.webp';
-import protoImage1 from '@/constants/images/product/side/prototyping.webp';
-import hydraImage1 from '@/constants/images/product/side/hydraulic.webp';
-import assetImage1 from '@/constants/images/product/side/asset.webp';
-import embeddedImage1 from '@/constants/images/product/side/embedded.webp';
-import supplyImage1 from '@/constants/images/product/side/supply.webp';
-import caeImage1 from '@/constants/images/product/side/cae.webp'
-import techImage1 from '@/constants/images/product/side/tech.webp'
+import mechImage from '@/constants/images/product-engineering/logo/mech.webp';
+import elecImage from '@/constants/images/product-engineering/logo/elec.webp';
+import caeImage from '@/constants/images/product-engineering/logo/cae.webp';
+import prototypingImage from '@/constants/images/product-engineering/logo/prototyp.webp';
+import hydraulicImage from '@/constants/images/product-engineering/logo/hydraulic.webp';
+import assetImage from '@/constants/images/product-engineering/logo/asset.webp';
+import embeddedImage from '@/constants/images/product-engineering/logo/embedded.webp';
+import techImage from '@/constants/images/product-engineering/logo/technical.webp';
+import supplyImage from '@/constants/images/product-engineering/logo/supply.webp';
+import mechImage1 from '@/constants/images/product-engineering/side/mech.webp';
+import elecImage1 from '@/constants/images/product-engineering/side/elec.webp';
+import protoImage1 from '@/constants/images/product-engineering/side/prototyping.webp';
+import hydraImage1 from '@/constants/images/product-engineering/side/hydraulic.webp';
+import assetImage1 from '@/constants/images/product-engineering/side/asset.webp';
+import embeddedImage1 from '@/constants/images/product-engineering/side/embedded.webp';
+import supplyImage1 from '@/constants/images/product-engineering/side/supply.webp';
+import caeImage1 from '@/constants/images/product-engineering/side/cae.webp'
+import techImage1 from '@/constants/images/product-engineering/side/tech.webp'
 
 const sections = {
   // 1. Mechanical Design Services
@@ -76,7 +76,7 @@ const sections = {
     description:
       "Delivering power through precision, our hydraulic engineering services focus on efficient system design and reliability. We analyze, model, and optimize hydraulic circuits to enhance performance while ensuring environmental and safety compliance.",
     imageUrl:
-    caeImage1,
+      caeImage1,
     bulletPoints: [
       "Structural Analysis (FEA)",
       "Optimization Studies",
@@ -107,7 +107,7 @@ const sections = {
       "Assembly Testing & Design Validation",
       "Additive Manufacturing for Complex Geometries",
       "Support for Iterative Design Improvements",
-      
+
     ],
     additionalImageUrl: prototypingImage,
   },
@@ -127,7 +127,7 @@ const sections = {
       "Environmental Compliance",
       "Hydraulic System Retrofitting",
       "Selection of Components (Pumps, Valves, Actuators)",
-      
+
     ],
     additionalImageUrl: hydraulicImage,
   },
@@ -155,7 +155,7 @@ const sections = {
     title: "Embedded Systems Engineering",
     description:
       "Drive innovation with intelligent, connected systems. Our embedded engineering solutions cover the full spectrum, from firmware development to IoT integration, ensuring reliable, scalable performance in today’s smart products.",
-    imageUrl:embeddedImage1,
+    imageUrl: embeddedImage1,
 
     bulletPoints: [
       "Microcontroller & Microprocessor Programming",

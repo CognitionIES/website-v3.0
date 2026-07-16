@@ -1,8 +1,8 @@
 "use client";
+"use client";
 
 import Image from "next/image";
-
-const approachImage = "/images/projects/pcm/pcm-approach.webp";
+import approachImage from "@/constants/images/projects/pcm/pcm-approach.webp";
 
 const sections = [
   {
