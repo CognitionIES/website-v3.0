@@ -158,12 +158,12 @@ export const ABOUT_CONSTANTS = {
       title: "ISO 9001:2015 Certified",
       desc: "Our quality management systems are certified to the ISO 9001:2015 standard, reflecting consistent, audit-ready engineering delivery.",
     },
-    {
-      badge: "AVEVA",
-      logo: undefined as StaticImageData | undefined,
-      title: "AVEVA Certified Partner",
-      desc: "Recognized as a certified partner of AVEVA, enabling us to deliver engineering and digital solutions built on industry-leading AVEVA software.",
-    },
+    // {
+    //   badge: "AVEVA",
+    //   logo: undefined as StaticImageData | undefined,
+    //   title: "AVEVA Certified Partner",
+    //   desc: "Recognized as a certified partner of AVEVA, enabling us to deliver engineering and digital solutions built on industry-leading AVEVA software.",
+    // },
     {
       badge: "NASSCOM",
       logo: undefined as StaticImageData | undefined,

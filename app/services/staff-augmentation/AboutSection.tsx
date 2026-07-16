@@ -57,12 +57,12 @@ export default function AboutSection() {
               {DESCRIPTION_2}
             </p>
             <Link
-              href="#share-requirement"
-              className="group mt-auto pt-8 inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-[#0098AF] text-white text-sm font-semibold hover:bg-[#003C46] transition-colors duration-200 self-start"
-            >
-              Share your requirement
-              <ArrowDown className="w-4 h-4 group-hover:translate-y-0.5 transition-transform" />
-            </Link>
+  href="#share-requirement"
+  className="group mt-auto inline-flex items-center gap-2 self-start rounded-full bg-[#0098AF] px-7 py-3 text-sm font-semibold text-white shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#003C46] hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-[#0098AF] focus:ring-offset-2"
+>
+  <span>Share your requirement</span>
+  <ArrowDown className="h-4 w-4 transition-transform duration-300 group-hover:translate-y-1" />
+</Link>
           </motion.div>
 
           <motion.div

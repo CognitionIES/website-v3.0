@@ -103,8 +103,8 @@ function Story() {
             transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
             className="lg:col-span-5 flex flex-col"
           >
-            <p className="font-sans text-[16px] text-[#4a5568] leading-[1.8] mb-8">{TEXT.STORY_P1}</p>
-            <p className="font-sans text-[16px] text-[#4a5568] leading-[1.8]">{TEXT.STORY_P2}</p>
+            <p className="font-sans text-[16px] text-[#4a5568] leading-[1.8] text-justify mb-8">{TEXT.STORY_P1}</p>
+            <p className="font-sans text-[16px] text-[#4a5568] leading-[1.8] text-justify">{TEXT.STORY_P2}</p>
           </motion.div>
           <motion.div
             initial={{ opacity: 0, x: 30 }}

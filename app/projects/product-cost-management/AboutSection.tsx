@@ -22,15 +22,15 @@ export default function AboutSection() {
 
         <div className="grid md:grid-cols-2 gap-8 lg:gap-12 items-stretch">
           <div className="relative rounded-xl overflow-hidden shadow-md order-last md:order-first min-h-[300px]">
-            <Image
-              src={aboutImage}
-              alt="Client profile and project overview"
-              fill
-              className="object-cover"
-              sizes="(max-width: 768px) 100vw, 50vw"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#003C46]/40 to-transparent" />
-          </div>
+  <Image
+    src={aboutImage}
+    alt="Client profile and project overview"
+    fill
+    className="object-cover object-right"
+    sizes="(max-width: 768px) 100vw, 50vw"
+  />
+  <div className="absolute inset-0 bg-gradient-to-t from-[#003C46]/40 to-transparent" />
+</div>
 
           <div className="flex flex-col">
             <div className="space-y-6">

@@ -11,8 +11,8 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
-import productImage from "@/constants/images/home/our-services/product-2.webp";
-import plantImage from "@/constants/images/home/our-services/plant.webp";
+import productImage from "@/constants/images/product-engineering/product-engineering-services.webp";
+import plantImage from "@/constants/images/plant-engineering/plant-engineering-services.webp";
 import saasImage from "@/constants/images/home/our-services/saas.webp";
 import staffImage from "@/constants/images/home/our-services/staff.webp";
 
@@ -93,7 +93,7 @@ function ServiceRow({
       {/* Active-state accent bar — quiet left-edge indicator rather than a full bg fill */}
       <motion.span
         aria-hidden
-        className="absolute left-[-1px] top-0 bottom-0 w-[2px] bg-[#0098AF] origin-top"
+        className="absolute left-[-1px] top-0 bottom-0 w-[2px]  origin-top"
         initial={false}
         animate={{ scaleY: isActive ? 1 : 0 }}
         transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
