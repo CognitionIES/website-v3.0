@@ -21,8 +21,8 @@ export default function AboutSection() {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 lg:gap-12 items-center">
-          <div className="relative h-[300px] sm:h-[400px] rounded-xl overflow-hidden shadow-md order-last md:order-first">
+        <div className="grid md:grid-cols-2 gap-8 lg:gap-12 items-stretch">
+          <div className="relative rounded-xl overflow-hidden shadow-md order-last md:order-first min-h-[300px]">
             <Image
               src={aboutImage}
               alt="Client profile and project overview"
@@ -33,28 +33,29 @@ export default function AboutSection() {
             <div className="absolute inset-0 bg-gradient-to-t from-[#003C46]/40 to-transparent" />
           </div>
 
-          <div className="space-y-6">
-            <div className="space-y-2">
-              <p className="text-xs font-semibold uppercase tracking-wider text-[#0098af]">Client Profile</p>
-              <p className="text-base sm:text-lg text-gray-600 leading-relaxed">
-                A leading North American manufacturer of high-performance outdoor power tools,
-                log splitters, pressure washers, and air compressors, serving both commercial
-                and residential markets.
-              </p>
-            </div>
-            <div className="w-full h-px bg-gray-100" />
-            <div className="space-y-2">
-              <p className="text-xs font-semibold uppercase tracking-wider text-[#0098af]">Project Overview</p>
-              <p className="text-base sm:text-lg text-gray-600 leading-relaxed">
-                A complete cost transformation and design refinement of the Log Splitter lineup.
-                The goal was to maintain product quality and safety while achieving substantial
-                cost reductions through Cognition&apos;s PCM approach, uncovering inefficiencies,
-                benchmarking competitors, and proposing high-impact design optimisations.
-              </p>
+          <div className="flex flex-col">
+            <div className="space-y-6">
+              <div className="space-y-2">
+                <p className="text-xs font-semibold uppercase tracking-wider text-[#0098af]">Client Profile</p>
+                <p className="text-base sm:text-lg text-gray-600 leading-relaxed">
+                  A leading North American manufacturer of high-performance outdoor power tools,
+                  log splitters, pressure washers, and air compressors, serving both commercial
+                  and residential markets.
+                </p>
+              </div>
+              <div className="w-full h-px bg-gray-100" />
+              <div className="space-y-2">
+                <p className="text-xs font-semibold uppercase tracking-wider text-[#0098af]">Project Overview</p>
+                <p className="text-base sm:text-lg text-gray-600 leading-relaxed">
+                  A complete cost transformation and design refinement of the Log Splitter lineup.
+                  The goal was to maintain product quality and safety while achieving substantial
+                  cost reductions through Cognition&apos;s PCM approach, uncovering inefficiencies,
+                  benchmarking competitors, and proposing high-impact design optimisations.
+                </p>
+              </div>
             </div>
 
-            {/* Outcome callouts */}
-            <div className="grid grid-cols-2 gap-3 pt-2">
+            <div className="grid grid-cols-2 gap-3 mt-auto pt-8">
               {[
                 { value: "35%", label: "Cost of goods reduction" },
                 { value: "50%", label: "Margin improvement" },

@@ -86,7 +86,6 @@ function SectionHeader({ eyebrow }: { eyebrow: string }) {
   );
 }
 
-/*  Overview: text + parallax image + count-up stats  */
 export function OverviewSection({ study }: { study: CaseStudy }) {
   const { overview } = study;
   const { ref, y, reduce } = useParallax(30);
@@ -95,23 +94,27 @@ export function OverviewSection({ study }: { study: CaseStudy }) {
       <GridTexture />
       <div className="relative max-w-7xl mx-auto px-6 sm:px-10 lg:px-16">
         <SectionHeader eyebrow="Project Overview" />
-        <div className="grid md:grid-cols-2 gap-10 lg:gap-14 items-center">
+
+        {/* Full-width heading, on top */}
+        <h2 className="text-3xl sm:text-4xl font-bold text-[#003C46] leading-tight mb-10 max-w-3xl">
+          {overview.heading}
+        </h2>
+
+        <div className="grid md:grid-cols-2 gap-10 lg:gap-14 items-stretch">
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.6, ease: EASE }}
+            className="flex flex-col"
           >
-            <h2 className="text-3xl sm:text-4xl font-bold text-[#003C46] leading-tight">
-              {overview.heading}
-            </h2>
-            <p className="mt-6 text-base sm:text-lg text-[#5b5b5b] leading-relaxed">
+            <p className="text-base sm:text-lg text-[#5b5b5b] leading-relaxed">
               {overview.para1}
             </p>
             <p className="mt-4 text-base sm:text-lg text-[#5b5b5b] leading-relaxed">
               {overview.para2}
             </p>
-            <div className="mt-8 flex flex-wrap gap-4">
+            <div className="mt-auto pt-8 flex flex-wrap gap-4">
               {overview.stats.map((s) => (
                 <div
                   key={s.label}
@@ -128,10 +131,10 @@ export function OverviewSection({ study }: { study: CaseStudy }) {
             </div>
           </motion.div>
 
-          {/* Parallax image */}
+          {/* Parallax image, stretched to match column height */}
           <div
             ref={ref}
-            className="relative h-[300px] sm:h-[400px] rounded-2xl overflow-hidden shadow-md"
+            className="relative rounded-2xl overflow-hidden shadow-md min-h-[300px]"
           >
             <motion.div
               style={{ y: reduce ? 0 : y }}
@@ -152,7 +155,6 @@ export function OverviewSection({ study }: { study: CaseStudy }) {
     </section>
   );
 }
-
 /*  Objective: statement over slow parallax background  */
 export function ObjectiveSection({ study }: { study: CaseStudy }) {
   const { objective } = study;

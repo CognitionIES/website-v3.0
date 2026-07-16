@@ -26,12 +26,12 @@ export default function AboutSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="grid md:grid-cols-2 gap-12 items-center"
+          className="grid md:grid-cols-2 gap-12 items-stretch"
         >
-          <div>
+          <div className="flex flex-col">
             <p className="text-lg text-gray-600 mb-6 leading-relaxed text-justify">{DESCRIPTION_1}</p>
             <p className="text-lg text-gray-600 leading-relaxed text-justify">{DESCRIPTION_2}</p>
-            <div className="mt-8">
+            <div className="mt-auto pt-8">
               <Link href="/brochure">
                 <Button className="bg-[#0098af] text-white hover:bg-white hover:text-[#003C46] text-sm sm:text-base px-6 py-3 transition-colors duration-200 border-2 border-[#0098af]">
                   Download Brochure
@@ -39,7 +39,7 @@ export default function AboutSection() {
               </Link>
             </div>
           </div>
-          <div className="hidden md:block relative h-[380px] rounded-xl shadow-md overflow-hidden">
+          <div className="hidden md:block relative rounded-xl shadow-md overflow-hidden min-h-[380px]">
             <Image
               src={IMAGE}
               alt="Plant Engineering services"

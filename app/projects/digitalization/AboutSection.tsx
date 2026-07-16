@@ -7,7 +7,6 @@ export default function AboutSection() {
   return (
     <section className="w-full py-16 sm:py-20 lg:py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section header */}
         <div className="mb-10">
           <span className="inline-block px-3 py-1 bg-[#0098af]/10 text-[#0098af] text-xs font-medium uppercase tracking-wider rounded-full mb-3">
             Project Background
@@ -21,25 +20,25 @@ export default function AboutSection() {
           </p>
         </div>
 
-        {/* Two-column text + image */}
-        <div className="grid md:grid-cols-2 gap-8 lg:gap-12 items-center">
-          <div className="space-y-5 text-justify">
-            <p className="text-base sm:text-lg text-gray-600 leading-relaxed ">
-              The client, a reputed industrial chemical manufacturer, faced
-              challenges in scaling production due to manual processes, a lack
-              of real-time plant performance visibility, and inefficient data
-              communication across departments. Errors in equipment layout and
-              installation further caused delays and cost overruns.
-            </p>
-            <p className="text-base sm:text-lg text-gray-600 leading-relaxed">
-              Cognition IES was engaged to lead a complete digital
-              transformation, building a fully integrated, intelligent digital
-              ecosystem from layout validation through to live production
-              monitoring.
-            </p>
+        <div className="grid md:grid-cols-2 gap-8 lg:gap-12 items-stretch">
+          <div className="flex flex-col text-justify">
+            <div className="space-y-5">
+              <p className="text-base sm:text-lg text-gray-600 leading-relaxed">
+                The client, a reputed industrial chemical manufacturer, faced
+                challenges in scaling production due to manual processes, a lack
+                of real-time plant performance visibility, and inefficient data
+                communication across departments. Errors in equipment layout and
+                installation further caused delays and cost overruns.
+              </p>
+              <p className="text-base sm:text-lg text-gray-600 leading-relaxed">
+                Cognition IES was engaged to lead a complete digital
+                transformation, building a fully integrated, intelligent digital
+                ecosystem from layout validation through to live production
+                monitoring.
+              </p>
+            </div>
 
-            {/* Stat callouts */}
-            <div className="grid grid-cols-2 gap-4 pt-2">
+            <div className="grid grid-cols-2 gap-4 mt-auto pt-8">
               {[
                 { value: "8%", label: "Layout error rate before engagement" },
                 { value: "12 hrs", label: "Monthly production downtime" },
@@ -57,7 +56,7 @@ export default function AboutSection() {
             </div>
           </div>
 
-          <div className="relative h-[300px] sm:h-[360px] rounded-xl overflow-hidden shadow-md">
+          <div className="relative rounded-xl overflow-hidden shadow-md min-h-[300px]">
             <Image
               src={aboutImage}
               alt="Digitalization project background"

@@ -84,7 +84,6 @@ function Hero() {
   );
 }
 
-/*  Story  */
 function Story() {
   const { IMAGES, TEXT } = ABOUT_CONSTANTS;
   const ref = useRef<HTMLElement>(null);
@@ -95,27 +94,39 @@ function Story() {
       <div className="relative max-w-7xl mx-auto px-6 sm:px-10 lg:px-16">
         <SectionEyebrow label="Our Story" isInView={isInView} />
         <h2 className="font-display text-5xl md:text-6xl text-[#111827] leading-[1.0] tracking-[-0.03em] text-balance mb-8">
-              Two Decades of Engineering <em className="not-italic text-[#0098AF]">Trust</em>
-            </h2>
-        <div className="grid lg:grid-cols-12 gap-16 items-start">
-          <motion.div initial={{ opacity: 0, y: 24 }} animate={isInView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }} className="lg:col-span-5">
-            {/* <h2 className="font-display text-5xl md:text-6xl text-[#111827] leading-[1.0] tracking-[-0.03em] text-balance mb-8">
-              Two Decades of Engineering <em className="not-italic text-[#0098AF]">Trust</em>
-            </h2> */}
+          Two Decades of Engineering <em className="not-italic text-[#0098AF]">Trust</em>
+        </h2>
+        <div className="grid lg:grid-cols-12 gap-16 items-stretch">
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+            className="lg:col-span-5 flex flex-col"
+          >
             <p className="font-sans text-[16px] text-[#4a5568] leading-[1.8] mb-8">{TEXT.STORY_P1}</p>
-             <p className="font-sans text-[16px] text-[#4a5568] leading-[1.8]">{TEXT.STORY_P2}</p>
-            {/* <Link href="/contact" className="group inline-flex items-center gap-3 font-sans text-[13px] font-semibold tracking-[0.12em] uppercase text-[#003C46] hover:text-[#0098AF] transition-colors">
-              Work with us
-              <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200" />
-            </Link> */}
+            <p className="font-sans text-[16px] text-[#4a5568] leading-[1.8]">{TEXT.STORY_P2}</p>
           </motion.div>
-          <motion.div initial={{ opacity: 0, x: 30 }} animate={isInView ? { opacity: 1, x: 0 } : {}} transition={{ duration: 0.7, delay: 0.1, ease: [0.22, 1, 0.36, 1] }} className="lg:col-span-7">
-            <div className="relative rounded-2xl overflow-hidden group mt-2">
-              <Image src={IMAGES.STORY_IMAGE.OurJourneyImage} alt="Our journey" width={1220} height={900} className="w-full h-80 object-cover group-hover:scale-[1.02] transition-transform duration-700" />
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            animate={isInView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.7, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+            className="lg:col-span-7 flex flex-col"
+          >
+            <div className="relative rounded-2xl overflow-hidden group flex-1 min-h-[280px]">
+              <Image
+                src={IMAGES.STORY_IMAGE.OurJourneyImage}
+                alt="Our journey"
+                fill
+                sizes="(min-width: 1024px) 55vw, 100vw"
+                quality={85}
+                className="object-cover group-hover:scale-[1.02] transition-transform duration-700"
+              />
               <div className="absolute inset-0 bg-gradient-to-t from-[#003C46]/25 to-transparent" />
             </div>
-            {/* <p className="font-sans text-[16px] text-[#4a5568] leading-[1.8]">{TEXT.STORY_P2}</p> */}
-             <Link href="/contact" className="group inline-flex items-center gap-3 font-sans text-[13px] font-semibold tracking-[0.12em] uppercase text-[#003C46] hover:text-[#0098AF] transition-colors mt-12">
+            <Link
+              href="/contact"
+              className="group inline-flex items-center gap-3 font-sans text-[13px] font-semibold tracking-[0.12em] uppercase text-[#003C46] hover:text-[#0098AF] transition-colors mt-6 self-start"
+            >
               Work with us
               <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform duration-200" />
             </Link>

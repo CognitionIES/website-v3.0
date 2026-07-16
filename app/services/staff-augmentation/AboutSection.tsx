@@ -4,8 +4,6 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowDown } from "lucide-react";
-// Reusing an existing site image for now. Swap to a dedicated photo at
-// constants/images/staff-augmentation/about.webp when one is available.
 import aboutImage from "@/constants/images/home/our-services/staff.webp";
 import { STAFF_AUGMENTATION_CONSTANTS } from "@/constants/staff-augmentation/constants";
 
@@ -16,7 +14,6 @@ export default function AboutSection() {
 
   return (
     <section className="relative w-full py-20 sm:py-24 lg:py-28 bg-white overflow-hidden">
-      {/* Subtle grid */}
       <div
         className="absolute inset-0 pointer-events-none opacity-[0.025]"
         style={{
@@ -28,7 +25,7 @@ export default function AboutSection() {
 
       <div className="relative max-w-7xl mx-auto px-6 sm:px-10 lg:px-16">
         {/* Eyebrow + hairline */}
-        <div className="flex items-center gap-6 mb-14">
+        <div className="flex items-center gap-6 mb-10">
           <span className="eyebrow !mb-0">{EYEBROW}</span>
           <motion.div
             className="flex-1 h-px bg-[#e2e8f0] origin-left"
@@ -39,18 +36,21 @@ export default function AboutSection() {
           />
         </div>
 
-        {/* Text + image */}
-        <div className="grid md:grid-cols-2 gap-10 lg:gap-14 items-center">
+        {/* Full-width heading, on top */}
+        <h2 className="text-3xl sm:text-4xl font-bold text-[#003C46] leading-tight mb-10 max-w-3xl">
+          {HEADING}
+        </h2>
+
+        {/* Two columns below, stretched so both start & end on the same line */}
+        <div className="grid md:grid-cols-2 gap-10 lg:gap-14 items-stretch">
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+            className="flex flex-col"
           >
-            <h2 className="text-3xl sm:text-4xl font-bold text-[#003C46] leading-tight">
-              {HEADING}
-            </h2>
-            <p className="mt-6 text-base sm:text-lg text-[#5b5b5b] leading-relaxed">
+            <p className="text-base sm:text-lg text-[#5b5b5b] leading-relaxed">
               {DESCRIPTION_1}
             </p>
             <p className="mt-4 text-base sm:text-lg text-[#5b5b5b] leading-relaxed">
@@ -58,7 +58,7 @@ export default function AboutSection() {
             </p>
             <Link
               href="#share-requirement"
-              className="group mt-8 inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-[#0098AF] text-white text-sm font-semibold hover:bg-[#003C46] transition-colors duration-200"
+              className="group mt-auto pt-8 inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-[#0098AF] text-white text-sm font-semibold hover:bg-[#003C46] transition-colors duration-200 self-start"
             >
               Share your requirement
               <ArrowDown className="w-4 h-4 group-hover:translate-y-0.5 transition-transform" />
@@ -70,7 +70,7 @@ export default function AboutSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.6, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-            className="relative h-[300px] sm:h-[380px] rounded-2xl overflow-hidden shadow-md"
+            className="relative rounded-2xl overflow-hidden shadow-md min-h-[300px]"
           >
             <Image
               src={aboutImage}
