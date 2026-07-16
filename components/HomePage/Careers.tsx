@@ -6,7 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { CAREERS_CONSTANTS } from "@/constants/home/careers";
-
+import careersImage from "@/constants/images/career/Cognition-Ies-Team.webp";
 interface CareersData { IMAGE: string; SUBTITLE: string; DESCRIPTION: string; }
 
 const perks = ["Competitive compensation", "Global exposure", "Continuous learning"];
@@ -43,7 +43,7 @@ export default function Careers() {
           >
             <div className="relative rounded-2xl overflow-hidden group aspect-[4/3]">
               <Image
-                src={IMAGE}
+                src={careersImage}
                 alt="Join Cognition IES"
                 fill
                 className="object-cover group-hover:scale-[1.03] transition-transform duration-700"

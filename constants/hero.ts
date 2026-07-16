@@ -7,6 +7,7 @@ import staffAugImage from "@/constants/images/home/hero/staff-augmentation-1.web
 //import staffAug2 from "@/constants/images/home/hero/staff-augmentation-mobile-1.webp";
 import saas2 from "@/constants/images/home/hero/saas-mobile.webp";
 import process2 from "@/constants/images/home/hero/process-mobile.webp";
+import staffingAndAugmentationImage from "@/constants/images/staffing-recruitment/hero.webp";
 import { StaticImageData } from "next/image";
 
 export interface HeroSlide {
@@ -67,7 +68,7 @@ export const heroSlides: HeroSlide[] = [
     majorService: "Staff Augmentation",
     description:
       "Add vetted engineers to your team for exactly as long as you need them, working under your direction inside your tools and standards.",
-    image: saasImage,
-    mobileImage: saasImage,
+    image: staffingAndAugmentationImage,
+    mobileImage: staffingAndAugmentationImage,
   },
 ];
