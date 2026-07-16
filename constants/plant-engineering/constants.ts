@@ -10,7 +10,7 @@ import ModularImage from "@/constants/images/plant/horizontal/09.webp";
 import ReverseImage from "@/constants/images/plant/horizontal/10.webp";
 import ProcurementImage from "@/constants/images/plant/horizontal/11.webp";
 import heroImage from "@/constants/images/plant/hero.webp";
-import aboutImage from '@/constants/images/Plant-engineering/about.webp';
+import aboutImage from '@/constants/images/plant-engineering/about.webp';
 
 // This file holds all constants for the plant engineering page
 import { Building2, Workflow, Box, Truck } from "lucide-react";
