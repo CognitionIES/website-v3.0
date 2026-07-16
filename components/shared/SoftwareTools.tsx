@@ -41,20 +41,22 @@ function SoftwareTile({ tool }: { tool: SoftwareTool }) {
         aria-describedby={tooltipId}
         onFocus={() => setOpen(true)}
         onBlur={() => setOpen(false)}
-        className={`w-12 h-12 bg-white border rounded-xl p-2 flex items-center justify-center transition-colors duration-150 focus:outline-none focus:ring-2 focus:ring-[#0098af]/40 ${
-          tool.uncertain ? "border-amber-300" : "border-gray-200"
-        }`}
+        className={`relative w-28 h-28 bg-white border rounded-2xl p-4 flex items-center justify-center
+          shadow-sm transition-all duration-200 ease-out
+          hover:shadow-md hover:-translate-y-0.5 hover:border-[#0098af]/40
+          focus:outline-none focus:ring-2 focus:ring-[#0098af]/40 focus:ring-offset-2 focus:ring-offset-white
+          ${tool.uncertain ? "border-amber-300" : "border-gray-200"}`}
       >
         {tool.logo ? (
           <Image
             src={tool.logo}
             alt={tool.name}
-            width={32}
-            height={32}
-            className="object-contain w-full h-full"
+            fill
+            sizes="112px"
+            className="object-contain p-2"
           />
         ) : (
-          <span className="text-[11px] font-semibold text-[#0098af] select-none">
+          <span className="text-base font-semibold text-[#0098af] select-none">
             {initials(tool.name)}
           </span>
         )}

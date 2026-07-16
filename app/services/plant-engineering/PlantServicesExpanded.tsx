@@ -6,11 +6,6 @@ import { Flame, Cuboid, PenTool } from "lucide-react";
 import { SERVICE_PHASES, DISCIPLINE_IMAGES, type IconKey } from "@/constants/plant-engineering/servicePhases";
 import { SOFTWARE_BY_DISCIPLINE } from "@/constants/plant-engineering/SoftwareProficiency";
 import { AccordionList, AccordionItem, BulletGrid, SoftwareSection } from "@/components/shared/ServiceAccordion";
-// The 11 core disciplines now use your real icon set (constants/icon/perfect/) —
-// recolored to the site's teal accent, same source files as your repo. Fire &
-// Safety, BIM & 3D Modeling, and CAD Services are new categories with no matching
-// custom icon yet, so they still fall back to lucide icons until you have real
-// artwork for those three.
 import ProcessIcon from "@/constants/icon/perfect/process.svg";
 import PipingIcon from "@/constants/icon/perfect/piping.svg";
 import PipingStressIcon from "@/constants/icon/perfect/piping-stress.svg";
@@ -44,10 +39,6 @@ const slugify = (s: string) =>
   s.toLowerCase().replace(/[^a-z0-9\s-]/g, "").trim().replace(/\s+/g, "-");
 
 export default function PlantServicesExpanded() {
-  // Single-open state, matching /details and the Product Engineering homepage —
-  // opening one item closes whichever else was open. This used to be a
-  // Set<string> here (independent multi-open per item), which is why this page
-  // behaved differently from the other two.
   const [activeId, setActiveId] = useState<string | null>(null);
   const headingId = useId();
 
@@ -69,7 +60,7 @@ export default function PlantServicesExpanded() {
 
         <div className="space-y-16">
           {SERVICE_PHASES.map((phase) => (
-            <div key={phase.number}>
+            <div key={phase.number} id={`phase-${phase.number}`}>
               {/* Level 1 — phase heading, not an accordion */}
               <div className="flex items-baseline gap-4 mb-6 pb-4 border-b-2 border-[#003C46]">
                 <span className="font-mono text-sm text-[#0098af] tabular-nums">{phase.number}</span>
