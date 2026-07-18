@@ -1,5 +1,5 @@
 import { MetadataRoute } from "next";
-
+export const dynamic = "force-static";
 const BASE = "https://www.cognitionies.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {

@@ -94,9 +94,9 @@ export const ABOUT_CONSTANTS = {
   STATS: [
     { stat: "2005", label: "Established" },
     { stat: "20+", label: "Years of Engineering Excellence" },
-    { stat: "XXX+", label: "Projects Successfully Delivered" }, // TODO: replace XXX with real count
+    { stat: "10+", label: "Projects Successfully Delivered" }, // TODO: replace XXX with real count
     { stat: "50+", label: "Engineering Professionals" },
-    { stat: "7+", label: "Industries Served" },
+    { stat: "10+", label: "Industries Served" },
   ],
   KEY_VALUES: [
     { title: "Co-Innovation", desc: "Co-creating patents with you." },

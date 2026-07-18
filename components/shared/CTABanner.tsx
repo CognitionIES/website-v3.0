@@ -21,7 +21,7 @@ export default function CTABanner({ title, accentWord, description, buttons, cla
   };
 
   return (
-    <section ref={ref} className={cn("relative bg-[#111827] py-28 md:py-40 overflow-hidden", className)}>
+    <section ref={ref} className={cn("relative bg-[#111827] py-28 md:py-28 overflow-hidden", className)}>
       {/* Subtle grid */}
       <div className="absolute inset-0 opacity-[0.04] pointer-events-none"
         style={{ backgroundImage: "linear-gradient(rgba(255,255,255,0.5) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,0.5) 1px,transparent 1px)", backgroundSize: "64px 64px" }} />

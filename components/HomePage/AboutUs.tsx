@@ -7,11 +7,12 @@ import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { ABOUT_CONSTANTS } from "@/constants/home/about";
 import { AnimatedCounter } from "@/components/shared/AnimatedCounter";
+import { RichText } from "@/components/shared/RichText";
 
 const stats = [
   { value: "2005", label: "Established" },
   { value: "20+", label: "Years of excellence" },
-  { value: "7+", label: "Industries served" },
+  { value: "10+", label: "Industries served" },
 ];
 
 export default function AboutUs() {
@@ -76,9 +77,11 @@ export default function AboutUs() {
             className="lg:col-span-7 flex flex-col justify-between"
           >
             <div className="space-y-5">
-              <p className="text-[15px] text-[#4a5568] leading-[1.8]">
-                {ABOUT_CONSTANTS.DESCRIPTION_1}
-              </p>
+            <p className="text-[15px] text-[#4a5568] leading-[1.8]">
+  <RichText segments={ABOUT_CONSTANTS.DESCRIPTION_1} />
+</p>
+
+
               <p className="text-[15px] text-[#4a5568] leading-[1.8]">
                 {ABOUT_CONSTANTS.DESCRIPTION_2}
               </p>

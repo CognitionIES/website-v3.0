@@ -43,13 +43,13 @@ const VideoShowcase = () => {
           <div className="relative rounded-xl overflow-hidden shadow-2xl transform hover:scale-[1.01] transition-transform duration-300 bg-black">
             {/* 16:9 aspect ratio wrapper */}
             <div className="relative pt-[54.25%]">
-              <iframe
-                className="absolute inset-0 w-full h-full"
-                src="https://www.youtube.com/embed/zq4nEzGR85M"
+              <video
+                className="absolute inset-0 w-full h-full object-cover"
+                src="/videos/servicecpq.mp4"
                 title="ServiceCPQ Demo Video"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              ></iframe>
+                controls
+                playsInline
+              />
             </div>
           </div>
 

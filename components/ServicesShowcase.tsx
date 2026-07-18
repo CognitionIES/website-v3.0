@@ -201,13 +201,13 @@ export default function ServicesShowcase() {
           >
             Our <em className="not-italic text-[#0098AF]">Services</em>
           </motion.h2>
-          <Link
+          {/* <Link
             href="/services"
             className="group inline-flex items-center gap-2 text-[13px] font-semibold text-[#0098AF] hover:text-[#003C46] transition-colors"
           >
             View all services{" "}
             <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
-          </Link>
+          </Link> */}
         </div>
       </div>
 

@@ -417,7 +417,7 @@ function StatsSection() {
   const ref = useRef<HTMLElement>(null);
   const isInView = useInView(ref, { once: true, amount: 0.2 });
   return (
-    <section ref={ref} className="bg-[#111827] py-20 md:py-28 overflow-hidden relative">
+    <section ref={ref} className="bg-[#111827] py-20 md:py-20 overflow-hidden relative">
       <GridBg dark />
       <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-[#0098AF]/40 to-transparent" />
       <div className="relative max-w-7xl mx-auto px-6 sm:px-10 lg:px-16">
