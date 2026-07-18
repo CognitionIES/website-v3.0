@@ -77,6 +77,7 @@ export default function AboutSection() {
               alt="Engineers working as an extension of a client team"
               fill
               className="object-cover"
+              style={{ objectPosition: "center 40%" }}
               sizes="(max-width: 768px) 100vw, 50vw"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#003C46]/30 to-transparent" />

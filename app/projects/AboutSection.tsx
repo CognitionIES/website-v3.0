@@ -39,6 +39,7 @@ const projects = [
       "Staffed and managed a full-stack development team (React and Node.js) for a growing IT company, with rapid onboarding and end-to-end payroll and compliance support.",
     image: itTalentImg,
     href: "/projects/it-talent-deployment",
+    imagePosition: "center 40%",
   },
   {
     id: "project-4",
@@ -104,12 +105,13 @@ export default function ProjectsGrid() {
               >
                 <div className="relative h-56 overflow-hidden">
                   <Image
-                    src={project.image}
-                    alt={project.title}
-                    fill
-                    className="object-cover group-hover:scale-[1.03] transition-transform duration-500"
-                    sizes="(max-width: 768px) 100vw, 50vw"
-                  />
+                      src={project.image}
+                      alt={project.title}
+                      fill
+                      className="object-cover group-hover:scale-[1.03] transition-transform duration-500"
+                      style={{ objectPosition: project.imagePosition ?? "center center" }}
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                    />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#003C46]/60 to-transparent" />
                   <div className="absolute top-4 left-4">
                     <span className="font-sans text-[10px] font-semibold tracking-[0.14em] uppercase px-3 py-1.5 bg-white/15 backdrop-blur-sm rounded-full text-white/80 border border-white/20">

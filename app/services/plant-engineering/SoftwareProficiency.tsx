@@ -4,10 +4,21 @@ import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import Image from "next/image";
 import { SOFTWARE_BY_DISCIPLINE } from "@/constants/plant-engineering/SoftwareProficiency";
+import { getDisciplinesFlat } from "@/constants/plant-engineering/servicePhases";
 
 export default function SoftwareProficiency() {
   const ref = useRef<HTMLElement>(null);
   const isInView = useInView(ref, { once: true, amount: 0.1 });
+
+  // Map each IconKey -> its human-readable discipline title, then turn the
+  // discipline-keyed tool map into the {title, tools}[] shape this section renders.
+  const disciplineTitles = Object.fromEntries(
+    getDisciplinesFlat().map((d) => [d.icon, d.title])
+  );
+  const categories = Object.entries(SOFTWARE_BY_DISCIPLINE).map(([icon, tools]) => ({
+    title: disciplineTitles[icon] ?? icon,
+    tools,
+  }));
 
   return (
     <section ref={ref} className="py-16 sm:py-20 bg-white">
@@ -26,7 +37,7 @@ export default function SoftwareProficiency() {
         </div>
 
         <div className="space-y-10">
-          {SOFTWARE_PROFICIENCY.map((cat, ci) => (
+          {categories.map((cat, ci) => (
             <motion.div
               key={cat.title}
               initial={{ opacity: 0, y: 16 }}
@@ -46,12 +57,14 @@ export default function SoftwareProficiency() {
                     }`}
                   >
                     <div className="relative w-6 h-6 flex-shrink-0">
-                      <Image
-                        src={tool.logo}
-                        alt={tool.name}
-                        fill
-                        className="object-contain"
-                      />
+                      {tool.logo && (
+                        <Image
+                          src={tool.logo}
+                          alt={tool.name}
+                          fill
+                          className="object-contain"
+                        />
+                      )}
                     </div>
                     <span className="text-[13px] text-[#003C46] font-medium whitespace-nowrap">
                       {tool.name}
