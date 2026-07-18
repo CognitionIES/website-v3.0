@@ -10,7 +10,7 @@ export default function CTASection() {
       description="Contact us today to see how we can bring your ideas to life."
       buttons={[
         { label: "Get in Touch", href: "/contact", variant: "primary" },
-        { label: "View Services", href: "/services", variant: "outline" },
+        { label: "View Services", href: "/services/plant-engineering", variant: "outline" },
       ]}
     />
   );

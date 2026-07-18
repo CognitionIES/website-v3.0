@@ -29,6 +29,7 @@ import OutcomeSection from "./OutcomeSection";
 import AISection from "./AISection";
 import TechSection from "./TechSection";
 import CTASection from "@/components/CTA";
+import CTABanner from "@/components/shared/CTABanner";
 
 export default function DigitalizationProject() {
   return (
@@ -41,7 +42,15 @@ export default function DigitalizationProject() {
       <OutcomeSection />
       <AISection />
       <TechSection />
-      <CTASection />
+     <CTABanner
+           title="Ready to Start Your Project?"
+           accentWord="Project?"
+           description="Contact us today to see how we can bring your ideas to life."
+           buttons={[
+             { label: "Get in Touch", href: "/contact", variant: "primary" },
+             { label: "View Services", href: "/services/plant-engineering", variant: "outline" },
+           ]}
+         />
       <Footer />
     </div>
   );

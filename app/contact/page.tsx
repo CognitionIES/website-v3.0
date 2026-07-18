@@ -13,9 +13,9 @@ export default function ContactPage() {
   return (
     <div className="bg-white">
       <MegaMenu />
-      <PageHero image={IMAGE} title={TITLE} subtitle="Contact" breadcrumbs={[{ label: "Contact Us", href: "/contact" }]} />
+      <PageHero image={IMAGE} title={TITLE} breadcrumbs={[{ label: "Contact Us", href: "/contact" }]} />
       <ContactSection />
-      <GlobalPresence />
+      {/* <GlobalPresence /> */}
       <CTABanner
         eyebrow="Let's Talk"
         title="Prefer to talk directly?"
@@ -23,7 +23,7 @@ export default function ContactPage() {
         description="Our team is available for calls and meetings. Let us know the best time to connect."
         buttons={[
           { label: "Email Us",         href: "mailto:info@cognitionies.com", variant: "primary" },
-          { label: "Explore Services", href: "/services",                    variant: "outline" },
+          { label: "Explore Services", href: "/services/product-engineering",                    variant: "outline" },
         ]}
       />
       <Footer />

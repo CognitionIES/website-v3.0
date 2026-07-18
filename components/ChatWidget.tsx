@@ -40,7 +40,7 @@ const KB: { q: RegExp; a: string }[] = [
   /* SaaS / ServiceCPQ */
   {
     q: /saas|servicecpq|cpq|configure.?price|quote|cloud.?platform|software.?solution|erp|crm|integrat|workflow/i,
-    a: "Our SaaS practice is built around ServiceCPQ, a cloud-native configure-price-quote platform for complex engineering services. It simplifies quoting, integrates with ERP/CRM systems, and cuts sales cycle time. [Learn more about ServiceCPQ](/services/saas-solution/servicecpq) or [contact us](/contact) to discuss your requirements.",
+    a: "Our SaaS practice is built around ServiceCPQ, a cloud-native configure-price-quote platform for complex engineering services. It simplifies quoting, integrates with ERP/CRM systems, and cuts sales cycle time. [Learn more about ServiceCPQ](/services/saas-solution) or [contact us](/contact) to discuss your requirements.",
   },
 
   /* Careers / Hiring */
@@ -88,7 +88,7 @@ const KB: { q: RegExp; a: string }[] = [
   /* Services overview */
   {
     q: /service|offer|what.*do|help.*with|capabilit|solution|practic/i,
-    a: "Cognition IES offers four core practice areas: [Product Engineering](/services/product-engineering) (CAD/CAE, simulation, prototyping), [Plant Engineering](/services/plant-engineering) (layouts, 3D scanning, digital twins), [SaaS Solutions (ServiceCPQ)](/services/saas-solution/servicecpq), and [Staff Augmentation](/services/staff-augmentation) (pre-vetted engineers added to your team). Which area would you like to explore?",
+    a: "Cognition IES offers four core practice areas: [Product Engineering](/services/product-engineering) (CAD/CAE, simulation, prototyping), [Plant Engineering](/services/plant-engineering) (layouts, 3D scanning, digital twins), [SaaS Solutions (ServiceCPQ)](/services/saas-solution), and [Staff Augmentation](/services/staff-augmentation) (pre-vetted engineers added to your team). Which area would you like to explore?",
   },
 
   /* Brochure / Downloads */

@@ -44,7 +44,7 @@ const services = [
     description:
       "Cloud-native, scalable software that streamlines operations and accelerates growth across every industry vertical.",
     image: saasImage,
-    href: "/services/saas-solution/servicecpq",
+    href: "/services/saas-solution",
     tags: ["ServiceCPQ", "Integration", "Cloud", "Automation"],
   },
   {

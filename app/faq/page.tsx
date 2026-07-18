@@ -118,7 +118,7 @@ export default function FAQPage() {
         description="Our team is happy to help. Reach out and we'll respond within one business day."
         buttons={[
           { label: "Contact Us",       href: "/contact",  variant: "primary" },
-          { label: "Explore Services", href: "/services", variant: "outline" },
+          { label: "Explore Services", href: "/services/plant-engineering", variant: "outline" },
         ]}
       />
       <Footer />

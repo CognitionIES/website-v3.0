@@ -7,7 +7,7 @@ export const metadata: Metadata = buildMetadata({
   title: "ServiceCPQ | AI-Powered After-Sales & Claims Platform",
   description:
     "Cognition IES is an authorized dealer of ServiceCPQ, an AI-powered after-sales platform unifying warranty claims, Configure Price Quote (CPQ), and repair workflows for HVAC, heavy equipment, medical device, CNC, and electrical & solar manufacturers.",
-  path: "/services/saas-solution/servicecpq",
+  path: "/services/saas-solution",
   keywords: [
     "ServiceCPQ",
     "after-sales SaaS platform",
@@ -26,7 +26,7 @@ export default function SaasSolutionLayout({ children }: { children: React.React
       <SchemaMarkup
         schema={breadcrumbSchema([
           { name: "Services", url: "/services" },
-          { name: "ServiceCPQ", url: "/services/saas-solution/servicecpq" },
+          { name: "ServiceCPQ", url: "/services/saas-solution" },
         ])}
       />
       {children}

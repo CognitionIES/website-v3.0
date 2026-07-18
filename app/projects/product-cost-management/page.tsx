@@ -28,6 +28,7 @@ import Objectives from "./Objectives";
 import ApproachSection from "./ApproachSection";
 import KeyFindingSection from "./KeyFindingSection";
 import SummarySection from "./SummarySection";
+import CTABanner from "@/components/shared/CTABanner";
 
 export default function ProductCostManagement() {
   return (
@@ -39,7 +40,15 @@ export default function ProductCostManagement() {
       <ApproachSection />
       <KeyFindingSection />
       <SummarySection />
-      <CTASection />
+    <CTABanner
+          title="Ready to Start Your Project?"
+          accentWord="Project?"
+          description="Contact us today to see how we can bring your ideas to life."
+          buttons={[
+            { label: "Get in Touch", href: "/contact", variant: "primary" },
+            { label: "View Services", href: "/services/product-engineering", variant: "outline" },
+          ]}
+        />
       <Footer />
     </div>
   );

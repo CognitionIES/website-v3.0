@@ -75,7 +75,7 @@ export const professionalServiceSchema = {
     itemListElement: [
       { "@type": "Offer", itemOffered: { "@type": "Service", name: "Product Engineering", url: `${BASE}/services/product-engineering` } },
       { "@type": "Offer", itemOffered: { "@type": "Service", name: "Plant Engineering", url: `${BASE}/services/plant-engineering` } },
-      { "@type": "Offer", itemOffered: { "@type": "Service", name: "ServiceCPQ SaaS", url: `${BASE}/services/saas-solution/servicecpq` } },
+      { "@type": "Offer", itemOffered: { "@type": "Service", name: "ServiceCPQ SaaS", url: `${BASE}/services/saas-solution` } },
       { "@type": "Offer", itemOffered: { "@type": "Service", name: "Staff Augmentation", url: `${BASE}/services/staff-augmentation` } },
     ],
   },

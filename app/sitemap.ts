@@ -18,7 +18,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/services`, lastModified: now, changeFrequency: "monthly", priority: 0.95 },
     { url: `${BASE}/services/product-engineering`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
     { url: `${BASE}/services/plant-engineering`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
-    { url: `${BASE}/services/saas-solution/servicecpq`, lastModified: now, changeFrequency: "monthly", priority: 0.85 },
+    { url: `${BASE}/services/saas-solution`, lastModified: now, changeFrequency: "monthly", priority: 0.85 },
     { url: `${BASE}/services/staff-augmentation`, lastModified: now, changeFrequency: "monthly", priority: 0.85 },
     // Product Engineering sub-services (clean semantic URLs)
     { url: `${BASE}/services/product-engineering/mechanical-design`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },

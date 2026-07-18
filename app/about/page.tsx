@@ -466,7 +466,7 @@ export default function AboutPage() {
         description="Ready to turn your engineering challenges into opportunities? Let's connect."
         buttons={[
           { label: "Get in Touch",     href: "/contact",  variant: "primary" },
-          { label: "Explore Services", href: "/services", variant: "outline" },
+          { label: "Explore Services", href: "/services/plant-engineering", variant: "outline" },
         ]}
       />
       <Footer />

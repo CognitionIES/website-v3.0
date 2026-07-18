@@ -13,7 +13,7 @@ const links = {
   Services: [
     { label: "Product Engineering",  href: "/services/product-engineering" },
     { label: "Plant Engineering",    href: "/services/plant-engineering" },
-    { label: "SaaS Solutions",       href: "/services/saas-solution/servicecpq" },
+    { label: "SaaS Solutions",       href: "/services/saas-solution" },
     { label: "Staff Augmentation",   href: "/services/staff-augmentation" },
   ],
 };
