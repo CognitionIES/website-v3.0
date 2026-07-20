@@ -31,7 +31,7 @@ export default function Content() {
       <ObjectiveSection study={ENGINEERING_TALENT} />
       <ApproachSection study={ENGINEERING_TALENT} />
       <ResultsSection study={ENGINEERING_TALENT} />
-      <TestimonialBand study={ENGINEERING_TALENT} />
+      {/* <TestimonialBand study={ENGINEERING_TALENT} /> */}
       <RolesToolsSection study={ENGINEERING_TALENT} />
       <CTASection />
       <Footer />

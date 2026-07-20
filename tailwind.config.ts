@@ -11,26 +11,28 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans:    ["DM Sans", "Helvetica Neue", "Arial", "ui-sans-serif", "system-ui", "sans-serif"],
-        display: ["DM Serif Display", "Georgia", "serif"],
-        calibri: ["DM Sans", "sans-serif"],
+        // Now point at the CSS variables so font-sans / font-display utility
+        // classes respect the live font switch, same as the base styles.
+        sans: ["var(--font-body)", "Helvetica Neue", "Arial", "ui-sans-serif", "system-ui", "sans-serif"],
+        display: ["var(--font-dm-serif)", "Georgia", "serif"],
+        calibri: ["var(--font-body)", "sans-serif"],
       },
       colors: {
-        teal:   "#0098AF",
-        navy:   "#003C46",
-        ink:    "#111827",
+        teal: "#0098AF",
+        navy: "#003C46",
+        ink: "#111827",
         background: "hsl(var(--background))",
-        foreground:  "hsl(var(--foreground))",
-        card:        { DEFAULT: "hsl(var(--card))", foreground: "hsl(var(--card-foreground))" },
-        popover:     { DEFAULT: "hsl(var(--popover))", foreground: "hsl(var(--popover-foreground))" },
-        primary:     { DEFAULT: "hsl(var(--primary))", foreground: "hsl(var(--primary-foreground))" },
-        secondary:   { DEFAULT: "hsl(var(--secondary))", foreground: "hsl(var(--secondary-foreground))" },
-        muted:       { DEFAULT: "hsl(var(--muted))", foreground: "hsl(var(--muted-foreground))" },
-        accent:      { DEFAULT: "hsl(var(--accent))", foreground: "hsl(var(--accent-foreground))" },
+        foreground: "hsl(var(--foreground))",
+        card: { DEFAULT: "hsl(var(--card))", foreground: "hsl(var(--card-foreground))" },
+        popover: { DEFAULT: "hsl(var(--popover))", foreground: "hsl(var(--popover-foreground))" },
+        primary: { DEFAULT: "hsl(var(--primary))", foreground: "hsl(var(--primary-foreground))" },
+        secondary: { DEFAULT: "hsl(var(--secondary))", foreground: "hsl(var(--secondary-foreground))" },
+        muted: { DEFAULT: "hsl(var(--muted))", foreground: "hsl(var(--muted-foreground))" },
+        accent: { DEFAULT: "hsl(var(--accent))", foreground: "hsl(var(--accent-foreground))" },
         destructive: { DEFAULT: "hsl(var(--destructive))", foreground: "hsl(var(--destructive-foreground))" },
         border: "hsl(var(--border))",
-        input:  "hsl(var(--input))",
-        ring:   "hsl(var(--ring))",
+        input: "hsl(var(--input))",
+        ring: "hsl(var(--ring))",
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -39,11 +41,11 @@ export default {
       },
       keyframes: {
         "accordion-down": { from: { height: "0" }, to: { height: "var(--radix-accordion-content-height)" } },
-        "accordion-up":   { from: { height: "var(--radix-accordion-content-height)" }, to: { height: "0" } },
+        "accordion-up": { from: { height: "var(--radix-accordion-content-height)" }, to: { height: "0" } },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
-        "accordion-up":   "accordion-up 0.2s ease-out",
+        "accordion-up": "accordion-up 0.2s ease-out",
       },
     },
   },

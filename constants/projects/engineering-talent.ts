@@ -76,7 +76,7 @@ export const ENGINEERING_TALENT: CaseStudy = {
   ],
   testimonial: {
     quote:
-      "Cognition's engineering staffing model made it easy for us to quickly bring in a skilled, multi-disciplinary team with the right tools and experience. Their support helped us stay on schedule without putting extra pressure on our internal recruitment team.",
+      "ABC",
     author: "Project Lead",
     company: "Engineering Client",
   },

@@ -4,7 +4,7 @@ export const ABOUT_CONSTANTS = {
   TITLE: "Who We Are",
   SUBTITLE: "Driving Operational Efficiency & Product Innovation",
   DESCRIPTION_1: [
-    { text: "Established in 2005 and headquartered in India, with a representative office in the USA, Cognition IES delivers " },
+    { text: "Established in 2005 and headquartered in USA, with a representative office in the India, Cognition IES delivers " },
     { text: "Product Engineering", href: "/services/product-engineering" },
     { text: ", " },
     { text: "Plant Engineering", href: "/services/plant-engineering" },

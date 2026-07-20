@@ -14,6 +14,12 @@
   --bg-warm:     #fafaf8;
   --bg-dark:     #0f1117;
   --ink:         #111827;
+
+  /* Switchable body font — defaults to Inter until FontSwitcher (temporary
+     preview widget) overrides it via inline style. Once a font is chosen
+     permanently, replace var(--font-inter) below with the winner and
+     remove the fallback chain / FontSwitcher entirely. */
+  --font-body: var(--font-inter);
 }
 
 /*  shadcn tokens ─ */
@@ -38,7 +44,7 @@
   html { scroll-behavior: smooth; overflow-x: hidden; }
 
   body {
-    font-family: "DM Sans", "Helvetica Neue", Arial, ui-sans-serif, sans-serif;
+    font-family: var(--font-body), "Helvetica Neue", Arial, ui-sans-serif, sans-serif;
     font-size: 16px;
     line-height: 1.6;
     color: var(--body);
@@ -48,17 +54,18 @@
     text-rendering: optimizeLegibility;
   }
 
-  /* Display serif for all headings */
+  /* Display serif for all headings — unchanged visually, just now self-hosted
+     via next/font instead of the removed manual <link> tags. */
   h1, h2, h3, h4 {
-    font-family: "DM Serif Display", "Georgia", serif;
+    font-family: var(--font-dm-serif), "Georgia", serif;
     color: var(--ink);
     line-height: 1.1;
     letter-spacing: -0.025em;
   }
 
-  /* DM Sans for all body/ui */
+  /* Switchable body/UI font */
   p, span, label, button, a, input, textarea, select, li, td {
-    font-family: "DM Sans", "Helvetica Neue", Arial, ui-sans-serif, sans-serif;
+    font-family: var(--font-body), "Helvetica Neue", Arial, ui-sans-serif, sans-serif;
   }
 
   p { margin: 0; }
@@ -75,7 +82,7 @@
 @layer components {
   .eyebrow {
     display: block;
-    font-family: "DM Sans", sans-serif;
+    font-family: var(--font-body), sans-serif;
     font-size: 11px;
     font-weight: 600;
     letter-spacing: 0.18em;

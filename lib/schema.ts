@@ -25,21 +25,20 @@ export const organizationSchema = {
       availableLanguage: "English",
     },
   ],
-  address: [
-    {
-      "@type": "PostalAddress",
-      addressCountry: "IN",
-      addressRegion: "India",
-    },
-    {
-      "@type": "PostalAddress",
-      addressCountry: "US",
-      addressRegion: "USA",
-    },
-  ],
-  sameAs: [
-    "https://in.linkedin.com/company/cognition-ies",
-  ],
+  // Single real address (USA HQ) — the previous version listed two
+  // vague country-only entries (one for a US office that doesn't exist).
+  // A real street/locality/postal code is what Google's guidance actually
+  // wants here; country-only entries carry little value.
+  address: {
+    "@type": "PostalAddress",
+    streetAddress:
+      "1st Floor, Vadodara Hyper Complex, Rhino Circle, Dr Vikram Sarabhai Marg, Alkapuri",
+    addressLocality: "Vadodara",
+    addressRegion: "Gujarat",
+    postalCode: "390007",
+    addressCountry: "IN",
+  },
+  sameAs: ["https://in.linkedin.com/company/cognition-ies"],
 };
 
 /** Website schema with SearchAction */
@@ -61,7 +60,8 @@ export const professionalServiceSchema = {
   "@type": "ProfessionalService",
   name: "Cognition IES",
   url: BASE,
-  description: "Engineering consultancy offering product engineering, plant engineering, SaaS solutions, and engineering staff augmentation related services.",
+  description:
+    "Engineering consultancy offering product engineering, plant engineering, SaaS solutions, and engineering staff augmentation related services.",
   serviceType: [
     "Product Engineering",
     "Plant Engineering",
@@ -111,15 +111,23 @@ export function faqSchema(items: { q: string; a: string }[]) {
   };
 }
 
-/** JobPosting schema builder */
+/**
+ * JobPosting schema builder.
+ * validThrough, remote, and baseSalary are optional additions — existing
+ * calls with just the original 5 fields still work unchanged.
+ */
 export function jobSchema(job: {
   title: string;
   description: string;
   datePosted: string;
   location: string;
   employmentType: string;
+  validThrough?: string; // ISO 8601 date; add if the posting expires
+  remote?: boolean; // true = fully remote role
+  country?: string; // ISO 3166-1 alpha-2, defaults to "IN"
+  baseSalary?: { currency: string; min: number; max: number; unit?: "YEAR" | "MONTH" | "HOUR" };
 }) {
-  return {
+  const schema: Record<string, unknown> = {
     "@context": "https://schema.org",
     "@type": "JobPosting",
     title: job.title,
@@ -131,11 +139,39 @@ export function jobSchema(job: {
       sameAs: BASE,
       logo: `${BASE}/images/logo.png`,
     },
-    jobLocation: {
-      "@type": "Place",
-      address: { "@type": "PostalAddress", addressLocality: job.location },
-    },
     employmentType: job.employmentType,
     industry: "Engineering Services",
   };
+
+  if (job.validThrough) {
+    schema.validThrough = job.validThrough;
+  }
+
+  if (job.remote) {
+    schema.jobLocationType = "TELECOMMUTE";
+    schema.applicantLocationRequirements = {
+      "@type": "Country",
+      name: job.country === "US" ? "United States" : "India",
+    };
+  } else {
+    schema.jobLocation = {
+      "@type": "Place",
+      address: { "@type": "PostalAddress", addressLocality: job.location, addressCountry: job.country ?? "IN" },
+    };
+  }
+
+  if (job.baseSalary) {
+    schema.baseSalary = {
+      "@type": "MonetaryAmount",
+      currency: job.baseSalary.currency,
+      value: {
+        "@type": "QuantitativeValue",
+        minValue: job.baseSalary.min,
+        maxValue: job.baseSalary.max,
+        unitText: job.baseSalary.unit ?? "YEAR",
+      },
+    };
+  }
+
+  return schema;
 }

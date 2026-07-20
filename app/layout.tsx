@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Inter, Plus_Jakarta_Sans, Manrope, IBM_Plex_Sans, DM_Serif_Display } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "sonner";
 import { Analytics } from "@vercel/analytics/react";
@@ -7,6 +8,7 @@ import NavigationProgress from "../components/NavigationProgress";
 import ChatWidget from "../components/ChatWidget";
 import LeadMagnet from "../components/LeadMagnet";
 import SchemaMarkup from "../components/SchemaMarkup";
+import FontSwitcher from "../components/FontSwitcher";
 import {
   organizationSchema,
   websiteSchema,
@@ -14,6 +16,26 @@ import {
 } from "../lib/schema";
 
 const BASE = "https://www.cognitionies.com";
+
+// Four candidate body fonts, self-hosted via next/font (no render-blocking
+// external request, unlike the old <link> tags this replaces).
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" });
+const jakarta = Plus_Jakarta_Sans({ subsets: ["latin"], variable: "--font-jakarta", display: "swap" });
+const manrope = Manrope({ subsets: ["latin"], variable: "--font-manrope", display: "swap" });
+const plexSans = IBM_Plex_Sans({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-plex",
+  display: "swap",
+});
+// Headings font — unchanged from before, just self-hosted now instead of
+// loaded via the manual <link> tags (which are being removed below).
+const dmSerif = DM_Serif_Display({
+  subsets: ["latin"],
+  weight: "400",
+  variable: "--font-dm-serif",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE),
@@ -54,12 +76,12 @@ export const metadata: Metadata = {
     description:
       "Cognition IES provides engineering services, IT staff augmentation, plant engineering, mechanical design, product engineering and digital twin solutions.",
     images: [
-      { 
-        url: "/og-image.png", 
-        width: 1200, 
-        height: 630, 
-        alt: "Cognition IES - Engineering Smarter Solutions" 
-      }
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Cognition IES - Engineering Smarter Solutions",
+      },
     ],
   },
   twitter: {
@@ -80,7 +102,7 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon:  [{ url: "/favicon.webp", type: "image/png" }],
+    icon: [{ url: "/favicon.png", type: "image/png" }],
     apple: [{ url: "/apple-touch-icon.png" }],
   },
   manifest: "/site.webmanifest",
@@ -93,19 +115,15 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en">
+    <html
+      lang="en"
+      className={`${inter.variable} ${jakarta.variable} ${manrope.variable} ${plexSans.variable} ${dmSerif.variable}`}
+    >
       <head>
-        {/* Preconnect for fonts eliminates render-blocking */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        {/* Font load display=swap prevents FOUT */}
-        <link
-          href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300;1,9..40,400&family=DM+Serif+Display:ital@0;1&display=swap"
-          rel="stylesheet"
-        />
-        {/* DNS prefetch for third-party services */}
+        {/* DNS prefetch for third-party services (font <link> tags removed —
+            next/font above self-hosts and inlines fonts, eliminating the
+            render-blocking external request this used to cause) */}
         <link rel="dns-prefetch" href="https://api.web3forms.com" />
-        <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
 
         {/* Site-wide JSON-LD schema */}
         <SchemaMarkup schema={[organizationSchema, websiteSchema, professionalServiceSchema]} />
@@ -116,6 +134,7 @@ export default function RootLayout({
         <main>{children}</main>
         <ChatWidget />
         <LeadMagnet />
+        <FontSwitcher />
         <Analytics />
         <Toaster richColors position="top-right" />
       </body>
