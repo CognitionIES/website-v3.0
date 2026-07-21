@@ -9,7 +9,7 @@ export default function robots(): MetadataRoute.Robots {
         disallow: [
           "/jobs/",          // internal job detail pages (Supabase-driven)
           "/api/",           // API routes
-          "/_next/",         // Next.js internals
+          // "/_next/",         // Next.js internals
           "/admin/",         // any admin paths
         ],
       },
