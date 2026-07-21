@@ -9,7 +9,7 @@ import Footer from "@/components/Footer";
 import PageHero from "@/components/shared/PageHero";
 import CTABanner from "@/components/shared/CTABanner";
 import { Search } from "lucide-react";
-import faqImage from "@/constants/images/faq-hero.jpg";
+import faqImage from "@/constants/images/FAQ/hero.webp";
 
 const CATS = [
   { id: "all", label: "All" },
