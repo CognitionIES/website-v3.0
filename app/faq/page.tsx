@@ -9,6 +9,7 @@ import Footer from "@/components/Footer";
 import PageHero from "@/components/shared/PageHero";
 import CTABanner from "@/components/shared/CTABanner";
 import { Search } from "lucide-react";
+import faqImage from "@/constants/images/faq-hero.jpg";
 
 const CATS = [
   { id: "all", label: "All" },
@@ -31,7 +32,7 @@ export default function FAQPage() {
   return (
     <div className="bg-white">
       <MegaMenu />
-      <PageHero image="@/constants/images/faq-hero.jpg" title="Frequently Asked Questions" subtitle="Support" breadcrumbs={[{ label: "FAQs", href: "/faq" }]} />
+      <PageHero image={faqImage} title="Frequently Asked Questions" subtitle="Support" breadcrumbs={[{ label: "FAQs", href: "/faq" }]} />
 
       <section ref={ref} className="bg-white py-28 md:py-36 overflow-hidden relative">
         <div className="absolute inset-0 pointer-events-none opacity-[0.025]"

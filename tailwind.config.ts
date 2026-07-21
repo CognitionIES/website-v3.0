@@ -14,7 +14,7 @@ export default {
         // Now point at the CSS variables so font-sans / font-display utility
         // classes respect the live font switch, same as the base styles.
         sans: ["var(--font-body)", "Helvetica Neue", "Arial", "ui-sans-serif", "system-ui", "sans-serif"],
-        display: ["var(--font-dm-serif)", "Georgia", "serif"],
+        display: ["var(--font-body)", "Georgia", "serif"],
         calibri: ["var(--font-body)", "sans-serif"],
       },
       colors: {

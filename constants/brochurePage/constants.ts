@@ -1,8 +1,8 @@
 // constants/brochurePage/constants.js
-const heroImage = '/images/brochure/hero.webp';
+//const heroImage = '/images/brochure/hero.webp';
 
 export const BROCHURE_CONSTANTS = {
-  BANNER_IMAGE: { heroImage },
+  //BANNER_IMAGE: { heroImage },
 
   // Toggle options
   BROCHURE_TYPES: {

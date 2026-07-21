@@ -1,5 +1,17 @@
 import type { Metadata } from "next";
-import { Inter, Plus_Jakarta_Sans, Manrope, IBM_Plex_Sans, DM_Serif_Display } from "next/font/google";
+import {
+  Inter,
+  Plus_Jakarta_Sans,
+  Manrope,
+  IBM_Plex_Sans,
+  Sora,
+  Outfit,
+  Lexend,
+  Work_Sans,
+  Space_Grotesk,
+  Poppins,
+  Source_Sans_3,
+} from "next/font/google";
 import "./globals.css";
 import { Toaster } from "sonner";
 import { Analytics } from "@vercel/analytics/react";
@@ -28,14 +40,13 @@ const plexSans = IBM_Plex_Sans({
   variable: "--font-plex",
   display: "swap",
 });
-// Headings font — unchanged from before, just self-hosted now instead of
-// loaded via the manual <link> tags (which are being removed below).
-const dmSerif = DM_Serif_Display({
-  subsets: ["latin"],
-  weight: "400",
-  variable: "--font-dm-serif",
-  display: "swap",
-});
+const sora = Sora({ subsets: ["latin"], weight: ["300", "400", "500", "600", "700"], variable: "--font-sora", display: "swap" });
+const outfit = Outfit({ subsets: ["latin"], weight: ["300", "400", "500", "600", "700"], variable: "--font-outfit", display: "swap" });
+const lexend = Lexend({ subsets: ["latin"], weight: ["300", "400", "500", "600", "700"], variable: "--font-lexend", display: "swap" });
+const workSans = Work_Sans({ subsets: ["latin"], weight: ["300", "400", "500", "600", "700"], variable: "--font-work-sans", display: "swap" });
+const spaceGrotesk = Space_Grotesk({ subsets: ["latin"], weight: ["300", "400", "500", "600", "700"], variable: "--font-space-grotesk", display: "swap" });
+const poppins = Poppins({ subsets: ["latin"], weight: ["300", "400", "500", "600", "700"], variable: "--font-poppins", display: "swap" });
+const sourceSans = Source_Sans_3({ subsets: ["latin"], weight: ["300", "400", "500", "600", "700"], variable: "--font-source-sans", display: "swap" });
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE),
@@ -117,7 +128,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${jakarta.variable} ${manrope.variable} ${plexSans.variable} ${dmSerif.variable}`}
+      className={`${inter.variable} ${jakarta.variable} ${manrope.variable} ${plexSans.variable} ${sora.variable} ${outfit.variable} ${lexend.variable} ${workSans.variable} ${spaceGrotesk.variable} ${poppins.variable} ${sourceSans.variable}`}
     >
       <head>
         {/* DNS prefetch for third-party services (font <link> tags removed —
@@ -140,4 +151,4 @@ export default function RootLayout({
       </body>
     </html>
   );
-}
+} 

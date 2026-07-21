@@ -20,6 +20,13 @@ const FONT_OPTIONS = [
   { id: "jakarta", label: "Plus Jakarta Sans", cssVar: "var(--font-jakarta)" },
   { id: "manrope", label: "Manrope", cssVar: "var(--font-manrope)" },
   { id: "plex", label: "IBM Plex Sans", cssVar: "var(--font-plex)" },
+  { id: "sora", label: "Sora", cssVar: "var(--font-sora)" },
+  { id: "outfit", label: "Outfit", cssVar: "var(--font-outfit)" },
+  { id: "lexend", label: "Lexend", cssVar: "var(--font-lexend)" },
+  { id: "work-sans", label: "Work Sans", cssVar: "var(--font-work-sans)" },
+  { id: "space-grotesk", label: "Space Grotesk", cssVar: "var(--font-space-grotesk)" },
+  { id: "poppins", label: "Poppins", cssVar: "var(--font-poppins)" },
+  { id: "source-sans", label: "Source Sans 3", cssVar: "var(--font-source-sans)" },
 ] as const;
 
 type FontId = (typeof FONT_OPTIONS)[number]["id"];
@@ -62,6 +69,9 @@ export default function FontSwitcher() {
         flexDirection: "column",
         gap: "6px",
         fontFamily: "system-ui, sans-serif",
+        maxHeight: "70vh",
+        overflowY: "auto",
+        width: "200px",
       }}
     >
       <span style={{ color: "#999", fontSize: "11px", padding: "0 4px", marginBottom: "2px" }}>
