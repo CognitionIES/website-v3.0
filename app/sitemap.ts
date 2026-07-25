@@ -15,7 +15,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/brochure`, lastModified: now, changeFrequency: "monthly", priority: 0.7 },
 
     // Services, high priority (core revenue pages)
-    { url: `${BASE}/services`, lastModified: now, changeFrequency: "monthly", priority: 0.95 },
     { url: `${BASE}/services/product-engineering`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
     { url: `${BASE}/services/plant-engineering`, lastModified: now, changeFrequency: "monthly", priority: 0.9 },
     { url: `${BASE}/services/saas-solution`, lastModified: now, changeFrequency: "monthly", priority: 0.85 },

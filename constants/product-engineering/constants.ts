@@ -1,32 +1,8 @@
 // This file holds all constants for the product engineering page
 
-import supplyImage1 from '@/constants/images/product-engineering/side/supply.webp';
-import mechImage1 from '@/constants/images/product-engineering/side/mech.webp';
-import elecImage1 from '@/constants/images/product-engineering/side/elec.webp';
-import protoImage1 from '@/constants/images/product-engineering/side/prototyping.webp';
-import hydraImage1 from '@/constants/images/product-engineering/side/hydraulic.webp';
-import assetImage1 from '@/constants/images/product-engineering/side/asset.webp';
-//const embeddedImage1 = '/images/product/side/embedded.webp';
-import caeImage1 from '@/constants/images/product-engineering/side/cae.webp'
-import techImage1 from '@/constants/images/product-engineering/side/tech.webp'
 import aboutImage from '@/constants/images/product-engineering/about.webp'
-import embeddedImage2 from '@/constants/images/product-engineering/side/embedded-1.webp'
-import { faGears, faMagnifyingGlassChart, faPlugCircleBolt } from "@fortawesome/free-solid-svg-icons";
-import { Cpu, FileText, Layers, Printer, Truck, Workflow } from "lucide-react";
 import productEngineeringImage from '@/constants/images/product-engineering/product-engineering-services.webp';
 
-// constants/product-engineering/constants.ts
-import { ComponentType } from "react";
-import { StaticImageData } from "next/image";
-
-interface Service {
-  icon: ComponentType<{ className?: string }> | { type: string; icon: never }; // Support both Lucide and Font Awesome
-  title: string;
-  description: string;
-  image: StaticImageData;
-  alt: string;
-  href: string;
-}
 export const PRODUCT_ENGINEERING_CONSTANTS = {
   // Hero Section
   HERO: {
@@ -48,93 +24,11 @@ export const PRODUCT_ENGINEERING_CONSTANTS = {
   },
 
   // Services Section
-  // ⚠️ DEPRECATED — confirmed via grep that nothing reads
-  // PRODUCT_ENGINEERING_CONSTANTS.SERVICES or .FAQ anywhere in the codebase;
-  // only .ABOUT (below) is still live, via AboutSection.tsx. The real,
-  // current service content lives in
-  // constants/product-engineering/services.ts (PRODUCT_SERVICES). Kept here
-  // non-destructively rather than deleted — safe to remove once confirmed.
-  SERVICES: {
-    TITLE: "Product Engineering Services",
-    SUBTITLE:
-      "Comprehensive engineering solutions tailored to your specific needs",
-    ITEMS: [
-      {
-        icon: { type: "fontawesome", icon: faGears },
-        title: "Mechanical Design Services",
-        description: "Comprehensive mechanical design solutions including 3D modeling, simulation, & optimization",
-        image: mechImage1,
-        alt: "Mechanical design",
-        href: "/services/product-engineering/mechanical-design",
-      },
-
-      {
-        icon: { type: "fontawesome", icon: faPlugCircleBolt },
-        title: "Electrical Engineering Services",
-        description: "Innovative electrical system design and power distribution solutions",
-        image: elecImage1,
-        alt: "Mechanical design",
-        href: "/services/product-engineering/electrical-engineering",
-      },
-      {
-        icon: { type: "fontawesome", icon: faMagnifyingGlassChart },
-        title: "CAE/CFD",
-        description: "Advanced computational analysis for engineering design and fluid dynamics",
-        image: caeImage1,
-        alt: "CAE/CFD Image",
-        href: "/services/product-engineering/cae-cfd",
-      },
-      {
-        icon: Printer,
-        title: "Prototyping and 3D Printing",
-        description: "Rapid prototyping and additive manufacturing services",
-        image: protoImage1,
-        alt: "Prototyping and 3D Printing Image",
-        href: "/services/product-engineering/prototyping-3d-printing",
-      },
-      {
-        icon: Workflow,
-        title: "Hydraulic Engineering Services",
-        description: "Expert hydraulic system design and fluid power solutions",
-        image: hydraImage1,
-        alt: "Hydraulic Engineering Services Image",
-        href: "/services/product-engineering/hydraulic-engineering",
-      },
-
-      {
-        icon: Layers,
-        title: "Asset Management",
-        description: "Comprehensive asset lifecycle management and optimization",
-        image: assetImage1,
-        alt: "Asset Management Image",
-        href: "/services/product-engineering/asset-management",
-      },
-      {
-        icon: Cpu,
-        title: "Embedded Systems Engineering",
-        description: "Custom embedded solutions and IoT device development",
-        image: embeddedImage2,
-        alt: "Embedded Systems Engineering Image",
-        href: "/services/product-engineering/embedded-systems",
-      },
-      {
-        icon: FileText,
-        title: "Technical Publication",
-        description: "Professional technical documentation and manual creation",
-        image: techImage1,
-        alt: "Technical Publication Image",
-        href: "/services/product-engineering/technical-publication",
-      },
-      {
-        icon: Truck,
-        title: "Supply Chain Management",
-        description: "End-to-end supply chain optimization and procurement services",
-        image: supplyImage1,
-        alt: "Mechanical design",
-        href: "/services/product-engineering/supply-chain-management",
-      },
-    ] as unknown as Service[],
-  },
+  // Removed — was confirmed dead (nothing read .SERVICES), and its hrefs
+  // pointed at /services/product-engineering/[service] subpages that no
+  // longer exist. Live service content is in
+  // constants/product-engineering/services.ts (PRODUCT_SERVICES), rendered
+  // by ProductServicesExpanded.tsx as an in-page accordion.
 
   // FAQ Section
   FAQ: {

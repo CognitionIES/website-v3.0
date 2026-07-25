@@ -1,17 +1,5 @@
 import type { Metadata } from "next";
-import {
-  Inter,
-  Plus_Jakarta_Sans,
-  Manrope,
-  IBM_Plex_Sans,
-  Sora,
-  Outfit,
-  Lexend,
-  Work_Sans,
-  Space_Grotesk,
-  Poppins,
-  Source_Sans_3,
-} from "next/font/google";
+import { Lexend } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "sonner";
 import { Analytics } from "@vercel/analytics/react";
@@ -20,7 +8,6 @@ import NavigationProgress from "../components/NavigationProgress";
 import ChatWidget from "../components/ChatWidget";
 import LeadMagnet from "../components/LeadMagnet";
 import SchemaMarkup from "../components/SchemaMarkup";
-import FontSwitcher from "../components/FontSwitcher";
 import {
   organizationSchema,
   websiteSchema,
@@ -29,24 +16,8 @@ import {
 
 const BASE = "https://www.cognitionies.com";
 
-// Four candidate body fonts, self-hosted via next/font (no render-blocking
-// external request, unlike the old <link> tags this replaces).
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" });
-const jakarta = Plus_Jakarta_Sans({ subsets: ["latin"], variable: "--font-jakarta", display: "swap" });
-const manrope = Manrope({ subsets: ["latin"], variable: "--font-manrope", display: "swap" });
-const plexSans = IBM_Plex_Sans({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-  variable: "--font-plex",
-  display: "swap",
-});
-const sora = Sora({ subsets: ["latin"], weight: ["300", "400", "500", "600", "700"], variable: "--font-sora", display: "swap" });
-const outfit = Outfit({ subsets: ["latin"], weight: ["300", "400", "500", "600", "700"], variable: "--font-outfit", display: "swap" });
+// Body font — finalized as Lexend (font A/B testing via FontSwitcher removed).
 const lexend = Lexend({ subsets: ["latin"], weight: ["300", "400", "500", "600", "700"], variable: "--font-lexend", display: "swap" });
-const workSans = Work_Sans({ subsets: ["latin"], weight: ["300", "400", "500", "600", "700"], variable: "--font-work-sans", display: "swap" });
-const spaceGrotesk = Space_Grotesk({ subsets: ["latin"], weight: ["300", "400", "500", "600", "700"], variable: "--font-space-grotesk", display: "swap" });
-const poppins = Poppins({ subsets: ["latin"], weight: ["300", "400", "500", "600", "700"], variable: "--font-poppins", display: "swap" });
-const sourceSans = Source_Sans_3({ subsets: ["latin"], weight: ["300", "400", "500", "600", "700"], variable: "--font-source-sans", display: "swap" });
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE),
@@ -126,10 +97,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html
-      lang="en"
-      className={`${inter.variable} ${jakarta.variable} ${manrope.variable} ${plexSans.variable} ${sora.variable} ${outfit.variable} ${lexend.variable} ${workSans.variable} ${spaceGrotesk.variable} ${poppins.variable} ${sourceSans.variable}`}
-    >
+    <html lang="en" className={lexend.variable}>
       <head>
         {/* DNS prefetch for third-party services (font <link> tags removed —
             next/font above self-hosts and inlines fonts, eliminating the
@@ -145,10 +113,9 @@ export default function RootLayout({
         <main>{children}</main>
         <ChatWidget />
         <LeadMagnet />
-        <FontSwitcher />
         <Analytics />
         <Toaster richColors position="top-right" />
       </body>
     </html>
   );
-} 
+}

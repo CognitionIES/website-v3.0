@@ -59,28 +59,49 @@ export const professionalServiceSchema = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
   name: "Cognition IES",
-  url: BASE,
+  url: "https://www.cognitionies.com/",
   description:
     "Engineering consultancy offering product engineering, plant engineering, SaaS solutions, and engineering staff augmentation related services.",
-  serviceType: [
-    "Product Engineering",
-    "Plant Engineering",
-    "SaaS Solutions",
-    "Staff Augmentation",
-  ],
   areaServed: ["India", "USA", "Global"],
   hasOfferCatalog: {
     "@type": "OfferCatalog",
     name: "Engineering Services",
     itemListElement: [
-      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Product Engineering", url: `${BASE}/services/product-engineering` } },
-      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Plant Engineering", url: `${BASE}/services/plant-engineering` } },
-      { "@type": "Offer", itemOffered: { "@type": "Service", name: "ServiceCPQ SaaS", url: `${BASE}/services/saas-solution` } },
-      { "@type": "Offer", itemOffered: { "@type": "Service", name: "Staff Augmentation", url: `${BASE}/services/staff-augmentation` } },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Product Engineering",
+          url: "https://www.cognitionies.com/services/product-engineering",
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Plant Engineering",
+          url: "https://www.cognitionies.com/services/plant-engineering",
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "ServiceCPQ SaaS",
+          url: "https://www.cognitionies.com/services/saas-solution",
+        },
+      },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Staff Augmentation",
+          url: "https://www.cognitionies.com/services/staff-augmentation",
+        },
+      },
     ],
   },
 };
-
 /** Breadcrumb schema builder */
 export function breadcrumbSchema(items: { name: string; url: string }[]) {
   return {

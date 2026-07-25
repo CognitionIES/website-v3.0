@@ -15,11 +15,8 @@
   --bg-dark:     #0f1117;
   --ink:         #111827;
 
-  /* Switchable body font — defaults to Inter until FontSwitcher (temporary
-     preview widget) overrides it via inline style. Once a font is chosen
-     permanently, replace var(--font-inter) below with the winner and
-     remove the fallback chain / FontSwitcher entirely. */
-  --font-body: var(--font-inter);
+  /* Body font — finalized as Lexend. */
+  --font-body: var(--font-lexend);
 }
 
 /*  shadcn tokens ─ */

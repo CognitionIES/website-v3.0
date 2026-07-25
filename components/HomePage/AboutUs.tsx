@@ -36,8 +36,8 @@ export default function AboutUs() {
 
         {/* Full-width heading, on top */}
         <h2 className="font-display text-4xl md:text-5xl text-[#111827] leading-[1.05] tracking-[-0.03em] mb-8 text-balance">
-          Engineering that moves{" "}
-          <em className="not-italic text-[#0098AF]">industries forward</em>
+          Engineering That Moves{" "}
+          <em className="not-italic text-[#0098AF]">Industries Forward</em>
         </h2>
 
         {/* Two columns below: image | text — stretched so both start & end on the same line */}
